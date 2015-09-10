@@ -1,0 +1,262 @@
+@charset "UTF-8";
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+  font-size: 14px;
+  color: #444444;
+  line-height: 1.5;
+  text-align: center;
+  min-height: 100%;
+}
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+}
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+p,
+input,
+select,
+button,
+ul,
+ol,
+li,
+header,
+section,
+menu,
+nav,
+footer,
+aside,
+article {
+  margin: 0;
+  padding: 0;
+}
+article,
+aside,
+dialog,
+footer,
+header,
+section,
+footer,
+nav,
+figure,
+menu {
+  display: block;
+}
+a {
+  text-decoration: none;
+  -webkit-transition: all ease-in-out 0.4s !important;
+          transition: all ease-in-out 0.4s !important;
+}
+button {
+  -webkit-transition: all ease-in-out 0.4s !important;
+          transition: all ease-in-out 0.4s !important;
+}
+.bo-container-app {
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  top: 44px;
+  bottom: 0;
+}
+.bo-layout-main,
+.bo-layout-header,
+.bo-layout-menu,
+.bo-layout-sidebar {
+  background: #fff;
+}
+.bo-layout-main {
+  width: 768px;
+  min-height: 100%;
+  margin: 0 auto;
+  box-shadow: 0px 1px 1px #f2f2f2;
+}
+.bo-layout-header {
+  width: 768px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: 0 auto;
+}
+.bo-layout-menu {
+  width: 768px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+}
+.bo-layout-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+.bo-header,
+.bo-header-light {
+  width: 100%;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  position: relative;
+}
+.bo-header .bo-nav-left,
+.bo-header-light .bo-nav-left,
+.bo-header .bo-nav-right,
+.bo-header-light .bo-nav-right {
+  position: absolute;
+  height: 44px;
+  line-height: 44px;
+}
+.bo-header .bo-nav-left,
+.bo-header-light .bo-nav-left {
+  left: 0;
+  top: 0;
+}
+.bo-header .bo-nav-right,
+.bo-header-light .bo-nav-right {
+  right: 0;
+  top: 0;
+}
+.bo-header {
+  background: #6699ff;
+  color: #fff;
+}
+.bo-header-light {
+  background: #ffffff;
+  color: #444444;
+  border-bottom: 1px #e0e0e0 solid;
+}
+.bo-menu-3 > li {
+  float: left;
+  display: inline-block;
+  width: 33.33333%;
+}
+.bo-menu-4 > li {
+  width: 25%;
+}
+.bo-menu-5 > li {
+  width: 20%;
+}
+.bo-menu-icon {
+  border-top: 1px #e0e0e0 solid;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  font-size: 22px;
+  color: #999999;
+  background: #ffffff;
+  overflow: hidden;
+}
+.bo-menu-icon button {
+  background: none;
+  border: 0;
+  font-size: 22px;
+  width: 100%;
+  height: 40px;
+  color: #999999;
+  cursor: pointer;
+}
+.bo-menu-icon button:active {
+  color: #6699ff;
+}
+.bo-menu-icon button:hover {
+  color: #6699ff;
+}
+.bo-menu-icon a {
+  display: block;
+  width: 100%;
+  height: 40px;
+  color: #999999;
+}
+.bo-menu-icon a:hover {
+  color: #6699ff;
+}
+.bo-menu-icon a:active {
+  color: #6699ff;
+}
+.bo-sidebar {
+  width: 200px;
+  height: 100%;
+  overflow-y: auto;
+  background: #34495e;
+}
+@media only screen and (max-width: 768px) {
+  .bo-body {
+    background: #ffffff;
+  }
+  .bo-container,
+  .bo-layout-header,
+  .bo-layout-menu,
+  .bo-layout-main {
+    width: 100%;
+  }
+  .bo-layout-sidebar {
+    left: -200px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .bo-body {
+    background: #ffffff;
+  }
+  .bo-container,
+  .bo-layout-header,
+  .bo-layout-menu,
+  .bo-layout-main {
+    width: 768px;
+  }
+  .bo-layout-sidebar {
+    left: -200px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .bo-body {
+    background: #f9f9f9;
+  }
+  .bo-container,
+  .bo-layout-header,
+  .bo-layout-menu,
+  .bo-layout-main {
+    width: 768px;
+  }
+  .bo-layout-sidebar {
+    left: -200px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .bo-body {
+    background: #f9f9f9;
+  }
+  .bo-container,
+  .bo-layout-header,
+  .bo-layout-menu,
+  .bo-layout-main {
+    width: 768px;
+  }
+}
+.bo-container-app {
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  top: 44px;
+  bottom: 0;
+}
+.bo-layout-header,
+.bo-layout-menu {
+  *width: 768px;
+  *left: 50%;
+  *margin-left: -384px;
+}

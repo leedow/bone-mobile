@@ -5,16 +5,23 @@ var watch 			= require('gulp-watch');
 var uglify			= require('gulp-uglify');
 var minifyCSS 		= require('gulp-minify-css');
 var webpack 		= require('gulp-webpack');
+var gutil 			= require('gulp-util');
 
-//less
 gulp.task('css', function(){
-	return 	gulp.src('./style/main.less')
-			.pipe(watch('./style/*.less'))
+	watch('./style/*.less', function(){
+		gulp.src('./style/bone.less')
 			.pipe(less())
+			.on('error', function(err) {
+				gutil.log('Less Error!', err.message);
+				this.end();
+			})
 			.pipe(autoprefixer())
 			//.pipe(minifyCSS())
 			.pipe(gulp.dest('./build'));
+	});
+
 });
+
 
 
 gulp.task('js', function(callback){

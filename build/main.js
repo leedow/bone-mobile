@@ -56,7 +56,7 @@
 /***/ function(module, exports) {
 
 	module.exports.test = function(){
-		console.log('fsdf')
+		console.log('fsdfddddddddddddd')
 	}
 
 /***/ }

@@ -1,0 +1,36 @@
+.@{prefix}{
+	&header, &header-light{
+		width: 100%;
+		height: @header-height;
+		line-height: @header-height;
+		text-align: center;
+		position: relative;
+
+		.@{prefix}nav-left, .@{prefix}nav-right{
+			position: absolute;
+			height: @header-height;
+			line-height: @header-height;
+		}
+
+		.@{prefix}nav-left{
+			left:0;
+			top:0;
+		}
+
+		.@{prefix}nav-right{
+			right:0;
+			top:0;
+		}
+	}
+
+	&header{
+		background: @header-background;
+		color: #fff;
+	}
+
+	&header-light{
+		background: @header-background-light;
+		color: @header-color-light;
+		border-bottom: 1px @line-color solid;
+	}
+}

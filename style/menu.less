@@ -1,0 +1,72 @@
+//底部menu
+.@{prefix}{
+	&menu-3{
+		&>li{
+			float: left;
+			display: inline-block;
+			width: 33.33333%;
+		}
+	}
+
+	&menu-4{
+		&>li{
+			width: 25%;
+		}
+	}
+
+	&menu-5 {
+		&>li{
+			width: 20%;
+		}
+	}
+
+	&menu-icon{//不带文字，纯图标菜单
+		border-top: @menu-border-top;
+		text-align: center;
+		height: @menu-height-icon;
+		line-height: @menu-height-icon;
+		font-size: @menu-fontsize-icon;
+		color: @menu-color-icon; 
+		background: @menu-background-icon;
+		overflow: hidden;//防止字体溢出
+
+
+		button{
+			background: none;
+			border:0;
+			font-size: @menu-fontsize-icon;
+			width: 100%;
+			height: @menu-height-icon;
+			color: @menu-color-icon;
+			cursor: pointer;
+
+			&:active{
+				color: @menu-color-hover-icon;;
+				//background: lighten(@menu-background-icon, 8%)
+			}
+			&:hover{
+				color: @menu-color-hover-icon;
+				//background: lighten(@menu-background-icon, 8%)
+			}
+		}
+
+		a{
+			display: block;
+			width: 100%;
+			height: @menu-height-icon;
+			color: @menu-color-icon;
+			&:hover{
+				color: @menu-color-hover-icon;
+				//background: lighten(@menu-background-icon, 8%)
+			}
+			&:active{
+				color: @menu-color-hover-icon;
+				//background: lighten(@menu-background-icon, 8%)
+			}
+		}
+	}
+
+	&menu-normal{//带文字菜单
+
+	}
+}

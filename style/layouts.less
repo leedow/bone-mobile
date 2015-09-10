@@ -11,39 +11,40 @@
 		bottom: 0;
 	}
 
-	&layout-main, &layout-header, &layout-menu, &layout-sidebar{
+	&layout-main, &layout-header, &layout-menu{
 		background: #fff;
+		width: @layout-width-lg;
+		margin-left: @sidebar-width-lg;
 	}
 
 	&layout-main{
+		margin-top:0;
 		background: @layout-main-background;
-		width: @width-sm;
 		min-height: 100%;
-		margin: 0 auto;
 		box-shadow: @layout-shadow;
-		padding: @header-height 0 @menu-height-icon;
+		padding: @header-height 0 @menu-height-icon 0;
 	}
 
 	&layout-header{
-		width: @width-sm;
+		//width: @width-sm;
 		position: fixed;
 		left: 0;
 		right: 0;
 		top: 0;
-		margin: 0 auto;
+		
 	}
 
 	&layout-menu{
-		width: @width-sm;
+		//width: @width-sm;
 		position: fixed;
 		left: 0;
 		right: 0;
 		bottom: 0;
-		margin: 0 auto;
+		
 	}
 
 	&layout-sidebar{
-		width: @sidebar-width;
+		width: @sidebar-width-lg;
 		height: 100%;
 		position: fixed;
 		left:0;

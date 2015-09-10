@@ -73,36 +73,32 @@ button {
 }
 .bo-layout-main,
 .bo-layout-header,
-.bo-layout-menu,
-.bo-layout-sidebar {
+.bo-layout-menu {
   background: #fff;
+  width: 80%;
+  margin-left: 20%;
 }
 .bo-layout-main {
+  margin-top: 0;
   background: #f2f2f2;
-  width: 768px;
   min-height: 100%;
-  margin: 0 auto;
   box-shadow: 0px 1px 1px #cfcfcf;
-  padding: 44px 0 40px;
+  padding: 44px 0 40px 0;
 }
 .bo-layout-header {
-  width: 768px;
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
-  margin: 0 auto;
 }
 .bo-layout-menu {
-  width: 768px;
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
-  margin: 0 auto;
 }
 .bo-layout-sidebar {
-  width: 200px;
+  width: 20%;
   position: fixed;
   left: 0;
   top: 0;
@@ -149,9 +145,13 @@ button {
   width: 33.33333%;
 }
 .bo-menu-4 > li {
+  float: left;
+  display: inline-block;
   width: 25%;
 }
 .bo-menu-5 > li {
+  float: left;
+  display: inline-block;
   width: 20%;
 }
 .bo-menu-icon {
@@ -206,6 +206,51 @@ button {
 .bo-p1111 {
   padding: 14px 21px;
 }
+.bo-p1000 {
+  padding-top: 14px;
+}
+.bo-p0010 {
+  padding-bottom: 14px;
+}
+.bo-p0100 {
+  padding-right: 21px;
+}
+.bo-p0001 {
+  padding-left: 21px;
+}
+.bo-p1010 {
+  padding: 14px 0;
+}
+.bo-p0101 {
+  padding: 0 21px;
+}
+.bo-p1101 {
+  padding: 14px 21px 0 14px;
+}
+.bo-m1111 {
+  margin: 14px 21px;
+}
+.bo-m1000 {
+  margin-top: 14px;
+}
+.bo-m0010 {
+  margin-bottom: 14px;
+}
+.bo-m0100 {
+  margin-right: 21px;
+}
+.bo-m0001 {
+  margin-left: 21px;
+}
+.bo-m1010 {
+  margin: 14px 0;
+}
+.bo-m0101 {
+  margin: 0 21px;
+}
+.bo-m1101 {
+  margin: 14px 21px 0 14px;
+}
 @media only screen and (max-width: 768px) {
   .bo-body {
     background: #ffffff;
@@ -215,6 +260,7 @@ button {
   .bo-layout-menu,
   .bo-layout-main {
     width: 100%;
+    margin-left: 0;
   }
   .bo-layout-sidebar {
     left: -200px;
@@ -264,17 +310,4 @@ button {
   .bo-layout-sidebar {
     width: 20%;
   }
-}
-.bo-container-app {
-  width: 100%;
-  margin: 0 auto;
-  position: absolute;
-  top: 44px;
-  bottom: 0;
-}
-.bo-layout-header,
-.bo-layout-menu {
-  *width: 768px;
-  *left: 50%;
-  *margin-left: -384px;
 }

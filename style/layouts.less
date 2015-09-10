@@ -16,10 +16,12 @@
 	}
 
 	&layout-main{
+		background: @layout-main-background;
 		width: @width-sm;
 		min-height: 100%;
 		margin: 0 auto;
 		box-shadow: @layout-shadow;
+		padding: @header-height 0 @menu-height-icon;
 	}
 
 	&layout-header{
@@ -41,6 +43,7 @@
 	}
 
 	&layout-sidebar{
+		width: @sidebar-width;
 		height: 100%;
 		position: fixed;
 		left:0;

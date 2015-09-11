@@ -55,6 +55,9 @@ figure,
 menu {
   display: block;
 }
+ul {
+  list-style-type: none;
+}
 a {
   text-decoration: none;
   -webkit-transition: all ease-in-out 0.4s !important;
@@ -77,6 +80,7 @@ button {
   background: #fff;
   width: 80%;
   margin-left: 20%;
+  z-index: 999;
 }
 .bo-layout-main {
   margin-top: 0;
@@ -197,14 +201,87 @@ button {
   overflow-y: auto;
   background: #34495e;
 }
+.bo-sidebar .bo-tab-vertical {
+  text-align: left;
+}
+.bo-sidebar .bo-tab-vertical a,
+.bo-sidebar .bo-tab-vertical button {
+  padding: 0 14px !important;
+  height: 36.4px !important;
+  line-height: 36.4px !important;
+  color: #b9c8d8 !important;
+}
+.bo-sidebar .bo-tab-vertical a:hover,
+.bo-sidebar .bo-tab-vertical button:hover {
+  color: #ffffff !important;
+}
+.bo-sidebar .bo-tab-vertical .bo-tab-dock {
+  right: 14px;
+  top: 0;
+  height: 36.4px !important;
+  line-height: 36.4px !important;
+  color: #91aac2;
+}
+.bo-sidebar-title {
+  color: #b9c8d8;
+  text-align: left;
+  font-size: 12.6px;
+  padding: 14px 14px;
+}
+bo- button {
+  font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+}
 .bo-box {
   text-align: left;
   background: #fff;
   border-top: 1px #ffffff solid;
   border-bottom: 1px #e0e0e0 solid;
 }
+.bo-tab-vertical,
+.bo-tab-vertical-bor {
+  padding-left: 7px;
+}
+.bo-tab-vertical .bo-tab-item,
+.bo-tab-vertical-bor .bo-tab-item {
+  position: relative;
+}
+.bo-tab-vertical .bo-tab-item > a,
+.bo-tab-vertical-bor .bo-tab-item > a {
+  display: block;
+  padding: 0 14px;
+  height: 52px;
+  line-height: 52px;
+}
+.bo-tab-vertical .bo-tab-item > button,
+.bo-tab-vertical-bor .bo-tab-item > button {
+  font-size: 14px;
+  border: 0;
+  background: none;
+  padding: 0 14px;
+  height: 52px;
+  line-height: 52px;
+  width: 100%;
+}
+.bo-tab-vertical .bo-tab-item .bo-tab-dock,
+.bo-tab-vertical-bor .bo-tab-item .bo-tab-dock {
+  position: absolute;
+  right: 14px;
+  top: 0;
+  height: 52px;
+  line-height: 52px;
+}
+.bo-tab-vertical-bor .bo-tab-item {
+  border-bottom: 1px #e0e0e0 solid;
+}
+.bo-tab-vertical-bor .bo-tab-item:after {
+  clear: both;
+  width: 100%;
+}
+.bo-tab-vertical-bor:last-child {
+  border-bottom: 0;
+}
 .bo-p1111 {
-  padding: 14px 21px;
+  padding: 14px 14px;
 }
 .bo-p1000 {
   padding-top: 14px;
@@ -213,19 +290,19 @@ button {
   padding-bottom: 14px;
 }
 .bo-p0100 {
-  padding-right: 21px;
+  padding-right: 14px;
 }
 .bo-p0001 {
-  padding-left: 21px;
+  padding-left: 14px;
 }
 .bo-p1010 {
   padding: 14px 0;
 }
 .bo-p0101 {
-  padding: 0 21px;
+  padding: 0 14px;
 }
 .bo-p1101 {
-  padding: 14px 21px 0 14px;
+  padding: 14px 14px 0 14px;
 }
 .bo-m1111 {
   margin: 14px 21px;
@@ -310,4 +387,13 @@ button {
   .bo-layout-sidebar {
     width: 20%;
   }
+}
+.bo-tl {
+  text-align: left;
+}
+.bo-tr {
+  text-align: right;
+}
+.bo-tc {
+  text-align: center;
 }

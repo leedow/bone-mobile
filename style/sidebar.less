@@ -4,5 +4,36 @@
 		height: 100%;
 		overflow-y: auto;
 		background: @sidebar-background;	
+
+		.@{prefix}tab-vertical{
+			text-align: left;
+			a, button{
+				padding: 0 @padding-horizon !important;
+				height: @tabs-height*0.7 !important;
+				line-height: @tabs-height*0.7 !important;
+				color:@sidebar-tab-color !important;
+			}
+			a:hover, button:hover{
+				color: lighten(@sidebar-tab-color, 40%) !important;
+			}
+			
+			.@{prefix}tab-dock{
+				right:@padding-horizon;
+				top:0;
+				height: @tabs-height*0.7 !important;
+				line-height: @tabs-height*0.7 !important;
+				color: @sidebar-tab-color-flag;
+				.@{prefix}tab-dock-item{
+					
+				}
+			}
+		}
+
+		&-title{
+			color: @sidebar-tab-color;
+			text-align: left;
+			font-size: @font-size*0.9;
+			padding: @padding-vertical @padding-horizon;
+		}
 	}
 }

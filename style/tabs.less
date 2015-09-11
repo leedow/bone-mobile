@@ -1,0 +1,47 @@
+.@{prefix}{
+	&tab-vertical, &tab-vertical-bor{
+		padding-left: 0.5*@padding-horizon;
+		.@{prefix}tab-item{
+			position: relative;
+			&>a{
+				display: block;
+				padding: 0 @padding-horizon;
+				height: @tabs-height;
+				line-height: @tabs-height;
+			}
+			&>button{
+				font-size: @font-size;
+				border:0;
+				background: none;
+				padding: 0 @padding-horizon;
+				height: @tabs-height;
+				line-height: @tabs-height;
+				width: 100%;
+			}
+			.@{prefix}tab-dock{
+				position: absolute;
+				right:@padding-horizon;
+				top:0;
+				height: @tabs-height;
+				line-height: @tabs-height;
+				.@{prefix}tab-dock-item{
+					
+				}
+			}
+		}
+	}
+
+	&tab-vertical-bor{
+		.@{prefix}tab-item{
+			&:after{
+				clear:both;
+				width:100%;
+			}
+			border-bottom:1px @line-color solid;
+		}
+		&:last-child{
+			border-bottom: 0;
+		}
+	}
+
+}

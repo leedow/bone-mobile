@@ -6,21 +6,20 @@
 <title>Bone index</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
-<link href="../build/bone.css" type="text/css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="../fonts/iconfont.css">
-<link rel="stylesheet" type="text/css" href="../highlight/shCoreDefault.css">
-<script type="text/javascript" src="../plugins/jquery.min.js"></script>
-<script type="text/javascript"  data-manual src="../highlight/shCore.js"></script>
-<script type="text/javascript" src="../highlight/scripts/shBrushCSharp.js"></script>
-<script type="text/javascript">SyntaxHighlighter.all();</script>
-<!--[if lt IE 9]>
-<script type="text/javascript" src="../plugins/html5shiv-printshiv.min.js"></script>
-<![endif]-->
+<?php include('source.php');?>
 </head>
 <body class="bo-body">
 <header class="bo-layout-header">
 	<div class="bo-header">
-		按钮们
+		<div class="bo-header-dock-left">
+			<a href="">fsd</a>
+			<button>fds</button>
+		</div>
+		Welcome to Bone-mobile
+
+		<div class="bo-header-dock-right">
+			<a href=""></a>
+		</div>
 	</div>
 </header>
 <nav class="bo-layout-menu">
@@ -32,11 +31,7 @@
 		</ul>
 	</div>
 </nav>
-<aside class="bo-layout-sidebar">
-	<div class="bo-sidebar">
-		sidebar
-	</div>
-</aside>
+<?php include('sidebar.php'); ?>
 
 <section class="bo-layout-main">
 	<div class="bo-box">
@@ -55,9 +50,27 @@
 		This is box
 				<script type="syntaxhighlighter" class="brush: csharp;">
 <![CDATA[
-<div class="fdsff">fsddsf</div>
+ 
+
+
 ]]>
 </script>
+	</div>
+	<div class="bo-box bo-m1000">
+		<ul class="bo-tab-vertical-bor">
+			<li class="bo-tab-item">
+				<a href="">这是一个链接</a>
+			</li>
+			<li class="bo-tab-item">
+				<button class="bo-tl">这是一个按钮</button>
+				<div class="bo-tab-dock">
+					<div class="bo-tab-dock-item">fsdf</div>
+				</div>
+			</li>
+			<li class="bo-tab-item">
+				<button class="bo-tr">this is a button</button>
+			</li>
+		</ul>
 	</div>
 </section>
 </body>

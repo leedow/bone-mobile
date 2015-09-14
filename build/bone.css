@@ -441,6 +441,28 @@ bo- button {
     width: 20%;
   }
 }
+.bo-article h1,
+.bo-article h2,
+.bo-article h3,
+.bo-article h4,
+.bo-article h5 {
+  font-weight: bold;
+}
+.bo-article h1 {
+  font-size: 36px;
+}
+.bo-article h2 {
+  font-size: 28px;
+}
+.bo-article h3 {
+  font-size: 20px;
+}
+.bo-article h4 {
+  font-size: 19.2px;
+}
+.bo-article h5 {
+  font-size: 16px;
+}
 .bo-tl {
   text-align: left;
 }

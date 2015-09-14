@@ -27,7 +27,7 @@
 
 <section class="bo-layout-main">
 	<div class="bo-box-title">使用方法</div>
-	<div class="bo-box bo-p1111">
+	<div class="bo-box bo-p1111 bo-article">
 		  <p>Bone-mobile使用 <a href="http://www.iconfont.cn/" target="_blank">iconfont.cn</a> 提供的字体图标库，在此感谢阿里的同学对人类做出的贡献。可以使用两种方法来显示一枚图标。</p>
 <p style="font-size:28px;"><i class="iconfont"> &#xe605; </i>
 <i class="iconfont icon-roundadd"></i></p>

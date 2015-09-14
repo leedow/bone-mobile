@@ -20,33 +20,22 @@
 		</div>
 	</div>
 </header>
-<nav class="bo-layout-menu">
-	<div class="bo-menu-icon">
-		<ul class="bo-menu-3">
-			<li><button><i class="iconfont">&#xe605;</i></button></li>
-			<li><a href=""><i class="iconfont icon-roundadd"></i></a></li>
-			<li><i class="iconfont icon-similar"></i></li>
-		</ul>
-	</div>
-</nav>
+ <?php include('menu.php'); ?>
 <?php include('sidebar.php'); ?>
 
 <section class="bo-layout-main">
+	 
 	<div class="bo-box">
-		<div class="bo-p1101">
+		<div class="bo-p1111 article">
+			<h3>基本结构</h3>
+			<p>
 			层(Layouts)用于将页面划分为几个基本的布局，分别是layout-header,layout-sidebar,layout-menu,layout-main。
+			</p>
+			<h3>响应式</h3>
+			<p>layout-sidebar根据屏幕大小显示为可见和隐藏状态。</p>
 		</div>
-<script type="syntaxhighlighter" class="brush: csharp;">
-<![CDATA[
-<header class="bo-layout-header">
-	<div class="bo-header">
-		层和盒子
 	</div>
-</header>
-]]>
-</script>
-	</div>
-	<div class="bo-box-title">This is a title</div>
+	<div class="bo-box-title">Layout-header</div>
 	<div class="bo-box">
 		<div class="bo-p1101">
 			layout-header用于显示APP的头部。
@@ -62,7 +51,52 @@
 ]]>
 </script>		
 	</div> 
- 
+
+	<div class="bo-box-title">Layout-menu</div>
+	<div class="bo-box">
+		<div class="bo-p1101">
+			layout-menu用于显示主菜单，固定在底部。
+		</div>
+		
+<script type="syntaxhighlighter" class="brush: csharp;">
+<![CDATA[
+<nav class="bo-layout-menu">
+	//menu
+</nav>
+]]>
+</script>		
+	</div> 
+
+	<div class="bo-box-title">Layout-sidebar</div>
+	<div class="bo-box">
+		<div class="bo-p1101">
+			layout-sidebar用于显示侧栏，宽屏下默认显示，窄屏下默认隐藏。
+		</div>
+		
+<script type="syntaxhighlighter" class="brush: csharp;">
+<![CDATA[
+<aside class="bo-layout-sidebar">
+	//sidebar
+</aside>
+]]>
+</script>		
+	</div> 
+
+
+	<div class="bo-box-title">Layout-main</div>
+	<div class="bo-box">
+		<div class="bo-p1101">
+			layout-main用于显示页面主题部分。
+		</div>
+		
+<script type="syntaxhighlighter" class="brush: csharp;">
+<![CDATA[
+<section class="bo-layout-main">
+	//content
+</section>
+]]>
+</script>		
+	</div> 
 </section>
 </body>
 </html>

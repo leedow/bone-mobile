@@ -1,10 +1,17 @@
 .@{prefix}{
-	&container{
+	&header, &header-light{
+		 
 
+		.@{prefix}header-dock-left, .@{prefix}header-dock-right{
+			 
+			a, button{
+				*min-width: @header-height - 2*@padding-horizon;				 
+				*display: block;
+			}
+		}
+
+		 
 	}
 
- 
- 
- 
-
+	 
 }

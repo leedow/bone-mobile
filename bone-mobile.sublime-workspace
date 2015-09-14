@@ -1,0 +1,1343 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"over",
+				"overflow-y"
+			],
+			[
+				"init",
+				"initOftenBuy"
+			],
+			[
+				"_init",
+				"_initListOftenBuy"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"pd",
+				"pd_left"
+			],
+			[
+				"input",
+				"input-height"
+			],
+			[
+				"to",
+				"toFixed"
+			],
+			[
+				"add",
+				"addDate"
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"marin",
+				"margin-right"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"remove",
+				"removeClass"
+			],
+			[
+				"border",
+				"border-bottom"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"border-bo",
+				"border-bottom-left-radius"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"rg",
+				"rgba()"
+			],
+			[
+				"get",
+				"getType"
+			],
+			[
+				"count",
+				"count-widget"
+			],
+			[
+				"error",
+				"errorType"
+			],
+			[
+				"class",
+				"classes"
+			],
+			[
+				"check",
+				"checkScript"
+			],
+			[
+				"modul",
+				"moduleCache"
+			],
+			[
+				"modu",
+				"moduleCache"
+			],
+			[
+				"path",
+				"path"
+			],
+			[
+				"strto",
+				"strtotime"
+			],
+			[
+				"each",
+				"eachScript"
+			],
+			[
+				"pub",
+				"publish"
+			],
+			[
+				"top",
+				"topic"
+			],
+			[
+				"test",
+				"testArguments"
+			],
+			[
+				"leng",
+				"lengthOfFunc"
+			],
+			[
+				"pro",
+				"prototype"
+			],
+			[
+				"ob",
+				"observerList"
+			],
+			[
+				"base-padding",
+				"base-padding-v"
+			],
+			[
+				"e",
+				"e"
+			],
+			[
+				"ele",
+				"element"
+			],
+			[
+				"rec",
+				"rectWidth"
+			],
+			[
+				"rect",
+				"rects"
+			],
+			[
+				"update",
+				"updateHistory"
+			],
+			[
+				"for",
+				"formatTime"
+			],
+			[
+				"start",
+				"startTime"
+			],
+			[
+				"spen",
+				"spendTime"
+			],
+			[
+				"cithis",
+				"cithisdo	thisdo"
+			],
+			[
+				"ci",
+				"cimodel	model"
+			],
+			[
+				"fire",
+				"fire_pro"
+			],
+			[
+				"geo",
+				"geometry"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"pad",
+				"padding-bottom"
+			],
+			[
+				"bor",
+				"border-bottom"
+			],
+			[
+				"bord",
+				"border-top"
+			],
+			[
+				"border-bottom",
+				"border-bottom-right-radius"
+			],
+			[
+				"fot",
+				"font-size"
+			],
+			[
+				"footer",
+				"footer-p"
+			],
+			[
+				"drop",
+				"drop-box"
+			],
+			[
+				"home",
+				"home_url"
+			],
+			[
+				"coun",
+				"country"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"gett",
+				"gettype"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"clo",
+				"color"
+			],
+			[
+				"avatar",
+				"avatar_url"
+			],
+			[
+				"set",
+				"service_type"
+			],
+			[
+				"site",
+				"site_url"
+			],
+			[
+				"access",
+				"access_token"
+			],
+			[
+				"cihis",
+				"cithispost	thispost"
+			],
+			[
+				"ava",
+				"avatar_url"
+			],
+			[
+				"weibo",
+				"weibo_url"
+			],
+			[
+				"str_re",
+				"str_replace"
+			],
+			[
+				"reu",
+				"result"
+			],
+			[
+				"user",
+				"user_model"
+			],
+			[
+				"list",
+				"list-style-type"
+			],
+			[
+				"post",
+				"post_data"
+			],
+			[
+				"duoshuo",
+				"duoshuoToken"
+			],
+			[
+				"php",
+				"phpfunction	function"
+			],
+			[
+				"cloud",
+				"cloud_projects"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "style/sidebar.less",
+			"settings":
+			{
+				"buffer_size": 855,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "docs/fonticon.php",
+			"settings":
+			{
+				"buffer_size": 18959,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "docs/index.php",
+			"settings":
+			{
+				"buffer_size": 1389,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "docs/layouts.php",
+			"settings":
+			{
+				"buffer_size": 1564,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "docs/header.php",
+			"settings":
+			{
+				"buffer_size": 2401,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "docs/sidebar.php",
+			"settings":
+			{
+				"buffer_size": 962,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style/header.less",
+			"settings":
+			{
+				"buffer_size": 1140,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "docs/menu.php",
+			"settings":
+			{
+				"buffer_size": 295,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"selected_items":
+		[
+			[
+				"Snippet: ",
+				"Snippet: html"
+			],
+			[
+				"pack",
+				"Preferences: Browse Packages"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 424.0
+	},
+	"console":
+	{
+		"height": 95.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/E/javaweb/elemanager/.classpath",
+		"/C/Users/tgoooo/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/D/sae/wwwroot/source/Earth/.project",
+		"/E/Nodejs/ghost/content/themes/casper-zh/tag.hbs",
+		"/D/sae/wwwroot/source/Earth/application/views/main/header.php",
+		"/D/sae/wwwroot/source/Earth/application/views/main/footer.php",
+		"/D/sae/wwwroot/source/Mercury/application/views/order/myorder.php",
+		"/D/sae/wwwroot/source/Earth/application/views/main/index.php",
+		"/D/sae/wwwroot/source/Earth/application/views/view/header.php",
+		"/D/sae/wwwroot/source/Earth/application/views/user/header.php",
+		"/D/sae/wwwroot/source/Earth/application/views/user/user.php",
+		"/D/sae/wwwroot/source/Earth/application/views/view/user.php",
+		"/D/sae/wwwroot/source/Earth/application/controllers/Welcome.php",
+		"/D/sae/wwwroot/source/Earth/application/views/view/orderlist.php",
+		"/D/sae/wwwroot/source/Earth/application/views/main/list.php",
+		"/D/sae/wwwroot/source/Earth/application/views/common/source2.php",
+		"/D/sae/wwwroot/source/Earth/application/views/common/cmdsource.php",
+		"/D/sae/wwwroot/source/Earth/application/config/database.php",
+		"/D/sae/wwwroot/source/Earth/application/views/view/myorder.php",
+		"/D/sae/wwwroot/source/Earth/application/views/order/myorder.php",
+		"/D/sae/wwwroot/source/Earth/js/modules1.0.3/shoppingcart.js",
+		"/D/sae/wwwroot/source/Earth/static/fonts/font.min.css",
+		"/D/sae/wwwroot/source/Earth/application/controllers/home.php",
+		"/D/sae/wwwroot/source/Earth/application/controllers/Passport.php",
+		"/D/sae/wwwroot/source/Earth/application/controllers/Shoppingcart.php",
+		"/D/sae/wwwroot/source/Mercury/application/views/shoppingcart/index.php",
+		"/D/sae/wwwroot/source/Earth/application/views/main/category.php",
+		"/D/sae/wwwroot/source/Earth/application/views/common/footer.php",
+		"/D/sae/wwwroot/source/Earth/application/views/common/header.php",
+		"/D/sae/wwwroot/contact.php",
+		"/D/sae/wwwroot/source/Earth/application/controllers/test.ohp",
+		"/D/sae/wwwroot/source/Earth/application/controllers/test.php",
+		"/D/sae/wwwroot/source/Earth/application/views/welcome_message.php",
+		"/D/sae/wwwroot/source/Earth/static/less/jishibao.less",
+		"/D/sae/wwwroot/source/Earth/application/views/shoppingcart/index.php",
+		"/D/sae/wwwroot/source/Earth/application/views/main/searchresult.php",
+		"/D/sae/wwwroot/source/Earth/application/controllers/Main.php",
+		"/D/sae/wwwroot/source/Earth/index.php",
+		"/D/sae/wwwroot/source/Earth/application/views/home.php",
+		"/D/sae/wwwroot/source/Earth/js/modules1.0.3/interaction.js",
+		"/D/sae/wwwroot/source/Earth/js/modules1.0.3/common.js",
+		"/D/sae/wwwroot/source/Earth/js/main.home.js",
+		"/D/sae/wwwroot/source/Earth/static/less/grid.less",
+		"/D/sae/wwwroot/source/Earth/js/modules1.0.3/list.js",
+		"/D/sae/wwwroot/source/Earth/application/views/passport/login.php",
+		"/D/sae/wwwroot/source/Earth/application/views/contact.php",
+		"/D/sae/wwwroot/source/Earth/application/views/page.php",
+		"/D/sae/wwwroot/source/Earth/application/views/product.php",
+		"/D/sae/wwwroot/source/Earth/application/views/exchange.php",
+		"/D/sae/wwwroot/source/Earth/application/views/passport/register.php",
+		"/D/sae/wwwroot/source/Earth/application/views/common/source.php",
+		"/D/sae/wwwroot/source/Earth/static/less/setting.less",
+		"/D/sae/wwwroot/source/Earth/application/views/common/category.php",
+		"/D/sae/wwwroot/leeopen/1/bone/demos/form.html",
+		"/D/sae/wwwroot/leeopen/1/bone/bone.min.js",
+		"/D/sae/wwwroot/leeopen/1/bone/bone.min.css",
+		"/D/sae/wwwroot/leeopen/1/bone/less/grid.less",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/D/sae/wwwroot/source/Mercury/application/views/order/comment.php",
+		"/D/sae/wwwroot/source/Mercury/application/controllers/Order.php",
+		"/D/sae/wwwroot/source/Mercury/application/controllers/Welcome.php",
+		"/D/sae/wwwroot/source/Mercury/static/Gruntfile.js",
+		"/D/sae/wwwroot/source/Mercury/static/less/main.less",
+		"/D/sae/wwwroot/source/Mercury/static/less/setting.less",
+		"/D/sae/wwwroot/source/Mercury/static/js/score_widget.js",
+		"/D/sae/wwwroot/source/Mercury/static/source.php",
+		"/D/sae/wwwroot/source/Mercury/static/js/leeui.js",
+		"/D/sae/wwwroot/source/Mercury/application/views/common/source.php",
+		"/D/sae/wwwroot/source/Mercury/static/less/score_widget.less",
+		"/D/sae/wwwroot/source/Mercury/static/less/common.less",
+		"/D/sae/wwwroot/source/Mercury/static/less/jishibao.less",
+		"/D/sae/wwwroot/source/Mercury/static/less/tabs.less",
+		"/D/sae/wwwroot/source/Mercury/application/views/admin/order.php",
+		"/D/sae/wwwroot/source/Mercury/application/views/common/cmdsource.php",
+		"/D/sae/wwwroot/source/Mercury/application/views/common/sourceadmin.php",
+		"/D/sae/wwwroot/source/Mercury/js/modules1.0.3/interaction.js",
+		"/D/sae/wwwroot/source/Mercury/js/modules1.0.3/shoppingcart.js",
+		"/E/javaweb/TONGXIANG备份/src/org/ldw/action/deleteAction.java",
+		"/E/javapro/.metadata/.plugins/org.eclipse.wst.server.core/tmp4/wtpwebapps/TONGXIANG/WEB-INF/classes/manager/action/uploadDb.class",
+		"/C/Users/tgoooo/Desktop/traffic/style/style.css",
+		"/C/Users/tgoooo/Desktop/traffic/js/main.js",
+		"/D/sae/wwwroot/test.json",
+		"/D/sae/wwwroot/leeopen/1/leeui4/less/setting.less",
+		"/E/javaweb/TONGXIANG备份/src/org/ldw/action/uploadsExcelAction.java",
+		"/E/javaweb/TONGXIANG备份/src/org/ldw/service/uploadsHelper.java",
+		"/E/javaweb/TONGXIANG备份/src/org/ldw/service/importExcelService.java",
+		"/E/javaweb/TONGXIANG备份/src/org/ldw/service/uploadsPhotoService.java",
+		"/E/javaweb/TONGXIANG备份/src/org/ldw/action/uploadsPhotoAction.java",
+		"/D/sae/wwwroot/source/Mercury/js/zepto.sea.mtimer.js",
+		"/D/sae/wwwroot/source/Mercury/static/zepto.min.js",
+		"/D/sae/wwwroot/source/Mercury/static/js/check_widget.js",
+		"/D/sae/wwwroot/source/Mercury/static/js/zepto.min.js",
+		"/D/sae/wwwroot/source/Mercury/js/zepto.min.js",
+		"/D/sae/wwwroot/source/Mercury/static/less/sidebar.less",
+		"/D/sae/wwwroot/source/Mercury/application/views/home/index.php",
+		"/E/javaweb/TONGXIANG备份/src/org/lyd/postgreSQL/GISSelect.java",
+		"/D/sae/wwwroot/source/Mercury/application/views/passport/register.php",
+		"/D/sae/wwwroot/source/Mercury/js/modules1.0.1/shoppingcart.js",
+		"/D/sae/wwwroot/source/Mercury/application/views/passport/login.php",
+		"/D/sae/wwwroot/source/Mercury/application/config/alipay.php",
+		"/D/sae/wwwroot/source/Mercury/application/config/config.php",
+		"/D/sae/wwwroot/source/Mercury/alipay/alipay.config.php",
+		"/D/sae/wwwroot/source/Mercury/static/js/count_widget.js",
+		"/D/sae/wwwroot/source/Mercury/static/less/input.less",
+		"/D/sae/wwwroot/source/Mercury/application/views/common/sidebar.php",
+		"/D/sae/wwwroot/source/Mercury/application/controllers/Home.php",
+		"/D/sae/wwwroot/source/Mercury/js/zepto.mtimer.js",
+		"/D/sae/wwwroot/source/Mercury/static/js/tabs_widget.js",
+		"/D/sae/wwwroot/source/Mercury/static/less/animation.less",
+		"/D/sae/wwwroot/source/Mercury/js/modules1.0.1/interaction.js",
+		"/D/sae/wwwroot/source/Mercury/js/main.home.js",
+		"/D/sae/emulation/init.php",
+		"/D/sae/bin/php-5.3.8/php.ini",
+		"/D/sae/emulation/core.function.php",
+		"/D/sae/emulation/mYaml.class.php",
+		"/D/sae/wwwroot/leeopen/1/leeui4/js/check_widget.js",
+		"/D/sae/wwwroot/leeopen/1/leeui4/demos/check.html",
+		"/D/sae/wwwroot/leeopen/1/leeui4/less/check_widget.less",
+		"/D/sae/wwwroot/leeopen/1/leeui4/Gruntfile.js",
+		"/D/sae/wwwroot/leeopen/1/leeui4/demos/buttons.html",
+		"/D/sae/wwwroot/leeopen/1/leeui4/demos/count_widget.html",
+		"/D/sae/wwwroot/leeopen/1/leeui4/demos/input.html",
+		"/D/sae/wwwroot/leeopen/1/leeui4/less/common.less",
+		"/D/sae/wwwroot/leeopen/1/leeui4/less/main.less",
+		"/D/sae/wwwroot/leeopen/1/leeui4/js/leeui.js",
+		"/D/sae/wwwroot/leeopen/1/leeui4/js/dialog_widget.js",
+		"/D/sae/wwwroot/leeopen/1/leeui4/less/animation.less",
+		"/D/sae/wwwroot/leeopen/1/leeui4/less/buttons.less"
+	],
+	"find":
+	{
+		"height": 50.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"list",
+			"row-title",
+			"$item",
+			"aler",
+			".fa",
+			" fa-caret-right",
+			"'];?></",
+			"alert",
+			".h",
+			";\n",
+			"#form",
+			"12px",
+			"gfd",
+			"key",
+			"</strong>",
+			"<strong>",
+			"info",
+			"3s",
+			"conne",
+			"URIEncoding=\"utf-8\"",
+			"8080",
+			"URIEncoding",
+			"detail",
+			"uploadsSingleFile",
+			"double",
+			"tap",
+			"readonly",
+			"zepto",
+			"tap",
+			"ajax",
+			"tap",
+			"addEntity",
+			"addu",
+			"focus",
+			"click",
+			"focus",
+			"enable",
+			"showPanel",
+			"click",
+			"select",
+			"tap",
+			"extensions",
+			"openssl",
+			"opens",
+			"\n",
+			"dd",
+			"#069B9B",
+			"req.Method",
+			"proxy to add the target URL",
+			"get",
+			"getAttribute",
+			"wrap",
+			"width",
+			"if",
+			"\"class\"",
+			"d",
+			"class",
+			"width",
+			"8080",
+			"root",
+			"app",
+			"html5",
+			"图标在右侧图标在右侧图标在右侧DDD",
+			"图标在右侧",
+			"lee-box",
+			"padding-base-vertical",
+			"光绪三十四年（1908）十月，沈兆椿等人在留下天曹庙创办“留下初等小学堂”，学生30人左右。",
+			"',\n",
+			"renderer3D",
+			"fill",
+			"leedow",
+			"tgooo",
+			"TGOOO",
+			"edit",
+			";//'",
+			"},\n",
+			");",
+			"dist",
+			"');\n",
+			"	\"",
+			"angular",
+			"BASE_URL",
+			"HOSTNAME_AND_PATH_TO_JSAPI",
+			"main",
+			"simple_html_dom",
+			"simple_html_dom_node",
+			"load(",
+			"console",
+			"i",
+			"alert",
+			"map",
+			"f9f9f9",
+			"localhost/arcgis/arcgis_js_api/library/3.9/3.9/",
+			"http://localhost/arcgis/arcgis_js_api/library/3.9/3.9/",
+			"[HOSTNAME_AND_PATH_TO_JSAPI]",
+			"events",
+			"<a",
+			"p",
+			"events",
+			"projects",
+			"projects/",
+			"projects",
+			"\"\n",
+			"rgba",
+			");",
+			"important",
+			";}",
+			"cate-title",
+			"pro-box",
+			"4px",
+			"leedow",
+			"<a",
+			"tag",
+			"mySettings",
+			"GLOBAL.add_type",
+			"GLOBAL.add_flag"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"$order",
+			"</span>",
+			"<span class=\"key\">",
+			"float",
+			"click",
+			"#003399",
+			"global_map",
+			"http://localhost/arcgis/arcgis_js_api/library/3.9/3.9/",
+			"e",
+			"p"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 7,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "style/sidebar.less",
+					"settings":
+					{
+						"buffer_size": 855,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								654,
+								654
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "docs/fonticon.php",
+					"settings":
+					{
+						"buffer_size": 18959,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								694,
+								666
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 162.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "docs/index.php",
+					"settings":
+					{
+						"buffer_size": 1389,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								366,
+								487
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "docs/layouts.php",
+					"settings":
+					{
+						"buffer_size": 1564,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								1564
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 648.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "docs/header.php",
+					"settings":
+					{
+						"buffer_size": 2401,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								2401
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 443.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "docs/sidebar.php",
+					"settings":
+					{
+						"buffer_size": 962,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								878,
+								878
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "style/header.less",
+					"settings":
+					{
+						"buffer_size": 1140,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1120,
+								1120
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 299.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "docs/menu.php",
+					"settings":
+					{
+						"buffer_size": 295,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								295,
+								295
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 30.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.829946321274,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"set",
+				"less/setting.less"
+			],
+			[
+				"welcome",
+				"application/controllers/Welcome.php"
+			],
+			[
+				"header",
+				"application/views/common/header.php"
+			],
+			[
+				"footer",
+				"application/views/common/footer.php"
+			],
+			[
+				"jis",
+				"static/less/jishibao.less"
+			],
+			[
+				"regis",
+				"application/views/passport/register.php"
+			],
+			[
+				"jishi",
+				"static/less/jishibao.less"
+			],
+			[
+				"index",
+				"index.php"
+			],
+			[
+				"grid",
+				"less/grid.less"
+			],
+			[
+				"list",
+				"js/modules1.0.3/list.js"
+			],
+			[
+				"inter",
+				"js/modules1.0.3/interaction.js"
+			],
+			[
+				"source",
+				"static/source.php"
+			],
+			[
+				"score",
+				"static/less/score_widget.less"
+			],
+			[
+				"order",
+				"application/controllers/Order.php"
+			],
+			[
+				"tabs",
+				"static/less/tabs.less"
+			],
+			[
+				"",
+				"static/less/jishibao.less"
+			],
+			[
+				"com",
+				"static/less/common.less"
+			],
+			[
+				"leeui",
+				"static/js/leeui.js"
+			],
+			[
+				"comment",
+				"application/views/order/comment.php"
+			],
+			[
+				"gr",
+				"static/Gruntfile.js"
+			],
+			[
+				"main",
+				"static/less/main.less"
+			],
+			[
+				"gruntl",
+				"static/Gruntfile.js"
+			],
+			[
+				"se",
+				"less/setting.less"
+			],
+			[
+				"button",
+				"less/buttons.less"
+			],
+			[
+				"side",
+				"js/sidebar_widget.js"
+			],
+			[
+				"count",
+				"static/js/count_widget.js"
+			],
+			[
+				"sour",
+				"static/source.php"
+			],
+			[
+				"cmd",
+				"application/views/common/cmdsource.php"
+			],
+			[
+				"shop",
+				"js/modules1.0.2/shoppingcart.js"
+			],
+			[
+				"sho",
+				"js/modules1.0.2/shoppingcart.js"
+			],
+			[
+				"anima",
+				"static/less/animation.less"
+			],
+			[
+				"tab",
+				"static/js/tabs_widget.js"
+			],
+			[
+				"common",
+				"static/less/common.less"
+			],
+			[
+				"input",
+				"static/less/input.less"
+			],
+			[
+				"mod",
+				"module1.js"
+			],
+			[
+				"ind",
+				"index.js"
+			],
+			[
+				"inde",
+				"1/index.php"
+			],
+			[
+				"con",
+				"1/application/config/config.php"
+			],
+			[
+				"animate",
+				"css/src/animation.less"
+			],
+			[
+				"arti",
+				"css/src/article.less"
+			],
+			[
+				"route",
+				"js/src/route.js"
+			],
+			[
+				"layout",
+				"css/src/layouts.less"
+			],
+			[
+				"menu",
+				"css/src/menu.less"
+			],
+			[
+				"buttons",
+				"css/src/buttons.less"
+			],
+			[
+				"icons",
+				"views/list/list-with-icons.html"
+			],
+			[
+				"list.le",
+				"css/src/list.less"
+			],
+			[
+				"taskcon",
+				"1/js/src/tasks/taskController.js"
+			],
+			[
+				"home",
+				"1/application/views/home.php"
+			],
+			[
+				"taskser",
+				"1/js/src/tasks/taskService.js"
+			],
+			[
+				"task_mo",
+				"1/application/models/tasks_model.php"
+			],
+			[
+				"tips",
+				"1/application/models/cloudlist/tips_model.php"
+			],
+			[
+				"arcgis.la",
+				"js/arcgis.layout.js"
+			],
+			[
+				"projec",
+				"1/application/controllers/cloudlist/projects.php"
+			],
+			[
+				"proj",
+				"1/application/views/cloudlist/project_add.php"
+			],
+			[
+				"user",
+				"1/application/models/user.php"
+			],
+			[
+				"login",
+				"1/application/controllers/login.php"
+			],
+			[
+				"project",
+				"1/application/controllers/projects.php"
+			],
+			[
+				"bas",
+				"js/arcgis.base.js"
+			],
+			[
+				"tag",
+				"1/application/views/cloudlist/add_tag.php"
+			],
+			[
+				"base",
+				"1/style/base.css"
+			],
+			[
+				"proje",
+				"1/application/views/project_home2.php"
+			],
+			[
+				"events",
+				"1/application/views/events_main.php"
+			],
+			[
+				"event",
+				"1/application/views/events_home.php"
+			],
+			[
+				"pro",
+				"1/application/views/project_home2.php"
+			],
+			[
+				"cate",
+				"1/application/views/category_home2.php"
+			],
+			[
+				"tags",
+				"1/application/views/tags_home.php"
+			],
+			[
+				"sear",
+				"1/application/views/search.php"
+			],
+			[
+				"home2",
+				"1/application/views/home2.php"
+			],
+			[
+				"rout",
+				"1/application/config/routes.php"
+			],
+			[
+				"lef",
+				"1/application/views/left_bar.php"
+			],
+			[
+				"pages",
+				"1/style/page.css"
+			],
+			[
+				"page",
+				"1/style/page.css"
+			],
+			[
+				"alexa",
+				"1/application/views/alexa_home.php"
+			],
+			[
+				"left",
+				"1/application/views/left_bar.php"
+			],
+			[
+				"projects",
+				"1/application/models/projects_model.php"
+			],
+			[
+				"bae",
+				"1/leeui/style/leeui-base.css"
+			],
+			[
+				"base.js",
+				"1/js/base.js"
+			],
+			[
+				"hom2",
+				"1/application/views/home2.php"
+			],
+			[
+				"hom",
+				"1/application/views/home2.php"
+			],
+			[
+				"leeconfig",
+				"1/application/config/leeconfig.php"
+			],
+			[
+				"config",
+				"1/application/config/config.php"
+			],
+			[
+				"regi",
+				"1/application/views/register2.php"
+			],
+			[
+				"curl",
+				"1/application/helpers/curl_helper.php"
+			],
+			[
+				"use",
+				"1/application/models/user_model.php"
+			],
+			[
+				"foo",
+				"1/application/views/footer.php"
+			],
+			[
+				"edit",
+				"1/application/views/cloudlist/project_edit.php"
+			],
+			[
+				"fo",
+				"1/application/views/footer.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 211.0,
+	"status_bar_visible": true
+}

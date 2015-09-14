@@ -11,26 +11,15 @@
 <body class="bo-body">
 <header class="bo-layout-header">
 	<div class="bo-header">
-		<div class="bo-header-dock-left">
-			<a href="">fsd</a>
-			<button>fds</button>
-		</div>
+		 
 		Welcome to Bone-mobile
 
 		<div class="bo-header-dock-right">
-			<a href=""></a>
+			<a href="https://github.com/leedow/bone-mobile" target="_blank">Github</a>
 		</div>
 	</div>
 </header>
-<nav class="bo-layout-menu">
-	<div class="bo-menu-icon">
-		<ul class="bo-menu-3">
-			<li><button><i class="iconfont">&#xe605;</i></button></li>
-			<li><a href=""><i class="iconfont icon-roundadd"></i></a></li>
-			<li><i class="iconfont icon-similar"></i></li>
-		</ul>
-	</div>
-</nav>
+<?php include('menu.php');?>
 <?php include('sidebar.php'); ?>
 
 <section class="bo-layout-main">

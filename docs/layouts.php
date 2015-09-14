@@ -11,7 +11,13 @@
 <body class="bo-body">
 <header class="bo-layout-header">
 	<div class="bo-header">
+		<div class="bo-header-dock-left">
+			<a href="index.php"><i class="iconfont icon-back"></i></a>
+		</div>
 		层和盒子
+		<div class="bo-header-dock-right">
+			<a href="https://github.com/leedow/bone-mobile" target="_blank">Github</a>
+		</div>
 	</div>
 </header>
 <nav class="bo-layout-menu">
@@ -40,7 +46,8 @@
 ]]>
 </script>
 	</div>
-	<div class="bo-box bo-m1000">
+	<div class="bo-box-title">This is a title</div>
+	<div class="bo-box">
 		<div class="bo-p1101">
 			layout-header用于显示APP的头部。
 		</div>

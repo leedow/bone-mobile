@@ -27,12 +27,15 @@
 	 
 	<div class="bo-box">
 		<div class="bo-p1111 article">
-			<h3>基本结构</h3>
+			<h3>Layout</h3>
 			<p>
-			层(Layouts)用于将页面划分为几个基本的布局，分别是layout-header,layout-sidebar,layout-menu,layout-main。
+			层(Layout)用于将页面划分为几个基本的布局，分别是layout-header,layout-sidebar,layout-menu,layout-main。
 			</p>
+			<h3>box</h3>
+			<p>盒子(box)是在同一页面中将内容进一步划分区域的容器，比如下文中layout-header,layout-menu等说明的区域装载体。</p>
 			<h3>响应式</h3>
-			<p>layout-sidebar根据屏幕大小显示为可见和隐藏状态。</p>
+			<p>layout-sidebar根据屏幕大小显示为可见和隐藏状态,同时其余layouts也会调整至最佳宽度。</p>
+
 		</div>
 	</div>
 	<div class="bo-box-title">Layout-header</div>

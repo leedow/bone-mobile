@@ -32,9 +32,12 @@
 <?php include('sidebar.php'); ?>
 
 <section class="bo-layout-main">
+	<div class="bo-box-title">
+		带颜色的头
+	</div>
 	<div class="bo-box">
 		<div class="bo-p1101">
-			带颜色的头(header)
+			 
 		</div>
 		<div class="bo-p1101">
 			<div class="bo-header">
@@ -61,11 +64,11 @@
 ]]>
 </script>
 	</div>
- 
- 	<div class="bo-box bo-m1000">
-		<div class="bo-p1101">
-			带颜色的头(header)
-		</div>
+ 	<div class="bo-box-title">
+		白色的头
+	</div>
+ 	<div class="bo-box">
+		 
 		<div class="bo-p1101">
 			<div class="bo-header-light">
 				<div class="bo-header-dock-left">
@@ -86,6 +89,39 @@
 	This is a header
 	<div class="bo-header-dock-right">
 		<a href="" target="_blank">button</a>
+	</div>
+</div>
+]]>
+</script>
+	</div>
+
+	<div class="bo-box-title">
+		带多个按钮的头
+	</div>
+ 	<div class="bo-box">
+		 
+		<div class="bo-p1101">
+			<div class="bo-header-light">
+				<div class="bo-header-dock-left">
+					<a href="index.php"><i class="iconfont icon-back"></i></a>
+				</div>
+				This is a light header
+				<div class="bo-header-dock-right">
+					<a class="bo-dock-item" href="" target="_blank">button</a>
+					<a class="bo-dock-item" href="" target="_blank">button</a>
+				</div>
+			</div>
+		</div>
+<script type="syntaxhighlighter" class="brush: csharp;">
+<![CDATA[
+<div class="bo-header-light">
+	<div class="bo-header-dock-left">
+		<a href="index.php"><i class="iconfont icon-back"></i></a>
+	</div>
+	This is a header
+	<div class="bo-header-dock-right">
+		<a class="bo-dock-item" href="" target="_blank">button</a>
+		<a class="bo-dock-item" href="" target="_blank">button</a>
 	</div>
 </div>
 ]]>

@@ -21,8 +21,8 @@
 		<h3 class="bo-sidebar-title">组 件</h3>
 		<ul class="bo-tab-vertical">
 			<li class="bo-tab-item"><a href="header.php">头</a><div class="bo-tab-dock">Header</div></li>
-			<li class="bo-tab-item"><a href="menu.php">主菜单</a><div class="bo-tab-dock">Menu</div></li>
-			<li class="bo-tab-item"><a href="sidebar.php">主侧栏</a><div class="bo-tab-dock">Sidebar</div></li>
+			<li class="bo-tab-item"><a href="globalmenu.php">主菜单</a><div class="bo-tab-dock">Menu</div></li>
+			<li class="bo-tab-item"><a href="globalsidebar.php">主侧栏</a><div class="bo-tab-dock">Sidebar</div></li>
 			<li class="bo-tab-item"><a href="tabs.php">菜单列表</a><div class="bo-tab-dock">Tabs</div></li>
 			 
 		</ul>

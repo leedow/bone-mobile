@@ -9,35 +9,22 @@
 <?php include('source.php');?>
 </head>
 <body class="bo-body">
-<header class="bo-layout-header">
-	<div class="bo-header">
-		<div class="bo-header-dock-left">
-			<a href="index.php"><i class="iconfont icon-back"></i></a>
-		</div>
-		头
-		<div class="bo-header-dock-right">
-			<a href="https://github.com/leedow/bone-mobile" target="_blank">Github</a>
-		</div>
-	</div>
-</header>
-<nav class="bo-layout-menu">
-	<div class="bo-menu-icon">
-		<ul class="bo-menu-3">
-			<li><button><i class="iconfont">&#xe605;</i></button></li>
-			<li><a href=""><i class="iconfont icon-roundadd"></i></a></li>
-			<li><i class="iconfont icon-similar"></i></li>
-		</ul>
-	</div>
-</nav>
-<?php include('sidebar.php'); ?>
+<?php include('commonheader.php'); ?>
+<?php include('commonmenu.php'); ?>
+<?php include('commonsidebar.php'); ?>
 
 <section class="bo-layout-main">
+	<div class="bo-box bo-p0111 bo-article">
+		<h2>头 <small>header</small></h2>
+		<p>header用于显示当前页面的标题以及左右侧按钮显示。</p>
+	</div>
 	<div class="bo-box-title">
 		带颜色的头
 	</div>
 	<div class="bo-box">
 		<div class="bo-p1101">
-			 
+			
+
 		</div>
 		<div class="bo-p1101">
 			<div class="bo-header">

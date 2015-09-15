@@ -9,24 +9,15 @@
 <?php include('source.php');?>
 </head>
 <body class="bo-body">
-<header class="bo-layout-header">
-	<div class="bo-header">
-		<div class="bo-header-dock-left">
-			<a href="index.php"><i class="iconfont icon-back"></i></a>
-		</div>
-		层和盒子
-		<div class="bo-header-dock-right">
-			<a href="https://github.com/leedow/bone-mobile" target="_blank">Github</a>
-		</div>
-	</div>
-</header>
- <?php include('menu.php'); ?>
-<?php include('sidebar.php'); ?>
+<?php include('commonheader.php'); ?>
+<?php include('commonmenu.php'); ?>
+<?php include('commonsidebar.php'); ?>
 
 <section class="bo-layout-main">
 	 
 	<div class="bo-box">
-		<div class="bo-p1111 article">
+		<div class="bo-p0111 bo-article">
+			<h2>层和盒子 <small>Layouts and box</small></h2>
 			<h3>Layout</h3>
 			<p>
 			层(Layout)用于将页面划分为几个基本的布局，分别是layout-header,layout-sidebar,layout-menu,layout-main。

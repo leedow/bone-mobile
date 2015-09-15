@@ -9,18 +9,9 @@
 <?php include('source.php');?>
 </head>
 <body class="bo-body">
-<header class="bo-layout-header">
-	<div class="bo-header">
-		 
-		Welcome to Bone-mobile
-
-		<div class="bo-header-dock-right">
-			<a href="https://github.com/leedow/bone-mobile" target="_blank">Github</a>
-		</div>
-	</div>
-</header>
-<?php include('menu.php');?>
-<?php include('sidebar.php'); ?>
+<?php include('commonheader.php'); ?>
+<?php include('commonmenu.php'); ?>
+<?php include('commonsidebar.php'); ?>
 
 <section class="bo-layout-main">
 	<div class="bo-box">

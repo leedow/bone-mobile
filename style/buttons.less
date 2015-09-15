@@ -1,5 +1,97 @@
-@{prefix}{
-	button{
+.@{prefix}{
+	&btn, &btn-primary, &btn-warm,&btn-blank, &btn-primary-blank, &btn-warm-blank{
 		font-family: @font-family;
+		cursor: pointer;
+		display: inline-block;
+		padding: @btn-padding;
+		border: 0;
+		border-radius: @btn-radius;
+		line-height: 1.5;
+		font-size: @font-size;
+		text-align: center;
+
+		i{
+			line-height: 1.4;
+		}
 	}	
+
+	&btn-blank{
+		color: @font-color;
+		border:1px @line-color solid;
+		background: none;
+
+		&:hover{
+			background: @btn-background;
+			color: @btn-color;
+		}
+	}
+
+	&btn-primary-blank{
+		color: @btn-background-primary;
+		border:1px @btn-background-primary solid;
+		background: none;
+
+		&:hover{
+			background: @btn-background-primary;
+			color: @btn-color-primary;
+		}
+	}
+
+	&btn-warm-blank{
+		color: @btn-background-warm;
+		border:1px @btn-background-warm solid;
+		background: none;
+
+		&:hover{
+			background: @btn-background-warm;
+			color: @btn-color-warm;
+		}
+	}
+
+	&btn{
+		color: @font-color;
+		background: @btn-background;
+		border:1px @btn-background solid;
+
+		&:hover{
+			background: darken(@btn-background, 10%)
+		}
+
+	}
+
+
+	&btn-primary{
+		color: @btn-color-primary;
+		background: @btn-background-primary;
+		border:1px @btn-background-primary solid;
+
+		&:hover{
+			background: darken(@btn-background-primary, 11%)
+		}
+	}
+
+	&btn-warm{
+		color: @btn-color-warm;
+		background: @btn-background-warm;
+		border:1px @btn-background-warm solid;
+
+		&:hover{
+			background: darken(@btn-background-warm, 11%)
+		}
+	}
+
+	&btn-sm{
+		padding: @btn-padding-sm;
+		font-size: @btn-fontsize-sm;
+	}
+
+	&btn-lg{
+		padding: @btn-padding-lg;
+		font-size: @btn-fontsize-lg;
+	}
+
+	&btn-block{
+		width: 100%;
+		display: block !important;
+	}
 }

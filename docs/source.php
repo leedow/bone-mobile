@@ -6,7 +6,6 @@
 <script type="text/javascript"  data-manual src="../highlight/shCore.js"></script>
 <script type="text/javascript" src="../highlight/scripts/shBrushCSharp.js"></script>
 <script type="text/javascript">SyntaxHighlighter.all();</script>
-<base href="http://localhost/source/bone-mobile/docs/"></base>
 <!--[if lt IE 9]>
 <script type="text/javascript" src="../plugins/html5shiv-printshiv.min.js"></script>
 <![endif]-->

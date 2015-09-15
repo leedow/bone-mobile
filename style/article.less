@@ -2,21 +2,26 @@
 	&article{
 		h1,h2,h3,h4,h5{
 			font-weight: bold;
+			padding: 0.8em 0 0.2em 0;
+			small{
+				color: @font-color-light;
+				font-weight: normal;
+			}
 		}
 		h1{
-			font-size: @font-size-lg*1.8;
-		}
-		h2{
-			font-size: @font-size-lg*1.4;
-		}
-		h3{
 			font-size: @font-size-lg;
 		}
-		h4{
+		h2{
 			font-size: @font-size-md*1.2;
 		}
-		h5{
+		h3{
 			font-size: @font-size-md;
+		}
+		h4{
+			font-size: @font-size*1.2;
+		}
+		h5{
+			font-size: @font-size;
 		}
 		&>p{
 

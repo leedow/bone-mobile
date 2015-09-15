@@ -10,25 +10,19 @@
 <?php include('source.php');?>
 </head>
 <body class="bo-body">
-<header class="bo-layout-header">
-	<div class="bo-header">
-		<div class="bo-header-dock-left">
-			<a href="index.php"><i class="iconfont icon-back"></i></a>
-		</div>
-		字体图标
-
-		<div class="bo-header-dock-right">
-			<a href="https://github.com/leedow/bone-mobile" target="_blank">Github</a>
-		</div>
-	</div>
-</header>
-<?php include('menu.php');?>
-<?php include('sidebar.php'); ?>
+<?php include('commonheader.php'); ?>
+<?php include('commonmenu.php'); ?>
+<?php include('commonsidebar.php'); ?>
 
 <section class="bo-layout-main">
+	<div class="bo-box bo-p0111 bo-article">
+		<h2>字体图标 <small>FontIcon</small></h2>
+		<p>Bone-mobile使用 <a href="http://www.iconfont.cn/" target="_blank">iconfont.cn</a> 
+			提供的字体图标库，在此感谢阿里的同学对人类做出的贡献。</p>
+	</div>
 	<div class="bo-box-title">使用方法</div>
 	<div class="bo-box bo-p1111 bo-article">
-		  <p>Bone-mobile使用 <a href="http://www.iconfont.cn/" target="_blank">iconfont.cn</a> 提供的字体图标库，在此感谢阿里的同学对人类做出的贡献。可以使用两种方法来显示一枚图标。</p>
+		  <p>可以使用两种方法来显示一枚图标。</p>
 <p style="font-size:28px;"><i class="iconfont"> &#xe605; </i>
 <i class="iconfont icon-roundadd"></i></p>
 <script type="syntaxhighlighter" class="brush: csharp;">

@@ -22,8 +22,6 @@ gulp.task('css', function(){
 
 });
 
-
-
 gulp.task('js', function(callback){
 	return 	gulp.src('./test.js')
 			.pipe(webpack({

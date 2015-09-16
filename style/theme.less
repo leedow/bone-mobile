@@ -3,6 +3,7 @@
 
 //font
 @font-family: 				"Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+@font-family-icon:			iconfont;
 @font-size: 				14px;
 @font-size-sm: 				12px;
 @font-size-md:				16px;
@@ -10,6 +11,7 @@
 @font-color: 				#444;
 @font-color-light:			#999;
 @line-height: 				1.5;
+@radius:					4px;
 
 //padding
 @padding-vertical:			@font-size;
@@ -35,6 +37,7 @@
 @layout-shadow:				0px 1px 1px #cfcfcf;
 @layout-main-background:	#f2f2f2;
 @box-title-color:			#999;
+
 //response
 @width-lg: 					1200px;
 @width-md: 					992px;
@@ -81,13 +84,11 @@
 
 
 //buttons
-@btn-radius:				4px;
+@btn-radius:				@radius;
 
 @btn-padding-sm:			5px 10px;
 @btn-padding:				6px 12px;
 @btn-padding-lg:			10px 16px;
-
- 
 
 @btn-fontsize-sm:			@font-size-sm;
 @btn-fontsize:				@font-size;
@@ -102,7 +103,19 @@
 @btn-color-primary:			#fff;
 @btn-color-warm:			#fff;
 
-//
+//input
+@input-padding:				7px 10px;//@btn-padding;
+@input-padding-lg:			11px 16px;//@btn-padding-lg;
+@input-shadow-color:		lighten(@color-primary, 15%);
+@input-shadow-color-wrong:	lighten(@color-highlight, 15%);
+@input-shadow-color-pass:	lighten(@color-comfort, 15%);
+
+@input-height:				35px;
+@input-height-lg:			46px;
+
+
+//form
+@form-item-padding: 		0.5*@padding-vertical;
 
 
 

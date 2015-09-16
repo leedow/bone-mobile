@@ -13,11 +13,23 @@
 		 
 	}
 
-	&btn, &btn-primary, &btn-warm{
-		*float:left;
-		*display: block;
+	&btn, &btn-primary, &btn-warm, &btn-primary-blank, &btn-warm-blank{
+		//*float:left;
+		*display: inline;
 		*overflow:visible ;
+		
 	}
 
+	&input{
+		*padding-top: 0;
+		*padding-bottom: 0;
+		*line-height: @input-height;
+	}
+
+	&input-lg{
+		*padding-top: 0;
+		*padding-bottom: 0;
+		*line-height: @input-height-lg;
+	}
 	 
 }

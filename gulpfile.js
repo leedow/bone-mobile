@@ -6,6 +6,8 @@ var uglify			= require('gulp-uglify');
 var minifyCSS 		= require('gulp-minify-css');
 var webpack 		= require('gulp-webpack');
 var gutil 			= require('gulp-util');
+var ejs 			= require("gulp-ejs");
+
 
 gulp.task('css', function(){
 	watch('./style/*.less', function(){
@@ -33,7 +35,15 @@ gulp.task('js', function(callback){
 			.pipe(gulp.dest('./build'));
 });
 
+gulp.task('doc', function(){
+	watch('./docs/src/*.ejs', function(){
+		gulp.src('./docs/src/*.ejs')
+			.pipe(ejs())
+			.pipe(gulp.dest('./docs'));
+	});
+});
+
 
 gulp.task('default', function(){
-	gulp.run(['css', 'js']);
+	gulp.run(['css', 'js', 'doc']);
 });

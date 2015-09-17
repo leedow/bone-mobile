@@ -4,16 +4,20 @@
 		"selected_items":
 		[
 			[
+				"font",
+				"font-size"
+			],
+			[
+				"inline",
+				"inline"
+			],
+			[
 				"margin",
 				"margin-bottom"
 			],
 			[
 				"btn-back",
 				"btn-background-warm"
-			],
-			[
-				"font",
-				"font-size"
 			],
 			[
 				"over",
@@ -66,10 +70,6 @@
 			[
 				"border",
 				"border-bottom"
-			],
-			[
-				"inline",
-				"inline-block"
 			],
 			[
 				"border-bo",
@@ -320,10 +320,34 @@
 	"buffers":
 	[
 		{
-			"file": "docs/buttons.php",
+			"file": "docs/commonsidebar.php",
 			"settings":
 			{
-				"buffer_size": 3257,
+				"buffer_size": 1153,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style/input.less",
+			"settings":
+			{
+				"buffer_size": 2319,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "docs/form.php",
+			"settings":
+			{
+				"buffer_size": 3162,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style/form.less",
+			"settings":
+			{
+				"buffer_size": 223,
 				"line_ending": "Windows"
 			}
 		},
@@ -336,34 +360,18 @@
 			}
 		},
 		{
-			"file": "style/core.less",
-			"settings":
-			{
-				"buffer_size": 750,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "style/hack.less",
 			"settings":
 			{
-				"buffer_size": 313,
+				"buffer_size": 532,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "docs/source.php",
+			"file": "style/bone.less",
 			"settings":
 			{
-				"buffer_size": 736,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "style/header.less",
-			"settings":
-			{
-				"buffer_size": 1184,
+				"buffer_size": 469,
 				"line_ending": "Windows"
 			}
 		},
@@ -371,7 +379,15 @@
 			"file": "style/theme.less",
 			"settings":
 			{
-				"buffer_size": 2410,
+				"buffer_size": 2832,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "docs/source.php",
+			"settings":
+			{
+				"buffer_size": 740,
 				"line_ending": "Windows"
 			}
 		}
@@ -416,6 +432,16 @@
 	},
 	"file_history":
 	[
+		"/D/sae/wwwroot/source/bone-mobile/docs/buttons.php",
+		"/D/sae/wwwroot/source/bone-mobile/style/input.less",
+		"/D/sae/wwwroot/source/bone-mobile/docs/inputs.php",
+		"/D/sae/wwwroot/source/bone-mobile/style/buttons.less",
+		"/D/sae/wwwroot/source/bone-mobile/style/core.less",
+		"/D/sae/wwwroot/source/bone-mobile/style/hack.less",
+		"/D/sae/wwwroot/source/bone-mobile/docs/source.php",
+		"/D/sae/wwwroot/source/bone-mobile/style/header.less",
+		"/D/sae/wwwroot/source/bone-mobile/docs/form.php",
+		"/D/sae/wwwroot/source/bone-mobile/style/bone.less",
 		"/D/sae/wwwroot/source/bone-mobile/style/sidebar.less",
 		"/D/sae/wwwroot/source/bone-mobile/docs/fonticon.php",
 		"/D/sae/wwwroot/source/bone-mobile/docs/index.php",
@@ -425,16 +451,11 @@
 		"/D/sae/wwwroot/source/bone-mobile/docs/commonheader.php",
 		"/D/sae/wwwroot/source/bone-mobile/docs/sidebar.php",
 		"/D/sae/wwwroot/source/bone-mobile/style/article.less",
-		"/D/sae/wwwroot/source/bone-mobile/style/header.less",
 		"/D/sae/wwwroot/source/bone-mobile/docs/commonmenu.php",
 		"/D/sae/wwwroot/source/bone-mobile/docs/menu.php",
 		"/D/sae/wwwroot/source/bone-mobile/style/box.less",
-		"/D/sae/wwwroot/source/bone-mobile/style/bone.less",
 		"/D/sae/wwwroot/source/bone-mobile/style/menu.less",
-		"/D/sae/wwwroot/source/bone-mobile/style/buttons.less",
-		"/D/sae/wwwroot/source/bone-mobile/docs/source.php",
 		"/D/sae/wwwroot/source/bone-mobile/style/padding.less",
-		"/D/sae/wwwroot/source/bone-mobile/style/core.less",
 		"/D/sae/wwwroot/source/bone-mobile/gulpfile.js",
 		"/D/sae/wwwroot/source/bone-mobile/bone-mobile.sublime-project",
 		"/E/javaweb/elemanager/.classpath",
@@ -538,12 +559,7 @@
 		"/D/sae/wwwroot/source/Mercury/application/views/passport/login.php",
 		"/D/sae/wwwroot/source/Mercury/application/config/alipay.php",
 		"/D/sae/wwwroot/source/Mercury/application/config/config.php",
-		"/D/sae/wwwroot/source/Mercury/alipay/alipay.config.php",
-		"/D/sae/wwwroot/source/Mercury/static/js/count_widget.js",
-		"/D/sae/wwwroot/source/Mercury/static/less/input.less",
-		"/D/sae/wwwroot/source/Mercury/application/views/common/sidebar.php",
-		"/D/sae/wwwroot/source/Mercury/application/controllers/Home.php",
-		"/D/sae/wwwroot/source/Mercury/js/zepto.mtimer.js"
+		"/D/sae/wwwroot/source/Mercury/alipay/alipay.config.php"
 	],
 	"find":
 	{
@@ -705,30 +721,30 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "docs/buttons.php",
+					"file": "docs/commonsidebar.php",
 					"settings":
 					{
-						"buffer_size": 3257,
+						"buffer_size": 1153,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								498,
-								498
+								338,
+								338
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
-						"translation.x": 0.0,
+						"translation.x": 108.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -736,18 +752,18 @@
 				},
 				{
 					"buffer": 1,
-					"file": "style/buttons.less",
+					"file": "style/input.less",
 					"settings":
 					{
-						"buffer_size": 1653,
+						"buffer_size": 2319,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								325,
-								325
+								150,
+								150
 							]
 						],
 						"settings":
@@ -762,44 +778,44 @@
 				},
 				{
 					"buffer": 2,
-					"file": "style/core.less",
+					"file": "docs/form.php",
 					"settings":
 					{
-						"buffer_size": 750,
+						"buffer_size": 3162,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								659,
-								659
+								644,
+								644
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 54.0,
+						"translation.y": 702.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "style/hack.less",
+					"file": "style/form.less",
 					"settings":
 					{
-						"buffer_size": 313,
+						"buffer_size": 223,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								304,
-								304
+								182,
+								182
 							]
 						],
 						"settings":
@@ -814,23 +830,49 @@
 				},
 				{
 					"buffer": 4,
-					"file": "docs/source.php",
+					"file": "style/buttons.less",
 					"settings":
 					{
-						"buffer_size": 736,
+						"buffer_size": 1653,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								736,
-								736
+								90,
+								90
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 7.0,
+						"translation.y": 270.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "style/hack.less",
+					"settings":
+					{
+						"buffer_size": 532,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								290,
+								290
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -839,19 +881,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "style/header.less",
+					"buffer": 6,
+					"file": "style/bone.less",
 					"settings":
 					{
-						"buffer_size": 1184,
+						"buffer_size": 469,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								664,
-								664
+								244,
+								244
 							]
 						],
 						"settings":
@@ -867,23 +909,23 @@
 			]
 		},
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
-					"buffer": 6,
+					"buffer": 7,
 					"file": "style/theme.less",
 					"settings":
 					{
-						"buffer_size": 2410,
+						"buffer_size": 2832,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2297,
-								2297
+								2582,
+								2582
 							]
 						],
 						"settings":
@@ -891,7 +933,33 @@
 							"syntax": "Packages/LESS/LESS.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1385.0,
+						"translation.y": 1512.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "docs/source.php",
+					"settings":
+					{
+						"buffer_size": 740,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								137,
+								137
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -927,7 +995,7 @@
 		"cols":
 		[
 			0.0,
-			0.95652173913,
+			0.702521008403,
 			1.0
 		],
 		"rows":
@@ -947,6 +1015,22 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"hack",
+				"style/hack.less"
+			],
+			[
+				"buttons",
+				"style/buttons.less"
+			],
+			[
+				"form",
+				"docs/form.php"
+			],
+			[
+				"input",
+				"style/input.less"
+			],
 			[
 				"theme",
 				"style/theme.less"
@@ -1084,10 +1168,6 @@
 				"static/less/common.less"
 			],
 			[
-				"input",
-				"static/less/input.less"
-			],
-			[
 				"mod",
 				"module1.js"
 			],
@@ -1122,10 +1202,6 @@
 			[
 				"menu",
 				"css/src/menu.less"
-			],
-			[
-				"buttons",
-				"css/src/buttons.less"
 			],
 			[
 				"icons",
@@ -1314,6 +1390,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 216.0,
+	"side_bar_width": 176.0,
 	"status_bar_visible": true
 }

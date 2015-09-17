@@ -6,13 +6,19 @@
 <title>Bone-mobile buttons</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
-<?php include('source.php');?>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link href="../build/bone.css?v=1" type="text/css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../fonts/iconfont.css">
+<link rel="stylesheet" type="text/css" href="../highlight/shCoreDefault.css">
+<script type="text/javascript" src="../plugins/jquery.min.js"></script>
+<script type="text/javascript"  data-manual src="../highlight/shCore.js"></script>
+<script type="text/javascript" src="../highlight/scripts/shBrushCSharp.js"></script>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="../plugins/html5shiv-printshiv.min.js"></script>
+<![endif]-->
 </head>
 <body class="bo-body">
-
-<!--include "commonheader.html"-->
-<!--include "commonmenu.html"-->
-<!--include "commonsidebar.html"-->
 <header class="bo-layout-header">
 	<div class="bo-header">
 		<div class="bo-header-dock-left">
@@ -24,7 +30,47 @@
 		</div>
 	</div>
 </header>
-fd
+<nav class="bo-layout-menu">
+	<div class="bo-menu-icon">
+		<ul class="bo-menu-3">
+			<li><button><i class="iconfont icon-appreciate"></i></button></li>
+			<li><a href="index.php"><i class="iconfont icon-home"></i></a></li>
+			<li><i class="iconfont icon-similar"></i></li>
+		</ul>
+	</div>
+</nav>
+<aside class="bo-layout-sidebar">
+	<div class="bo-sidebar">
+		<h3 class="bo-sidebar-title">设 计</h3>
+		<ul class="bo-tab-vertical">
+			<li class="bo-tab-item"><a href="fonticon.html">字体图标</a>
+				<div class="bo-tab-dock">
+					FontIcon
+				</div>
+			</li>
+			 
+		</ul>
+		<h3 class="bo-sidebar-title">基本样式</h3>
+		<ul class="bo-tab-vertical">
+			<li class="bo-tab-item"><a href="layouts.html">层和盒子</a>
+				<div class="bo-tab-dock">
+					Layouts&Box
+				</div>
+			</li>
+			 
+		</ul>
+		<h3 class="bo-sidebar-title">静态组件</h3>
+		<ul class="bo-tab-vertical">
+			<li class="bo-tab-item"><a href="header.html">头</a><div class="bo-tab-dock">Header</div></li>
+			<li class="bo-tab-item"><a href="menu.html">主菜单</a><div class="bo-tab-dock">Menu</div></li>
+			<li class="bo-tab-item"><a href="sidebar.html">主侧栏</a><div class="bo-tab-dock">Sidebar</div></li>
+			<li class="bo-tab-item"><a href="list.html">列 表</a><div class="bo-tab-dock">List</div></li>
+			<li class="bo-tab-item"><a href="tabs.html">选项卡</a><div class="bo-tab-dock">Tabs</div></li>
+			<li class="bo-tab-item"><a href="buttons.html">按 钮</a><div class="bo-tab-dock">Buttons</div></li>
+			<li class="bo-tab-item"><a href="form.html">表 单</a><div class="bo-tab-dock">Form</div></li> 
+		</ul>
+	</div>
+</aside>
 <style type="text/css">
 
 .article	.bo-btn, .bo-btn-primary, .bo-btn-warm{

@@ -7,6 +7,7 @@ var minifyCSS 		= require('gulp-minify-css');
 var webpack 		= require('gulp-webpack');
 var gutil 			= require('gulp-util');
 var ejs 			= require("gulp-ejs");
+var rev				= require('gulp-rev');
 
 
 gulp.task('css', function(){
@@ -17,6 +18,7 @@ gulp.task('css', function(){
 				gutil.log('Less Error!', err.message);
 				this.end();
 			})
+			//.pipe(rev())
 			.pipe(autoprefixer())
 			//.pipe(minifyCSS())
 			.pipe(gulp.dest('./build'));

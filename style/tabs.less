@@ -1,16 +1,19 @@
 .@{prefix}{
 	&tab-vertical, &tab-vertical-bor{
-		padding-left: 0.5*@padding-horizon;
-		.@{prefix}tab-item{
+		font-size: @font-size-md;
+		//padding-left: @padding-horizon;
+		.@{prefix}tab-item, .@{prefix}tab-item-icon{
 			position: relative;
-			&>a{
+			&>a, &>p{
 				display: block;
 				padding: 0 @padding-horizon;
 				height: @tabs-height;
 				line-height: @tabs-height;
+
 			}
 			&>button{
-				font-size: @font-size;
+				font-size: @font-size-md;
+				font-family: inherit;
 				border:0;
 				background: none;
 				padding: 0 @padding-horizon;
@@ -19,24 +22,67 @@
 				width: 100%;
 			}
 			.@{prefix}tab-dock{
+				font-size: @font-size;
 				position: absolute;
-				right:@padding-horizon;
+				right:0;
 				top:0;
 				height: @tabs-height;
 				line-height: @tabs-height;
-				.@{prefix}tab-dock-item{
-					
+				.@{prefix}tab-dock-button{
+					display: inline-block;
+					font-family: inherit;
+					//font-size: inherit;
+					height: @tabs-height;
+					line-height: @tabs-height;
+					padding: 0 @padding-vertical;
+					background: none;
+					border:0;
+					border-left: 1px @line-color solid;
+
 				}
+				.@{prefix}tab-dock-text{
+				 
+					line-height: @tabs-height;
+					color: @font-color-light;
+					padding:0 @padding-horizon 0 0;
+					margin:0;
+				}
+			}
+		}
+
+		.@{prefix}tab-item-icon{
+			padding-left: 0.7*@tabs-height;
+			&>i{
+				position: absolute;
+				left:0;
+				top:0;
+				height: @tabs-height;
+				line-height: @tabs-height;
+				padding-left: @padding-horizon;
+				text-align: center;
+				font-size: @font-size-lg;
+				color: @font-color-light;
+			}
+		}
+
+		.@{prefix}tab-item-arrow{
+			position: relative;
+			&:after{
+				position: absolute;
+				width: @tabs-height;
+				text-align: center;
+				top:0;
+				right:0;
+				content: "\e61c";
+				font-family: "iconfont";
+				height: @tabs-height;
+				line-height: @tabs-height;
 			}
 		}
 	}
 
 	&tab-vertical-bor{
-		.@{prefix}tab-item{
-			&:after{
-				clear:both;
-				width:100%;
-			}
+		.@{prefix}tab-item,.@{prefix}tab-item-icon{
 			border-bottom:1px @line-color solid;
 		}
 		&:last-child{

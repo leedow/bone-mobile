@@ -4,12 +4,16 @@
 		"selected_items":
 		[
 			[
-				"font",
-				"font-size"
+				"padding",
+				"padding-right"
 			],
 			[
 				"inline",
-				"inline"
+				"inline-block"
+			],
+			[
+				"font",
+				"font-size"
 			],
 			[
 				"margin",
@@ -74,10 +78,6 @@
 			[
 				"border-bo",
 				"border-bottom-left-radius"
-			],
-			[
-				"padding",
-				"padding-top"
 			],
 			[
 				"rg",
@@ -320,34 +320,74 @@
 	"buffers":
 	[
 		{
-			"file": "docs/commonsidebar.php",
+			"file": "docs/src/buttons.ejs",
 			"settings":
 			{
-				"buffer_size": 1153,
+				"buffer_size": 3232,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "style/input.less",
+			"file": "docs/src/sidebar.ejs",
 			"settings":
 			{
-				"buffer_size": 2319,
+				"buffer_size": 1988,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "docs/form.php",
+			"file": "docs/src/tmp.ejs",
 			"settings":
 			{
-				"buffer_size": 3162,
+				"buffer_size": 664,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "style/form.less",
+			"file": "docs/src/commonsidebar.ejs",
 			"settings":
 			{
-				"buffer_size": 223,
+				"buffer_size": 1544,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "docs/src/list.ejs",
+			"settings":
+			{
+				"buffer_size": 1058,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style/tabs.less",
+			"settings":
+			{
+				"buffer_size": 1882,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style/sidebar.less",
+			"settings":
+			{
+				"buffer_size": 1001,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/javaweb/maddog/WebContent/manager/system/importData3.jsp",
+			"settings":
+			{
+				"buffer_size": 477,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style/core.less",
+			"settings":
+			{
+				"buffer_size": 865,
 				"line_ending": "Windows"
 			}
 		},
@@ -355,23 +395,7 @@
 			"file": "style/buttons.less",
 			"settings":
 			{
-				"buffer_size": 1653,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "style/hack.less",
-			"settings":
-			{
-				"buffer_size": 532,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "style/bone.less",
-			"settings":
-			{
-				"buffer_size": 469,
+				"buffer_size": 1713,
 				"line_ending": "Windows"
 			}
 		},
@@ -384,10 +408,29 @@
 			}
 		},
 		{
+			"file": "docs/src/tabs.ejs",
+			"settings":
+			{
+				"buffer_size": 1418,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\">\n<link href=\"../build/bone.css?v=1\" type=\"text/css\" rel=\"stylesheet\">\n<link rel=\"stylesheet\" type=\"text/css\" href=\"../fonts/iconfont.css\">\n<link rel=\"stylesheet\" type=\"text/css\" href=\"../highlight/shCoreDefault.css\">\n<script type=\"text/javascript\" src=\"../plugins/jquery.min.js\"></script>\n<script type=\"text/javascript\"  data-manual src=\"../highlight/shCore.js\"></script>\n<script type=\"text/javascript\" src=\"../highlight/scripts/shBrushCSharp.js\"></script>\n<script type=\"text/javascript\">SyntaxHighlighter.all();</script>\n<!--[if lt IE 9]>\n<script type=\"text/javascript\" src=\"../plugins/html5shiv-printshiv.min.js\"></script>\n<![endif]-->",
 			"file": "docs/source.php",
+			"file_size": 750,
+			"file_write_time": 130868850328331668,
 			"settings":
 			{
 				"buffer_size": 740,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "gulpfile.js",
+			"settings":
+			{
+				"buffer_size": 1129,
 				"line_ending": "Windows"
 			}
 		}
@@ -432,31 +475,59 @@
 	},
 	"file_history":
 	[
-		"/D/sae/wwwroot/source/bone-mobile/docs/buttons.php",
+		"/D/sae/wwwroot/source/bone-mobile/build/bone-ce6dcbc6df.css",
+		"/D/sae/wwwroot/source/bone-mobile/style/article.less",
+		"/E/javaweb/maddog/docs/index.html",
+		"/E/javaweb/maddog/WebContent/manager/views/lee/history.html",
+		"/E/javaweb/maddog/WebContent/manager/views/lee/default.html",
+		"/E/javaweb/maddog/WebContent/manager/views/lee/check.html",
+		"/E/javaweb/maddog/WebContent/manager/system/menu.jsp",
+		"/E/javaweb/maddog/WebContent/manager/system/menu2.jsp",
+		"/E/javaweb/maddog/WebContent/manager/system/edit.jsp",
+		"/E/javaweb/maddog/WebContent/manager/js/controllers/lee/view.js",
+		"/E/javaweb/maddog/WebContent/manager/js/controllers/lee/photos2.js",
+		"/E/javaweb/maddog/WebContent/manager/js/controllers/lee/photos.js",
+		"/E/javaweb/maddog/WebContent/manager/js/controllers/lee/history.js",
+		"/E/javaweb/maddog/WebContent/manager/js/controllers/lee/help.js",
+		"/E/javaweb/maddog/WebContent/manager/js/controllers/lee/gmap.js",
+		"/D/sae/wwwroot/source/bone-mobile/docs/commonsidebar.php",
 		"/D/sae/wwwroot/source/bone-mobile/style/input.less",
-		"/D/sae/wwwroot/source/bone-mobile/docs/inputs.php",
+		"/D/sae/wwwroot/source/bone-mobile/docs/form.php",
+		"/D/sae/wwwroot/source/bone-mobile/style/form.less",
 		"/D/sae/wwwroot/source/bone-mobile/style/buttons.less",
-		"/D/sae/wwwroot/source/bone-mobile/style/core.less",
 		"/D/sae/wwwroot/source/bone-mobile/style/hack.less",
+		"/D/sae/wwwroot/source/bone-mobile/style/bone.less",
+		"/D/sae/wwwroot/source/bone-mobile/gulpfile.js",
+		"/E/Nodejs/ghost/content/themes/alife/post.hbs",
+		"/D/sae/wwwroot/source/bone-mobile/docs/src/fonticon.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/docs/src/form.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/docs/src/header.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/docs/src/index.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/docs/src/layouts.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/docs/src/menu.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/docs/src/sidebar.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/docs/src/source.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/docs/src/commonsidebar.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/docs/buttons.html",
+		"/D/sae/wwwroot/source/bone-mobile/node_modules/gulp-content-includer/index.js",
+		"/D/sae/wwwroot/source/bone-mobile/docs/src/commonheader.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/docs/buttons.php",
+		"/D/sae/wwwroot/source/bone-mobile/docs/inputs.php",
+		"/D/sae/wwwroot/source/bone-mobile/style/core.less",
 		"/D/sae/wwwroot/source/bone-mobile/docs/source.php",
 		"/D/sae/wwwroot/source/bone-mobile/style/header.less",
-		"/D/sae/wwwroot/source/bone-mobile/docs/form.php",
-		"/D/sae/wwwroot/source/bone-mobile/style/bone.less",
 		"/D/sae/wwwroot/source/bone-mobile/style/sidebar.less",
 		"/D/sae/wwwroot/source/bone-mobile/docs/fonticon.php",
 		"/D/sae/wwwroot/source/bone-mobile/docs/index.php",
 		"/D/sae/wwwroot/source/bone-mobile/docs/layouts.php",
 		"/D/sae/wwwroot/source/bone-mobile/docs/header.php",
-		"/D/sae/wwwroot/source/bone-mobile/docs/commonsidebar.php",
 		"/D/sae/wwwroot/source/bone-mobile/docs/commonheader.php",
 		"/D/sae/wwwroot/source/bone-mobile/docs/sidebar.php",
-		"/D/sae/wwwroot/source/bone-mobile/style/article.less",
 		"/D/sae/wwwroot/source/bone-mobile/docs/commonmenu.php",
 		"/D/sae/wwwroot/source/bone-mobile/docs/menu.php",
 		"/D/sae/wwwroot/source/bone-mobile/style/box.less",
 		"/D/sae/wwwroot/source/bone-mobile/style/menu.less",
 		"/D/sae/wwwroot/source/bone-mobile/style/padding.less",
-		"/D/sae/wwwroot/source/bone-mobile/gulpfile.js",
 		"/D/sae/wwwroot/source/bone-mobile/bone-mobile.sublime-project",
 		"/E/javaweb/elemanager/.classpath",
 		"/C/Users/tgoooo/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
@@ -531,35 +602,7 @@
 		"/D/sae/wwwroot/source/Mercury/static/less/jishibao.less",
 		"/D/sae/wwwroot/source/Mercury/static/less/tabs.less",
 		"/D/sae/wwwroot/source/Mercury/application/views/admin/order.php",
-		"/D/sae/wwwroot/source/Mercury/application/views/common/cmdsource.php",
-		"/D/sae/wwwroot/source/Mercury/application/views/common/sourceadmin.php",
-		"/D/sae/wwwroot/source/Mercury/js/modules1.0.3/interaction.js",
-		"/D/sae/wwwroot/source/Mercury/js/modules1.0.3/shoppingcart.js",
-		"/E/javaweb/TONGXIANG备份/src/org/ldw/action/deleteAction.java",
-		"/E/javapro/.metadata/.plugins/org.eclipse.wst.server.core/tmp4/wtpwebapps/TONGXIANG/WEB-INF/classes/manager/action/uploadDb.class",
-		"/C/Users/tgoooo/Desktop/traffic/style/style.css",
-		"/C/Users/tgoooo/Desktop/traffic/js/main.js",
-		"/D/sae/wwwroot/test.json",
-		"/D/sae/wwwroot/leeopen/1/leeui4/less/setting.less",
-		"/E/javaweb/TONGXIANG备份/src/org/ldw/action/uploadsExcelAction.java",
-		"/E/javaweb/TONGXIANG备份/src/org/ldw/service/uploadsHelper.java",
-		"/E/javaweb/TONGXIANG备份/src/org/ldw/service/importExcelService.java",
-		"/E/javaweb/TONGXIANG备份/src/org/ldw/service/uploadsPhotoService.java",
-		"/E/javaweb/TONGXIANG备份/src/org/ldw/action/uploadsPhotoAction.java",
-		"/D/sae/wwwroot/source/Mercury/js/zepto.sea.mtimer.js",
-		"/D/sae/wwwroot/source/Mercury/static/zepto.min.js",
-		"/D/sae/wwwroot/source/Mercury/static/js/check_widget.js",
-		"/D/sae/wwwroot/source/Mercury/static/js/zepto.min.js",
-		"/D/sae/wwwroot/source/Mercury/js/zepto.min.js",
-		"/D/sae/wwwroot/source/Mercury/static/less/sidebar.less",
-		"/D/sae/wwwroot/source/Mercury/application/views/home/index.php",
-		"/E/javaweb/TONGXIANG备份/src/org/lyd/postgreSQL/GISSelect.java",
-		"/D/sae/wwwroot/source/Mercury/application/views/passport/register.php",
-		"/D/sae/wwwroot/source/Mercury/js/modules1.0.1/shoppingcart.js",
-		"/D/sae/wwwroot/source/Mercury/application/views/passport/login.php",
-		"/D/sae/wwwroot/source/Mercury/application/config/alipay.php",
-		"/D/sae/wwwroot/source/Mercury/application/config/config.php",
-		"/D/sae/wwwroot/source/Mercury/alipay/alipay.config.php"
+		"/D/sae/wwwroot/source/Mercury/application/views/common/cmdsource.php"
 	],
 	"find":
 	{
@@ -577,6 +620,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".php",
 			"border-box",
 			"list",
 			"row-title",
@@ -701,6 +745,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			".html",
 			"$order",
 			"</span>",
 			"<span class=\"key\">",
@@ -721,106 +766,106 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 13,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "docs/commonsidebar.php",
+					"file": "docs/src/buttons.ejs",
 					"settings":
 					{
-						"buffer_size": 1153,
+						"buffer_size": 3232,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								338,
-								338
+								472,
+								472
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
-						"translation.x": 108.0,
-						"translation.y": 0.0,
+						"translation.x": 0.0,
+						"translation.y": 162.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "style/input.less",
+					"file": "docs/src/sidebar.ejs",
 					"settings":
 					{
-						"buffer_size": 2319,
+						"buffer_size": 1988,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								150,
-								150
+								856,
+								856
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 324.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "docs/form.php",
+					"file": "docs/src/tmp.ejs",
 					"settings":
 					{
-						"buffer_size": 3162,
+						"buffer_size": 664,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								644,
-								644
+								340,
+								340
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 702.0,
+						"translation.y": 108.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "style/form.less",
+					"file": "docs/src/commonsidebar.ejs",
 					"settings":
 					{
-						"buffer_size": 223,
+						"buffer_size": 1544,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								182,
-								182
+								494,
+								494
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -830,44 +875,44 @@
 				},
 				{
 					"buffer": 4,
-					"file": "style/buttons.less",
+					"file": "docs/src/list.ejs",
 					"settings":
 					{
-						"buffer_size": 1653,
+						"buffer_size": 1058,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								90,
-								90
+								774,
+								774
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
-						"translation.x": 7.0,
-						"translation.y": 270.0,
+						"translation.x": 0.0,
+						"translation.y": 261.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "style/hack.less",
+					"file": "style/tabs.less",
 					"settings":
 					{
-						"buffer_size": 532,
+						"buffer_size": 1882,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								290,
-								290
+								79,
+								79
 							]
 						],
 						"settings":
@@ -882,18 +927,96 @@
 				},
 				{
 					"buffer": 6,
-					"file": "style/bone.less",
+					"file": "style/sidebar.less",
 					"settings":
 					{
-						"buffer_size": 469,
+						"buffer_size": 1001,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								244,
-								244
+								773,
+								773
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 205.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/E/javaweb/maddog/WebContent/manager/system/importData3.jsp",
+					"settings":
+					{
+						"buffer_size": 477,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java Server Pages (JSP).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "style/core.less",
+					"settings":
+					{
+						"buffer_size": 865,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								673,
+								673
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 108.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "style/buttons.less",
+					"settings":
+					{
+						"buffer_size": 1713,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								348,
+								348
 							]
 						],
 						"settings":
@@ -905,15 +1028,9 @@
 						"zoom_level": 1.0
 					},
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 1,
-			"sheets":
-			[
+				},
 				{
-					"buffer": 7,
+					"buffer": 10,
 					"file": "style/theme.less",
 					"settings":
 					{
@@ -924,8 +1041,8 @@
 						"selection":
 						[
 							[
-								2582,
-								2582
+								682,
+								682
 							]
 						],
 						"settings":
@@ -933,13 +1050,39 @@
 							"syntax": "Packages/LESS/LESS.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1512.0,
+						"translation.y": 54.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 11,
+					"file": "docs/src/tabs.ejs",
+					"settings":
+					{
+						"buffer_size": 1418,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1199,
+								1199
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 3195.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
 					"file": "docs/source.php",
 					"settings":
 					{
@@ -950,13 +1093,39 @@
 						"selection":
 						[
 							[
-								137,
-								137
+								740,
+								728
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "gulpfile.js",
+					"settings":
+					{
+						"buffer_size": 1129,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								849,
+								849
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -984,18 +1153,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.702521008403,
 			1.0
 		],
 		"rows":
@@ -1015,6 +1177,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"the",
+				"style/theme.less"
+			],
 			[
 				"hack",
 				"style/hack.less"
@@ -1390,6 +1556,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 176.0,
+	"side_bar_width": 220.0,
 	"status_bar_visible": true
 }

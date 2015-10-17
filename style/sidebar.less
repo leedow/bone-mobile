@@ -6,8 +6,10 @@
 		background: @sidebar-background;	
 
 		.@{prefix}tab-vertical{
+			font-size: @font-size;
 			text-align: left;
 			a, button{
+				font-size: inherit;
 				padding: 0 @padding-horizon !important;
 				height: @tabs-height*0.7 !important;
 				line-height: @tabs-height*0.7 !important;
@@ -18,14 +20,17 @@
 			}
 			
 			.@{prefix}tab-dock{
+				
 				right:@padding-horizon;
 				top:0;
 				height: @tabs-height*0.7 !important;
 				line-height: @tabs-height*0.7 !important;
 				color: @sidebar-tab-color-flag;
 				font-size: @font-size*0.8;
-				.@{prefix}tab-dock-item{
-					
+				.@{prefix}tab-dock-text{
+					color: @sidebar-tab-color-flag !important;
+					line-height: @tabs-height*0.7 !important;;
+
 				}
 			}
 		}

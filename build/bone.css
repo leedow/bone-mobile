@@ -124,6 +124,12 @@ p {
   top: 0;
   height: 100%;
 }
+.bo-unfixed .bo-layout-header {
+  position: relative;
+}
+.bo-unfixed .bo-layout-main {
+  padding: 0 0 40px 0;
+}
 .bo-header,
 .bo-header-light {
   width: 100%;
@@ -131,6 +137,7 @@ p {
   line-height: 44px;
   text-align: center;
   position: relative;
+  font-size: 16px;
 }
 .bo-header .bo-header-dock-left,
 .bo-header-light .bo-header-dock-left,
@@ -651,6 +658,27 @@ p {
 .bo-tab-vertical-bor:last-child {
   border-bottom: 0;
 }
+.bo-tab-horizon {
+  height: 44px;
+}
+.bo-tab-horizon:after {
+  clear: both;
+  height: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+.bo-tab-horizon .bo-tab-item {
+  display: inline-block;
+  font-size: 16px;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  float: left;
+}
+.bo-tab-horizon .bo-tab-item-current {
+  border-bottom: 2px #6699ff solid;
+  color: #6699ff !important;
+}
 .bo-p1111 {
   padding: 14px 14px;
 }
@@ -804,6 +832,96 @@ p {
 }
 .bo-article h5 {
   font-size: 14px;
+}
+/**
+ * Grid
+ * @authors leedow (644743991@qq.com)
+ * @website http://www.leedow.com
+ * @date    2015-05-17 12:01:55
+ * @version $Id$
+ */
+.col {
+  float: left;
+}
+.bo-col {
+  float: left;
+}
+.bo-col-1 {
+  float: left;
+  width: 8.333333%;
+}
+.bo-col-2 {
+  float: left;
+  width: 16.666666%;
+}
+.bo-col-3 {
+  float: left;
+  width: 25%;
+}
+.bo-col-4 {
+  float: left;
+  width: 33.333333%;
+}
+.bo-col-5 {
+  float: left;
+  width: 41.666666%;
+}
+.bo-col-6 {
+  float: left;
+  width: 50%;
+}
+.bo-col-7 {
+  float: left;
+  width: 58.333333%;
+}
+.bo-col-8 {
+  float: left;
+  width: 66.666666%;
+}
+.bo-col-9 {
+  float: left;
+  width: 75%;
+}
+.bo-col-10 {
+  float: left;
+  width: 83.333333%;
+}
+.bo-col-11 {
+  float: left;
+  width: 91.666666%;
+}
+.bo-offset-1 {
+  margin-left: 8.333333%;
+}
+.bo-offset-2 {
+  margin-left: 16.666666%;
+}
+.bo-offset-3 {
+  margin-left: 25%;
+}
+.bo-offset-4 {
+  margin-left: 33.333333%;
+}
+.bo-offset-5 {
+  margin-left: 41.666666%;
+}
+.bo-offset-6 {
+  margin-left: 50%;
+}
+.bo-offset-7 {
+  margin-left: 58.333333%;
+}
+.bo-offset-8 {
+  margin-left: 66.666666%;
+}
+.bo-offset-9 {
+  margin-left: 75%;
+}
+.bo-offset-10 {
+  margin-left: 83.333333%;
+}
+.bo-offset-11 {
+  margin-left: 91.666666%;
 }
 .bo-tl {
   text-align: left;

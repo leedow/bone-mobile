@@ -47,12 +47,19 @@
 	var verify = __webpack_require__(1);
 
 	 
+	$(document).ready(function(){
+		$('#go').click(function(){
+			verify.check('#form');
+		});
+	});
 
 /***/ },
 /* 1 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports.verify = function(obj){
+	var CONFIG = __webpack_require__(2);
+
+	module.exports.check = function(obj){
 		$this = $(obj);
 		var flag = true;
 		var msg = {
@@ -142,7 +149,7 @@
 	function set_state(params){
 		for(key in params){
 			if (params[key] == '') {
-				$(key).next('.input-wrong').remove();
+				$(key).next('p').remove();
 			} else {
 				add_state($(key), params[key]);
 			};
@@ -150,12 +157,14 @@
 	}
 
 	function add_state(aim, info){
-		aim.next('.input-wrong').remove();
+		aim.next('p').remove();
 		if (info != '') {
 			info = aim.attr('data-msg')?aim.attr('data-msg'):info;
-			aim.after('<span class="input-wrong"><i class="fa  fa-exclamation-circle "></i> ' + info + '</span>');
+			aim.after('<p>' + info + '</p>');
+			aim.parent('div').addClass(CONFIG.prefix + 'input-wrong');
 		} else {
-			aim.next('.input-wrong').remove();
+			aim.parent('div').removeClass(CONFIG.prefix + 'input-wrong');
+			aim.next('p').remove();
 		};
 	}
 
@@ -199,6 +208,14 @@
 		return true;
 	}
 
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+	module.exports = {
+		prefix: 'bo-'
+	}
 
 /***/ }
 /******/ ]);

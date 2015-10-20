@@ -315,6 +315,7 @@ p {
 .bo-btn-blank,
 .bo-btn-primary-blank,
 .bo-btn-warm-blank {
+  -webkit-appearance: none !important;
   font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
   cursor: pointer;
   display: inline-block;
@@ -410,6 +411,7 @@ p {
   border-radius: 4px;
   line-height: 1.5;
   font-family: inherit;
+  font-size: 14px;
 }
 .bo-input:focus,
 .bo-input-lg:focus,

@@ -27,7 +27,8 @@ gulp.task('css', function(){
 });
 
 gulp.task('js', function(callback){
-	return 	gulp.src('./test.js')
+	watch('./js/*.js', function(){
+		gulp.src('./js/main.js')
 			.pipe(webpack({
 				watch: true,
 				output: {
@@ -35,6 +36,7 @@ gulp.task('js', function(callback){
 				}
 			}))
 			.pipe(gulp.dest('./build'));
+	});
 });
 
 gulp.task('doc', function(){

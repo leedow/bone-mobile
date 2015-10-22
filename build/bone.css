@@ -406,6 +406,7 @@ p {
 .bo-input-lg,
 .bo-select,
 .bo-select-lg {
+  -webkit-appearance: none !important;
   background: #fff;
   border: 1px #e0e0e0 solid;
   border-radius: 4px;
@@ -441,12 +442,10 @@ p {
 .bo- select {
   -webkit-appearance: none;
 }
-.bo-input-wrong,
-.bo-input-wrong-lg {
+.bo-input-wrong {
   position: relative;
 }
-.bo-input-wrong:after,
-.bo-input-wrong-lg:after {
+.bo-input-wrong:after {
   position: absolute;
   right: 7px;
   top: 0;
@@ -458,29 +457,22 @@ p {
   line-height: 35px;
 }
 .bo-input-wrong > .bo-input,
-.bo-input-wrong-lg > .bo-input,
-.bo-input-wrong > .bo-input-lg,
-.bo-input-wrong-lg > .bo-input-lg {
+.bo-input-wrong > .bo-input-lg {
   border: 1px #ff6633 solid;
   box-shadow: 0 0 4px #ff9f80;
 }
 .bo-input-wrong > .bo-input:hover,
-.bo-input-wrong-lg > .bo-input:hover,
 .bo-input-wrong > .bo-input-lg:hover,
-.bo-input-wrong-lg > .bo-input-lg:hover,
 .bo-input-wrong > .bo-input:focus,
-.bo-input-wrong-lg > .bo-input:focus,
-.bo-input-wrong > .bo-input-lg:focus,
-.bo-input-wrong-lg > .bo-input-lg:focus {
+.bo-input-wrong > .bo-input-lg:focus {
   border: 1px #ff6633 solid;
   box-shadow: 0 0 4px #ff9f80;
 }
-.bo-input-wrong > p,
-.bo-input-wrong-lg > p {
+.bo-input-wrong > p {
   color: #ff6633;
   padding: 7px 0 0 0;
 }
-.bo-input-wrong-lg:after {
+.bo-form-item-lg .bo-input-wrong:after {
   height: 46px;
   line-height: 46px;
 }
@@ -535,11 +527,36 @@ p {
   content: ' * ';
   font-size: 16px;
 }
-.bo-form-item {
+.bo-form-item,
+.bo-form-item-lg {
   padding: 7px 0;
 }
 .bo-form-control {
   width: 100%;
+}
+.bo-form-blank .bo-form-item {
+  padding: 0;
+  border-bottom: 1px #e0e0e0 solid;
+  position: relative;
+}
+.bo-form-blank .bo-form-item input {
+  border: 0 !important;
+  padding-left: 80px;
+}
+.bo-form-blank .bo-form-item p {
+  padding-left: 14px;
+}
+.bo-form-blank .bo-form-item .bo-label {
+  width: 80px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 46px;
+  line-height: 46px;
+  text-align: right;
+  z-index: 99;
+  font-size: 16px;
+  padding-right: 14px;
 }
 .bo-box {
   text-align: left;

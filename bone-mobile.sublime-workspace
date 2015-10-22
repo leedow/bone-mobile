@@ -320,73 +320,6 @@
 	"buffers":
 	[
 		{
-			"file": "docs/src/full.ejs",
-			"settings":
-			{
-				"buffer_size": 1755,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "style/layouts.less",
-			"settings":
-			{
-				"buffer_size": 987,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "style/response.less",
-			"settings":
-			{
-				"buffer_size": 1461,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "style/theme.less",
-			"settings":
-			{
-				"buffer_size": 2863,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "docs/src/commonsidebar.ejs",
-			"settings":
-			{
-				"buffer_size": 1701,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "//底部menu\n.@{prefix}{\n	&menu-3{\n		&>li{\n			float: left;\n			display: inline-block;\n			width: 33.33333%;\n		}\n	}\n\n	&menu-4{\n		&>li{\n			float: left;\n			display: inline-block;\n			width: 25%;\n		}\n	}\n\n	&menu-5 {\n		&>li{\n			float: left;\n			display: inline-block;\n			width: 20%;\n		}\n	}\n\n	&menu-icon{//不带文字，纯图标菜单\n		border-top: @menu-border-top;\n		text-align: center;\n		height: @menu-height-icon;\n		line-height: @menu-height-icon;\n		font-size: @menu-fontsize-icon;\n		color: @menu-color-icon; \n		background: @menu-background-icon;\n		overflow: hidden;//防止字体溢出\n\n		button{\n			background: none;\n			border:0;\n			font-size: @menu-fontsize-icon;\n			width: 100%;\n			height: @menu-height-icon;\n			color: @menu-color-icon;\n			cursor: pointer;\n\n			&:active{\n				color: @menu-color-hover-icon;;\n				//background: lighten(@menu-background-icon, 8%)\n			}\n			&:hover{\n				color: @menu-color-hover-icon;\n				//background: lighten(@menu-background-icon, 8%)\n			}\n		}\n\n		a{\n			display: block;\n			width: 100%;\n			height: @menu-height-icon;\n			color: @menu-color-icon;\n			&:hover{\n				color: @menu-color-hover-icon;\n				//background: lighten(@menu-background-icon, 8%)\n			}\n			&:active{\n				color: @menu-color-hover-icon;\n				//background: lighten(@menu-background-icon, 8%)\n			}\n		}\n	}\n\n	&menu-normal{//带文字菜单\n\n	}\n}",
-			"file": "style/menu.less",
-			"file_size": 1404,
-			"file_write_time": 130863451903024955,
-			"settings":
-			{
-				"buffer_size": 1282,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/sae/wwwroot/source/Moon01/moon02.sql",
-			"settings":
-			{
-				"buffer_size": 5683,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "style/tabs.less",
-			"settings":
-			{
-				"buffer_size": 2324,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "style/grid.less",
 			"settings":
 			{
@@ -395,74 +328,53 @@
 			}
 		},
 		{
-			"file": "style/bone.less",
+			"file": "gulpfile.js",
 			"settings":
 			{
-				"buffer_size": 496,
+				"buffer_size": 1164,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "docs/src/index.ejs",
+			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 1187,
+				"buffer_size": 128,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "docs/src/commonheader.ejs",
+			"file": "js/bone-verify.js",
 			"settings":
 			{
-				"buffer_size": 321,
+				"buffer_size": 2962,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "docs/src/tabs.ejs",
+			"file": "js/bone-config.js",
 			"settings":
 			{
-				"buffer_size": 1399,
+				"buffer_size": 35,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "docs/src/layouts.ejs",
+			"file": "build/main.js",
 			"settings":
 			{
-				"buffer_size": 2008,
+				"buffer_size": 4572,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "style/header.less",
+			"contents": "/******/ (function(modules) { // webpackBootstrap\n/******/ 	// The module cache\n/******/ 	var installedModules = {};\n\n/******/ 	// The require function\n/******/ 	function __webpack_require__(moduleId) {\n\n/******/ 		// Check if module is in cache\n/******/ 		if(installedModules[moduleId])\n/******/ 			return installedModules[moduleId].exports;\n\n/******/ 		// Create a new module (and put it into the cache)\n/******/ 		var module = installedModules[moduleId] = {\n/******/ 			exports: {},\n/******/ 			id: moduleId,\n/******/ 			loaded: false\n/******/ 		};\n\n/******/ 		// Execute the module function\n/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);\n\n/******/ 		// Flag the module as loaded\n/******/ 		module.loaded = true;\n\n/******/ 		// Return the exports of the module\n/******/ 		return module.exports;\n/******/ 	}\n\n\n/******/ 	// expose the modules object (__webpack_modules__)\n/******/ 	__webpack_require__.m = modules;\n\n/******/ 	// expose the module cache\n/******/ 	__webpack_require__.c = installedModules;\n\n/******/ 	// __webpack_public_path__\n/******/ 	__webpack_require__.p = \"\";\n\n/******/ 	// Load entry module and return exports\n/******/ 	return __webpack_require__(0);\n/******/ })\n/************************************************************************/\n/******/ ([\n/* 0 */\n/***/ function(module, exports, __webpack_require__) {\n\n	var verify = __webpack_require__(1);\n\n	 var tets = 22;\n\n/***/ },\n/* 1 */\n/***/ function(module, exports) {\n\n	module.exports.verify = function(obj){\n		$this = $(obj);\n		var flag = true;\n		var msg = {\n			'required': '此项不能为空',\n			'wrong': '此项格式错误'\n		}\n\n		$this.find('.verify-required').each(function(){\n			add_state($(this), '');\n			if (check_empty($(this).val())) {\n				add_state($(this), msg.required);\n				flag = false;\n			} \n		});\n\n		$this.find('.verify-email').each(function(){\n			add_state($(this), '');\n			if (check_empty($(this).val())) {\n				if (allow_empty($(this))) {\n					return true;\n				};\n				add_state($(this), msg.required);\n				flag = false;\n			} else if (!check_email($(this).val())) {\n				add_state($(this), msg.wrong);\n				flag = false;\n			}\n		});\n\n		$this.find('.verify-url').each(function(){\n			add_state($(this), '');\n			if (check_empty($(this).val())) {\n				if (allow_empty($(this))) {\n					return true;\n				};\n				add_state($(this), msg.required);\n				flag = false;\n			} else if (!check_url($(this).val())) {\n				add_state($(this), msg.wrong);\n				flag = false;\n			}\n		});\n\n		$this.find('.verify-password').each(function(){\n			add_state($(this), '');\n\n			if (check_empty($(this).val())) {\n				if (allow_empty($(this))) {\n					return true;\n				};\n				add_state($(this), msg.required);\n				flag = false;\n			} else if (!check_psd($(this).val())) {\n				add_state($(this), msg.wrong);\n				flag = false;\n			}\n		});\n\n		$this.find('.verify-nocn').each(function(){\n			add_state($(this), '');\n			if (check_empty($(this).val())) {\n				if (allow_empty($(this))) {\n					return true;\n				};\n				add_state($(this), msg.required);\n				flag = false;\n			} else if (!check_nocn($(this).val())) {\n				add_state($(this), msg.wrong);\n				flag = false;\n			}\n		});\n\n		//bone.placeholder.refresh();\n		\n		return flag;\n	}\n\n\n	function allow_empty(obj){\n		if(obj.attr('class').indexOf('verify-empty') < 0){\n			return false;\n		} else {\n			return true;\n		}\n	}	\n\n	function set_state(params){\n		for(key in params){\n			if (params[key] == '') {\n				$(key).next('.input-wrong').remove();\n			} else {\n				add_state($(key), params[key]);\n			};\n		}\n	}\n\n	function add_state(aim, info){\n		aim.next('.input-wrong').remove();\n		if (info != '') {\n			info = aim.attr('data-msg')?aim.attr('data-msg'):info;\n			aim.after('<span class=\"input-wrong\"><i class=\"fa  fa-exclamation-circle \"></i> ' + info + '</span>');\n		} else {\n			aim.next('.input-wrong').remove();\n		};\n	}\n\n	function check_empty(value){\n		//var reg = /^\\s$/;\n		if(value.replace(' ', '') != ''){\n			return false;\n		}\n		return true;\n	}\n\n	function check_email(value){\n		  var reg = /^([a-zA-Z0-9_\\.\\-])+\\@(([a-zA-Z0-9\\-])+\\.)+([a-zA-Z0-9]{2,4})+$/;\n		  if(!reg.test(value)){\n		   		return false;\n		  }\n		  return true;\n	}\n\n	function check_url(value){\n		var reg = /[a-zA-Z0-9]+\\.[a-z]+/i;\n		if(!reg.test(value)){\n			return false;\n		}\n		return true;\n	}\n\n	function check_psd(value){\n		var reg = /[a-zA-Z0-9]{6,14}/;\n		if(!reg.test(value)){\n			return false;\n		}\n		return true;\n	}\n\n	function check_nocn(value){\n		var reg = /[\\u4E00-\\u9FA5]/i;\n		if(reg.test(value)){\n			return false;\n		}\n		return true;\n	}\n\n\n/***/ }\n/******/ ]);",
+			"file": "build/build/main.js",
+			"file_size": 4719,
+			"file_write_time": 130897935177044591,
 			"settings":
 			{
-				"buffer_size": 1212,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "style/margin.less",
-			"settings":
-			{
-				"buffer_size": 407,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "docs/commonmenu.html",
-			"settings":
-			{
-				"buffer_size": 295,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "style/buttons.less",
-			"settings":
-			{
-				"buffer_size": 1762,
+				"buffer_size": 4547,
 				"line_ending": "Windows"
 			}
 		},
@@ -470,23 +382,23 @@
 			"file": "fonts/iconfont.css",
 			"settings":
 			{
-				"buffer_size": 3275,
+				"buffer_size": 3284,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "docs/src/fonticon.ejs",
+			"file": "docs/src/source.ejs",
 			"settings":
 			{
-				"buffer_size": 18922,
+				"buffer_size": 806,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "style/input.less",
+			"file": "docs/verify.html",
 			"settings":
 			{
-				"buffer_size": 2344,
+				"buffer_size": 6116,
 				"line_ending": "Windows"
 			}
 		},
@@ -496,6 +408,22 @@
 			{
 				"buffer_size": 3292,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "docs/src/verify.ejs",
+			"settings":
+			{
+				"buffer_size": 1272,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "docs/src/form.ejs",
+			"settings":
+			{
+				"buffer_size": 3053,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -539,24 +467,37 @@
 	},
 	"file_history":
 	[
+		"/D/sae/wwwroot/source/bone-mobile/docs/src/full.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/style/layouts.less",
+		"/D/sae/wwwroot/source/bone-mobile/style/response.less",
+		"/D/sae/wwwroot/source/bone-mobile/style/theme.less",
+		"/D/sae/wwwroot/source/bone-mobile/docs/src/commonsidebar.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/style/menu.less",
+		"/D/sae/wwwroot/source/Moon01/moon02.sql",
+		"/D/sae/wwwroot/source/bone-mobile/style/tabs.less",
+		"/D/sae/wwwroot/source/bone-mobile/style/bone.less",
+		"/D/sae/wwwroot/source/bone-mobile/docs/src/index.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/docs/src/commonheader.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/docs/src/tabs.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/docs/src/layouts.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/style/header.less",
+		"/D/sae/wwwroot/source/bone-mobile/style/margin.less",
+		"/D/sae/wwwroot/source/bone-mobile/docs/commonmenu.html",
+		"/D/sae/wwwroot/source/bone-mobile/style/buttons.less",
+		"/D/sae/wwwroot/source/bone-mobile/fonts/iconfont.css",
+		"/D/sae/wwwroot/source/bone-mobile/docs/src/fonticon.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/style/input.less",
+		"/D/sae/wwwroot/source/bone-mobile/gulpfile.js",
 		"/D/sae/wwwroot/source/bone-mobile/docs/tabs.html",
 		"/C/Users/tgoooo/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/D/sae/wwwroot/source/bone-mobile/docs/src/buttons.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/docs/src/sidebar.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/docs/src/tmp.ejs",
-		"/D/sae/wwwroot/source/bone-mobile/docs/src/commonsidebar.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/docs/src/list.ejs",
-		"/D/sae/wwwroot/source/bone-mobile/style/tabs.less",
 		"/D/sae/wwwroot/source/bone-mobile/style/sidebar.less",
 		"/E/javaweb/maddog/WebContent/manager/system/importData3.jsp",
 		"/D/sae/wwwroot/source/bone-mobile/style/core.less",
-		"/D/sae/wwwroot/source/bone-mobile/style/buttons.less",
-		"/D/sae/wwwroot/source/bone-mobile/style/theme.less",
-		"/D/sae/wwwroot/source/bone-mobile/docs/src/tabs.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/docs/source.php",
-		"/D/sae/wwwroot/source/bone-mobile/gulpfile.js",
-		"/D/sae/wwwroot/source/bone-mobile/style/layouts.less",
-		"/D/sae/wwwroot/source/bone-mobile/docs/src/index.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/build/bone-ce6dcbc6df.css",
 		"/D/sae/wwwroot/source/bone-mobile/style/article.less",
 		"/E/javaweb/maddog/docs/index.html",
@@ -573,24 +514,18 @@
 		"/E/javaweb/maddog/WebContent/manager/js/controllers/lee/help.js",
 		"/E/javaweb/maddog/WebContent/manager/js/controllers/lee/gmap.js",
 		"/D/sae/wwwroot/source/bone-mobile/docs/commonsidebar.php",
-		"/D/sae/wwwroot/source/bone-mobile/style/input.less",
 		"/D/sae/wwwroot/source/bone-mobile/docs/form.php",
 		"/D/sae/wwwroot/source/bone-mobile/style/form.less",
 		"/D/sae/wwwroot/source/bone-mobile/style/hack.less",
-		"/D/sae/wwwroot/source/bone-mobile/style/bone.less",
 		"/E/Nodejs/ghost/content/themes/alife/post.hbs",
-		"/D/sae/wwwroot/source/bone-mobile/docs/src/fonticon.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/docs/src/form.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/docs/src/header.ejs",
-		"/D/sae/wwwroot/source/bone-mobile/docs/src/layouts.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/docs/src/menu.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/docs/src/source.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/docs/buttons.html",
 		"/D/sae/wwwroot/source/bone-mobile/node_modules/gulp-content-includer/index.js",
-		"/D/sae/wwwroot/source/bone-mobile/docs/src/commonheader.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/docs/buttons.php",
 		"/D/sae/wwwroot/source/bone-mobile/docs/inputs.php",
-		"/D/sae/wwwroot/source/bone-mobile/style/header.less",
 		"/D/sae/wwwroot/source/bone-mobile/docs/fonticon.php",
 		"/D/sae/wwwroot/source/bone-mobile/docs/index.php",
 		"/D/sae/wwwroot/source/bone-mobile/docs/layouts.php",
@@ -600,7 +535,6 @@
 		"/D/sae/wwwroot/source/bone-mobile/docs/commonmenu.php",
 		"/D/sae/wwwroot/source/bone-mobile/docs/menu.php",
 		"/D/sae/wwwroot/source/bone-mobile/style/box.less",
-		"/D/sae/wwwroot/source/bone-mobile/style/menu.less",
 		"/D/sae/wwwroot/source/bone-mobile/style/padding.less",
 		"/D/sae/wwwroot/source/bone-mobile/bone-mobile.sublime-project",
 		"/E/javaweb/elemanager/.classpath",
@@ -660,13 +594,7 @@
 		"/D/sae/wwwroot/leeopen/1/bone/bone.min.css",
 		"/D/sae/wwwroot/leeopen/1/bone/less/grid.less",
 		"/C/Windows/System32/drivers/etc/hosts",
-		"/D/sae/wwwroot/source/Mercury/application/views/order/comment.php",
-		"/D/sae/wwwroot/source/Mercury/application/controllers/Order.php",
-		"/D/sae/wwwroot/source/Mercury/application/controllers/Welcome.php",
-		"/D/sae/wwwroot/source/Mercury/static/Gruntfile.js",
-		"/D/sae/wwwroot/source/Mercury/static/less/main.less",
-		"/D/sae/wwwroot/source/Mercury/static/less/setting.less",
-		"/D/sae/wwwroot/source/Mercury/static/js/score_widget.js"
+		"/D/sae/wwwroot/source/Mercury/application/views/order/comment.php"
 	],
 	"find":
 	{
@@ -830,219 +758,11 @@
 	"groups":
 	[
 		{
-			"selected": 20,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "docs/src/full.ejs",
-					"settings":
-					{
-						"buffer_size": 1755,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								703,
-								703
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "style/layouts.less",
-					"settings":
-					{
-						"buffer_size": 987,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								820,
-								820
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "style/response.less",
-					"settings":
-					{
-						"buffer_size": 1461,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1397,
-								1397
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 810.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "style/theme.less",
-					"settings":
-					{
-						"buffer_size": 2863,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								539,
-								546
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "docs/src/commonsidebar.ejs",
-					"settings":
-					{
-						"buffer_size": 1701,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								572,
-								572
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "style/menu.less",
-					"settings":
-					{
-						"buffer_size": 1282,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								272,
-								272
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 864.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/D/sae/wwwroot/source/Moon01/moon02.sql",
-					"settings":
-					{
-						"buffer_size": 5683,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1691,
-								1691
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SQL/SQL.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 445.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "style/tabs.less",
-					"settings":
-					{
-						"buffer_size": 2324,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								26,
-								14
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
 					"file": "style/grid.less",
 					"settings":
 					{
@@ -1053,8 +773,8 @@
 						"selection":
 						[
 							[
-								402,
-								402
+								313,
+								313
 							]
 						],
 						"settings":
@@ -1068,24 +788,24 @@
 					"type": "text"
 				},
 				{
-					"buffer": 9,
-					"file": "style/bone.less",
+					"buffer": 1,
+					"file": "gulpfile.js",
 					"settings":
 					{
-						"buffer_size": 496,
+						"buffer_size": 1164,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								443,
-								443
+								693,
+								693
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1094,24 +814,24 @@
 					"type": "text"
 				},
 				{
-					"buffer": 10,
-					"file": "docs/src/index.ejs",
+					"buffer": 2,
+					"file": "js/main.js",
 					"settings":
 					{
-						"buffer_size": 1187,
+						"buffer_size": 128,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								591,
-								591
+								116,
+								116
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1120,19 +840,149 @@
 					"type": "text"
 				},
 				{
-					"buffer": 11,
-					"file": "docs/src/commonheader.ejs",
+					"buffer": 3,
+					"file": "js/bone-verify.js",
 					"settings":
 					{
-						"buffer_size": 321,
+						"buffer_size": 2962,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								321,
-								321
+								457,
+								457
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "js/bone-config.js",
+					"settings":
+					{
+						"buffer_size": 35,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								35
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "build/main.js",
+					"settings":
+					{
+						"buffer_size": 4572,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1610,
+								1610
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 486.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "build/build/main.js",
+					"settings":
+					{
+						"buffer_size": 4547,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "fonts/iconfont.css",
+					"settings":
+					{
+						"buffer_size": 3284,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								961,
+								961
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "docs/src/source.ejs",
+					"settings":
+					{
+						"buffer_size": 806,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								806,
+								806
 							]
 						],
 						"settings":
@@ -1146,89 +996,11 @@
 					"type": "text"
 				},
 				{
-					"buffer": 12,
-					"file": "docs/src/tabs.ejs",
+					"buffer": 9,
+					"file": "docs/verify.html",
 					"settings":
 					{
-						"buffer_size": 1399,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								779,
-								779
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 216.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "docs/src/layouts.ejs",
-					"settings":
-					{
-						"buffer_size": 2008,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								410,
-								410
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 324.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "style/header.less",
-					"settings":
-					{
-						"buffer_size": 1212,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								347,
-								347
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": "style/margin.less",
-					"settings":
-					{
-						"buffer_size": 407,
+						"buffer_size": 6116,
 						"regions":
 						{
 						},
@@ -1241,140 +1013,10 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"file": "docs/commonmenu.html",
-					"settings":
-					{
-						"buffer_size": 295,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								295,
-								295
-							]
-						],
-						"settings":
-						{
 							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 17,
-					"file": "style/buttons.less",
-					"settings":
-					{
-						"buffer_size": 1762,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								379,
-								379
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 18,
-					"file": "fonts/iconfont.css",
-					"settings":
-					{
-						"buffer_size": 3275,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								767,
-								767
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 54.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 19,
-					"file": "docs/src/fonticon.ejs",
-					"settings":
-					{
-						"buffer_size": 18922,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								920,
-								920
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 162.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 20,
-					"file": "style/input.less",
-					"settings":
-					{
-						"buffer_size": 2344,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								199,
-								199
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1620.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1382,11 +1024,11 @@
 			]
 		},
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
-					"buffer": 21,
+					"buffer": 10,
 					"file": "/E/Download/iconfont (2)/ux_1445171175_7056942/iconfont.css",
 					"settings":
 					{
@@ -1407,6 +1049,58 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "docs/src/verify.ejs",
+					"settings":
+					{
+						"buffer_size": 1272,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								995,
+								995
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 216.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "docs/src/form.ejs",
+					"settings":
+					{
+						"buffer_size": 3053,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1397,
+								1397
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 396.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1442,7 +1136,7 @@
 		"cols":
 		[
 			0.0,
-			0.795811518325,
+			0.381508153321,
 			1.0
 		],
 		"rows":
@@ -1845,6 +1539,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 220.0,
+	"side_bar_width": 203.0,
 	"status_bar_visible": true
 }

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Bone-mobile header</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<%- include source.ejs %>
+</head>
+<body class="bo-body">
+<%- include commonheader.ejs %>
+<%- include commonmenu.ejs %>
+<%- include commonsidebar.ejs %>
+
+<section class="bo-layout-main">
+	<div class="bo-box bo-p0111 bo-article">
+		<h2>表单验证 <small>form verify</small></h2>
+ 
+	</div>
+	<div class="bo-box bo-m1000 bo-p1111">
+		<input type="text" class="bo-input" placeholder="Search"> <button class="bo-btn-primary">button</button>
+	</div>
+ 
+ 	<div class="bo-box bo-m1000 bo-p1111">
+ 		<div class="bo-form" id="form">		 
+ 			<div class="bo-form-item">
+ 				<label class="bo-label-required">必填项</label>
+ 				<div>
+ 					<input class="bo-input bo-form-control verify-required" type="text" placeholder="Enter something">
+ 				</div>
+ 			</div>
+ 			 	
+ 			<div class="bo-form-item">
+ 				<input type="submit" class="bo-btn-primary" id="go" value="确 定">
+ 				<input type="submit" class="bo-btn-blank" value="取 消">
+ 			</div>
+ 		 		
+ 		</div>
+ <script type="syntaxhighlighter" class="brush: csharp;">
+<![CDATA[
+
+]]>
+</script>
+ 	</div>
+</section>
+</body>
+</html>

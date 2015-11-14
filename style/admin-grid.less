@@ -1,0 +1,42 @@
+.@{prefix}{
+	//带侧栏的栅格,系统管理布局for PC
+	&container-sys{
+		width: 100%;
+		height: 100%;
+	}
+
+	&col-header{
+		width: 100%;
+		height: @ad-header-height;
+		background: @color-primary;
+		color: #fff;
+	}
+
+	&header-fixed{
+		position: absolute;
+		left:0;
+		top:0;
+	}
+
+	&col-sidebar{
+		width: @ad-sidebar-width; 
+		background: @ad-sidebar-background-color;
+		color: #fff;
+	}
+
+	&sidebar-fixed{
+		position: absolute;
+		left:0;
+		top: @ad-header-height;
+		bottom:0;
+	}
+
+	&col-content{
+		position: absolute;
+		right:0;
+		left: @ad-sidebar-width;
+		top: @ad-header-height;
+		bottom:0;
+		overflow-y: auto;
+	}
+}

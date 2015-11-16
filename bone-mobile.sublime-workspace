@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"border",
+				"border-radius"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"rg",
+				"rgba(r,g,b,a)"
+			],
+			[
 				"over",
 				"overflow"
 			],
@@ -18,10 +30,6 @@
 			[
 				"font",
 				"font-size"
-			],
-			[
-				"margin",
-				"margin-bottom"
 			],
 			[
 				"btn-back",
@@ -72,16 +80,8 @@
 				"removeClass"
 			],
 			[
-				"border",
-				"border-bottom"
-			],
-			[
 				"border-bo",
 				"border-bottom-left-radius"
-			],
-			[
-				"rg",
-				"rgba()"
 			],
 			[
 				"get",
@@ -320,125 +320,42 @@
 	"buffers":
 	[
 		{
-			"file": "style/grid.less",
+			"file": "/C/Users/tgoooo/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 			"settings":
 			{
-				"buffer_size": 1217,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "gulpfile.js",
-			"settings":
-			{
-				"buffer_size": 1164,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/main.js",
-			"settings":
-			{
-				"buffer_size": 128,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/bone-verify.js",
-			"settings":
-			{
-				"buffer_size": 3028,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/bone-config.js",
-			"settings":
-			{
-				"buffer_size": 35,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "build/main.js",
-			"settings":
-			{
-				"buffer_size": 1677,
+				"buffer_size": 253,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "/******/ (function(modules) { // webpackBootstrap\n/******/ 	// The module cache\n/******/ 	var installedModules = {};\n\n/******/ 	// The require function\n/******/ 	function __webpack_require__(moduleId) {\n\n/******/ 		// Check if module is in cache\n/******/ 		if(installedModules[moduleId])\n/******/ 			return installedModules[moduleId].exports;\n\n/******/ 		// Create a new module (and put it into the cache)\n/******/ 		var module = installedModules[moduleId] = {\n/******/ 			exports: {},\n/******/ 			id: moduleId,\n/******/ 			loaded: false\n/******/ 		};\n\n/******/ 		// Execute the module function\n/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);\n\n/******/ 		// Flag the module as loaded\n/******/ 		module.loaded = true;\n\n/******/ 		// Return the exports of the module\n/******/ 		return module.exports;\n/******/ 	}\n\n\n/******/ 	// expose the modules object (__webpack_modules__)\n/******/ 	__webpack_require__.m = modules;\n\n/******/ 	// expose the module cache\n/******/ 	__webpack_require__.c = installedModules;\n\n/******/ 	// __webpack_public_path__\n/******/ 	__webpack_require__.p = \"\";\n\n/******/ 	// Load entry module and return exports\n/******/ 	return __webpack_require__(0);\n/******/ })\n/************************************************************************/\n/******/ ([\n/* 0 */\n/***/ function(module, exports, __webpack_require__) {\n\n	var verify = __webpack_require__(1);\n\n	 var tets = 22;\n\n/***/ },\n/* 1 */\n/***/ function(module, exports) {\n\n	module.exports.verify = function(obj){\n		$this = $(obj);\n		var flag = true;\n		var msg = {\n			'required': '此项不能为空',\n			'wrong': '此项格式错误'\n		}\n\n		$this.find('.verify-required').each(function(){\n			add_state($(this), '');\n			if (check_empty($(this).val())) {\n				add_state($(this), msg.required);\n				flag = false;\n			} \n		});\n\n		$this.find('.verify-email').each(function(){\n			add_state($(this), '');\n			if (check_empty($(this).val())) {\n				if (allow_empty($(this))) {\n					return true;\n				};\n				add_state($(this), msg.required);\n				flag = false;\n			} else if (!check_email($(this).val())) {\n				add_state($(this), msg.wrong);\n				flag = false;\n			}\n		});\n\n		$this.find('.verify-url').each(function(){\n			add_state($(this), '');\n			if (check_empty($(this).val())) {\n				if (allow_empty($(this))) {\n					return true;\n				};\n				add_state($(this), msg.required);\n				flag = false;\n			} else if (!check_url($(this).val())) {\n				add_state($(this), msg.wrong);\n				flag = false;\n			}\n		});\n\n		$this.find('.verify-password').each(function(){\n			add_state($(this), '');\n\n			if (check_empty($(this).val())) {\n				if (allow_empty($(this))) {\n					return true;\n				};\n				add_state($(this), msg.required);\n				flag = false;\n			} else if (!check_psd($(this).val())) {\n				add_state($(this), msg.wrong);\n				flag = false;\n			}\n		});\n\n		$this.find('.verify-nocn').each(function(){\n			add_state($(this), '');\n			if (check_empty($(this).val())) {\n				if (allow_empty($(this))) {\n					return true;\n				};\n				add_state($(this), msg.required);\n				flag = false;\n			} else if (!check_nocn($(this).val())) {\n				add_state($(this), msg.wrong);\n				flag = false;\n			}\n		});\n\n		//bone.placeholder.refresh();\n		\n		return flag;\n	}\n\n\n	function allow_empty(obj){\n		if(obj.attr('class').indexOf('verify-empty') < 0){\n			return false;\n		} else {\n			return true;\n		}\n	}	\n\n	function set_state(params){\n		for(key in params){\n			if (params[key] == '') {\n				$(key).next('.input-wrong').remove();\n			} else {\n				add_state($(key), params[key]);\n			};\n		}\n	}\n\n	function add_state(aim, info){\n		aim.next('.input-wrong').remove();\n		if (info != '') {\n			info = aim.attr('data-msg')?aim.attr('data-msg'):info;\n			aim.after('<span class=\"input-wrong\"><i class=\"fa  fa-exclamation-circle \"></i> ' + info + '</span>');\n		} else {\n			aim.next('.input-wrong').remove();\n		};\n	}\n\n	function check_empty(value){\n		//var reg = /^\\s$/;\n		if(value.replace(' ', '') != ''){\n			return false;\n		}\n		return true;\n	}\n\n	function check_email(value){\n		  var reg = /^([a-zA-Z0-9_\\.\\-])+\\@(([a-zA-Z0-9\\-])+\\.)+([a-zA-Z0-9]{2,4})+$/;\n		  if(!reg.test(value)){\n		   		return false;\n		  }\n		  return true;\n	}\n\n	function check_url(value){\n		var reg = /[a-zA-Z0-9]+\\.[a-z]+/i;\n		if(!reg.test(value)){\n			return false;\n		}\n		return true;\n	}\n\n	function check_psd(value){\n		var reg = /[a-zA-Z0-9]{6,14}/;\n		if(!reg.test(value)){\n			return false;\n		}\n		return true;\n	}\n\n	function check_nocn(value){\n		var reg = /[\\u4E00-\\u9FA5]/i;\n		if(reg.test(value)){\n			return false;\n		}\n		return true;\n	}\n\n\n/***/ }\n/******/ ]);",
-			"file": "build/build/main.js",
-			"file_size": 4719,
-			"file_write_time": 130897935177044591,
+			"file": "style/common/dialog.less",
 			"settings":
 			{
-				"buffer_size": 4547,
+				"buffer_size": 1672,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "fonts/iconfont.css",
+			"file": "style/bone-pc.less",
 			"settings":
 			{
-				"buffer_size": 3284,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "docs/src/source.ejs",
-			"settings":
-			{
-				"buffer_size": 806,
+				"buffer_size": 637,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "docs/verify.html",
+			"file": "/E/javaweb/smart/trunck/sources/webresource/front/index.html",
 			"settings":
 			{
-				"buffer_size": 4278,
+				"buffer_size": 4411,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "docs/src/tabs.ejs",
+			"file": "style/addon/gelinwei.less",
 			"settings":
 			{
-				"buffer_size": 1399,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "style/form.less",
-			"settings":
-			{
-				"buffer_size": 783,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "style/theme.less",
-			"settings":
-			{
-				"buffer_size": 2929,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "build/bone.css",
-			"settings":
-			{
-				"buffer_size": 18658,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "style/input.less",
-			"settings":
-			{
-				"buffer_size": 2399,
+				"buffer_size": 2218,
 				"line_ending": "Windows"
 			}
 		},
@@ -462,7 +379,7 @@
 			"file": "docs/src/form.ejs",
 			"settings":
 			{
-				"buffer_size": 3551,
+				"buffer_size": 4073,
 				"line_ending": "Windows"
 			}
 		},
@@ -518,39 +435,61 @@
 	},
 	"file_history":
 	[
+		"/D/sae/bin/Apache2.2/conf/httpd.conf",
+		"/D/sae/wwwroot/source/bone-mobile/style/grid.less",
+		"/D/sae/wwwroot/source/bone-mobile/gulpfile.js",
+		"/D/sae/wwwroot/source/bone-mobile/style/bone-pc.less",
+		"/D/sae/wwwroot/source/bone-mobile/style/addon/gelinwei.less",
+		"/D/sae/wwwroot/source/bone-mobile/js/main.js",
+		"/D/sae/wwwroot/source/bone-mobile/js/bone-verify.js",
+		"/D/sae/wwwroot/source/bone-mobile/js/bone-config.js",
+		"/D/sae/wwwroot/source/bone-mobile/build/main.js",
+		"/D/sae/wwwroot/source/bone-mobile/build/build/main.js",
+		"/D/sae/wwwroot/source/bone-mobile/fonts/iconfont.css",
+		"/D/sae/wwwroot/source/bone-mobile/docs/src/source.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/docs/verify.html",
+		"/D/sae/wwwroot/source/bone-mobile/docs/src/tabs.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/style/admin-grid.less",
+		"/D/sae/wwwroot/source/bone-mobile/style/container.less",
+		"/D/sae/wwwroot/source/bone-mobile/style/form.less",
+		"/D/sae/wwwroot/source/bone-mobile/style/theme.less",
+		"/D/sae/wwwroot/source/bone-mobile/build/bone.css",
+		"/D/sae/wwwroot/source/bone-mobile/style/input.less",
+		"/D/sae/wwwroot/source/bone-mobile/style/menu.less",
+		"/D/sae/wwwroot/source/bone-mobile/style/article.less",
+		"/D/sae/wwwroot/source/bone-mobile/style/sidebar.less",
+		"/D/sae/wwwroot/source/bone-mobile/style/bone.less",
+		"/D/sae/wwwroot/source/bone-mobile/docs-pc/src/commonheader.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/docs-pc/src/commonmenu.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/docs-pc/src/commonsidebar.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/docs-pc/src/index.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/docs/src/index.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/docs-pc/src/source.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/docs/src/commonsidebar.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/docs-pc/index.html",
+		"/D/sae/wwwroot/source/bone-mobile/style/response.less",
+		"/D/sae/wwwroot/source/bone-mobile/style/pc/container.less",
 		"/C/Users/tgoooo/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/D/sae/wwwroot/source/bone-mobile/docs/src/full.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/style/layouts.less",
-		"/D/sae/wwwroot/source/bone-mobile/style/response.less",
-		"/D/sae/wwwroot/source/bone-mobile/style/theme.less",
-		"/D/sae/wwwroot/source/bone-mobile/docs/src/commonsidebar.ejs",
-		"/D/sae/wwwroot/source/bone-mobile/style/menu.less",
 		"/D/sae/wwwroot/source/Moon01/moon02.sql",
 		"/D/sae/wwwroot/source/bone-mobile/style/tabs.less",
-		"/D/sae/wwwroot/source/bone-mobile/style/bone.less",
-		"/D/sae/wwwroot/source/bone-mobile/docs/src/index.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/docs/src/commonheader.ejs",
-		"/D/sae/wwwroot/source/bone-mobile/docs/src/tabs.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/docs/src/layouts.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/style/header.less",
 		"/D/sae/wwwroot/source/bone-mobile/style/margin.less",
 		"/D/sae/wwwroot/source/bone-mobile/docs/commonmenu.html",
 		"/D/sae/wwwroot/source/bone-mobile/style/buttons.less",
-		"/D/sae/wwwroot/source/bone-mobile/fonts/iconfont.css",
 		"/D/sae/wwwroot/source/bone-mobile/docs/src/fonticon.ejs",
-		"/D/sae/wwwroot/source/bone-mobile/style/input.less",
-		"/D/sae/wwwroot/source/bone-mobile/gulpfile.js",
 		"/D/sae/wwwroot/source/bone-mobile/docs/tabs.html",
 		"/D/sae/wwwroot/source/bone-mobile/docs/src/buttons.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/docs/src/sidebar.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/docs/src/tmp.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/docs/src/list.ejs",
-		"/D/sae/wwwroot/source/bone-mobile/style/sidebar.less",
 		"/E/javaweb/maddog/WebContent/manager/system/importData3.jsp",
 		"/D/sae/wwwroot/source/bone-mobile/style/core.less",
 		"/D/sae/wwwroot/source/bone-mobile/docs/source.php",
 		"/D/sae/wwwroot/source/bone-mobile/build/bone-ce6dcbc6df.css",
-		"/D/sae/wwwroot/source/bone-mobile/style/article.less",
 		"/E/javaweb/maddog/docs/index.html",
 		"/E/javaweb/maddog/WebContent/manager/views/lee/history.html",
 		"/E/javaweb/maddog/WebContent/manager/views/lee/default.html",
@@ -566,13 +505,11 @@
 		"/E/javaweb/maddog/WebContent/manager/js/controllers/lee/gmap.js",
 		"/D/sae/wwwroot/source/bone-mobile/docs/commonsidebar.php",
 		"/D/sae/wwwroot/source/bone-mobile/docs/form.php",
-		"/D/sae/wwwroot/source/bone-mobile/style/form.less",
 		"/D/sae/wwwroot/source/bone-mobile/style/hack.less",
 		"/E/Nodejs/ghost/content/themes/alife/post.hbs",
 		"/D/sae/wwwroot/source/bone-mobile/docs/src/form.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/docs/src/header.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/docs/src/menu.ejs",
-		"/D/sae/wwwroot/source/bone-mobile/docs/src/source.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/docs/buttons.html",
 		"/D/sae/wwwroot/source/bone-mobile/node_modules/gulp-content-includer/index.js",
 		"/D/sae/wwwroot/source/bone-mobile/docs/buttons.php",
@@ -625,27 +562,7 @@
 		"/D/sae/wwwroot/source/Earth/application/views/main/searchresult.php",
 		"/D/sae/wwwroot/source/Earth/application/controllers/Main.php",
 		"/D/sae/wwwroot/source/Earth/index.php",
-		"/D/sae/wwwroot/source/Earth/application/views/home.php",
-		"/D/sae/wwwroot/source/Earth/js/modules1.0.3/interaction.js",
-		"/D/sae/wwwroot/source/Earth/js/modules1.0.3/common.js",
-		"/D/sae/wwwroot/source/Earth/js/main.home.js",
-		"/D/sae/wwwroot/source/Earth/static/less/grid.less",
-		"/D/sae/wwwroot/source/Earth/js/modules1.0.3/list.js",
-		"/D/sae/wwwroot/source/Earth/application/views/passport/login.php",
-		"/D/sae/wwwroot/source/Earth/application/views/contact.php",
-		"/D/sae/wwwroot/source/Earth/application/views/page.php",
-		"/D/sae/wwwroot/source/Earth/application/views/product.php",
-		"/D/sae/wwwroot/source/Earth/application/views/exchange.php",
-		"/D/sae/wwwroot/source/Earth/application/views/passport/register.php",
-		"/D/sae/wwwroot/source/Earth/application/views/common/source.php",
-		"/D/sae/wwwroot/source/Earth/static/less/setting.less",
-		"/D/sae/wwwroot/source/Earth/application/views/common/category.php",
-		"/D/sae/wwwroot/leeopen/1/bone/demos/form.html",
-		"/D/sae/wwwroot/leeopen/1/bone/bone.min.js",
-		"/D/sae/wwwroot/leeopen/1/bone/bone.min.css",
-		"/D/sae/wwwroot/leeopen/1/bone/less/grid.less",
-		"/C/Windows/System32/drivers/etc/hosts",
-		"/D/sae/wwwroot/source/Mercury/application/views/order/comment.php"
+		"/D/sae/wwwroot/source/Earth/application/views/home.php"
 	],
 	"find":
 	{
@@ -663,6 +580,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"dialog",
+			",\n",
+			"FollowSymLinks",
+			"mod_include",
+			"mode_include",
+			"background: none;",
 			".php",
 			"border-box",
 			"list",
@@ -783,7 +706,7 @@
 			"GLOBAL.add_flag"
 		],
 		"highlight": true,
-		"in_selection": false,
+		"in_selection": true,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
@@ -809,54 +732,28 @@
 	"groups":
 	[
 		{
-			"selected": 11,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "style/grid.less",
+					"file": "/C/Users/tgoooo/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 					"settings":
 					{
-						"buffer_size": 1217,
+						"buffer_size": 253,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								313,
-								313
+								253,
+								253
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 57.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "gulpfile.js",
-					"settings":
-					{
-						"buffer_size": 1164,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								693,
-								693
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -865,24 +762,50 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "js/main.js",
+					"buffer": 1,
+					"file": "style/common/dialog.less",
 					"settings":
 					{
-						"buffer_size": 128,
+						"buffer_size": 1672,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								116,
-								116
+								501,
+								501
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 648.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "style/bone-pc.less",
+					"settings":
+					{
+						"buffer_size": 637,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								412,
+								412
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -892,226 +815,44 @@
 				},
 				{
 					"buffer": 3,
-					"file": "js/bone-verify.js",
+					"file": "/E/javaweb/smart/trunck/sources/webresource/front/index.html",
 					"settings":
 					{
-						"buffer_size": 3028,
+						"buffer_size": 4411,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1948,
-								1948
+								205,
+								205
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1404.0,
+						"translation.y": 324.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "js/bone-config.js",
+					"file": "style/addon/gelinwei.less",
 					"settings":
 					{
-						"buffer_size": 35,
+						"buffer_size": 2218,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								35
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "build/main.js",
-					"settings":
-					{
-						"buffer_size": 1677,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 486.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "build/build/main.js",
-					"settings":
-					{
-						"buffer_size": 4547,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "fonts/iconfont.css",
-					"settings":
-					{
-						"buffer_size": 3284,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								961,
-								961
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "docs/src/source.ejs",
-					"settings":
-					{
-						"buffer_size": 806,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								806,
-								806
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "docs/verify.html",
-					"settings":
-					{
-						"buffer_size": 4278,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1620.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "docs/src/tabs.ejs",
-					"settings":
-					{
-						"buffer_size": 1399,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								727,
-								727
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 270.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "style/form.less",
-					"settings":
-					{
-						"buffer_size": 783,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								367,
-								367
+								185,
+								185
 							]
 						],
 						"settings":
@@ -1119,85 +860,7 @@
 							"syntax": "Packages/LESS/LESS.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "style/theme.less",
-					"settings":
-					{
-						"buffer_size": 2929,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								2929
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1350.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "build/bone.css",
-					"settings":
-					{
-						"buffer_size": 18658,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 9359.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "style/input.less",
-					"settings":
-					{
-						"buffer_size": 2399,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								2399
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 54.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1209,7 +872,7 @@
 			"sheets":
 			[
 				{
-					"buffer": 15,
+					"buffer": 5,
 					"file": "/E/Download/iconfont (2)/ux_1445171175_7056942/iconfont.css",
 					"settings":
 					{
@@ -1235,7 +898,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 16,
+					"buffer": 6,
 					"file": "docs/src/verify.ejs",
 					"settings":
 					{
@@ -1261,19 +924,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 17,
+					"buffer": 7,
 					"file": "docs/src/form.ejs",
 					"settings":
 					{
-						"buffer_size": 3551,
+						"buffer_size": 4073,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2158,
-								2173
+								676,
+								569
 							]
 						],
 						"settings":
@@ -1281,13 +944,13 @@
 							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 8892.0,
+						"translation.y": 99.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 18,
+					"buffer": 8,
 					"file": "docs/src/list.ejs",
 					"settings":
 					{
@@ -1343,7 +1006,7 @@
 		"cols":
 		[
 			0.0,
-			0.559245960502,
+			0.685366922328,
 			1.0
 		],
 		"rows":
@@ -1746,6 +1409,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 252.0,
+	"side_bar_width": 223.0,
 	"status_bar_visible": true
 }

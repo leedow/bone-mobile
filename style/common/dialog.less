@@ -1,0 +1,105 @@
+.@{prefix}{
+	&dialog-layout{
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,0.5);
+		//background: url(../img/hide-layout.png);
+		//display: none;
+		z-index: 99999;
+	}
+
+	&dialog{
+		position: relative;
+		border-radius: 4px;
+		overflow: hidden;
+		width: 400px;
+		background: #fff;
+		color: #444;
+		padding-top: 40px;
+		padding-bottom: 50px;
+		//margin-top: 100px;	
+	
+		&-title{
+			position: absolute;
+			width: 100%;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			left:0;
+			top:0;
+			font-size: 16px;
+			margin:0;
+			padding:3px 0 0 0;
+		}
+
+		&-close{
+			position: absolute;
+			width:40px;
+			height:40px;
+			line-height: 40px;
+			font-size: 18px;
+			top:0;
+			right:0;
+			cursor: pointer;
+
+			&:hover{
+				//color:@base-main-color ;
+			}
+		}
+
+		&-content{
+			height: 100%;
+			//width:100%;
+			overflow: hidden;
+			padding:15px;
+		}
+
+		&-buttons{
+			position: absolute;
+			bottom:0;
+			left:0;
+			height: 50px;
+			width: 100%;
+			.button{
+				float: right;
+				margin-right: 15px;
+			}
+		}
+	}
+
+ 
+ 
+
+	@-webkit-keyframes open {
+		from { -webkit-transform: scale(0.2);}
+		to { -webkit-transform: scale(1);}
+	}
+
+	@keyframes open {
+		from {transform: scale(0.1);}
+		to { transform: scale(1); }
+	}
+
+	@-webkit-keyframes close {
+		from { -webkit-transform: scale(1);}
+		to { -webkit-transform: scale(0); display: none;}
+	}
+
+	@keyframes close {
+		from {transform: scale(1);}
+		to { transform: scale(0); display: none;}
+	}
+
+
+	&dialog-open{
+		-webkit-animation: open 0.3s both ease;
+		animation: open 0.3s both ease;
+	}
+	&dialog-close{
+		-webkit-animation: close 0.3s both ease;
+		animation: close 0.3s both ease;
+	}
+}

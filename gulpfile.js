@@ -11,7 +11,7 @@ var rev				= require('gulp-rev');
 
 
 gulp.task('css', function(){
-	watch('./style/*.less', function(){
+	watch('./style/**/*.less', function(){
 		gulp.src('./style/bone.less')
 			.pipe(less())
 			.on('error', function(err) {
@@ -32,7 +32,8 @@ gulp.task('css', function(){
 			//.pipe(rev())
 			.pipe(autoprefixer())
 			//.pipe(minifyCSS())
-			.pipe(gulp.dest('./build'));
+			.pipe(gulp.dest('./build'))
+			.pipe(gulp.dest('E:/javaweb/smart/trunck/sources/webresource/front/style'));//for格林卫
 	});
 
 });
@@ -55,6 +56,11 @@ gulp.task('doc', function(){
 		gulp.src('./docs/src/*.ejs')
 			.pipe(ejs())
 			.pipe(gulp.dest('./docs'));
+	});
+	watch('./docs-pc/src/*.ejs', function(){
+		gulp.src('./docs-pc/src/*.ejs')
+			.pipe(ejs())
+			.pipe(gulp.dest('./docs-pc'));
 	});
 });
 

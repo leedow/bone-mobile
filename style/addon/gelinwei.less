@@ -1,0 +1,156 @@
+ //格林卫定制
+ .banner-container{
+ 	overflow: hidden;
+ 	position: relative;
+
+
+ 	.header{
+ 		position: absolute;
+ 		left:0;
+ 		top:0;
+ 		//margin-left:-550px;
+ 		width: 100%;
+ 		padding:20px 30px;
+
+
+ 		#logo{
+ 			float: left;
+ 			width: 240px;
+ 		}
+
+ 		.nav{
+ 			float: right;
+ 			margin-top: 8px;
+ 			font-size: 16px;
+ 			li{
+ 				display: inline;
+ 				a{
+ 					display: inline-block;
+ 					padding:10px 20px;
+ 					color:#fff;
+ 					text-shadow:0px 1px 1px #999;
+ 					font-size: 18px;
+ 				}
+ 				a:hover{
+ 					background: rgba(255, 255, 255, 0.2);
+ 					border-radius: 20px;
+ 				}
+ 			}
+ 		}
+ 	}
+
+ 	.banner{
+ 		width: 100%;
+ 		vertical-align:bottom;
+ 	}
+
+ 	.search{
+ 		padding: 15px;
+ 		position: absolute;
+ 		bottom:0;
+ 		left:0;
+ 		width: 100%;
+ 		background: rgba(0, 0, 0, 0.5);
+
+ 		.search-input{
+ 			background: none;
+ 			border:1px #fff solid;
+ 			color:#fff;
+ 			text-align: center;
+ 			width:40%;
+ 			border-radius:23px;
+
+ 			&::-webkit-input-placeholder{
+ 				color:#fff;
+ 			}
+
+ 			&:focus{
+ 				background: #fff;
+ 				color:#444;
+ 			}
+ 		}
+
+ 		.search-button{
+ 			background: none;
+ 			border:0;
+ 			color:#fff;
+ 			border-radius:23px;
+ 			&:hover{
+ 				background: rgba(255, 255, 255, 0.2);
+ 			}
+ 		}
+ 	}
+ }
+
+ .home-container{
+ 	width: 980px;
+ 	margin:0 auto;
+ }
+
+ .home-title{
+ 	padding:40px 0;
+ 	h3{
+ 		color: #565a5c;
+ 		font-size: 32px;
+ 	}
+ 	p{
+ 		color:#565a5c;
+ 		font-size: 22px;
+ 		padding:0;
+ 		margin:0;
+ 	}
+ }
+
+ .pic-box{
+ 	margin:10px;
+ 	height: 340px;
+ 	overflow: hidden;
+ 	position: relative;
+ 	border-radius: 4px;	
+ 	img{
+ 		width:100%;
+ 		border-radius: 4px;
+ 	}
+
+ 	.cover{
+ 		position: absolute;
+ 		left:0;
+ 		top:0;
+ 		height: 100%;
+ 		width:100%;
+ 		background: rgba(0, 0, 0, 0.3);
+ 		text-align: center;
+ 		display: block;
+
+ 		&:hover{
+ 			background: rgba(0, 0, 0, 0.1)
+ 		}
+		 
+ 		.name{
+ 			display: table-cell;
+ 			vertical-align: middle;
+ 			color:#fff;
+ 			height:340px;
+ 			width: 340px;
+
+ 			text-align: center;
+ 			div{
+ 				display: block;
+ 				width: 100%;
+ 				text-align: center;
+ 				vertical-align: middle;
+ 				h2{
+ 					font-size: 28px;
+ 					font-weight: normal;
+ 				}
+ 				p{
+ 					font-size: 18px;
+ 				}
+ 			}
+ 		}
+ 	}
+ }
+
+ .more-container{
+ 	padding:40px 0;
+ }

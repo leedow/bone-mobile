@@ -383,6 +383,7 @@ p {
 }
 .bo-btn,
 .bo-btn-primary,
+.bo-btn-primary-underline,
 .bo-btn-warm,
 .bo-btn-blank,
 .bo-btn-primary-blank,
@@ -391,7 +392,7 @@ p {
   font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
   cursor: pointer;
   display: inline-block;
-  padding: 6px 12px;
+  padding: 8px 12px;
   border: 0;
   border-radius: 2px;
   line-height: 1.5;
@@ -400,6 +401,7 @@ p {
 }
 .bo-btn i,
 .bo-btn-primary i,
+.bo-btn-primary-underline i,
 .bo-btn-warm i,
 .bo-btn-blank i,
 .bo-btn-primary-blank i,
@@ -453,6 +455,16 @@ p {
   background: #2e74ff;
   color: #ffffff;
 }
+.bo-btn-primary-underline {
+  color: #ffffff;
+  background: #6699ff;
+  border: 1px #6699ff solid;
+  border-bottom: 3px #1966ff solid;
+}
+.bo-btn-primary-underline:hover {
+  background: #2e74ff;
+  color: #ffffff;
+}
 .bo-btn-warm {
   color: #ffffff;
   background: #ff6633;
@@ -502,8 +514,8 @@ p {
 }
 .bo-input,
 .bo-select {
-  padding: 7px 10px;
-  height: 35px;
+  padding: 9px 10px;
+  height: 39px;
 }
 .bo-input-lg,
 .bo-select-lg {
@@ -525,8 +537,8 @@ p {
   content: '\e612';
   font-size: 20px;
   color: #ff6633;
-  height: 35px;
-  line-height: 35px;
+  height: 39px;
+  line-height: 39px;
 }
 .bo-input-wrong > .bo-input,
 .bo-input-wrong > .bo-input-lg {
@@ -582,8 +594,8 @@ p {
   content: '\e608';
   font-size: 20px;
   color: #66cc33;
-  height: 35px;
-  line-height: 35px;
+  height: 39px;
+  line-height: 39px;
 }
 .bo-input-pass > .bo-input,
 .bo-input-pass > .bo-input-lg {
@@ -607,8 +619,8 @@ p {
   font-family: iconfont;
   font-size: 20px;
   color: #66cc33;
-  height: 35px;
-  line-height: 35px;
+  height: 39px;
+  line-height: 39px;
   color: #999999;
 }
 .bo-input-pass-lg:after {
@@ -1009,10 +1021,43 @@ p {
 .bo-input {
   *padding-top: 0;
   *padding-bottom: 0;
-  *line-height: 35px;
+  *line-height: 39px;
 }
 .bo-input-lg {
   *padding-top: 0;
   *padding-bottom: 0;
   *line-height: 46px;
+}
+.bo-dropdown-left-bottom,
+.bo-dropdown-right-bottom,
+.bo-dropdown-right-top,
+.bo-dropdown-left-top {
+  position: relative;
+  display: inline-block;
+}
+.bo-dropdown-left-bottom .bo-dropdown-menu,
+.bo-dropdown-right-bottom .bo-dropdown-menu,
+.bo-dropdown-right-top .bo-dropdown-menu,
+.bo-dropdown-left-top .bo-dropdown-menu {
+  position: absolute;
+  border: 1px #e0e0e0 solid;
+  border-radius: 2px;
+  background: #fff;
+  z-index: 999;
+}
+.bo-dropdown-left-bottom .bo-dropdown-menu {
+  top: 100%;
+  left: 0;
+}
+.bo-dropdown-right-bottom .bo-dropdown-menu {
+  top: 100%;
+  right: 0;
+}
+.bo-dropdown-right-top .bo-dropdown-menu {
+  bottom: 100% ;
+  right: 0;
+}
+.bo-dropdown-left-top .bo-dropdown-menu {
+  bottom: 100%;
+  left: 0;
 }

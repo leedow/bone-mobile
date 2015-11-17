@@ -1,5 +1,5 @@
 .@{prefix}{
-	&btn, &btn-primary, &btn-warm,&btn-blank, &btn-primary-blank, &btn-warm-blank{
+	&btn, &btn-primary,&btn-primary-underline, &btn-warm,&btn-blank, &btn-primary-blank, &btn-warm-blank{
 		-webkit-appearance: none !important;
 		font-family: @font-family;
 		cursor: pointer;
@@ -70,6 +70,17 @@
 		background: @btn-background-primary;
 		border:1px @btn-background-primary solid;
 
+		&:hover{
+			background: darken(@btn-background-primary, 11%);
+			color: @btn-color-primary;
+		}
+	}
+
+	&btn-primary-underline{
+		color: @btn-color-primary;
+		background: @btn-background-primary;
+		border:1px @btn-background-primary solid;
+		border-bottom:3px darken(@btn-background-primary,15%) solid;
 		&:hover{
 			background: darken(@btn-background-primary, 11%);
 			color: @btn-color-primary;

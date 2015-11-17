@@ -33,7 +33,7 @@ gulp.task('css', function(){
 			.pipe(autoprefixer())
 			//.pipe(minifyCSS())
 			.pipe(gulp.dest('./build'))
-			.pipe(gulp.dest('E:/javaweb/smart/trunck/sources/webresource/front/style'));//for格林卫
+			.pipe(gulp.dest('D:/sae/wwwroot/source/smart/trunck/sources/webresource/front/style'));//for格林卫
 	});
 
 });

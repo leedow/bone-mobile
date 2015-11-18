@@ -39,7 +39,20 @@ body{
  
 <div class="bo-container-sys">
 	<div class="bo-col-header bo-header-fixed">
-		logo
+		<header class="bo-header">
+			<div class="bo-logo">Bone UI Framework</div>
+			<ul class="bo-header-nav">
+				<li><a class="bo-btn-primary bo-nav-button" href="">消息 <i class="icon iconfont">&#xe63e;</i></a></li>
+				<li>
+					<div class="bo-dropdown-right-bottom">
+					     <button class="bo-btn-primary bo-nav-button" style="margin:0;">下拉按钮 <i class="icon iconfont"></i></button>
+					    <!--  <ul class="bo-dropdown-menu">
+					        <li>菜单</li>
+					     </ul> -->
+					</div>
+				</li>
+			</ul>
+		</header>
 	</div>
 	<div class="bo-col-sidebar bo-sidebar-fixed">
 		
@@ -80,6 +93,24 @@ body{
  
 	</div>	 
 	<div class="bo-col-content bg">
+
+		<div class="bo-box bo-m1101">
+			<header class="bo-header-light">
+				<div class="bo-logo">Light theme header</div>
+				<ul class="bo-header-nav">
+					<li><a class="bo-btn-primary bo-nav-button" href="">消息 <i class="icon iconfont">&#xe63e;</i></a></li>
+					<li>
+						<div class="bo-dropdown-right-bottom">
+						     <button class="bo-btn-primary bo-nav-button" style="margin:0;">下拉按钮 <i class="icon iconfont"></i></button>
+						    <!--  <ul class="bo-dropdown-menu">
+						        <li>菜单</li>
+						     </ul> -->
+						</div>
+					</li>
+				</ul>
+			</header>
+		</div>
+
 		<div class="bo-box bo-m1101">
 			<div class="bo-tab-horizon">
 				<a class="bo-tab-item bo-tab-item-current" href="">item1</a>
@@ -132,7 +163,7 @@ body{
 			<div class="bo-col-6">
 				<div class="bo-box">
 					<div class="bo-box bo-m0100 bo-p1111">
-						 <div class="bo-dialog">
+						 <div class="bo-dialog" style="border:1px #e0e0e0 solid">
 						 	<div class="dialog-title">标 题</div>
 						 	<div class="dialog-close"></div>
 						 	<div class="dialog-content bo-p0111">
@@ -154,7 +185,7 @@ body{
 			 					<input type="submit" class="bo-btn-blank button" value="取 消">
 						 	</div>
 						</div><!--#dialog-->
-						<div class="bo-dialog" style="margin-top:20px;">
+						<div class="bo-dialog" style="margin-top:20px;border:1px #e0e0e0 solid;" >
 						 	<div class="dialog-title">标 题</div>
 						 	<div class="dialog-close"><i class="icon iconfont">&#xe602;</i></div>
 						 	<div class="dialog-content bo-p0111">

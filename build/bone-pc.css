@@ -121,6 +121,57 @@ p {
   bottom: 0;
   overflow-y: auto;
 }
+.bo-header,
+.bo-header-light {
+  height: 50px;
+}
+.bo-header .bo-logo,
+.bo-header-light .bo-logo {
+  float: left;
+  line-height: 50px;
+  font-size: 20px;
+  padding-left: 14px;
+}
+.bo-header .bo-header-nav,
+.bo-header-light .bo-header-nav {
+  float: right;
+  height: 100%;
+  line-height: 50px;
+}
+.bo-header .bo-header-nav li,
+.bo-header-light .bo-header-nav li {
+  display: inline;
+}
+.bo-header .bo-header-nav li .bo-nav-button,
+.bo-header-light .bo-header-nav li .bo-nav-button {
+  height: 50px;
+  line-height: 50px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.bo-header .bo-header-nav li .bo-nav-button i,
+.bo-header-light .bo-header-nav li .bo-nav-button i {
+  font-size: 20px;
+}
+.bo-header .bo-header-nav li > a {
+  color: #fff;
+}
+.bo-header .bo-header-nav li .bo-nav-button {
+  color: #fff;
+}
+.bo-header-light {
+  border-bottom: 1px #e0e0e0 solid;
+  background: #fff;
+}
+.bo-header-light .bo-header-nav li .bo-nav-button {
+  color: #444444;
+  border: 0;
+  border-left: 1px #e0e0e0 solid;
+  background: none;
+}
+.bo-header-light .bo-header-nav li .bo-nav-button:hover {
+  color: #6699ff;
+}
 #bo-dialog-layout {
   position: fixed;
   left: 0;

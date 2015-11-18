@@ -55,7 +55,7 @@
 @layout-width-md:			80%;
 @layout-width-lg:			80%;
 
-//global header
+//global header for mobile
 @header-height:				44px;
 @header-background: 		@color-primary;
 @header-color:				#fff;
@@ -64,6 +64,18 @@
 @header-background-light:	#fff;
 @header-color-light:		#444;
 @header-color-hover-light:	darken(@color-primary, 10%);
+
+
+//header for pc & response design
+@header-pc-height:			50px;
+@header-pc-background:		@color-primary;
+@header-pc-color:			#fff;
+@header-pc-color-hover:		darken(@color-primary, 10%);
+
+@header-pc-height-light:	50px;
+@header-pc-background-light:#fff;
+@header-pc-color-light:		@font-color;
+@header-pc-color-hover-light:@font-color;
 
 //global menu
 @menu-border-top:			1px @line-color solid;
@@ -133,3 +145,4 @@
 @dialog-background:			#fff;
 @dialog-header-height:		40px;
 @dialog-dock-height:		50px;
+ 

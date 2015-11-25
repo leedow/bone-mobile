@@ -4,12 +4,24 @@
 		"selected_items":
 		[
 			[
-				"border",
-				"border-radius"
-			],
-			[
 				"margin",
 				"margin-top"
+			],
+			[
+				"padding",
+				"padding-bottom"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"border",
+				"border-radius"
 			],
 			[
 				"rg",
@@ -20,16 +32,8 @@
 				"overflow"
 			],
 			[
-				"padding",
-				"padding-right"
-			],
-			[
 				"inline",
 				"inline-block"
-			],
-			[
-				"font",
-				"font-size"
 			],
 			[
 				"btn-back",
@@ -42,10 +46,6 @@
 			[
 				"_init",
 				"_initListOftenBuy"
-			],
-			[
-				"mar",
-				"margin"
 			],
 			[
 				"pd",
@@ -320,42 +320,109 @@
 	"buffers":
 	[
 		{
-			"file": "/C/Users/tgoooo/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+			"file": "style/addon/gelinwei/home.less",
 			"settings":
 			{
-				"buffer_size": 253,
+				"buffer_size": 2902,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style/addon/gelinwei/list.less",
+			"settings":
+			{
+				"buffer_size": 2241,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style/addon/gelinwei/footer.less",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style/addon/gelinwei/form.less",
+			"settings":
+			{
+				"buffer_size": 62,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style/addon/gelinwei/userhome.less",
+			"settings":
+			{
+				"buffer_size": 397,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style/pc/header.less",
+			"settings":
+			{
+				"buffer_size": 1187,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style/bone-greenway.less",
+			"settings":
+			{
+				"buffer_size": 924,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style/common/margin.less",
+			"settings":
+			{
+				"buffer_size": 595,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "\n@font-face {font-family: \"iconfont\";\n  src: url('iconfont.eot'); /* IE9*/\n  src: url('iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */\n  url('iconfont.woff') format('woff'), /* chrome、firefox */\n  url('iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/\n  url('iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */\n}\n\n.iconfont {\n  font-family:\"iconfont\" !important;\n \n  font-style:normal;\n  -webkit-font-smoothing: antialiased;\n  -webkit-text-stroke-width: 0px;\n  -moz-osx-font-smoothing: grayscale;\n}\n.icon-appreciate:before { content: \"\\e600\"; }\n.icon-check:before { content: \"\\e601\"; }\n.icon-close:before { content: \"\\e602\"; }\n.icon-emoji:before { content: \"\\e603\"; }\n.icon-favorfill:before { content: \"\\e604\"; }\n.icon-favor:before { content: \"\\e605\"; }\n.icon-locationfill:before { content: \"\\e606\"; }\n.icon-location:before { content: \"\\e607\"; }\n.icon-roundcheckfill:before { content: \"\\e608\"; }\n.icon-roundcheck:before { content: \"\\e609\"; }\n.icon-roundclosefill:before { content: \"\\e60a\"; }\n.icon-roundclose:before { content: \"\\e60b\"; }\n.icon-roundrightfill:before { content: \"\\e60c\"; }\n.icon-roundright:before { content: \"\\e60d\"; }\n.icon-search:before { content: \"\\e60e\"; }\n.icon-timefill:before { content: \"\\e60f\"; }\n.icon-time:before { content: \"\\e610\"; }\n.icon-unfold:before { content: \"\\e611\"; }\n.icon-warnfill:before { content: \"\\e612\"; }\n.icon-warn:before { content: \"\\e613\"; }\n.icon-commentfill:before { content: \"\\e614\"; }\n.icon-comment:before { content: \"\\e615\"; }\n.icon-like:before { content: \"\\e616\"; }\n.icon-back:before { content: \"\\e617\"; }\n.icon-more:before { content: \"\\e618\"; }\n.icon-myfill:before { content: \"\\e619\"; }\n.icon-scan:before { content: \"\\e61a\"; }\n.icon-settings:before { content: \"\\e61b\"; }\n.icon-pic:before { content: \"\\e63f\"; }\n.icon-right:before { content: \"\\e61c\"; }\n.icon-refresh:before { content: \"\\e61d\"; }\n.icon-moreandroid:before { content: \"\\e61e\"; }\n.icon-deletefill:before { content: \"\\e61f\"; }\n.icon-cart:before { content: \"\\e620\"; }\n.icon-delete:before { content: \"\\e640\"; }\n.icon-profile:before { content: \"\\e641\"; }\n.icon-home:before { content: \"\\e621\"; }\n.icon-lock:before { content: \"\\e622\"; }\n.icon-weibo:before { content: \"\\e642\"; }\n.icon-present:before { content: \"\\e643\"; }\n.icon-square:before { content: \"\\e623\"; }\n.icon-squarecheck:before { content: \"\\e624\"; }\n.icon-round:before { content: \"\\e625\"; }\n.icon-roundaddfill:before { content: \"\\e626\"; }\n.icon-roundadd:before { content: \"\\e627\"; }\n.icon-add:before { content: \"\\e628\"; }\n.icon-similar:before { content: \"\\e629\"; }\n.icon-infofill:before { content: \"\\e62a\"; }\n.icon-info:before { content: \"\\e62b\"; }\n.icon-forward:before { content: \"\\e62c\"; }\n.icon-vipcard:before { content: \"\\e644\"; }\n.icon-voice:before { content: \"\\e62d\"; }\n.icon-voicefill:before { content: \"\\e62e\"; }\n.icon-searchlist:before { content: \"\\e645\"; }\n.icon-sort:before { content: \"\\e62f\"; }\n.icon-down:before { content: \"\\e646\"; }\n.icon-mobilefill:before { content: \"\\e630\"; }\n.icon-female:before { content: \"\\e631\"; }\n.icon-male:before { content: \"\\e632\"; }\n.icon-pullleft:before { content: \"\\e633\"; }\n.icon-pullright:before { content: \"\\e634\"; }\n.icon-apps:before { content: \"\\e635\"; }\n.icon-peoplefill:before { content: \"\\e636\"; }\n.icon-people:before { content: \"\\e637\"; }\n.icon-repair:before { content: \"\\e638\"; }\n.icon-repairfill:before { content: \"\\e639\"; }\n.icon-tagfill:before { content: \"\\e63a\"; }\n.icon-tag:before { content: \"\\e63b\"; }\n.icon-write:before { content: \"\\e647\"; }\n.icon-add1:before { content: \"\\e63c\"; }\n.icon-move:before { content: \"\\e63d\"; }\n.icon-safe:before { content: \"\\e648\"; }\n.icon-messagefill:before { content: \"\\e63e\"; }\n",
+			"file": "fonts/iconfont.css",
+			"file_size": 3700,
+			"file_write_time": 130924931418544986,
+			"settings":
+			{
+				"buffer_size": 3692,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "style/common/dialog.less",
+			"file": "style/common/form.less",
 			"settings":
 			{
-				"buffer_size": 1672,
+				"buffer_size": 783,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "style/bone-pc.less",
+			"file": "docs/src/commonheader.ejs",
 			"settings":
 			{
-				"buffer_size": 637,
+				"buffer_size": 321,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/E/javaweb/smart/trunck/sources/webresource/front/index.html",
+			"file": "docs/src/source.ejs",
 			"settings":
 			{
-				"buffer_size": 4411,
+				"buffer_size": 807,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "style/addon/gelinwei.less",
+			"file": "style/common/padding.less",
 			"settings":
 			{
-				"buffer_size": 2218,
+				"buffer_size": 702,
 				"line_ending": "Windows"
 			}
 		},
@@ -376,6 +443,14 @@
 			}
 		},
 		{
+			"file": "fonts2/iconfont.css",
+			"settings":
+			{
+				"buffer_size": 3284,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "docs/src/form.ejs",
 			"settings":
 			{
@@ -391,6 +466,65 @@
 			"settings":
 			{
 				"buffer_size": 1057,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/bone-verify.js",
+			"settings":
+			{
+				"buffer_size": 3028,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/bone-dialog.js",
+			"settings":
+			{
+				"buffer_size": 3708,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/main.js",
+			"settings":
+			{
+				"buffer_size": 218,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "build/main.js",
+			"settings":
+			{
+				"buffer_size": 9162,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "module.exports = {\n	prefix: 'bo-',\n	$: function(str){//格式化选择器#test->#bo-test\n		var res = '';\n\n		if(/^#./.test(str)){\n			\n			res = str.replace('#', '#' + this.prefix);\n\n		}\n		else if(/^\\../.test(str)){\n			\n			res = str.replace('.', '.' + this.prefix);\n		} else {\n			res = this.prefix + str;	\n		}\n		return res;\n	}\n}",
+			"file": "js/bone-config.js",
+			"file_size": 342,
+			"file_write_time": 130921501010236219,
+			"settings":
+			{
+				"buffer_size": 313,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "node_modules/gulp-ejs/test/expected/config.js",
+			"settings":
+			{
+				"buffer_size": 134,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "docs-pc/src/source.ejs",
+			"settings":
+			{
+				"buffer_size": 810,
 				"line_ending": "Windows"
 			}
 		}
@@ -435,14 +569,34 @@
 	},
 	"file_history":
 	[
+		"/D/sae/wwwroot/source/bone-mobile/font/iconfont.css",
+		"/C/Users/tgoooo/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/D/sae/wwwroot/source/bone-mobile/style/common/dialog.less",
+		"/D/sae/wwwroot/source/bone-mobile/style/addon/gelinwei/theme.less",
+		"/D/sae/wwwroot/source/bone-mobile/style/bone-pc.less",
+		"/D/sae/wwwroot/source/bone-mobile/style/bone-greenway.less",
+		"/D/sae/wwwroot/source/bone-mobile/style/pc/header.less",
+		"/D/sae/wwwroot/source/bone-mobile/style/common/dropdown.less",
+		"/D/sae/wwwroot/source/bone-mobile/style/addon/gelinwei/list.less",
+		"/E/javaweb/smart/trunck/sources/webresource/front/index.html",
+		"/D/sae/wwwroot/source/bone-mobile/style/addon/gelinwei.less",
+		"/D/sae/wwwroot/source/bone-mobile/docs-pc/src/index.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/style/common/theme.less",
+		"/D/sae/wwwroot/source/bone-mobile/build/bone-pc.css",
+		"/D/sae/wwwroot/source/bone-mobile/gulpfile.js",
+		"/D/sae/wwwroot/source/bone-mobile/style/common/buttons.less",
+		"/D/sae/wwwroot/source/bone-mobile/docs/src/buttons.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/style/bone.less",
+		"/D/sae/wwwroot/source/bone-mobile/style/pc/admin-grid.less",
+		"/D/sae/wwwroot/source/bone-mobile/style/common/grid.less",
+		"/D/sae/wwwroot/source/bone-mobile/style/common/input.less",
+		"/D/sae/wwwroot/source/bone-mobile/docs/src/index.ejs",
+		"/D/sae/wwwroot/source/bone-mobile/js/bone-config.js",
+		"/D/sae/wwwroot/source/bone-mobile/js/bone-dialog.js",
 		"/D/sae/bin/Apache2.2/conf/httpd.conf",
 		"/D/sae/wwwroot/source/bone-mobile/style/grid.less",
-		"/D/sae/wwwroot/source/bone-mobile/gulpfile.js",
-		"/D/sae/wwwroot/source/bone-mobile/style/bone-pc.less",
-		"/D/sae/wwwroot/source/bone-mobile/style/addon/gelinwei.less",
 		"/D/sae/wwwroot/source/bone-mobile/js/main.js",
 		"/D/sae/wwwroot/source/bone-mobile/js/bone-verify.js",
-		"/D/sae/wwwroot/source/bone-mobile/js/bone-config.js",
 		"/D/sae/wwwroot/source/bone-mobile/build/main.js",
 		"/D/sae/wwwroot/source/bone-mobile/build/build/main.js",
 		"/D/sae/wwwroot/source/bone-mobile/fonts/iconfont.css",
@@ -458,18 +612,14 @@
 		"/D/sae/wwwroot/source/bone-mobile/style/menu.less",
 		"/D/sae/wwwroot/source/bone-mobile/style/article.less",
 		"/D/sae/wwwroot/source/bone-mobile/style/sidebar.less",
-		"/D/sae/wwwroot/source/bone-mobile/style/bone.less",
 		"/D/sae/wwwroot/source/bone-mobile/docs-pc/src/commonheader.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/docs-pc/src/commonmenu.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/docs-pc/src/commonsidebar.ejs",
-		"/D/sae/wwwroot/source/bone-mobile/docs-pc/src/index.ejs",
-		"/D/sae/wwwroot/source/bone-mobile/docs/src/index.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/docs-pc/src/source.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/docs/src/commonsidebar.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/docs-pc/index.html",
 		"/D/sae/wwwroot/source/bone-mobile/style/response.less",
 		"/D/sae/wwwroot/source/bone-mobile/style/pc/container.less",
-		"/C/Users/tgoooo/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/D/sae/wwwroot/source/bone-mobile/docs/src/full.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/style/layouts.less",
 		"/D/sae/wwwroot/source/Moon01/moon02.sql",
@@ -482,7 +632,6 @@
 		"/D/sae/wwwroot/source/bone-mobile/style/buttons.less",
 		"/D/sae/wwwroot/source/bone-mobile/docs/src/fonticon.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/docs/tabs.html",
-		"/D/sae/wwwroot/source/bone-mobile/docs/src/buttons.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/docs/src/sidebar.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/docs/src/tmp.ejs",
 		"/D/sae/wwwroot/source/bone-mobile/docs/src/list.ejs",
@@ -547,26 +696,11 @@
 		"/D/sae/wwwroot/source/Earth/js/modules1.0.3/shoppingcart.js",
 		"/D/sae/wwwroot/source/Earth/static/fonts/font.min.css",
 		"/D/sae/wwwroot/source/Earth/application/controllers/home.php",
-		"/D/sae/wwwroot/source/Earth/application/controllers/Passport.php",
-		"/D/sae/wwwroot/source/Earth/application/controllers/Shoppingcart.php",
-		"/D/sae/wwwroot/source/Mercury/application/views/shoppingcart/index.php",
-		"/D/sae/wwwroot/source/Earth/application/views/main/category.php",
-		"/D/sae/wwwroot/source/Earth/application/views/common/footer.php",
-		"/D/sae/wwwroot/source/Earth/application/views/common/header.php",
-		"/D/sae/wwwroot/contact.php",
-		"/D/sae/wwwroot/source/Earth/application/controllers/test.ohp",
-		"/D/sae/wwwroot/source/Earth/application/controllers/test.php",
-		"/D/sae/wwwroot/source/Earth/application/views/welcome_message.php",
-		"/D/sae/wwwroot/source/Earth/static/less/jishibao.less",
-		"/D/sae/wwwroot/source/Earth/application/views/shoppingcart/index.php",
-		"/D/sae/wwwroot/source/Earth/application/views/main/searchresult.php",
-		"/D/sae/wwwroot/source/Earth/application/controllers/Main.php",
-		"/D/sae/wwwroot/source/Earth/index.php",
-		"/D/sae/wwwroot/source/Earth/application/views/home.php"
+		"/D/sae/wwwroot/source/Earth/application/controllers/Passport.php"
 	],
 	"find":
 	{
-		"height": 50.0
+		"height": 67.0
 	},
 	"find_in_files":
 	{
@@ -706,7 +840,7 @@
 			"GLOBAL.add_flag"
 		],
 		"highlight": true,
-		"in_selection": true,
+		"in_selection": false,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
@@ -732,28 +866,54 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/C/Users/tgoooo/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+					"file": "style/addon/gelinwei/home.less",
 					"settings":
 					{
-						"buffer_size": 253,
+						"buffer_size": 2902,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								253,
-								253
+								2899,
+								2899
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 3348.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "style/addon/gelinwei/list.less",
+					"settings":
+					{
+						"buffer_size": 2241,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								173,
+								173
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -762,45 +922,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "style/common/dialog.less",
-					"settings":
-					{
-						"buffer_size": 1672,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								501,
-								501
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 648.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
 					"buffer": 2,
-					"file": "style/bone-pc.less",
+					"file": "style/addon/gelinwei/footer.less",
 					"settings":
 					{
-						"buffer_size": 637,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								412,
-								412
+								0,
+								0
 							]
 						],
 						"settings":
@@ -815,44 +949,18 @@
 				},
 				{
 					"buffer": 3,
-					"file": "/E/javaweb/smart/trunck/sources/webresource/front/index.html",
+					"file": "style/addon/gelinwei/form.less",
 					"settings":
 					{
-						"buffer_size": 4411,
+						"buffer_size": 62,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								205,
-								205
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 324.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "style/addon/gelinwei.less",
-					"settings":
-					{
-						"buffer_size": 2218,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								185,
-								185
+								59,
+								59
 							]
 						],
 						"settings":
@@ -860,7 +968,241 @@
 							"syntax": "Packages/LESS/LESS.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 54.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "style/addon/gelinwei/userhome.less",
+					"settings":
+					{
+						"buffer_size": 397,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								342,
+								342
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "style/pc/header.less",
+					"settings":
+					{
+						"buffer_size": 1187,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								543,
+								543
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 279.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "style/bone-greenway.less",
+					"settings":
+					{
+						"buffer_size": 924,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								907,
+								907
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "style/common/margin.less",
+					"settings":
+					{
+						"buffer_size": 595,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								574,
+								574
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "fonts/iconfont.css",
+					"settings":
+					{
+						"buffer_size": 3692,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								967,
+								967
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "style/common/form.less",
+					"settings":
+					{
+						"buffer_size": 783,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								275,
+								275
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "docs/src/commonheader.ejs",
+					"settings":
+					{
+						"buffer_size": 321,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "docs/src/source.ejs",
+					"settings":
+					{
+						"buffer_size": 807,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								807,
+								807
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "style/common/padding.less",
+					"settings":
+					{
+						"buffer_size": 702,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								548,
+								548
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 63.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -872,7 +1214,7 @@
 			"sheets":
 			[
 				{
-					"buffer": 5,
+					"buffer": 13,
 					"file": "/E/Download/iconfont (2)/ux_1445171175_7056942/iconfont.css",
 					"settings":
 					{
@@ -898,7 +1240,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 14,
 					"file": "docs/src/verify.ejs",
 					"settings":
 					{
@@ -924,7 +1266,33 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 15,
+					"file": "fonts2/iconfont.css",
+					"settings":
+					{
+						"buffer_size": 3284,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								765,
+								765
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1026.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 16,
 					"file": "docs/src/form.ejs",
 					"settings":
 					{
@@ -935,8 +1303,8 @@
 						"selection":
 						[
 							[
-								676,
-								569
+								528,
+								528
 							]
 						],
 						"settings":
@@ -950,7 +1318,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 17,
 					"file": "docs/src/list.ejs",
 					"settings":
 					{
@@ -968,6 +1336,188 @@
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "js/bone-verify.js",
+					"settings":
+					{
+						"buffer_size": 3028,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								77,
+								77
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2214.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "js/bone-dialog.js",
+					"settings":
+					{
+						"buffer_size": 3708,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2914,
+								2914
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1674.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "js/main.js",
+					"settings":
+					{
+						"buffer_size": 218,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								205,
+								205
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "build/main.js",
+					"settings":
+					{
+						"buffer_size": 9162,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "js/bone-config.js",
+					"settings":
+					{
+						"buffer_size": 313,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								290,
+								290
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"file": "node_modules/gulp-ejs/test/expected/config.js",
+					"settings":
+					{
+						"buffer_size": 134,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 24,
+					"file": "docs-pc/src/source.ejs",
+					"settings":
+					{
+						"buffer_size": 810,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								230,
+								230
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1006,7 +1556,7 @@
 		"cols":
 		[
 			0.0,
-			0.685366922328,
+			0.741929855586,
 			1.0
 		],
 		"rows":
@@ -1027,20 +1577,52 @@
 		"selected_items":
 		[
 			[
+				"list",
+				"style/addon/gelinwei/list.less"
+			],
+			[
 				"theme",
-				"style/theme.less"
+				"style/common/theme.less"
+			],
+			[
+				"inde",
+				"docs-pc/src/index.ejs"
+			],
+			[
+				"the",
+				"style/common/theme.less"
+			],
+			[
+				"index",
+				"docs-pc/src/index.ejs"
+			],
+			[
+				"dialog",
+				"style/common/dialog.less"
+			],
+			[
+				"main",
+				"js/main.js"
+			],
+			[
+				"dia",
+				"js/bone-dialog.js"
+			],
+			[
+				"config",
+				"js/bone-config.js"
+			],
+			[
+				"ver",
+				"js/bone-verify.js"
+			],
+			[
+				"them",
+				"style/common/theme.less"
 			],
 			[
 				"form",
 				"style/form.less"
-			],
-			[
-				"them",
-				"style/theme.less"
-			],
-			[
-				"the",
-				"style/theme.less"
 			],
 			[
 				"hack",
@@ -1083,16 +1665,8 @@
 				"static/less/jishibao.less"
 			],
 			[
-				"index",
-				"index.php"
-			],
-			[
 				"grid",
 				"less/grid.less"
-			],
-			[
-				"list",
-				"js/modules1.0.3/list.js"
 			],
 			[
 				"inter",
@@ -1133,10 +1707,6 @@
 			[
 				"gr",
 				"static/Gruntfile.js"
-			],
-			[
-				"main",
-				"static/less/main.less"
 			],
 			[
 				"gruntl",
@@ -1193,10 +1763,6 @@
 			[
 				"ind",
 				"index.js"
-			],
-			[
-				"inde",
-				"1/index.php"
 			],
 			[
 				"con",
@@ -1367,10 +1933,6 @@
 				"1/application/config/leeconfig.php"
 			],
 			[
-				"config",
-				"1/application/config/config.php"
-			],
-			[
 				"regi",
 				"1/application/views/register2.php"
 			],
@@ -1409,6 +1971,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 223.0,
+	"side_bar_width": 241.0,
 	"status_bar_visible": true
 }

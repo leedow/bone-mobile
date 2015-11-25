@@ -1,6 +1,6 @@
 .@{prefix}{
-	&input, &input-lg, &select, &select-lg{
-		-webkit-appearance: none !important;
+	&textarea, &input, &input-lg, &select, &select-lg{
+		
 		background: #fff;
 		border: 1px @line-color solid;
 		border-radius: @radius;
@@ -19,6 +19,14 @@
 		}
 
 
+	}
+
+	&textarea{
+		padding: @input-padding;
+	}
+
+	&input, &input-lg{
+		-webkit-appearance: none !important;
 	}
 
 	&input, &select{

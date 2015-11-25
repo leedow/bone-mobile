@@ -358,6 +358,10 @@
 		 		+ '</h3><div class="dialog-close"><i class="icon iconfont">&#xe602;</i></div><div class="content">'+this._content+'</div>'+buttons+'</div></div>'
 		 	);
 		 	
+			if($this._config.buttons == 'none'){
+				$(tmp.sdialog).css('padding-bottom', '10px');
+			}
+
 			$(tmp.layout + ' .dialog-close').on('click', function(){
 				$this.close();
 			});

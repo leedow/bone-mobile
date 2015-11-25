@@ -6,7 +6,7 @@ body {
 body {
   font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
   font-size: 14px;
-  color: #444444;
+  color: #565a5c;
   line-height: 1.5;
   text-align: center;
   min-height: 100%;
@@ -59,7 +59,7 @@ ul {
   list-style-type: none;
 }
 a {
-  color: #444444;
+  color: #565a5c;
   text-decoration: none;
   -webkit-transition: all ease-in-out 0.4s !important;
           transition: all ease-in-out 0.4s !important;
@@ -260,7 +260,7 @@ p {
 .bo-header-light .bo-header-dock-right a,
 .bo-header-light .bo-header-dock-left button,
 .bo-header-light .bo-header-dock-right button {
-  color: #444444;
+  color: #565a5c;
 }
 .bo-header-light .bo-header-dock-left a:hover,
 .bo-header-light .bo-header-dock-right a:hover,
@@ -412,13 +412,13 @@ p {
   border-radius: 0 !important;
 }
 .bo-btn-blank {
-  color: #444444;
+  color: #565a5c;
   border: 1px #e0e0e0 solid;
   background: none;
 }
 .bo-btn-blank:hover {
   background: #f2f2f2;
-  color: #444444;
+  color: #565a5c;
 }
 .bo-btn-primary-blank {
   color: #6699ff;
@@ -439,7 +439,7 @@ p {
   color: #ffffff;
 }
 .bo-btn {
-  color: #444444;
+  color: #565a5c;
   background: #f2f2f2;
   border: 1px #f2f2f2 solid;
 }
@@ -486,11 +486,11 @@ p {
   width: 100%;
   display: block !important;
 }
+.bo-textarea,
 .bo-input,
 .bo-input-lg,
 .bo-select,
 .bo-select-lg {
-  -webkit-appearance: none !important;
   background: #fff;
   border: 1px #e0e0e0 solid;
   border-radius: 2px;
@@ -498,6 +498,7 @@ p {
   font-family: inherit;
   font-size: 14px;
 }
+.bo-textarea:focus,
 .bo-input:focus,
 .bo-input-lg:focus,
 .bo-select:focus,
@@ -506,11 +507,19 @@ p {
   box-shadow: 0 0 4px #b3ccff;
   border: 1px #6699ff solid;
 }
+.bo-textarea:hover,
 .bo-input:hover,
 .bo-input-lg:hover,
 .bo-select:hover,
 .bo-select-lg:hover {
   border: 1px #6699ff solid;
+}
+.bo-textarea {
+  padding: 9px 10px;
+}
+.bo-input,
+.bo-input-lg {
+  -webkit-appearance: none !important;
 }
 .bo-input,
 .bo-select {
@@ -626,6 +635,9 @@ p {
 .bo-input-pass-lg:after {
   height: 46px;
   line-height: 46px;
+}
+.bo-form label {
+  font-weight: bold;
 }
 .bo-label-required:after {
   color: #ff6633;
@@ -833,6 +845,21 @@ p {
 .bo-p1101 {
   padding: 14px 14px 0 14px;
 }
+.bo-p2000 {
+  padding-top: 28px;
+}
+.bo-p0020 {
+  padding-bottom: 28px;
+}
+.bo-p0200 {
+  padding-right: 28px;
+}
+.bo-p0002 {
+  padding-left: 28px;
+}
+.bo-p2222 {
+  padding: 28px 28px;
+}
 .bo-m1111 {
   margin: 14px 14px;
 }
@@ -856,6 +883,18 @@ p {
 }
 .bo-m1101 {
   margin: 14px 14px 0 14px;
+}
+.bo-m2000 {
+  margin-top: 28px;
+}
+.bo-m0020 {
+  margin-bottom: 28px;
+}
+.bo-m0200 {
+  margin-right: 28px;
+}
+.bo-m0002 {
+  margin-left: 28px;
 }
 .bo-article h1,
 .bo-article h2,
@@ -898,6 +937,12 @@ p {
 .col {
   float: left;
   display: block;
+}
+.bo-ovf {
+  overflow: hidden;
+}
+.bo-hf {
+  height: 100%;
 }
 .bo-col {
   float: left;

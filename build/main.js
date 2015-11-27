@@ -46,9 +46,11 @@
 
 	var verify = __webpack_require__(1);
 	var dialog = __webpack_require__(3);
+	var dropdown = __webpack_require__(4);
 
 	 
 	$(document).ready(function(){
+		dropdown.init();
 		$('#go').click(function(){
 			//verify.check('#form');ff
 			var d = dialog.init('标 题', 'content');
@@ -276,6 +278,7 @@
 		this.timer;
 		this._ok = function(){};
 		this._no = function(){};
+		this._onload = function(){};
 
 		var tmp = {
 			layout: CONFIG.$('#dialog-layout'),
@@ -324,6 +327,16 @@
 			return this;
 		}
 
+		//加载完毕
+		this.onload = function(callback){
+			if(typeof callback != 'undefined'){
+				$this._onload = callback;
+
+			}  
+		
+			return this;	
+		}
+
 		//点击关闭
 		this.close = function(callback){
 			if(typeof callback != 'undefined'){
@@ -357,6 +370,11 @@
 			$('body').append('<div id="'+domstr.layout+'"><div class="container ' + domstr.sdialog+' dialog-state-open" style="width:'+this._config.width+'"><h3 class="dialog-title">'+this._title
 		 		+ '</h3><div class="dialog-close"><i class="icon iconfont">&#xe602;</i></div><div class="content">'+this._content+'</div>'+buttons+'</div></div>'
 		 	);
+
+		 	
+		 	setTimeout(function(){
+		 		$this._onload();
+		 	}, 1);
 		 	
 			if($this._config.buttons == 'none'){
 				$(tmp.sdialog).css('padding-bottom', '10px');
@@ -386,6 +404,7 @@
 
 			$this._ok = function(){};
 			$this._no = function(){};
+			$this._onload = function(){};
 
 			$this._dom();
 			$this.open();
@@ -399,6 +418,26 @@
 	}
 
 	  
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var CONFIG = __webpack_require__(2);
+
+	module.exports.init = function(){
+		dropdown();
+	}
+
+
+	function dropdown(){
+		$('.' + CONFIG.prefix + 'dropdown').hover(function(){
+	 
+			$(this).find('.' + CONFIG.prefix + 'dropdown-menu').css('display', 'block');
+		}, function(){
+			$(this).find('.' + CONFIG.prefix + 'dropdown-menu').css('display', 'none');
+		});	
+	}
 
 /***/ }
 /******/ ]);

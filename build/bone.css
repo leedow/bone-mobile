@@ -561,9 +561,13 @@ p {
   border: 1px #ff6633 solid;
   box-shadow: 0 0 4px #ff9f80;
 }
+.bo-input-wrong > i {
+  display: none;
+}
 .bo-input-wrong > p {
   color: #ff6633;
   padding: 7px 0 0 0;
+  text-align: left;
 }
 .bo-form-item-lg .bo-input-wrong:after,
 .bo-form-item-lg .bo-input-pass:after {
@@ -605,6 +609,9 @@ p {
   color: #66cc33;
   height: 39px;
   line-height: 39px;
+}
+.bo-input-pass > i {
+  display: none;
 }
 .bo-input-pass > .bo-input,
 .bo-input-pass > .bo-input-lg {
@@ -896,6 +903,9 @@ p {
 .bo-m0002 {
   margin-left: 28px;
 }
+.bo-article {
+  text-align: left;
+}
 .bo-article h1,
 .bo-article h2,
 .bo-article h3,
@@ -1084,6 +1094,7 @@ p {
 .bo-dropdown-right-bottom .bo-dropdown-menu,
 .bo-dropdown-right-top .bo-dropdown-menu,
 .bo-dropdown-left-top .bo-dropdown-menu {
+  display: none;
   position: absolute;
   border: 1px #e0e0e0 solid;
   border-radius: 2px;

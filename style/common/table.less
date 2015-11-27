@@ -1,0 +1,30 @@
+.@{prefix}{
+	&table, &table-border{
+		width: 100%;
+		text-align: left;
+		border-collapse:collapse;
+		th{
+			text-align: left;
+			padding: 0px @padding-vertical;
+			line-height: @table-height;
+		}
+
+		thead{
+			 
+		}
+
+		td{
+			padding: 0px @padding-vertical;
+			line-height: @table-height;
+		}
+	}
+
+	&table-border{
+		th{
+			border-bottom: 1px @line-color solid;
+		}
+		td{
+			border-bottom: 1px @line-color solid;
+		}
+	}
+}

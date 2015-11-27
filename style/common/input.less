@@ -66,9 +66,15 @@
 				box-shadow: 0 0 4px @input-shadow-color-wrong;
 			}
 		}
+
+		&>i{
+			display: none;
+		}
+
 		&>p{
 			color: @color-highlight;
 			padding: 0.5*@padding-vertical 0 0 0;
+			text-align: left;
 		}
 	}
 
@@ -120,6 +126,10 @@
 			color: @color-comfort;
 			height: @input-height;
 			line-height: @input-height;
+		}
+
+		&>i{
+			display: none;
 		}
 
 		&>.@{prefix}input,&>.@{prefix}input-lg{

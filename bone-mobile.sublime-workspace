@@ -331,7 +331,7 @@
 			"file": "style/addon/gelinwei/list.less",
 			"settings":
 			{
-				"buffer_size": 2241,
+				"buffer_size": 2239,
 				"line_ending": "Windows"
 			}
 		},
@@ -355,7 +355,7 @@
 			"file": "style/addon/gelinwei/userhome.less",
 			"settings":
 			{
-				"buffer_size": 397,
+				"buffer_size": 755,
 				"line_ending": "Windows"
 			}
 		},
@@ -371,7 +371,7 @@
 			"file": "style/bone-greenway.less",
 			"settings":
 			{
-				"buffer_size": 924,
+				"buffer_size": 1011,
 				"line_ending": "Windows"
 			}
 		},
@@ -398,7 +398,7 @@
 			"file": "style/common/form.less",
 			"settings":
 			{
-				"buffer_size": 783,
+				"buffer_size": 817,
 				"line_ending": "Windows"
 			}
 		},
@@ -422,7 +422,7 @@
 			"file": "style/common/padding.less",
 			"settings":
 			{
-				"buffer_size": 702,
+				"buffer_size": 765,
 				"line_ending": "Windows"
 			}
 		},
@@ -448,6 +448,14 @@
 			{
 				"buffer_size": 3284,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "style/addon/gelinwei/project.less",
+			"settings":
+			{
+				"buffer_size": 1412,
+				"line_ending": "Windows"
 			}
 		},
 		{
@@ -494,6 +502,17 @@
 			}
 		},
 		{
+			"contents": "var CONFIG = require('./bone-config');\n\n\nfunction dropdown(){\n	$(CONFIG.prefix + 'dropdown').hover(function);\n}",
+			"file": "js/bone-dropdown.js",
+			"file_size": 40,
+			"file_write_time": 130930205761623144,
+			"settings":
+			{
+				"buffer_size": 111,
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "build/main.js",
 			"settings":
 			{
@@ -525,6 +544,14 @@
 			"settings":
 			{
 				"buffer_size": 810,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style/common/article.less",
+			"settings":
+			{
+				"buffer_size": 400,
 				"line_ending": "Windows"
 			}
 		}
@@ -866,7 +893,7 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -881,8 +908,8 @@
 						"selection":
 						[
 							[
-								2899,
-								2899
+								1686,
+								1686
 							]
 						],
 						"settings":
@@ -890,7 +917,7 @@
 							"syntax": "Packages/LESS/LESS.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 3348.0,
+						"translation.y": 2430.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -900,15 +927,15 @@
 					"file": "style/addon/gelinwei/list.less",
 					"settings":
 					{
-						"buffer_size": 2241,
+						"buffer_size": 2239,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								173,
-								173
+								47,
+								47
 							]
 						],
 						"settings":
@@ -978,15 +1005,15 @@
 					"file": "style/addon/gelinwei/userhome.less",
 					"settings":
 					{
-						"buffer_size": 397,
+						"buffer_size": 755,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								342,
-								342
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1011,8 +1038,8 @@
 						"selection":
 						[
 							[
-								543,
-								543
+								387,
+								387
 							]
 						],
 						"settings":
@@ -1020,7 +1047,7 @@
 							"syntax": "Packages/LESS/LESS.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 279.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1030,15 +1057,15 @@
 					"file": "style/bone-greenway.less",
 					"settings":
 					{
-						"buffer_size": 924,
+						"buffer_size": 1011,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								907,
-								907
+								994,
+								994
 							]
 						],
 						"settings":
@@ -1108,15 +1135,15 @@
 					"file": "style/common/form.less",
 					"settings":
 					{
-						"buffer_size": 783,
+						"buffer_size": 817,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								275,
-								275
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1186,15 +1213,15 @@
 					"file": "style/common/padding.less",
 					"settings":
 					{
-						"buffer_size": 702,
+						"buffer_size": 765,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								548,
-								548
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1210,7 +1237,7 @@
 			]
 		},
 		{
-			"selected": 2,
+			"selected": 9,
 			"sheets":
 			[
 				{
@@ -1293,6 +1320,32 @@
 				},
 				{
 					"buffer": 16,
+					"file": "style/addon/gelinwei/project.less",
+					"settings":
+					{
+						"buffer_size": 1412,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1288,
+								1288
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 17,
 					"file": "docs/src/form.ejs",
 					"settings":
 					{
@@ -1318,7 +1371,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 17,
+					"buffer": 18,
 					"file": "docs/src/list.ejs",
 					"settings":
 					{
@@ -1344,7 +1397,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 18,
+					"buffer": 19,
 					"file": "js/bone-verify.js",
 					"settings":
 					{
@@ -1364,13 +1417,13 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2214.0,
+						"translation.y": 1674.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 19,
+					"buffer": 20,
 					"file": "js/bone-dialog.js",
 					"settings":
 					{
@@ -1381,8 +1434,8 @@
 						"selection":
 						[
 							[
-								2914,
-								2914
+								320,
+								320
 							]
 						],
 						"settings":
@@ -1390,13 +1443,13 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1674.0,
+						"translation.y": 972.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 20,
+					"buffer": 21,
 					"file": "js/main.js",
 					"settings":
 					{
@@ -1422,7 +1475,33 @@
 					"type": "text"
 				},
 				{
-					"buffer": 21,
+					"buffer": 22,
+					"file": "js/bone-dropdown.js",
+					"settings":
+					{
+						"buffer_size": 111,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								107,
+								107
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 23,
 					"file": "build/main.js",
 					"settings":
 					{
@@ -1448,7 +1527,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 22,
+					"buffer": 24,
 					"file": "js/bone-config.js",
 					"settings":
 					{
@@ -1459,8 +1538,8 @@
 						"selection":
 						[
 							[
-								290,
-								290
+								313,
+								313
 							]
 						],
 						"settings":
@@ -1474,7 +1553,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 23,
+					"buffer": 25,
 					"file": "node_modules/gulp-ejs/test/expected/config.js",
 					"settings":
 					{
@@ -1500,7 +1579,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 24,
+					"buffer": 26,
 					"file": "docs-pc/src/source.ejs",
 					"settings":
 					{
@@ -1518,6 +1597,32 @@
 						"settings":
 						{
 							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 27,
+					"file": "style/common/article.less",
+					"settings":
+					{
+						"buffer_size": 400,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								307,
+								307
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1556,7 +1661,7 @@
 		"cols":
 		[
 			0.0,
-			0.741929855586,
+			0.2760279965,
 			1.0
 		],
 		"rows":
@@ -1576,6 +1681,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"",
+				"js/bone-config.js"
+			],
 			[
 				"list",
 				"style/addon/gelinwei/list.less"
@@ -1687,10 +1796,6 @@
 			[
 				"tabs",
 				"static/less/tabs.less"
-			],
-			[
-				"",
-				"static/less/jishibao.less"
 			],
 			[
 				"com",
@@ -1971,6 +2076,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 241.0,
+	"side_bar_width": 161.0,
 	"status_bar_visible": true
 }

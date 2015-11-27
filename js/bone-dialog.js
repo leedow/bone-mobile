@@ -31,6 +31,7 @@ function _dialog(title, content, config){
 	this.timer;
 	this._ok = function(){};
 	this._no = function(){};
+	this._onload = function(){};
 
 	var tmp = {
 		layout: CONFIG.$('#dialog-layout'),
@@ -79,6 +80,16 @@ function _dialog(title, content, config){
 		return this;
 	}
 
+	//加载完毕
+	this.onload = function(callback){
+		if(typeof callback != 'undefined'){
+			$this._onload = callback;
+
+		}  
+	
+		return this;	
+	}
+
 	//点击关闭
 	this.close = function(callback){
 		if(typeof callback != 'undefined'){
@@ -112,6 +123,11 @@ function _dialog(title, content, config){
 		$('body').append('<div id="'+domstr.layout+'"><div class="container ' + domstr.sdialog+' dialog-state-open" style="width:'+this._config.width+'"><h3 class="dialog-title">'+this._title
 	 		+ '</h3><div class="dialog-close"><i class="icon iconfont">&#xe602;</i></div><div class="content">'+this._content+'</div>'+buttons+'</div></div>'
 	 	);
+
+	 	
+	 	setTimeout(function(){
+	 		$this._onload();
+	 	}, 1);
 	 	
 		if($this._config.buttons == 'none'){
 			$(tmp.sdialog).css('padding-bottom', '10px');
@@ -141,6 +157,7 @@ function _dialog(title, content, config){
 
 		$this._ok = function(){};
 		$this._no = function(){};
+		$this._onload = function(){};
 
 		$this._dom();
 		$this.open();

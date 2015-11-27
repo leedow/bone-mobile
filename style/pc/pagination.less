@@ -1,0 +1,35 @@
+.@{prefix}{
+	&pagination{
+ 
+		overflow: hidden;
+		border: 1px @line-color solid;
+		display: inline-block;
+		
+		a{
+			margin:0;
+			display: block;
+			float:left;
+			border-right: 1px @line-color solid;
+			padding: 0.4em 1em;
+		}
+
+		a:hover{
+			background: @layout-main-background;
+			color: @font-color;
+		}
+
+		a:last{
+			border-right:0;
+		}
+
+		.current{
+			display: inline-block;
+			border-right: 1px @line-color solid;
+			//padding: 0.4em 1em;
+			background: @color-primary;
+			color: #fff;
+			
+		}
+	}
+
+}

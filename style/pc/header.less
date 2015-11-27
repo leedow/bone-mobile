@@ -15,8 +15,10 @@
 			float: right;
 			height: 100%;
 			line-height: @header-pc-height;
-			li{
-				display: inline;
+			.nav-item{
+				text-align: left;
+				float:left;
+				position: relative;
 				.@{prefix}nav-button{
 					height: @header-pc-height;
 					line-height: @header-pc-height;
@@ -30,6 +32,17 @@
 					.pic-icon{
 						
 					}
+				}
+
+				.tag{
+					position: absolute;
+					right:5px;
+					top:5px;
+					background: red;
+					color:#fff;
+					padding:2px 5px;
+					line-height: 1em;
+					border-radius:10px;
 				}
 			}
 		}

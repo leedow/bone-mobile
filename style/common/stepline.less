@@ -1,0 +1,117 @@
+@w-1: 8.333333%;
+@w-2: 16.666666%;
+@w-3: 25%;
+@w-4: 33.333333%;
+@w-5: 41.666666%;
+@w-6: 50%;
+@w-7: 58.333333%;
+@w-8: 66.666666%;
+@w-9: 75%;
+@w-10: 83.333333%;
+@w-11: 91.666666%;
+@w-12: 100%;
+
+.@{prefix}{
+	&stepline-box{
+		padding:80px 40px;
+	}
+
+	&stepline{
+		position: relative;
+		height: @stepline-height;
+		background: @stepline-color-light;
+
+		.stepline-done{
+			background: @stepline-color-dark;
+			height: @stepline-height;
+		}
+
+
+		.dock{
+			position: absolute;
+			left:0;
+			top:-38px;	
+			text-align: center;
+			margin-left: -0.5*@stepline-dock-width;
+			width: @stepline-dock-width;
+			
+			&>i{
+				font-size: @font-size-lg;
+				line-height: 2*@stepline-circle-size;
+				height: 2*@stepline-circle-size;
+				margin:0;
+				padding:0;
+			}
+			&>span{
+				display: block;
+				margin:0 auto;
+				width: @stepline-circle-size;
+				height: @stepline-circle-size;
+				border-radius: 0.5*@stepline-circle-size;
+				background: @stepline-color-light;
+			}
+
+			&>p{
+				padding:5px;
+				margin:0;
+			}
+
+		}
+
+		.dock-2{
+			left:	 @w-2;
+		}
+
+		.dock-3{
+			left:	 @w-3;
+		}
+
+		.dock-4{
+			left:	 @w-4;
+		}
+
+		.dock-5{
+			left:	 @w-5;
+		}
+
+		.dock-6{
+			left:	 @w-6;
+		}
+
+		.dock-7{
+			left:	 @w-7;
+		}
+
+		.dock-8{
+			left:	 @w-8;
+		}
+
+		.dock-9{
+			left:	 @w-9;
+		}
+
+		.dock-10{
+			left:	 @w-10;
+		}
+
+		.dock-11{
+			left:	 @w-11;
+		}
+		.dock-12{
+			left:	 @w-12;
+		}
+
+		.dock-done{
+			color: @stepline-color-dark;
+			&>span{
+				background: @stepline-color-dark;
+			}
+		}
+
+		 
+	}
+
+
+
+
+}

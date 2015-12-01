@@ -53,3 +53,64 @@
 		color: @font-color-light;
 	}
 }
+
+.user-pro-banner{
+ 	overflow: hidden;
+ 	position: relative;
+ 
+ 	img{
+ 		width:100%;
+ 		vertical-align: bottom;
+ 	}
+
+ 	.user-pro-cover{
+ 		position: absolute;
+ 		left:0;
+ 		top:0;
+ 		height: 100%;
+ 		width:100%;
+ 		background: rgba(0, 0, 0, 0.3);
+ 		text-align: center;
+ 		display: block;
+
+ 		&:hover{
+ 			background: rgba(0, 0, 0, 0.1)
+ 		}
+		 
+ 		.user-pro-name{
+ 			color:#fff;
+ 			 
+ 			width: 100%;
+ 			text-align: center;
+ 			position: absolute;
+ 			top:50%;
+ 			margin-top:-75px;
+ 	 
+			h2{
+				font-size: 28px;
+				font-weight: bold;
+			}
+			 
+		 
+ 		}
+ 	}
+ }
+
+ .user-stepline{
+ 	padding:40px 80px;
+ .bo-stepline{
+ 	background: #fff;
+ }
+
+ 	.dock{
+ 		span{
+ 			background: #fff;
+ 		}
+ 	}
+
+ 	.dock-done{
+ 		span{
+ 			background: @color-comfort;;
+ 		}
+ 	}
+ }

@@ -47,7 +47,7 @@
 	var verify = __webpack_require__(1);
 	var dialog = __webpack_require__(3);
 	var dropdown = __webpack_require__(4);
-
+	var carousel = __webpack_require__(5);
 	 
 	$(document).ready(function(){
 		dropdown.init();
@@ -56,6 +56,9 @@
 			var d = dialog.init('标 题', 'content');
 
 		});
+
+		carousel.init();
+
 	});
 
 /***/ },
@@ -438,6 +441,114 @@
 			$(this).find('.' + CONFIG.prefix + 'dropdown-menu').css('display', 'none');
 		});	
 	}
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var CONFIG = __webpack_require__(2);
+
+
+	function slide(obj){
+		_this = this;
+		_this.obj = obj;
+		_this.slide = _this.obj.children('.slide');
+		_this.items = _this.slide.children('div');
+		_this.leftButton = _this.obj.children('.arrow-left');
+		_this.rightButton = _this.obj.children('.arrow-right');
+		_this.step = 0;
+		_this.length = 0;
+
+		//初始化尺寸
+		_this.init = function(){
+			
+			_this.items.each(function(){
+				_this.length += parseInt($(this).width());
+				_this.step = $(this).width();
+			})
+			 
+			_this.slide.css('width', _this.length);
+		}
+
+		//滚动 left or right
+		_this.run = function(direction){
+			var pos = _this.slide.position();
+
+			switch(direction){
+				case 'right':{
+					 
+					if(Math.abs(pos.left) >= _this.length - _this.step){
+					 
+					} else {
+						move(pos.left - _this.step);
+					}		
+					break;
+				}
+				case 'left':{
+	 
+					if(Math.abs(pos.left) == 0){
+						 
+					} else {
+						move(pos.left + _this.step);
+					}
+					break;
+				}
+				default: {
+
+				}
+			}
+
+			function displayButtons(left){
+				 
+				if(left == _this.step - _this.length){
+					_this.rightButton.css('display', 'none');
+					_this.leftButton.css('display', 'block');
+				} else if(left == 0){
+					_this.rightButton.css('display', 'block');
+					_this.leftButton.css('display', 'none');
+				} else {
+					_this.rightButton.css('display', 'block');
+					_this.leftButton.css('display', 'block');
+				}
+			}
+
+			function move(left){
+				_this.slide.animate({
+					left: left + 'px'
+				}, 500,function(){
+					displayButtons(left);
+				})
+			}	
+		}
+
+		_this.events = function(){
+			_this.leftButton.on('click', function(){
+				_this.run('left');
+			});
+			_this.rightButton.on('click', function(){
+				_this.run('right');
+			});
+		}
+
+
+
+		_this.init();
+		_this.events();
+		_this.run();
+
+	}
+
+	//适用于PC的幻灯片，依赖jquery
+	module.exports.init = function(){
+		 var list = [];
+		 $('.' + CONFIG.prefix + 'carousel').each(function(){
+		 	_this = $(this);
+		 	list.push(new slide(_this));
+		 });
+
+	}
+
+
 
 /***/ }
 /******/ ]);

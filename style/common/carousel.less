@@ -4,17 +4,23 @@
 		position: relative;
 		height: 200px;
 
-		.@{prefix}slide{
+		.slide{
+			position: absolute;
+			left:0;
+			top:0;
 
+			&>div{
+				float: left;
+			}
 		}
 
-		.@{prefix}arrow-left{
+		.arrow-left{
 			position: absolute;
 			left:0;
 			top:0;
 		}
 
-		.@{prefix}arrow-right{
+		.arrow-right{
 			position: absolute;
 			right:0;
 			top:0;

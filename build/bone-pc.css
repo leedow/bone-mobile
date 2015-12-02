@@ -1229,15 +1229,15 @@ p {
 .bo-carousel {
   overflow: hidden;
   position: relative;
-  height: 200px;
 }
 .bo-carousel .slide {
-  position: absolute;
-  left: 0;
-  top: 0;
+  margin-left: 0;
+  width: 100%;
 }
 .bo-carousel .slide > div {
   float: left;
+  overflow: hidden;
+  width: 100%;
 }
 .bo-carousel .arrow-left {
   position: absolute;

@@ -458,6 +458,7 @@
 		_this.rightButton = _this.obj.children('.arrow-right');
 		_this.step = 0;
 		_this.length = 0;
+		_this.flag = false;//动画标志
 
 		//初始化尺寸
 		_this.init = function(){
@@ -465,6 +466,7 @@
 			_this.items.each(function(){
 				_this.length += parseInt($(this).width());
 				_this.step = $(this).width();
+				$(this).css('width', _this.step);
 			})
 			 
 			_this.slide.css('width', _this.length);
@@ -472,7 +474,8 @@
 
 		//滚动 left or right
 		_this.run = function(direction){
-			var pos = _this.slide.position();
+			var pos = {};//_this.slide.position();
+			pos.left = parseInt(_this.slide.css('marginLeft'));
 
 			switch(direction){
 				case 'right':{
@@ -513,20 +516,24 @@
 			}
 
 			function move(left){
+				_this.flag = true;
 				_this.slide.animate({
-					left: left + 'px'
+					'marginLeft': left + 'px'
 				}, 500,function(){
 					displayButtons(left);
+					_this.flag = false;
 				})
 			}	
 		}
 
 		_this.events = function(){
 			_this.leftButton.on('click', function(){
-				_this.run('left');
+				if(!_this.flag)
+					_this.run('left');
 			});
 			_this.rightButton.on('click', function(){
-				_this.run('right');
+				if(!_this.flag)
+					_this.run('right');
 			});
 		}
 

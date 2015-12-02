@@ -88,7 +88,15 @@
  .home-container{
  	width: 980px;
  	margin:0 auto;
- 	overflow: hidden;
+ 	//overflow: hidden;
+ 	&:after{
+ 		content: "";
+ 		overflow: hidden;
+ 		line-height:0;
+ 		height: 0;
+ 		clear:both;
+ 	}
+
  }
 
  .home-title{
@@ -159,6 +167,12 @@
  	border-top:1px @line-color solid;
  	border-bottom:1px @line-color solid;
  	background: #f2f2f2;
+ }
+
+  .bg-light{
+ 	border-top:1px @line-color solid;
+ 	border-bottom:1px @line-color solid;
+ 	background: #fff;
  }
 
  .more-container{

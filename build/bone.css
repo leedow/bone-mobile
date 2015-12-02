@@ -496,6 +496,10 @@ p {
   width: 100%;
   display: block !important;
 }
+button,
+input {
+  outline: none;
+}
 .bo-textarea,
 .bo-input,
 .bo-input-lg,
@@ -705,6 +709,9 @@ p {
   text-align: left;
   font-weight: bold;
   color: #999999;
+}
+.bo-fw {
+  width: 100%;
 }
 .bo-tab-vertical,
 .bo-tab-vertical-bor {

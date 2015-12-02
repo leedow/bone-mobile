@@ -1,31 +1,56 @@
 .@{prefix}{
 	&carousel{
-		overflow: hidden;
-		position: relative;
-	
-
-		.slide{
 		 
+		position: relative;
+		&:after{
+			content
+			clear:both;
+			width: 100%;
+			line-height: 0;
+			height: 0;
+			overflow: hidden;
+		}
+
+		.slide-box{
+			overflow: hidden;
+			width: 100%;
+		 
+		}
+		.slide{	 
 			margin-left:0;
 	 		width: 100%;
-
-			&>div{
+	 
+			.slide-item{
 				float: left;
+				display: block;
 				overflow: hidden;
-				width: 100%;
+				//width: 100%;
+				 
+				&>img{
+					width: 100%;
+				}
 			}
+		}
+
+		.arrow-left, .arrow-right{
+			font-size: 2*@font-size-lg;
+			background: none;
+			border:0;
+			top:50%;
+			margin-top: -22px;
+			color:#fff;
 		}
 
 		.arrow-left{
 			position: absolute;
 			left:0;
-			top:0;
+			 
 		}
 
 		.arrow-right{
 			position: absolute;
 			right:0;
-			top:0;
+			 
 		}
 	}
 }

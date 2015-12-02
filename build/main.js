@@ -450,25 +450,28 @@
 
 
 	function slide(obj){
-		_this = this;
+		var _this = this;
 		_this.obj = obj;
-		_this.slide = _this.obj.children('.slide');
-		_this.items = _this.slide.children('div');
+		_this.slide = _this.obj.find('.slide');
+	 
+		_this.items = _this.slide.children('.slide-item');
 		_this.leftButton = _this.obj.children('.arrow-left');
 		_this.rightButton = _this.obj.children('.arrow-right');
 		_this.step = 0;
-		_this.length = 0;
+		_this.width = 0;//主容器长度
+		_this.length = 0;//slide长度
 		_this.flag = false;//动画标志
 
 		//初始化尺寸
 		_this.init = function(){
 			
 			_this.items.each(function(){
-				_this.length += parseInt($(this).width());
-				_this.step = $(this).width();
+				_this.length += parseInt($(this).outerWidth());
+				_this.step = $(this).outerWidth();
 				$(this).css('width', _this.step);
 			})
-			 
+			
+			_this.width = _this.obj.outerWidth();
 			_this.slide.css('width', _this.length);
 		}
 
@@ -480,10 +483,10 @@
 			switch(direction){
 				case 'right':{
 					 
-					if(Math.abs(pos.left) >= _this.length - _this.step){
+					if(Math.abs(pos.left) >= _this.length - _this.width - 1){
 					 
 					} else {
-						move(pos.left - _this.step);
+						_this.move(pos.left - _this.step);
 					}		
 					break;
 				}
@@ -492,7 +495,7 @@
 					if(Math.abs(pos.left) == 0){
 						 
 					} else {
-						move(pos.left + _this.step);
+						_this.move(pos.left + _this.step);
 					}
 					break;
 				}
@@ -500,31 +503,31 @@
 
 				}
 			}
-
-			function displayButtons(left){
-				 
-				if(left == _this.step - _this.length){
-					_this.rightButton.css('display', 'none');
-					_this.leftButton.css('display', 'block');
-				} else if(left == 0){
-					_this.rightButton.css('display', 'block');
-					_this.leftButton.css('display', 'none');
-				} else {
-					_this.rightButton.css('display', 'block');
-					_this.leftButton.css('display', 'block');
-				}
-			}
-
-			function move(left){
-				_this.flag = true;
-				_this.slide.animate({
-					'marginLeft': left + 'px'
-				}, 500,function(){
-					displayButtons(left);
-					_this.flag = false;
-				})
-			}	
 		}
+
+		_this.displayButtons = function(left){
+				 
+			if(left <= _this.width - _this.length + 1){
+				_this.rightButton.css('display', 'none');
+				_this.leftButton.css('display', 'block');
+			} else if(left == 0){
+				_this.rightButton.css('display', 'block');
+				_this.leftButton.css('display', 'none');
+			} else {
+				_this.rightButton.css('display', 'block');
+				_this.leftButton.css('display', 'block');
+			}
+		}
+
+		_this.move = function(left){
+			_this.flag = true;
+			_this.slide.animate({
+				'marginLeft': left + 'px'
+			}, 500,function(){
+				_this.displayButtons(left);
+				_this.flag = false;
+			})
+		}	
 
 		_this.events = function(){
 			_this.leftButton.on('click', function(){
@@ -541,7 +544,7 @@
 
 		_this.init();
 		_this.events();
-		_this.run();
+		 
 
 	}
 
@@ -549,7 +552,8 @@
 	module.exports.init = function(){
 		 var list = [];
 		 $('.' + CONFIG.prefix + 'carousel').each(function(){
-		 	_this = $(this);
+		 	var _this = $(this);
+		  
 		 	list.push(new slide(_this));
 		 });
 

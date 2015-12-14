@@ -188,6 +188,7 @@ p {
   color: #6699ff;
 }
 .bo-pagination {
+  background: #fff;
   overflow: hidden;
   border: 1px #e0e0e0 solid;
   display: inline-block;
@@ -941,6 +942,29 @@ input {
 }
 .bo-article h5 {
   font-size: 14px;
+}
+.bo-title-midline {
+  height: 60px;
+  position: relative;
+}
+.bo-title-midline:after {
+  content: "";
+  display: block;
+  border-bottom: 1px #e0e0e0 solid;
+  height: 50%;
+  width: 30%;
+  margin: 0 auto;
+}
+.bo-title-midline .title {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  line-height: 60px;
+  width: 100px;
+  background: #fff;
+  margin-left: -50px;
+  text-align: center;
+  font-weight: normal;
 }
 /**
  * Grid

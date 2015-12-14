@@ -11,6 +11,6 @@ $(document).ready(function(){
 
 	});
 
-	carousel.init();
+	carousel.init();//fdsfdfdd
 
 });

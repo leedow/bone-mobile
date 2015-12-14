@@ -58,6 +58,15 @@ gulp.task('js', function(callback){
 				}
 			}))
 			.pipe(gulp.dest('./build'));
+		gulp.src('./js/main-global.js')
+			.pipe(webpack({
+				watch: true,
+				output: {
+					filename: 'bone-global.js'
+				}
+			}))
+			.pipe(gulp.dest('./build'))
+			.pipe(gulp.dest('D:/sae/wwwroot/source/smart/trunck/sources/webresource/glw/front/js'));//for格林卫 
 	});
 });
 

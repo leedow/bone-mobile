@@ -28,4 +28,29 @@
 
 		}
 	}
+
+	&title-midline{
+		height: @title-midline-height;
+		position: relative;
+		&:after{
+			content: "";
+			display: block;
+			border-bottom: 1px @line-color solid;
+			height: 50%;
+			width: @title-line-width;
+			margin: 0 auto;
+		}
+
+		.title{
+			position: absolute;
+			left: 50%;
+			top: 0;
+			line-height: @title-midline-height;
+			width: @title-text-width;
+			background: #fff;
+			margin-left: -0.5*@title-text-width;
+			text-align: center;
+			font-weight: normal;
+		}
+	}
 }

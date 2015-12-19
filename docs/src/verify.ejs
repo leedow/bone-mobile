@@ -6,7 +6,7 @@
 <title>Bone-mobile header</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
-<%- include source.ejs %>
+<%- include sourceglobal.ejs %>
 </head>
 <body class="bo-body">
 <%- include commonheader.ejs %>
@@ -27,10 +27,15 @@
  			<div class="bo-form-item">
  				<label class="bo-label-required">必填项</label>
  				<div>
- 					<input class="bo-input bo-form-control verify-required" type="text" placeholder="Enter something">
+ 					<input class="bo-input bo-form-control" data-required=true type="text" placeholder="Enter something">
  				</div>
  			</div>
- 			 	
+ 			<div class="bo-form-item">
+ 				<label class="bo-label-required">邮 箱</label>
+ 				<div>
+ 					<input class="bo-input bo-form-control" data-required=true data-format="email" type="text" id="test" placeholder="Enter something">
+ 				</div>
+ 			</div> 	
  			<div class="bo-form-item">
  				<input type="submit" class="bo-btn-primary" id="go" value="确 定">
  				<input type="submit" class="bo-btn-blank" value="取 消">
@@ -41,6 +46,18 @@
 <![CDATA[
 
 ]]>
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#go').click(function(){
+			if(bone.verify2.check('#form')){
+				alert('pass');
+			} else {
+				alert('wrong');
+			}
+		});
+	});
 </script>
  	</div>
 </section>

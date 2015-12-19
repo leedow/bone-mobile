@@ -138,7 +138,7 @@ function _dialog(title, content, config){
 		});
 		$(tmp.layout + ' .dialog-ok').on('click', function(){
 			$this._ok();
-			$this.close();
+			//$this.close();
 		});
 		$(tmp.layout + ' .dialog-no').on('click', function(){
 			$this._no();

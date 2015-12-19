@@ -222,6 +222,20 @@ p {
   margin-left: -150px;
   top: 140px;
 }
+#bo-notice {
+  position: fixed;
+  width: 240px;
+  left: 50%;
+  margin-left: -120px;
+  bottom: 20%;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 25px;
+  background: #444;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+}
 #bo-dialog-layout {
   position: fixed;
   left: 0;

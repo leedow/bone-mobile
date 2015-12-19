@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="../fonts2/iconfont.css">
 <link rel="stylesheet" type="text/css" href="../highlight/shCoreDefault.css">
 <script type="text/javascript" src="../plugins/jquery.min.js"></script>
-<script type="text/javascript" src="../build/main.js"></script>
+<script type="text/javascript" src="../build/bone-global.js"></script>
 <script type="text/javascript"  data-manual src="../highlight/shCore.js"></script>
 <script type="text/javascript" src="../highlight/scripts/shBrushCSharp.js"></script>
 <script type="text/javascript">SyntaxHighlighter.all();</script>
@@ -93,10 +93,15 @@
  			<div class="bo-form-item">
  				<label class="bo-label-required">必填项</label>
  				<div>
- 					<input class="bo-input bo-form-control verify-required" type="text" placeholder="Enter something">
+ 					<input class="bo-input bo-form-control" data-required=true type="text" placeholder="Enter something">
  				</div>
  			</div>
- 			 	
+ 			<div class="bo-form-item">
+ 				<label class="bo-label-required">邮 箱</label>
+ 				<div>
+ 					<input class="bo-input bo-form-control" data-required=true data-format="email" type="text" id="test" placeholder="Enter something">
+ 				</div>
+ 			</div> 	
  			<div class="bo-form-item">
  				<input type="submit" class="bo-btn-primary" id="go" value="确 定">
  				<input type="submit" class="bo-btn-blank" value="取 消">
@@ -107,6 +112,18 @@
 <![CDATA[
 
 ]]>
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#go').click(function(){
+			if(bone.verify2.check('#form')){
+				alert('pass');
+			} else {
+				alert('wrong');
+			}
+		});
+	});
 </script>
  	</div>
 </section>

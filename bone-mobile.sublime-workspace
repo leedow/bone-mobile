@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"get",
+				"getInputData"
+			],
+			[
 				"margin",
 				"margin-top"
 			],
@@ -82,10 +86,6 @@
 			[
 				"border-bo",
 				"border-bottom-left-radius"
-			],
-			[
-				"get",
-				"getType"
 			],
 			[
 				"count",
@@ -322,8 +322,8 @@
 		{
 			"contents": ".country-box{\n	padding:40px 0 0 0;\n}\n\n.pro-box{\n	//height: 410px;\n	position: relative;\n	overflow: hidden;\n	img{\n		width: 100%;\n		border-radius: @radius;\n\n	}\n\n	h2{\n		text-align: left;\n	}\n\n	p{\n		color: @font-color-light;\n		text-align: left;\n		font-size: @font-size-md;\n	}\n\n	.pre-pic{\n		height:200px;\n		overflow: hidden;\n		margin-bottom: 20px;\n		img{\n			vertical-align: bottom;\n		}\n	}\n	.position{\n		position: absolute;\n		bottom:0;\n		left:0;\n		height: 50%;\n		overflow: hidden;\n		img{\n			width: 100%;\n			vertical-align: middle;\n		}\n	}\n}\n\n.page-banner{\n	height:320px;\n	position: relative;\n	margin-bottom: 40px;\n	background: #f2f2f2;\n	img{\n		width:100%;\n	}\n\n	.cover{\n		position: absolute;\n		left:0;\n		top:0;\n		width: 100%;\n		height: 100%;\n		background: rgba(0, 0, 0, 0.2) \n\n	}\n	.page-title{\n		position: absolute;\n		left:0;\n		top:50%;\n		width: 100%;\n	 \n		margin-top: -45px;\n		h2{\n			color:#fff;\n			font-size: 38px;\n			font-weight: normal;\n			//text-shadow: 0 2px 4px #444;\n		}\n		p{\n			color:#fff;\n			font-size:24px;	\n			padding:0 0 10px 0;\n		}\n	}\n}\n\n.page-banner-form{\n	height:160px;\n	position: relative;\n	margin-bottom: 40px;\n	background: #f2f2f2;\n	border-bottom:1px @line-color solid;\n\n	&:after{\n		 \n		content: \" \";\n		  height: 0;\n		  width: 0;\n		  border-color: transparent;\n		  border-style: solid;\n		  border-width: 15px;\n		  border-bottom-color: #fff;\n		  position: absolute;\n		  bottom: -1px;\n		  left:50%;\n		  margin-left: -14px;\n	}\n	 \n	.page-title{\n		position: absolute;\n		left:0;\n		top:50%;\n		width: 100%;\n	 \n		margin-top: -40px;\n		h2{\n		 	font-weight: normal;\n			font-size: 28px;\n			//text-shadow: 0 2px 4px #444;\n		}\n		p{			 \n			font-size:16px;	\n\n		}\n	}\n}\n.header-search{\n	float: left;\n	position: relative;\n\n	i{\n		position: absolute;\n		left:0;\n		top:0;\n		line-height: 60px;\n		font-size:28px;\n		width: 60px;\n		text-align: center;\n		color:#999;\n	}\n	.search-input{\n		border:0;\n		height:60px;\n		line-height: 60px;\n		font-family: inherit;\n		padding:0 20px 0 60px;\n		background: none;\n		outline:none;\n	}\n}\n\n.divi-line{\n	border-bottom:1px @line-color solid;\n	//padding-bottom:20px;\n	//margin-bottom:30px;\n}\n\n\n\n.p1111{\n	padding:13px;\n}\n\n.p1000{\n	padding-top:13px;\n}\n\n.bo-tab-horizon .bo-tab-item{\n	padding-right: 20px;\n	padding-left:20px;\n}\n\n.bo-nav-button{\n	padding-left:20px;\n	padding-right:20px;\n}",
 			"file": "style/addon/gelinwei/list.less",
-			"file_size": 2469,
-			"file_write_time": 130930966862389116,
+			"file_size": 2586,
+			"file_write_time": 130936205933485007,
 			"settings":
 			{
 				"buffer_size": 2296,
@@ -339,10 +339,10 @@
 			}
 		},
 		{
-			"file": "style/bone-pc.less",
+			"file": "js/bone-carousel.js",
 			"settings":
 			{
-				"buffer_size": 828,
+				"buffer_size": 2243,
 				"line_ending": "Windows"
 			}
 		},
@@ -374,7 +374,26 @@
 			"file": "style/addon/gelinwei/project.less",
 			"settings":
 			{
-				"buffer_size": 1412,
+				"buffer_size": 1931,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": ".checked{\n	color: @color-comfort;\n	cursor: pointer;\n}\n\n.unchecked{\n	color:#ccc;\n	cursor: pointer;\n}\n\n.shp-price{\n	 \n	span{\n		color: @color-highlight;\n		font-weight: bold;\n		font-size: @font-size-md;\n	}\n}\n.shp-price-total{\n	line-height: 46px;\n\n	span{\n		font-size: @font-size-lg;\n	}\n}\n\n.stars{\n	color:\n}",
+			"file": "style/addon/gelinwei/shoppingcart.less",
+			"file_size": 310,
+			"file_write_time": 130939580760909727,
+			"settings":
+			{
+				"buffer_size": 301,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/tgoooo/Desktop/a.html",
+			"settings":
+			{
+				"buffer_size": 976,
 				"line_ending": "Windows"
 			}
 		},
@@ -406,6 +425,22 @@
 			}
 		},
 		{
+			"file": "js/bone-verify2.js",
+			"settings":
+			{
+				"buffer_size": 3054,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/bone-form.js",
+			"settings":
+			{
+				"buffer_size": 513,
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "js/bone-dialog.js",
 			"settings":
 			{
@@ -414,10 +449,13 @@
 			}
 		},
 		{
+			"contents": "var verify = require('./bone-verify');\nvar dialog = require('./bone-dialog');\nvar dropdown = require('./bone-dropdown');\nvar carousel = require('./bone-carousel');\n \n$(document).ready(function(){\n	dropdown.init();\n	$('#go').click(function(){\n		//verify.check('#form');ff\n		var d = dialog.init('标 题', 'content');\n\n	});\n\n	carousel.init();//fdd\n\n});",
 			"file": "js/main.js",
+			"file_size": 370,
+			"file_write_time": 130945514120699987,
 			"settings":
 			{
-				"buffer_size": 279,
+				"buffer_size": 346,
 				"line_ending": "Windows"
 			}
 		},
@@ -430,10 +468,21 @@
 			}
 		},
 		{
+			"contents": "/******/ (function(modules) { // webpackBootstrap\n/******/ 	// The module cache\n/******/ 	var installedModules = {};\n\n/******/ 	// The require function\n/******/ 	function __webpack_require__(moduleId) {\n\n/******/ 		// Check if module is in cache\n/******/ 		if(installedModules[moduleId])\n/******/ 			return installedModules[moduleId].exports;\n\n/******/ 		// Create a new module (and put it into the cache)\n/******/ 		var module = installedModules[moduleId] = {\n/******/ 			exports: {},\n/******/ 			id: moduleId,\n/******/ 			loaded: false\n/******/ 		};\n\n/******/ 		// Execute the module function\n/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);\n\n/******/ 		// Flag the module as loaded\n/******/ 		module.loaded = true;\n\n/******/ 		// Return the exports of the module\n/******/ 		return module.exports;\n/******/ 	}\n\n\n/******/ 	// expose the modules object (__webpack_modules__)\n/******/ 	__webpack_require__.m = modules;\n\n/******/ 	// expose the module cache\n/******/ 	__webpack_require__.c = installedModules;\n\n/******/ 	// __webpack_public_path__\n/******/ 	__webpack_require__.p = \"\";\n\n/******/ 	// Load entry module and return exports\n/******/ 	return __webpack_require__(0);\n/******/ })\n/************************************************************************/\n/******/ ([\n/* 0 */\n/***/ function(module, exports, __webpack_require__) {\n\n	var verify = __webpack_require__(1);\n	var dialog = __webpack_require__(3);\n	var dropdown = __webpack_require__(4);\n	var carousel = __webpack_require__(5);\n	 \n	$(document).ready(function(){\n		dropdown.init();\n		$('#go').click(function(){\n			//verify.check('#form');ff\n			var d = dialog.init('标 题', 'content');\n\n		});\n\n		carousel.init();\n\n	});\n\n/***/ },\n/* 1 */\n/***/ function(module, exports, __webpack_require__) {\n\n	var CONFIG = __webpack_require__(2);\n\n	module.exports.check = function(obj){\n		$this = $(obj);\n		var flag = true;\n		var msg = {\n			'required': '此项不能为空',\n			'wrong': '此项格式错误'\n		}\n\n		$this.find('.verify-required').each(function(){\n			add_state($(this), '');\n			if (check_empty($(this).val())) {\n				add_state($(this), msg.required);\n				flag = false;\n			} \n		});\n\n		$this.find('.verify-email').each(function(){\n			add_state($(this), '');\n			if (check_empty($(this).val())) {\n				if (allow_empty($(this))) {\n					return true;\n				};\n				add_state($(this), msg.required);\n				flag = false;\n			} else if (!check_email($(this).val())) {\n				add_state($(this), msg.wrong);\n				flag = false;\n			}\n		});\n\n		$this.find('.verify-url').each(function(){\n			add_state($(this), '');\n			if (check_empty($(this).val())) {\n				if (allow_empty($(this))) {\n					return true;\n				};\n				add_state($(this), msg.required);\n				flag = false;\n			} else if (!check_url($(this).val())) {\n				add_state($(this), msg.wrong);\n				flag = false;\n			}\n		});\n\n		$this.find('.verify-password').each(function(){\n			add_state($(this), '');\n\n			if (check_empty($(this).val())) {\n				if (allow_empty($(this))) {\n					return true;\n				};\n				add_state($(this), msg.required);\n				flag = false;\n			} else if (!check_psd($(this).val())) {\n				add_state($(this), msg.wrong);\n				flag = false;\n			}\n		});\n\n		$this.find('.verify-nocn').each(function(){\n			add_state($(this), '');\n			if (check_empty($(this).val())) {\n				if (allow_empty($(this))) {\n					return true;\n				};\n				add_state($(this), msg.required);\n				flag = false;\n			} else if (!check_nocn($(this).val())) {\n				add_state($(this), msg.wrong);\n				flag = false;\n			}\n		});\n\n		//bone.placeholder.refresh();\n		\n		return flag;\n	}\n\n\n	function allow_empty(obj){\n		if(obj.attr('class').indexOf('verify-empty') < 0){\n			return false;\n		} else {\n			return true;\n		}\n	}	\n\n	function set_state(params){\n		for(key in params){\n			if (params[key] == '') {\n				$(key).next('p').remove();\n				add_state($(key), params[key]);\n			} else {\n				add_state($(key), params[key]);\n			};\n		}\n	}\n\n	function add_state(aim, info){\n		aim.next('p').remove();\n		if (info != '') {\n			info = aim.attr('data-msg')?aim.attr('data-msg'):info;\n			if(info != '{{none}}'){\n				aim.after('<p>' + info + '</p>');\n			}\n			aim.parent('div').addClass(CONFIG.prefix + 'input-wrong');\n		} else {\n			aim.parent('div').removeClass(CONFIG.prefix + 'input-wrong');\n			aim.next('p').remove();\n		};\n	}\n\n	function check_empty(value){\n		//var reg = /^\\s$/;\n		if(value.replace(' ', '') != ''){\n			return false;\n		}\n		return true;\n	}\n\n	function check_email(value){\n		  var reg = /^([a-zA-Z0-9_\\.\\-])+\\@(([a-zA-Z0-9\\-])+\\.)+([a-zA-Z0-9]{2,4})+$/;\n		  if(!reg.test(value)){\n		   		return false;\n		  }\n		  return true;\n	}\n\n	function check_url(value){\n		var reg = /[a-zA-Z0-9]+\\.[a-z]+/i;\n		if(!reg.test(value)){\n			return false;\n		}\n		return true;\n	}\n\n	function check_psd(value){\n		var reg = /[a-zA-Z0-9]{6,14}/;\n		if(!reg.test(value)){\n			return false;\n		}\n		return true;\n	}\n\n	function check_nocn(value){\n		var reg = /[\\u4E00-\\u9FA5]/i;\n		if(reg.test(value)){\n			return false;\n		}\n		return true;\n	}\n\n\n/***/ },\n/* 2 */\n/***/ function(module, exports) {\n\n	module.exports = {\n		prefix: 'bo-',\n		$: function(str){//格式化选择器#test->#bo-test\n			var res = '';\n\n			if(/^#./.test(str)){\n				\n				res = str.replace('#', '#' + this.prefix);\n\n			}\n			else if(/^\\../.test(str)){\n				\n				res = str.replace('.', '.' + this.prefix);\n			} else {\n				res = this.prefix + str;\n			}\n			return res;\n		}\n	}\n\n/***/ },\n/* 3 */\n/***/ function(module, exports, __webpack_require__) {\n\n	var CONFIG = __webpack_require__(2);\n\n	var $dialog;\n\n	module.exports.init = function(title, content, config){\n		if(typeof $dialog == 'undefined'){//单例模式\n			$dialog = new _dialog(title, content, config);\n			//console.log('new dialog');\n			\n		} else {\n			$dialog.refresh(title, content, config);\n			\n		}\n		return $dialog;\n	}\n\n	//对话框类\n	function _dialog(title, content, config){\n		var $this = this;\n		this._title = title?title:\"\";\n		this._content = content?content:\"\";\n		this._config = {};\n		this.config = config?config:{};\n		this._config.buttons = (this.config.buttons != undefined)?this.config.buttons:'single';\n		this._config.width = (this.config.width != undefined)?this.config.width:'400px';\n\n		/*config:{\n			'buttons': 'single',\n			'width': '400px' \n		}*/\n		this.timer;\n		this._ok = function(){};\n		this._no = function(){};\n		this._onload = function(){};\n\n		var tmp = {\n			layout: CONFIG.$('#dialog-layout'),\n			sdialog: CONFIG.$('.dialog'),\n			dialog: CONFIG.$('#dialog-layout') + ' ' + CONFIG.$('.dialog')\n		}\n\n		var domstr = {\n			layout: CONFIG.$('dialog-layout'),\n			sdialog: CONFIG.$('dialog'),\n			dialog: CONFIG.$('dialog-layout') + ' ' + CONFIG.$('dialog')\n		}\n\n\n\n		//显示对话框\n		this.open = function(){	\n			clearTimeout($this.timer);\n			$(tmp.layout).css('display', 'block');\n			var h = $(tmp.dialog).height() + 90;\n\n		 	$(tmp.dialog).css('margin-top', $(window).height()/2 - h/2);\n\n		}\n\n		//关闭对话框\n		this.close = function(){\n\n		}\n\n		//点击确定\n		this.ok = function(callback){\n			if(typeof callback != 'undefined'){\n				$this._ok = callback;\n			}\n			\n			return this;\n		}\n\n		//点击取消\n		this.no = function(callback){\n			if(typeof callback != 'undefined'){\n				$this._no = callback;\n			}  \n		\n			return this;\n		}\n\n		//加载完毕\n		this.onload = function(callback){\n			if(typeof callback != 'undefined'){\n				$this._onload = callback;\n\n			}  \n		\n			return this;	\n		}\n\n		//点击关闭\n		this.close = function(callback){\n			if(typeof callback != 'undefined'){\n				callback();\n			}\n\n			$(tmp.dialog).removeClass('dialog-state-open').addClass('dialog-state-close');\n	 		$this.timer = setTimeout(function(){\n	 			$(tmp.layout).css('display', 'none');\n	 		}, 300);\n			\n			return this;\n		}\n\n		this._dom = function(){\n			if($(tmp.layout).length > 0 ){\n				$(tmp.layout).remove();\n			}\n			 \n			if($this._config.buttons == 'single'){\n				var buttons = '<div class=\"dialog-buttons\">'\n					+'<button class=\"'+CONFIG.prefix+'btn-primary button dialog-ok\">确 定</button></div>';\n			} else if($this._config.buttons == 'none'){\n				var buttons = '';\n			} else {\n				var buttons = '<div class=\"dialog-buttons\">'\n					+'<button class=\"'+CONFIG.prefix+'btn-default button dialog-no\">取 消</button>'\n					+'<button class=\"'+CONFIG.prefix+'btn-primary button dialog-ok\">确 定</button></div>';\n			}\n\n			$('body').append('<div id=\"'+domstr.layout+'\"><div class=\"container ' + domstr.sdialog+' dialog-state-open\" style=\"width:'+this._config.width+'\"><h3 class=\"dialog-title\">'+this._title\n		 		+ '</h3><div class=\"dialog-close\"><i class=\"icon iconfont\">&#xe602;</i></div><div class=\"content\">'+this._content+'</div>'+buttons+'</div></div>'\n		 	);\n\n		 	\n		 	setTimeout(function(){\n		 		$this._onload();\n		 	}, 1);\n		 	\n			if($this._config.buttons == 'none'){\n				$(tmp.sdialog).css('padding-bottom', '10px');\n			}\n\n			$(tmp.layout + ' .dialog-close').on('click', function(){\n				$this.close();\n			});\n			$(tmp.layout + ' .dialog-ok').on('click', function(){\n				$this._ok();\n				$this.close();\n			});\n			$(tmp.layout + ' .dialog-no').on('click', function(){\n				$this._no();\n				$this.close();\n			});\n		}\n\n		//更新\n		this.refresh = function(title, content , config){\n			$this._title = title?title:\"\";\n			$this._content = content?content:\"\";\n			this._config = {};\n			this.config = config?config:{};\n			this._config.buttons = (this.config.buttons != undefined)?this.config.buttons:'single';\n			this._config.width = (this.config.width != undefined)?this.config.width:'400px';\n\n			$this._ok = function(){};\n			$this._no = function(){};\n			$this._onload = function(){};\n\n			$this._dom();\n			$this.open();\n		}\n\n		//this._dom = \n		\n		this._dom();\n		this.open();\n\n	}\n\n	  \n\n/***/ },\n/* 4 */\n/***/ function(module, exports, __webpack_require__) {\n\n	var CONFIG = __webpack_require__(2);\n\n	module.exports.init = function(){\n		dropdown();\n	}\n\n\n	function dropdown(){\n		$('.' + CONFIG.prefix + 'dropdown').hover(function(){\n	 \n			$(this).find('.' + CONFIG.prefix + 'dropdown-menu').css('display', 'block');\n		}, function(){\n			$(this).find('.' + CONFIG.prefix + 'dropdown-menu').css('display', 'none');\n		});	\n	}\n\n/***/ },\n/* 5 */\n/***/ function(module, exports, __webpack_require__) {\n\n	var CONFIG = __webpack_require__(2);\n\n\n	function slide(obj){\n		var _this = this;\n		_this.obj = obj;\n		_this.slide = _this.obj.find('.slide');\n	 \n		_this.items = _this.slide.children('.slide-item');\n		_this.leftButton = _this.obj.children('.arrow-left');\n		_this.rightButton = _this.obj.children('.arrow-right');\n		_this.step = 0;\n		_this.width = 0;//主容器长度\n		_this.length = 0;//slide长度\n		_this.flag = false;//动画标志\n\n		//初始化尺寸\n		_this.init = function(){\n			\n			_this.items.each(function(){\n				_this.length += parseInt($(this).outerWidth());\n				_this.step = $(this).outerWidth();\n				$(this).css('width', _this.step);\n			})\n			\n			_this.width = _this.obj.outerWidth();\n			_this.slide.css('width', _this.length);\n		}\n\n		//滚动 left or right\n		_this.run = function(direction){\n			var pos = {};//_this.slide.position();\n			pos.left = parseInt(_this.slide.css('marginLeft'));\n\n			switch(direction){\n				case 'right':{\n					 \n					if(Math.abs(pos.left) >= _this.length - _this.width - 1){\n					 \n					} else {\n						_this.move(pos.left - _this.step);\n					}		\n					break;\n				}\n				case 'left':{\n	 \n					if(Math.abs(pos.left) == 0){\n						 \n					} else {\n						_this.move(pos.left + _this.step);\n					}\n					break;\n				}\n				default: {\n\n				}\n			}\n		}\n\n		_this.displayButtons = function(left){\n				 \n			if(left <= _this.width - _this.length + 1){\n				_this.rightButton.css('display', 'none');\n				_this.leftButton.css('display', 'block');\n			} else if(left == 0){\n				_this.rightButton.css('display', 'block');\n				_this.leftButton.css('display', 'none');\n			} else {\n				_this.rightButton.css('display', 'block');\n				_this.leftButton.css('display', 'block');\n			}\n		}\n\n		_this.move = function(left){\n			_this.flag = true;\n			_this.slide.animate({\n				'marginLeft': left + 'px'\n			}, 500,function(){\n				_this.displayButtons(left);\n				_this.flag = false;\n			})\n		}	\n\n		_this.events = function(){\n			_this.leftButton.on('click', function(){\n				if(!_this.flag)\n					_this.run('left');\n			});\n			_this.rightButton.on('click', function(){\n				if(!_this.flag)\n					_this.run('right');\n			});\n		}\n\n\n\n		_this.init();\n		_this.events();\n		 \n\n	}\n\n	//适用于PC的幻灯片，依赖jquery\n	module.exports.init = function(){\n		 var list = [];\n		 $('.' + CONFIG.prefix + 'carousel').each(function(){\n		 	var _this = $(this);\n		  \n		 	list.push(new slide(_this));\n		 });\n\n	}\n\n\n\n/***/ }\n/******/ ]);",
 			"file": "build/main.js",
+			"file_size": 13070,
+			"file_write_time": 130935127643901397,
 			"settings":
 			{
-				"buffer_size": 9932,
+				"buffer_size": 12405,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/main-global.js",
+			"settings":
+			{
+				"buffer_size": 359,
 				"line_ending": "Windows"
 			}
 		},
@@ -468,7 +517,7 @@
 			"file": "style/common/article.less",
 			"settings":
 			{
-				"buffer_size": 400,
+				"buffer_size": 870,
 				"line_ending": "Windows"
 			}
 		},
@@ -492,7 +541,7 @@
 			"file": "docs-pc/src/index.ejs",
 			"settings":
 			{
-				"buffer_size": 7006,
+				"buffer_size": 7354,
 				"line_ending": "Windows"
 			}
 		},
@@ -508,7 +557,7 @@
 			"file": "style/common/input.less",
 			"settings":
 			{
-				"buffer_size": 3073,
+				"buffer_size": 3106,
 				"line_ending": "Windows"
 			}
 		},
@@ -516,7 +565,7 @@
 			"file": "style/common/theme.less",
 			"settings":
 			{
-				"buffer_size": 3718,
+				"buffer_size": 3864,
 				"line_ending": "Windows"
 			}
 		},
@@ -525,6 +574,30 @@
 			"settings":
 			{
 				"buffer_size": 1740,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style/bone-greenway.less",
+			"settings":
+			{
+				"buffer_size": 1143,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "gulpfile.js",
+			"settings":
+			{
+				"buffer_size": 2202,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "build/bone-global.js",
+			"settings":
+			{
+				"buffer_size": 16291,
 				"line_ending": "Windows"
 			}
 		}
@@ -569,6 +642,8 @@
 	},
 	"file_history":
 	[
+		"/D/sae/wwwroot/source/bone-mobile/style/bone-pc.less",
+		"/D/sae/wwwroot/source/smart/trunck/sources/java/glw/src/main/webapp/WEB-INF/views/admin/admin-cou-add.vm",
 		"/D/sae/wwwroot/source/bone-mobile/style/addon/gelinwei/home.less",
 		"/D/sae/wwwroot/source/bone-mobile/style/addon/gelinwei/footer.less",
 		"/D/sae/wwwroot/source/bone-mobile/style/addon/gelinwei/form.less",
@@ -589,7 +664,6 @@
 		"/C/Users/tgoooo/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/D/sae/wwwroot/source/bone-mobile/style/common/dialog.less",
 		"/D/sae/wwwroot/source/bone-mobile/style/addon/gelinwei/theme.less",
-		"/D/sae/wwwroot/source/bone-mobile/style/bone-pc.less",
 		"/D/sae/wwwroot/source/bone-mobile/style/addon/gelinwei/list.less",
 		"/E/javaweb/smart/trunck/sources/webresource/front/index.html",
 		"/D/sae/wwwroot/source/bone-mobile/style/addon/gelinwei.less",
@@ -695,8 +769,7 @@
 		"/D/sae/wwwroot/source/Earth/application/controllers/Welcome.php",
 		"/D/sae/wwwroot/source/Earth/application/views/view/orderlist.php",
 		"/D/sae/wwwroot/source/Earth/application/views/main/list.php",
-		"/D/sae/wwwroot/source/Earth/application/views/common/source2.php",
-		"/D/sae/wwwroot/source/Earth/application/views/common/cmdsource.php"
+		"/D/sae/wwwroot/source/Earth/application/views/common/source2.php"
 	],
 	"find":
 	{
@@ -866,7 +939,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -881,8 +954,8 @@
 						"selection":
 						[
 							[
-								218,
-								218
+								157,
+								157
 							]
 						],
 						"settings":
@@ -907,8 +980,8 @@
 						"selection":
 						[
 							[
-								188,
-								188
+								190,
+								190
 							]
 						],
 						"settings":
@@ -923,26 +996,26 @@
 				},
 				{
 					"buffer": 2,
-					"file": "style/bone-pc.less",
+					"file": "js/bone-carousel.js",
 					"settings":
 					{
-						"buffer_size": 828,
+						"buffer_size": 2243,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								745,
-								745
+								691,
+								691
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -950,7 +1023,7 @@
 			]
 		},
 		{
-			"selected": 17,
+			"selected": 9,
 			"sheets":
 			[
 				{
@@ -1036,15 +1109,15 @@
 					"file": "style/addon/gelinwei/project.less",
 					"settings":
 					{
-						"buffer_size": 1412,
+						"buffer_size": 1931,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1288,
-								1288
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1059,6 +1132,58 @@
 				},
 				{
 					"buffer": 7,
+					"file": "style/addon/gelinwei/shoppingcart.less",
+					"settings":
+					{
+						"buffer_size": 301,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								299,
+								299
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/C/Users/tgoooo/Desktop/a.html",
+					"settings":
+					{
+						"buffer_size": 976,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								680,
+								680
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
 					"file": "docs/src/form.ejs",
 					"settings":
 					{
@@ -1084,7 +1209,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 10,
 					"file": "docs/src/list.ejs",
 					"settings":
 					{
@@ -1110,7 +1235,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 11,
 					"file": "js/bone-verify.js",
 					"settings":
 					{
@@ -1121,8 +1246,8 @@
 						"selection":
 						[
 							[
-								77,
-								77
+								0,
+								3028
 							]
 						],
 						"settings":
@@ -1130,13 +1255,65 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1674.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 12,
+					"file": "js/bone-verify2.js",
+					"settings":
+					{
+						"buffer_size": 3054,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								690,
+								690
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "js/bone-form.js",
+					"settings":
+					{
+						"buffer_size": 513,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								440,
+								440
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 14,
 					"file": "js/bone-dialog.js",
 					"settings":
 					{
@@ -1162,19 +1339,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 15,
 					"file": "js/main.js",
 					"settings":
 					{
-						"buffer_size": 279,
+						"buffer_size": 346,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								246,
-								246
+								341,
+								341
 							]
 						],
 						"settings":
@@ -1188,7 +1365,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 16,
 					"file": "js/bone-dropdown.js",
 					"settings":
 					{
@@ -1214,19 +1391,45 @@
 					"type": "text"
 				},
 				{
-					"buffer": 13,
+					"buffer": 17,
 					"file": "build/main.js",
 					"settings":
 					{
-						"buffer_size": 9932,
+						"buffer_size": 12405,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1729,
+								1729
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 495.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "js/main-global.js",
+					"settings":
+					{
+						"buffer_size": 359,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								359,
+								359
 							]
 						],
 						"settings":
@@ -1240,7 +1443,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 14,
+					"buffer": 19,
 					"file": "js/bone-config.js",
 					"settings":
 					{
@@ -1266,7 +1469,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 15,
+					"buffer": 20,
 					"file": "node_modules/gulp-ejs/test/expected/config.js",
 					"settings":
 					{
@@ -1292,7 +1495,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 16,
+					"buffer": 21,
 					"file": "docs-pc/src/source.ejs",
 					"settings":
 					{
@@ -1318,19 +1521,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 17,
+					"buffer": 22,
 					"file": "style/common/article.less",
 					"settings":
 					{
-						"buffer_size": 400,
+						"buffer_size": 870,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								307,
-								307
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1344,7 +1547,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 18,
+					"buffer": 23,
 					"file": "docs-pc/src/commonheader.ejs",
 					"settings":
 					{
@@ -1370,7 +1573,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 19,
+					"buffer": 24,
 					"file": "docs-pc/src/commonsidebar.ejs",
 					"settings":
 					{
@@ -1396,19 +1599,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 20,
+					"buffer": 25,
 					"file": "docs-pc/src/index.ejs",
 					"settings":
 					{
-						"buffer_size": 7006,
+						"buffer_size": 7354,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5861,
-								5861
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1416,13 +1619,13 @@
 							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 6195.0,
+						"translation.y": 1101.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 21,
+					"buffer": 26,
 					"file": "style/common/form.less",
 					"settings":
 					{
@@ -1448,19 +1651,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 22,
+					"buffer": 27,
 					"file": "style/common/input.less",
 					"settings":
 					{
-						"buffer_size": 3073,
+						"buffer_size": 3106,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2394,
-								2394
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1474,19 +1677,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 23,
+					"buffer": 28,
 					"file": "style/common/theme.less",
 					"settings":
 					{
-						"buffer_size": 3718,
+						"buffer_size": 3864,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								540,
-								540
+								668,
+								668
 							]
 						],
 						"settings":
@@ -1500,7 +1703,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 24,
+					"buffer": 29,
 					"file": "style/common/grid.less",
 					"settings":
 					{
@@ -1521,6 +1724,84 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 702.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 30,
+					"file": "style/bone-greenway.less",
+					"settings":
+					{
+						"buffer_size": 1143,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1032,
+								1032
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 31,
+					"file": "gulpfile.js",
+					"settings":
+					{
+						"buffer_size": 2202,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1838,
+								1838
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 40.0,
+						"translation.y": 585.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 32,
+					"file": "build/bone-global.js",
+					"settings":
+					{
+						"buffer_size": 16291,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 450.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1556,7 +1837,7 @@
 		"cols":
 		[
 			0.0,
-			0.573092369478,
+			0.164864864865,
 			1.0
 		],
 		"rows":
@@ -1577,12 +1858,12 @@
 		"selected_items":
 		[
 			[
-				"index",
-				"docs-pc/src/index.ejs"
-			],
-			[
 				"theme",
 				"style/common/theme.less"
+			],
+			[
+				"index",
+				"docs-pc/src/index.ejs"
 			],
 			[
 				"them",
@@ -1971,6 +2252,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 121.0,
+	"side_bar_width": 256.0,
 	"status_bar_visible": true
 }

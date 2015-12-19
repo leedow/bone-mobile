@@ -44,24 +44,30 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var verify = __webpack_require__(1);
-	var dialog = __webpack_require__(3);
-	var dropdown = __webpack_require__(4);
-	var carousel = __webpack_require__(5);
-	var notice = __webpack_require__(6);
+	window.bone = {}
+
+	bone.verify = __webpack_require__(1);
+	bone.verify2 = __webpack_require__(3);
+	bone.dialog = __webpack_require__(4);
+	bone.dropdown = __webpack_require__(5);
+	bone.carousel = __webpack_require__(6);
+	bone.form = __webpack_require__(7);
+	bone.notice = __webpack_require__(8);
 	 
 	$(document).ready(function(){
-		dropdown.init();
-		$('#go').click(function(){
-			//verify.check('#form');ff
-			var d = dialog.init('标 题', 'content').ok(function(){
-				notice.show('测试提醒');
-			});
+		bone.dropdown.init();
+		bone.carousel.init();
+		//fdsffsdfds
+		$('.stars').each(function(){
+			var score = parseInt($(this).data('score'));
+			var tmp = '';
+			while(score--){
+				tmp += '<i class="icon iconfont">&#xe604;</i>';
+			}
+
+			$(this).html(tmp);
 
 		});
-
-		carousel.init();//fdd
-
 	});
 
 /***/ },
@@ -253,6 +259,113 @@
 
 	var CONFIG = __webpack_require__(2);
 
+
+	var Format = {
+		type: {
+			required: {
+				reg:/.{1,}/,
+				msg: '此项不能为空'
+			},
+			email: {
+				reg: /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
+				msg: '邮箱格式错误'
+			}
+		},
+		do: function(required, format, value){
+			var _this = this;
+			var value = value.replace(/\s/, '');
+
+			if(required){
+				if(!_this.type['required'].reg.test(value)){
+					return {
+						state: false,
+						msg: _this.type['required'].msg
+					};
+				}
+			}
+
+			if(_this.type[format] == undefined){
+				return {
+					state: true
+				};
+			}	
+
+			if(_this.type[format].reg.test(value)){
+				return {
+					state: true
+				};
+			} else {
+				if(value == ''){
+					return {
+						state: true
+					}
+				}
+				return {
+					state: false,
+					msg: _this.type[format].msg
+				};
+			}
+		}
+	}
+
+
+	var Verify = {
+		_flag: true,
+		_check: function(obj){
+			var _this = this;
+			obj.each(function(){
+				var required = $(this).data('required')?$(this).data('required'):false;
+				var format = $(this).data('format')?$(this).data('format'):'';
+				var value = $(this).val();
+
+				var res = Format.do(required, format, value);
+				if(!res.state){
+					_this.set($(this), res.msg);
+					_this._flag = false;
+				} else {
+					_this.set($(this), '');
+				}
+					
+				 
+			});
+		},
+		check: function(obj){
+			this._flag = true;
+		 	var form = $(obj);
+		 	var inputs = form.find('input');
+		 	var selects = form.find('select');
+		 	var textarea = form.find('textarea');
+
+		 	this._check(inputs);
+		 	this._check(selects);
+		 	this._check(textarea);
+
+		 	return this._flag;
+		},
+		set: function(aim, info){
+			aim.next('p').remove();
+			if (info != '') {
+				info = aim.attr('data-msg')?aim.attr('data-msg'):info;
+				if(info != '{{none}}'){
+					aim.after('<p>' + info + '</p>');
+				}
+				aim.parent('div').addClass(CONFIG.prefix + 'input-wrong');
+			} else {
+				aim.parent('div').removeClass(CONFIG.prefix + 'input-wrong');
+				aim.next('p').remove();
+			};
+		}
+	}
+
+	module.exports = Verify;
+	 
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var CONFIG = __webpack_require__(2);
+
 	var $dialog;
 
 	module.exports.init = function(title, content, config){
@@ -426,7 +539,7 @@
 	  
 
 /***/ },
-/* 4 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var CONFIG = __webpack_require__(2);
@@ -446,7 +559,7 @@
 	}
 
 /***/ },
-/* 5 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var CONFIG = __webpack_require__(2);
@@ -565,7 +678,42 @@
 
 
 /***/ },
-/* 6 */
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var CONFIG = __webpack_require__(2);
+
+
+	function getFormData(obj){
+		var form = $(obj);
+
+		var input = form.find('input');
+		var select = form.find('select');
+
+		var data = {};
+
+		input.each(function(){		 
+			if($(this).data('ignore') != true && $(this).attr('name') != undefined){
+				 
+				data[$(this).attr('name')] = $(this).val();
+			}
+		});
+
+		select.each(function(){
+			if($(this).data('ignore') != true && $(this).attr('name') != undefined){
+				data[$(this).attr('name')] = $(this).val();
+			}		 
+		});
+
+		return data;
+	}
+
+	module.exports.getFormData = function(obj){
+		return getFormData(obj);
+	}
+
+/***/ },
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var CONFIG = __webpack_require__(2);

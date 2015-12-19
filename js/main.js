@@ -2,15 +2,18 @@ var verify = require('./bone-verify');
 var dialog = require('./bone-dialog');
 var dropdown = require('./bone-dropdown');
 var carousel = require('./bone-carousel');
+var notice = require('./bone-notice');
  
 $(document).ready(function(){
 	dropdown.init();
 	$('#go').click(function(){
 		//verify.check('#form');ff
-		var d = dialog.init('标 题', 'content');
+		var d = dialog.init('标 题', 'content').ok(function(){
+			notice.show('测试提醒');
+		});
 
 	});
 
-	carousel.init();//fdsfdfdd
+	carousel.init();//fdd
 
 });

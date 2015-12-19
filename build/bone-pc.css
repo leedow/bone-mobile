@@ -582,9 +582,15 @@ input {
   display: none;
 }
 .bo-input-wrong > p {
+  position: absolute;
+  right: 35px;
+  top: 2px;
+  height: 39px -4;
+  line-height: 39px -4;
   color: #ff6633;
   padding: 7px 0 0 0;
   text-align: left;
+  background: #fff;
 }
 .bo-form-item-lg .bo-input-wrong:after,
 .bo-form-item-lg .bo-input-pass:after {
@@ -610,6 +616,9 @@ input {
   box-shadow: 0 0 4px #ff9f80;
 }
 .bo-select-wrong > p {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
   color: #ff6633;
   padding: 7px 0 0 0;
 }

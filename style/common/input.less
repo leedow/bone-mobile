@@ -76,9 +76,15 @@ button,input{
 		}
 
 		&>p{
+			position: absolute;
+			right: 35px;
+			top:2px;
+			height: @input-height -4;
+			line-height: @input-height -4;
 			color: @color-highlight;
 			padding: 0.5*@padding-vertical 0 0 0;
 			text-align: left;
+			background: #fff;
 		}
 	}
 
@@ -112,6 +118,9 @@ button,input{
 			}
 		}
 		&>p{
+			position: absolute;
+			bottom: -20px;
+			left:0;
 			color: @color-highlight;
 			padding: 0.5*@padding-vertical 0 0 0;
 		}

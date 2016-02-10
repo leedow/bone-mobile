@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Bone index</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<%- include source.ejs %>
+<style type="text/css">
+html,body{
+	margin:0;
+	padding:0;
+	width: 100%;
+	height: 100%:;
+}
+body{
+	background: #f2f2f2;
+}
+.bo-tab-horizon .bo-tab-item{
+	padding:0 20px;
+}
+</style>
+</head>
+<body>
+ 
+<div class="bo-container-sys">
+	<div class="bo-col-header bo-header-fixed">
+		<header class="bo-header">
+			<div class="bo-logo">Bone UI Framework</div>
+			<ul class="bo-header-nav">
+				<li class="nav-item"><a class="bo-btn-primary bo-nav-button" href="">消息 <i class="icon iconfont">&#xe63e;</i></a></li>
+				<li class="nav-item">
+					<div class="bo-dropdown-right-bottom">
+					     <button class="bo-btn-primary bo-nav-button" style="margin:0;">下拉按钮 <i class="icon iconfont"></i></button>
+					    <!--  <ul class="bo-dropdown-menu">
+					        <li>菜单</li>
+					     </ul> -->
+					</div>
+				</li>
+			</ul>
+		</header>
+	</div>
+	<div class="bo-col-sidebar bo-sidebar-fixed">
+		<%- include commonsidebar.ejs %> 
+	</div>	 
+	<div class="bo-col-content bg">
+		<div class="bo-row bo-m1101 bo-ovf">
+			<div class="bo-box">
+				<div class="bo-row">
+					<div class="bo-wall" style="width:300px;height:300px;">
+						<div class="slide">
+							my god
+						</div>
+					</div>
+
+					<div class="bo-wall" style="width:300px;height:300px;">
+						<div class="slide">
+							my god2
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+</body>
+</html>

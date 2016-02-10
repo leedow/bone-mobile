@@ -1,0 +1,62 @@
+@ad-header-height:			50px;
+@ad-sidebar-width:			200px;
+@ad-sidebar-background:		#34495E;
+
+
+.@{prefix}{
+	&sidebar{
+		width: 100%;
+		height: 100%;
+		padding:20px 0;
+		overflow-y: auto;
+		background: @sidebar-background;	
+
+		.@{prefix}tab-vertical{
+			font-size: @font-size;
+			text-align: left;
+			a, button{
+				font-size: 16px;
+				padding: 0 @padding-horizon !important;
+				height: @tabs-height !important;
+				line-height: @tabs-height !important;
+				color:@sidebar-tab-color !important;
+				padding-left:50px !important;
+				i{
+					position: absolute;
+					left:15px;
+					top:0;
+					line-height: @tabs-height -2 !important;
+					font-size: 24px;
+				}
+			}
+			a:hover, button:hover{
+				color: lighten(@sidebar-tab-color, 40%) !important;
+				background: lighten(@sidebar-background, 5%) !important;
+
+
+			}
+			
+			.@{prefix}tab-dock{
+				
+				right:@padding-horizon;
+				top:0;
+				height: @tabs-height*0.7 !important;
+				line-height: @tabs-height*0.7 !important;
+				color: @sidebar-tab-color-flag;
+				font-size: @font-size*0.8;
+				.@{prefix}tab-dock-text{
+					color: @sidebar-tab-color-flag !important;
+					line-height: @tabs-height*0.7 !important;;
+
+				}
+			}
+		}
+
+		&-title{
+			color: @sidebar-tab-color;
+			text-align: left;
+			font-size: @font-size*0.9;
+			padding: @padding-vertical @padding-horizon;
+		}
+	}
+}

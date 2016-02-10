@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"back",
+				"backup"
+			],
+			[
+				"di",
+				"direction"
+			],
+			[
+				"sele",
+				"selects"
+			],
+			[
+				"notice-wid",
+				"notice-widget-width"
+			],
+			[
 				"get",
 				"getInputData"
 			],
@@ -339,10 +355,117 @@
 			}
 		},
 		{
-			"file": "js/bone-carousel.js",
+			"file": "js/bone-wall.js",
 			"settings":
 			{
-				"buffer_size": 2243,
+				"buffer_size": 3172,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/bone-verify.js",
+			"settings":
+			{
+				"buffer_size": 3028,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/bone-notice.js",
+			"settings":
+			{
+				"buffer_size": 529,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/tgoooo/Desktop/微博对话框/微博对话框/index.html",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "/*引入外部脚本*/\nvar main = document.createElement('script');\nmain.type = 'text/javascript';\nmain.src = 'main.js';	\n\n/*地图初始化*/\nGlobal.locus.method.init = function(){\n	Global.constant.currentMap = 0;\n	OpenLayers.ProxyHost = \"cgi/proxy.cgi?url=\";//代理设置\n	var extent = new OpenLayers.Bounds(//初始化视图的边界设置,参照conf.cdi文件中的值\n			//原始大小，需要时可以使用以前的大小比例\n//		120.50490375617102, 30.588471912865483,\n//		120.5859733795086,	30.685245907613851\n			120.5197769375,30.6442280057,\n			120.5759246029,30.6159942732\n	);\n	var options = { \n			resolutions: [1.3248838880462998E-4, 4.568565131194137E-5, 2.2842825655970686E-5, 1.1421412827985343E-5, 2.2842825655970685E-6, 1.1421412827985342E-6, 5.710706413992671E-7],\n			projection: new OpenLayers.Projection('EPSG:4326'),\n			maxExtent: new OpenLayers.Bounds(-400.0,30.575736099832397,120.59245561913997,400.0),\n			units: \"degrees\",\n			numZoomLevels: 5,\n			controls: []\n	};\n	var renderer = OpenLayers.Util.getParameters(window.location.href).renderer;\n	renderer = (renderer) ? [renderer] : OpenLayers.Layer.Vector.prototype.renderers;\n	Global.locus.map = new OpenLayers.Map('map', options);\n	Global.locus.map.div.oncontextmenu = function () { return false;};//屏蔽浏览器的右键菜单 \n	var drawArr = ['变电站','开关站','变压器','环网柜','分支箱',\n	                '分支接头','盘余','中间接头','工井','杆塔','虚拟工井'];\n	Global.locus.draw.number = drawArr.length;\n	var visibleArr = ['变电站','开关站','变压器','环网柜','分支箱',\n	                '分支接头','盘余','中间接头','工井','杆塔',\n	                '虚拟工井','电缆','导线','虚拟管沟','排管',\n	                '桥架','沟道','直埋','隧道','顶管'];\n	Global.locus.constant.visible = visibleArr.length;\n	/*地图要素的选择显示*/	\n	for(var i=0;i<Global.locus.constant.visible;i++){\n		Global.locus.draw.scale[i]=Global.style.buildingStyle_nolabel.styles[\"default\"].rules[i].maxScaleDenominator;	\n	}	\n    var theHTML = '';\n    for(var i=0;i<Global.locus.constant.visible;i++){\n    	theHTML += '<li><input id=\"fVis' + i + '\" type=\"checkbox\" checked onclick=\"Global.locus.method.changeFeatureVisibility(' + i + ',this.checked)\"><label>' + visibleArr[i] + '</label></li>';\n    }        \n	theHTML = '<ul class=\"layout_ul\">' + theHTML + '</ul>';\n    document.getElementById(\"layout_list\").innerHTML = theHTML;\n    Global.locus.layers.baseLayer = new OpenLayers.Layer.WMS(\n            \"桐乡地图\", \"http://\"+Global.option.ip+\":8081/geoserver/gwc/service/wms\",\n            {\n            	layers: 'TONGXIANG',\n                format: 'image/png'\n        	},{\n        		tileSize: new OpenLayers.Size(256,256),\n                tileOrigin : new OpenLayers.LonLat(-400.0,400.0)\n            }\n    );        \n\n    Global.locus.layers.electricalLayer = new OpenLayers.Layer.Vector(\n    	\"电气设备\", \n    	{\n    		strategies: [new OpenLayers.Strategy.BBOX(), Global.locus.save.saveStrategy[0]],\n    		projection: new OpenLayers.Projection(\"EPSG:4326\"),\n			styleMap: Global.style.buildingStyle_nolabel,\n			rendererOptions: {zIndexing: true},\n    		protocol: new OpenLayers.Protocol.WFS({\n    		url: \"http://\"+Global.option.ip+\":8081/geoserver/OpenGIS/wfs\",//需要设置\n    		featureNS :  \"OpenGIS.edu.zjut\",//NameSapce命名空间,需要设置\n    		featureType: \"geo_electrical\",//图层名，需要设置\n    		geometryName: \"geometry_data\"//几何信息字段名，需要设置\n    		})\n    	}\n    );\n    \n    Global.locus.layers.buildingLayer = new OpenLayers.Layer.Vector(\n        	\"土建设备\", \n        	{\n        		strategies: [new OpenLayers.Strategy.BBOX(), Global.locus.save.saveStrategy[1]],\n        		projection: new OpenLayers.Projection(\"EPSG:4326\"),\n    			styleMap: Global.style.buildingStyle_nolabel,\n    			rendererOptions: {zIndexing: true},\n        		protocol: new OpenLayers.Protocol.WFS({\n        		url: \"http://\"+Global.option.ip+\":8081/geoserver/OpenGIS/wfs\",//需要设置\n        		featureNS :  \"OpenGIS.edu.zjut\",//NameSapce命名空间,需要设置\n        		featureType: \"geo_civil_engineering\",//图层名，需要设置\n        		geometryName: \"geometry_data\"//几何信息字段名，需要设置\n        		})\n        	}\n        );\n    \n    Global.locus.layers.elevationLayer.surveyLayer = new OpenLayers.Layer.Vector(\n    	\"土建测绘\", \n    	{\n    		strategies: [new OpenLayers.Strategy.BBOX(), Global.locus.save.saveStrategy[2]],\n    		projection: new OpenLayers.Projection(\"EPSG:4326\"),\n    		styleMap: Global.style.surveyStyle,\n			filter: new OpenLayers.Filter.Comparison({\n				type: OpenLayers.Filter.Comparison.EQUAL_TO,\n				property: \"well_id\",\n				value: 0\n			}),   		    		 		\n    		protocol: new OpenLayers.Protocol.WFS({\n    		url: \"http://\"+Global.option.ip+\":8081/geoserver/OpenGIS/wfs\",//需要设置\n    		featureNS :  \"OpenGIS.edu.zjut\",//NameSapce命名空间,需要设置\n    		featureType: \"geo_point_survery\",//图层名，需要设置\n    		geometryName: \"geometry_data\"//几何信息字段名，需要设置\n    		})\n    	}\n    );\n    \n    Global.locus.layers.elevationLayer.profileLayer = new OpenLayers.Layer.Vector(\n    	\"剖面\", \n    	{\n    		strategies: [new OpenLayers.Strategy.BBOX(), Global.locus.save.saveStrategy[3]],\n    		projection: new OpenLayers.Projection(\"EPSG:4326\"),     		  		\n    		styleMap: Global.style.profileStyle,\n			filter: new OpenLayers.Filter.Comparison({\n				type: OpenLayers.Filter.Comparison.EQUAL_TO,\n				property: \"well_id\",\n				value: 0\n			}),     		                                         		\n    		protocol: new OpenLayers.Protocol.WFS({\n        		url: \"http://\"+Global.option.ip+\":8081/geoserver/OpenGIS/wfs\",//需要设置\n        		featureNS :  \"OpenGIS.edu.zjut\",//NameSapce命名空间,需要设置\n        		featureType: \"geo_pipe_profile\",//图层名，需要设置\n        		geometryName: \"geometry_data\"//几何信息字段名，需要设置\n    		})\n    	}\n    );   \n    \n    Global.locus.layers.elevationLayer.pipe_propertyLayer = new OpenLayers.Layer.Vector(\n    	\"剖面属性\", \n    	{\n    		strategies: [new OpenLayers.Strategy.BBOX(), Global.locus.save.saveStrategy[4]],\n    		projection: new OpenLayers.Projection(\"EPSG:4326\"), \n    		styleMap: Global.style.pipe_propertyStyle, \n			filter: new OpenLayers.Filter.Comparison({\n				type: OpenLayers.Filter.Comparison.EQUAL_TO,\n				property: \"well_id\",\n				value: 0\n			}), 			                   		\n    		protocol: new OpenLayers.Protocol.WFS({\n    		url: \"http://\"+Global.option.ip+\":8081/geoserver/OpenGIS/wfs\",//需要设置\n    		featureNS :  \"OpenGIS.edu.zjut\",//NameSapce命名空间,需要设置\n    		featureType: \"geo_pipe_hole\",//图层名，需要设置\n    		geometryName: \"geometry_data\"//几何信息字段名，需要设置\n    		})\n    	}\n    );\n    \n    Global.locus.layers.elevationLayer.cableLayer = new OpenLayers.Layer.Vector(\n    	\"剖面电缆\", \n    	{\n    		strategies: [new OpenLayers.Strategy.BBOX(), Global.locus.save.saveStrategy[5]],\n    		projection: new OpenLayers.Projection(\"EPSG:4326\"),\n    		styleMap: Global.style.cableStyle,\n			filter: new OpenLayers.Filter.Comparison({\n				type: OpenLayers.Filter.Comparison.EQUAL_TO,\n				property: \"well_id\",\n				value: 0\n			}),     		                		\n    		protocol: new OpenLayers.Protocol.WFS({\n    		url: \"http://\"+Global.option.ip+\":8081/geoserver/OpenGIS/wfs\",//需要设置\n    		featureNS :  \"OpenGIS.edu.zjut\",//NameSapce命名空间,需要设置\n    		featureType: \"geo_cable\",//图层名，需要设置\n    		geometryName: \"geometry_data\"//几何信息字段名，需要设置\n    		})\n		}\n	);\n    \n    Global.locus.layers.tempLayer = new OpenLayers.Layer.Vector(\"tempLayer\", {\n		styleMap: Global.style.tempStyle,\n		renderers: renderer,\n		displayInLayerSwitcher: false\n	});  \n\n	Global.locus.map.addLayers([\n		Global.locus.layers.baseLayer, 		\n		Global.locus.layers.elevationLayer.surveyLayer, \n		Global.locus.layers.elevationLayer.profileLayer, \n		Global.locus.layers.elevationLayer.pipe_propertyLayer, \n		Global.locus.layers.elevationLayer.cableLayer, \n		Global.locus.layers.tempLayer, \n		Global.locus.layers.buildingLayer,\n		Global.locus.layers.electricalLayer\n	]);\n	\n	/*电气设备添加按钮*/  \n	for(var i=0;i<Global.constant.electricalNum;i++){\n    	Global.locus.draw.controls[i] = new OpenLayers.Control.DrawFeature(\n	        Global.locus.layers.electricalLayer, OpenLayers.Handler.Point,\n	        {\n	            callbacks:{\n					done: function(geometry) {\n				        var feature = new OpenLayers.Feature.Vector(geometry);	\n				        feature.attributes['object_type'] = Global.locus.draw.unitType;\n				        feature.attributes['z_index'] = Global.constant.unit;//设置电气层不同要素的叠放等级\n				        feature.attributes['x_offset'] = 0;//设置默认注记偏移值\n				        feature.attributes['y_offset'] = -15;\n				        feature.renderIntent = 'default';\n				        var proceed = this.layer.events.triggerEvent(\n					            \"sketchcomplete\", {feature: feature}\n					        );\n				        if(proceed !== false) {\n				            feature.state = OpenLayers.State.INSERT;\n				            this.layer.addFeatures([feature]);\n				            this.featureAdded(feature);\n				            this.events.triggerEvent(\"featureadded\",{feature : feature});\n				        }\n						Plugins.dialog.show({\n							title	: '属性', \n							url		: Global.option.URL+'/getProperty.action',\n							obj		: feature, \n							param	: {\n								type	: feature.attributes['object_type']\n							}\n						}, {\n							'success' : function(){\n					        	var projectTo = new OpenLayers.Projection(\"EPSG:4326\"); //WGS 1984 projection\n					            var projectSource = Global.locus.map.getProjectionObject(); //The map projection\n					            var featureClone = feature.clone();\n						        featureClone.geometry.transform(projectSource, projectTo);\n						        Plugins.dialog.set('#lon', featureClone.geometry.x);\n						        Plugins.dialog.set('#lat', featureClone.geometry.y);\n							},\n							'submit' : function(e){\n								if($('#feature_name').val()==\"\"){							\n									Plugins.dialog.warm(e, '名称不能为空，请填写后重新提交' ,{});	\n								}else{\n									Base.request.insert_pro(e, 0);\n								}\n							},\n							'cancel' : function(e){\n								e['obj'].destroy();\n							}\n						});\n					},          \n	            	create: function(vertex, feature) {\n						feature.style = Global.locus.draw.styleType;\n            			this.layer.events.triggerEvent(\"sketchstarted\", {vertex:vertex,feature:feature})\n					}\n				}\n			}\n	    );  	     \n	}\n	\n	/*土建设备添加按钮*/\n	for(var i=Global.constant.electricalNum;i<Global.locus.draw.number;i++){\n    	Global.locus.draw.controls[i] = new OpenLayers.Control.DrawFeature(\n	        Global.locus.layers.buildingLayer, OpenLayers.Handler.Point,\n	        {\n	            callbacks:{\n					done: function(geometry) {\n				        var feature = new OpenLayers.Feature.Vector(geometry);	\n				        feature.renderIntent = 'default';\n				        feature.attributes['object_type'] = Global.locus.draw.unitType;\n				        feature.attributes['z_index'] = Global.constant.unit;\n				        feature.attributes['x_offset'] = 0;\n				        feature.attributes['y_offset'] = 15;\n				        var proceed = this.layer.events.triggerEvent(\n					            \"sketchcomplete\", {feature: feature}\n					        );\n				        if(proceed !== false) {\n				            feature.state = OpenLayers.State.INSERT;\n				            this.layer.addFeatures([feature]);\n				            this.featureAdded(feature);\n				            this.events.triggerEvent(\"featureadded\",{feature : feature});\n				        }\n						Plugins.dialog.show({\n							title	: '属性', \n							url		: Global.option.URL+'/getProperty.action',\n							obj		: feature, \n							param	: {\n								type	: feature.attributes['object_type']\n							}\n						}, {\n							'success' : function(){\n					        	var projectTo = new OpenLayers.Projection(\"EPSG:4326\"); //WGS 1984 projection\n					            var projectSource = Global.locus.map.getProjectionObject(); //The map projection\n					            var featureClone = feature.clone();\n						        featureClone.geometry.transform(projectSource, projectTo);\n						        Plugins.dialog.set('#lon', featureClone.geometry.x);\n						        Plugins.dialog.set('#lat', featureClone.geometry.y);\n							},\n							'submit' : function(e){\n								if($('#feature_name').val()==\"\"){							\n									Plugins.dialog.warm(e, '名称不能为空，请填写后重新提交' ,{});	\n								}else{\n									Base.request.insert_pro(e, 1);\n								}\n							},\n							'cancel' : function(e){\n								e['obj'].destroy();\n							}\n						});\n					},          \n	            	create: function(vertex, feature) {\n						feature.style = Global.locus.draw.styleType;\n            			this.layer.events.triggerEvent(\"sketchstarted\", {vertex:vertex,feature:feature})\n					}\n				}\n			}\n	    );  	     \n	}\n	\n\n	\n	/*定义要素选择按钮*/  \n    Global.locus.select.control = new OpenLayers.Control.SelectFeature(\n    	[\n 			Global.locus.layers.elevationLayer.surveyLayer,\n 			Global.locus.layers.electricalLayer,\n    		Global.locus.layers.buildingLayer,\n    		Global.locus.layers.elevationLayer.profileLayer,\n    		Global.locus.layers.elevationLayer.pipe_propertyLayer,\n    		Global.locus.layers.elevationLayer.cableLayer\n    	],\n    	{\n			onRightSelect:Global.method.onFeatureRightSelect,//添加的右键菜单\n			toggle: true,\n			box: true,//框选\n			boxKey: OpenLayers.Handler.MOD_SHIFT,//框选启动键\n            multipleKey: \"ctrlKey\"//多要素\n		}\n	);\n\n   /*定义要素拖动按钮*/ \n   Global.locus.copy.dragControl = new OpenLayers.Control.DragFeature(\n		   [\n		    Global.locus.layers.electricalLayer,                                                              	 \n    		Global.locus.layers.buildingLayer,\n    		Global.locus.layers.elevationLayer.surveyLayer 		\n        	], {\n				onStart: Global.locus.method.startDrag,\n				onDrag: Global.locus.method.doDrag,\n				onComplete: Global.locus.method.endDrag,\n			}\n   );\n   Global.locus.map.addControl(Global.locus.copy.dragControl);\n   \n   /*定义右下角坐标显示按钮*/\n   Global.locus.mousePositionCtl.control = new OpenLayers.Control.MousePosition({\n       prefix: '<a target=\"_blank\" ' +\n           'href=\"http://spatialreference.org/ref/epsg/4326/\">' +\n           'EPSG:4326</a> coordinates: ',\n       separator: ' | ',\n       numDigits: 10,\n       emptyString: 'Mouse is not over map.'\n       }\n   );\n   Global.locus.map.addControl( Global.locus.mousePositionCtl.control);\n   Global.locus.mousePositionCtl.control.activate();\n\n   /*定义键盘侦听*/\n   var keyboard = new OpenLayers.Control();\n   var keyHandler = new OpenLayers.Handler.Keyboard(keyboard, {\n   	keydown: function(evt) {\n       	var handled = true;\n           switch(evt.keyCode) {\n           case 16://shift\n           	Global.locus.flag.shift = true;\n           	break;\n           case 27://esc\n           	switch(Global.constant.currentMap){\n           	case 0:\n        		Plugins.menu.refresh();\n        		Plugins.FLAG.MAP['M1']=true;\n        		Plugins.menu.update();\n               	Global.locus.method.reset();\n               	Global.locus.method.toggleControl(\"pan\");\n               	break;\n           	case 1:\n        		Plugins.menu.refresh();\n        		Plugins.FLAG.LINE['L1']=true;\n        		Plugins.menu.update();\n               	Global.line.method.reset();\n               	Global.line.method.toggleControl(\"pan\");\n               	break;\n           	case 2:\n        		Plugins.menu.refresh();\n        		Plugins.FLAG.WIRE['W1']=true;\n        		Plugins.menu.update();\n               	Global.wire.method.reset();\n               	Global.wire.method.toggleControl(\"pan\");\n               	break;\n           	}\n           	break;\n           case 46://delete\n           	switch(Global.constant.currentMap){//区分不同选项卡\n           	case 0:\n           		Global.locus.method.deleteFeature();\n               	break;\n        	case 1:\n        		Global.line.method.deleteFeature();\n        		break;\n        	case 2:\n        		Global.wire.method.deleteFeature();\n        		break;\n               	/*\n           	case 1:\n           	case 2:\n	            	Plugins.dialog.show({\n	            		'title': '错误信息',\n	            		'text': '请从轨迹图或者树目录中进行删除！'\n	            	},{\n	            		'submit' : function(e){\n	            			Plugins.dialog.remove();\n	            		}\n	            	});          		\n           		break;\n           		*/\n           	}\n           	break;\n           default:\n               handled = false;\n           }\n           if (handled) {\n               OpenLayers.Event.stop(evt);\n           }\n       },\n   	keyup: function(evt) {\n       	var handled = true;\n           switch(evt.keyCode) {\n           case 16:\n           	Global.locus.flag.shift = false;\n           	break;\n           default:\n               handled = false;\n           }\n           if (handled) {\n               OpenLayers.Event.stop(evt);\n           }\n       }\n   });\n   keyHandler.activate();\n   Global.locus.map.addControl(keyboard);\n   \n   /*定义捕捉(吸附)按钮*/\n   var snap = new OpenLayers.Control.Snapping({layer: Global.locus.layers.electricalLayer,\n	   targets: [Global.locus.layers.buildingLayer]});\n   Global.locus.map.addControl(snap);     \n   snap.activate(); \n   \n   Global.locus.map.addControl(new OpenLayers.Control.PanZoomBar({\n	   position: new OpenLayers.Pixel(2, 15)\n   }));\n   var navigation = new OpenLayers.Control.Navigation();\n   navigation.zoomBoxKeyMask = OpenLayers.Handler.MOD_ALT;\n   Global.locus.map.addControl(navigation);\n   Global.locus.map.addControl(new OpenLayers.Control.ScaleLine());\n   Global.locus.map.addControl(new OpenLayers.Control.LayerSwitcher());\n   Global.locus.map.addControl(new OpenLayers.Control.OverviewMap());\n   Global.locus.map.addControl(Global.locus.select.control);\n   Global.locus.select.control.activate();\n   \n   /*框选、点选事件侦听器*/\n   Global.locus.select.control.events.on({\n	   \"boxselectionend\": Global.locus.method.box_selected\n   });\n   Global.locus.layers.electricalLayer.events.on({\n		\"featureselected\": Global.locus.method.electrical_select,\n		\"featureunselected\": Global.locus.method.electrical_unselect\n   });\n   Global.locus.layers.buildingLayer.events.on({\n		\"featureselected\": Global.locus.method.building_select,\n		\"featureunselected\": Global.locus.method.building_unselect\n   });	\n	Global.locus.layers.elevationLayer.profileLayer.events.on({\n		\"featureselected\": Global.locus.method.profile_select,\n		\"featureunselected\": Global.locus.method.profile_unselect\n	});\n	Global.locus.layers.elevationLayer.pipe_propertyLayer.events.on({\n		\"featureselected\": Global.locus.method.pipe_property_select,\n		\"featureunselected\": Global.locus.method.pipe_property_unselect\n	});  \n	Global.locus.layers.elevationLayer.cableLayer.events.on({\n		\"featureselected\": Global.locus.method.cable_select,\n		\"featureunselected\": Global.locus.method.cable_unselect\n	});  	    \n	\n    Global.locus.controls = {\n    	pan: new OpenLayers.Control.Pan,//漫游按钮\n    	edit: new OpenLayers.Control.ModifyFeature(null, {//编辑按钮\n    		layers:[\n				Global.locus.layers.electricalLayer, \n    			Global.locus.layers.buildingLayer, \n    			Global.locus.layers.elevationLayer.surveyLayer\n    		],\n    		mode: OpenLayers.Control.ModifyFeature.ROTATE |	OpenLayers.Control.ModifyFeature.RESIZE//编辑模式设置：可旋转、改变大小、移动、删除\n    			| OpenLayers.Control.ModifyFeature.DRAG | OpenLayers.Control.ModifyFeature.DELETE,\n    		onModification: Global.locus.method.modifiHandler,//编辑事件侦听(未完成)\n    		onModificationEnd: Global.locus.method.modifiEndHandler\n    		}  		\n    	),\n    	cable: new OpenLayers.Control.DrawFeature(//电缆穿管按钮\n    			Global.locus.layers.elevationLayer.profileLayer, OpenLayers.Handler.Point,{\n    			callbacks:{\n    				done: function(geometry){\n    					Global.locus.draw.cable.geometry = new OpenLayers.Geometry.Point(geometry.x,geometry.y);\n    					for(var i=0;i<Global.locus.layers.elevationLayer.profileLayer.features.length;i++){\n    						if(Global.locus.layers.elevationLayer.profileLayer.features[i].attributes['static_id']){\n    							if(Global.locus.layers.elevationLayer.profileLayer.features[i].geometry.components[0].containsPoint(geometry)){\n        							var Ppfeature, feature = Global.locus.layers.elevationLayer.profileLayer.features[i];\n        							for(var i=0;i<Global.locus.layers.buildingLayer.features.length;i++){\n        								if(Global.locus.layers.buildingLayer.features[i].attributes['static_id'] ==\n        									feature.attributes['pp_segment_id']){\n        									Ppfeature = Global.locus.layers.buildingLayer.features[i];\n        									break;\n        								}\n        							}\n        							if(Ppfeature){\n        							    OpenLayers.Request.GET({\n        							        url: \"getPropertyJson.action?type=\"+Ppfeature.attributes['object_type']\n        							        	+\"&staticId=\"+Ppfeature.attributes['static_id'],\n        							        success: ppSegmentProperty_success,\n        							        failure: (function(e){\n        							        	Plugins.dialog.show({\n        							        		'title': '错误信息',\n        							        		'text': e.responseText\n        							        	},{\n        							        		'submit' : function(e){\n        							        			Plugins.dialog.remove();\n        							        		}\n        							        	});\n        							        	}\n        							        )\n        							    });\n        							}else{\n        				            	Plugins.dialog.show({\n        				            		'title': '错误信息',\n        				            		'text': '请检查剖面所属管沟是否存在或者被隐藏!'\n        				            	},{\n        				            		'submit' : function(e){\n        				            			Plugins.dialog.remove();\n        				            		}\n        				            	});\n        							}\n        						    function ppSegmentProperty_success(req){\n        						    	var format = new OpenLayers.Format.JSON();\n        						    	var response = format.read(req.responseXML || req.responseText);\n        						    	var x_line = new OpenLayers.Geometry.LineString(\n        						    			[feature.geometry.components[0].components[0].components[0],\n        						    			 feature.geometry.components[0].components[0].components[1]]);\n        						    	var y_line = new OpenLayers.Geometry.LineString(\n        						    			[feature.geometry.components[0].components[0].components[3],\n        						    			 feature.geometry.components[0].components[0].components[4]]);\n        						    	var x_length = Global.locus.draw.cable.geometry.distanceTo(y_line);\n        						    	var y_length = Global.locus.draw.cable.geometry.distanceTo(x_line);\n        						    	var high = feature.geometry.components[0].components[0].components[1].distanceTo(\n        						    			feature.geometry.components[0].components[0].components[2]);\n        						    	var featureCopy;//镜像剖面\n        							    for(var i=0;i<Global.locus.layers.elevationLayer.profileLayer.features.length;i++){\n        							    	if(Global.locus.layers.elevationLayer.profileLayer.features[i].attributes['static_id'] ==\n        							    		feature.attributes['static_id']){\n        							    		var reference = feature.geometry.components[0].components[0].components[0];\n        							    		var geometry = Global.locus.layers.elevationLayer.profileLayer.features[i].geometry.components[0].components[0].components[0];\n        							    		if((geometry.x != reference.x) && (geometry.y != reference.y)){\n        							    			featureCopy = Global.locus.layers.elevationLayer.profileLayer.features[i];\n        							    		}\n        							    	}\n        							    }\n        							    if(featureCopy){\n        							    	var start = feature.geometry.components[0].components[0].components[0];\n        							    	var end = featureCopy.geometry.components[0].components[0].components[0];\n        							    	var direction = \n        							    		Math.atan((high-y_length)/(x_length)) + \n        							    		Math.atan((end.y-start.y)/(end.x-start.x));\n        							    	var compare = start;\n        							    	var mirrorCompare = end;\n        							    	var changedFlag = false;\n        							    	var checkedPass = true;\n        							        if(response['startBuilding'] == feature.attributes['well_id']){\n        							        }else{\n        							        	if(response['endBuilding'] == feature.attributes['well_id']){\n        							        		compare = end;\n        							        		mirrorCompare = start;\n        							    	    	changedFlag = true;\n        							        	}else{\n        	        				            	Plugins.dialog.show({\n        	        				            		'title': '错误信息',\n        	        				            		'text': '剖面所属管沟未经过剖面所属工井，请检查数据正确性！'\n        	        				            	},{\n        	        				            		'submit' : function(e){\n        	        				            			Plugins.dialog.remove();\n        	        				            		}\n        	        				            	});\n        							        		checkedPass = false;\n        							        	}\n        							        }\n        							        if(checkedPass){\n        							    		var length = Math.sqrt((x_length)*(x_length)+\n        							    				(high-y_length)*(high-y_length));\n        							    		var center = new OpenLayers.Geometry.Point();\n        							    		var mirrorCenter = new OpenLayers.Geometry.Point();\n        							    		var wellId, mirrorWellId;\n        							    		if(changedFlag){\n        							    			center.x = compare.x - length*Math.cos(direction);\n        							    			center.y = compare.y - length*Math.sin(direction);\n        							    			mirrorCenter.x = Global.locus.draw.cable.geometry.x;\n        							    			mirrorCenter.y = Global.locus.draw.cable.geometry.y;\n        							    			wellId = response['endBuilding'];\n        							    			mirrorWellId = response['startBuilding'];\n        							    		}else{\n        							    			center.x = Global.locus.draw.cable.geometry.x;\n        							    			center.y = Global.locus.draw.cable.geometry.y;\n        							        		mirrorCenter.x = mirrorCompare.x - length*Math.cos(direction);\n        							        		mirrorCenter.y = mirrorCompare.y - length*Math.sin(direction);\n        							        		wellId = response['startBuilding'];\n        							        		mirrorWellId = response['endBuilding'];\n        							    		}\n        							    		Plugins.dialog.show({\n        			    							title: '选择电缆', \n        			    							url: Global.option.URL+'/getProOfWireCables.action',\n        			    							width: 500,\n        			    							feature: feature,\n        			    							center: center,\n        			    							centerCopy: mirrorCenter,\n        			    							wellId: wellId,\n        			    							mirrorWellId: mirrorWellId,\n        			    							param	: {\n        			    								PPSId	: feature.attributes['pp_segment_id']\n        			    							}\n        			    						}, {\n        			    							'submit' : function(e){\n        			    								var selectedCable = $('#cable').val();\n        			    								var style,cableRadius;\n        		    									var cableDiameter = $('#cableDiameter').val();\n        		    									cableRadius = cableDiameter/2;\n        		    									var voltage = $('input[name=\"'+selectedCable+'\"]').val();\n        		    									switch(voltage){\n        		    									case \"0\" :\n        		    										style = {externalGraphic:\"img/holes/communicate.svg\",pointRadius: cableRadius};\n        		    										break;\n        		    									case \"1\" : \n        		    										style = {externalGraphic:\"img/holes/hole04.svg\",pointRadius: cableRadius};\n        		    										break;\n        		    									case \"2\" : \n        		    										style = {externalGraphic:\"img/holes/hole10.svg\",pointRadius: cableRadius};\n        		    										break;\n        		    									case \"3\" : \n        		    										style = {externalGraphic:\"img/holes/hole35.svg\",pointRadius: cableRadius};\n        		    										break;\n        		    									case \"4\" : \n        		    										style = {externalGraphic:\"img/holes/hole110.svg\",pointRadius: cableRadius};\n        		    										break;\n        		    									case \"5\" : \n        		    										style = {externalGraphic:\"img/holes/hole220.svg\",pointRadius: cableRadius};\n        		    										break;\n        		    									case \"6\" : \n        		    										style = {externalGraphic:\"img/holes/hole330.svg\",pointRadius: cableRadius};\n        		    										break;\n        		    									case \"7\" : \n        		    										style = {externalGraphic:\"img/holes/hole500.svg\",pointRadius: cableRadius};\n        		    										break;\n        		    									case \"8\" : \n        		    										style = {externalGraphic:\"img/holes/hole750.svg\",pointRadius: cableRadius};\n        		    										break;\n        		    									default:\n        		    										style = null;								\n        		    									}\n        		    									var attributes = {\n        		    											'cable_id': selectedCable,\n        		    											'voltage_grade': parseInt(voltage),\n        		    											'cable_diameter': cableDiameter,\n        		    											'pp_segment_id': e['feature'].attributes['pp_segment_id']\n        		    									}\n        		    									if(style){\n        		    										var cp = new OpenLayers.Feature.Vector(e['center'], attributes);\n        		    										cp.renderIntent = 'default';\n        		    										cp.attributes['well_id'] = e['wellId'];\n        		    										var cpCopy = new OpenLayers.Feature.Vector(e['centerCopy'], attributes);\n        		    										cpCopy.renderIntent = 'default';\n        		    										cpCopy.attributes['well_id'] = e['mirrorWellId'];\n        		    										cp.state = OpenLayers.State.INSERT;\n        		    										cpCopy.state = OpenLayers.State.INSERT;\n        		    										Global.locus.layers.elevationLayer.cableLayer.addFeatures([cp,cpCopy]);\n        		    							    		Global.locus.constant.saveEventsCount = 1;\n        		    							    		Global.locus.save.saveStrategy[5].save([cp,cpCopy]);\n        		    					    				var response = setInterval(function(){\n        		    					    					if(Global.locus.save.state['剖面电缆'] == 'success'){\n        		    					    	    				$.post(Global.option.URL + 'updatePro.action?SId=' + e['feature'].attributes['static_id']\n        		    					    	    					+ '&wcSeg=' + selectedCable);\n        		    												Global.locus.flag.matchCableFlag = false;\n        		    									    		Plugins.menu.refresh();\n        		    									    		Plugins.FLAG.MAP['M1']=true;\n        		    									    		Plugins.menu.update();\n        		    												Plugins.dialog.remove();\n        		    					    						clearInterval(response);\n        		    					    						Global.locus.method.reset();\n        		    					    					}\n        		    					    					if(Global.locus.save.state['剖面电缆'] == 'fail'){\n        		    					    						clearInterval(response);\n        		    					    						Global.locus.method.reset();\n        		    					    					}\n        		    					    				},500);\n        		    									}\n        			    							}\n        			    					    });	\n        							        }	\n        							    }else{\n	        				            	Plugins.dialog.show({\n	        				            		'title': '错误信息',\n	        				            		'text': '请确认管孔所属剖面是否存在镜像剖面或者被隐藏！'\n	        				            	},{\n	        				            		'submit' : function(e){\n	        				            			Plugins.dialog.remove();\n	        				            		}\n	        				            	});\n        							    }  \n        						    }\n        							break;\n        						}	\n    						}    						\n    					}\n    				}\n    			}\n    		}),\n		polygon: new OpenLayers.Control.DrawFeature(//测绘层工井俯视图多边形外框\n			Global.locus.layers.elevationLayer.surveyLayer, OpenLayers.Handler.Polygon,{\n				callbacks:{\n					done: function(geometry) {\n						var feature = new OpenLayers.Feature.Vector(geometry);				       \n						feature.renderIntent = 'default';\n						var proceed = this.layer.events.triggerEvent(\n					    	\"sketchcomplete\", {feature: feature}\n					 	 );\n						if(proceed !== false) {\n							feature.attributes['well_id'] = Global.locus.draw.surveyWellId;\n							feature.attributes['object_type'] = '1030110';\n					   	 	feature.state = OpenLayers.State.INSERT;\n					 		this.layer.addFeatures([feature]);\n							this.featureAdded(feature);\n					 		this.events.triggerEvent(\"featureadded\",{feature : feature});\n						}\n//						Global.locus.constant.saveEventsCount = 1;\n//			    		Global.locus.save.saveStrategy[2].save(feature);\n					}\n				}\n			}\n		)	\n	};\n    \n	for(var key in Global.locus.controls) {\n		Global.locus.map.addControl(Global.locus.controls[key]);\n	}\n	for(var i=0;i<Global.locus.draw.number;i++){\n		Global.locus.map.addControl(Global.locus.draw.controls[i]);\n	}\n\n    Global.locus.map.zoomToExtent(extent, true);//缩放至设定的边界\n}\n\n/* 删除功能函数 */\nGlobal.locus.method.deleteFeature = function() {\n	var selectedFeatures = 0;\n	for(var i=0;i<Global.locus.select.control.layers.length;i++){\n		selectedFeatures += Global.locus.select.control.layers[i].selectedFeatures.length;\n	}\n	if(selectedFeatures>0){\n    	Plugins.dialog.show({\n    		'title': '警告',\n    		'text': '确定删除要素？删除后数据将无法复原。'\n    	},{\n    		'submit' : function(e){\n    			function deleteSelected(i){\n            		for(var j=0;j<Global.locus.select.control.layers[i].selectedFeatures.length;j++){\n                      	 if(Global.locus.select.control.layers[i].selectedFeatures[j].fid == undefined) {\n                        		Global.locus.select.control.layers[i].destroyFeatures([Global.locus.select.control.layers[i].selectedFeatures[j]]);\n                          } else {\n                            	 Global.locus.select.control.layers[i].selectedFeatures[j].state = OpenLayers.State.DELETE;\n                             	 Global.locus.select.control.layers[i].events.triggerEvent(\"afterfeaturemodified\", {feature: Global.locus.select.control.layers[i].selectedFeatures[j]});\n                             	 Global.locus.select.control.layers[i].selectedFeatures[j].renderIntent = \"select\";\n                             	 Global.locus.select.control.layers[i].drawFeature(Global.locus.select.control.layers[i].selectedFeatures[j]);\n                          }\n              		}\n    			}\n            	for(var i=0;i<Global.locus.select.control.layers.length;i++){\n            		switch(Global.locus.select.control.layers[i].name){\n            		case '剖面' :\n            			var originLength = Global.locus.select.control.layers[i].selectedFeatures.length;\n            			if(originLength>0){\n        					var ppIds = [];\n        					var index = 0;     			\n                			for(var j=0;j<originLength;j++){\n                				if(Global.locus.select.control.layers[i].selectedFeatures[j].attributes['static_id']){\n                					ppIds[index] = Global.locus.select.control.layers[i].selectedFeatures[j].attributes['pp_segment_id'];\n                					index++;\n                				}            				\n                			}                			\n                			Global.constant.profileIndex = i;\n                		    OpenLayers.Request.POST({\n                		        url: \"deleteHole.action?type=profile&holesId=\"+ppIds.toString(),\n                		        success: profileStatus_success,\n                		        failure: (function(e){\n                		        	Plugins.dialog.show({\n                		        		'title': '错误信息',\n                		        		'text': e.responseText\n                		        	},{\n                		        		'submit' : function(e){\n                		        			Plugins.dialog.remove();\n                		        		}\n                		        	});\n                		        	}\n                		        )\n                		    });\n                		    function profileStatus_success(req){\n                		    	if(req.responseText == 'pole'){\n                   		        	Plugins.dialog.show({\n                		        		'title': '错误信息',\n                		        		'text': '剖面内部包含管孔、支架或电缆，请先删除内部元素！'\n                		        	},{\n                		        		'submit' : function(e){\n                		        			Plugins.dialog.remove();\n                		        		}\n                		        	});\n                		    	}else{\n                		    		var i = Global.constant.profileIndex;\n                        			var originLength = Global.locus.select.control.layers[i].selectedFeatures.length;\n                        			for(var j=0;j<originLength;j++){\n                        				var ppid = Global.locus.select.control.layers[i].selectedFeatures[j].attributes['pp_segment_id'];\n                        				for(var k=0;k<Global.locus.layers.elevationLayer.profileLayer.features.length;k++){\n                        					if(Global.locus.layers.elevationLayer.profileLayer.features[k].attributes['pp_segment_id'] == ppid){\n                        						if(Global.locus.layers.elevationLayer.profileLayer.features[k].renderIntent == 'default'){\n                        							Global.locus.select.control.layers[i].selectedFeatures.push(Global.locus.layers.elevationLayer.profileLayer.features[k]);\n                        							Global.locus.layers.elevationLayer.profileLayer.features[k].renderIntent = 'select';\n                        						}\n                        					}\n                        				}\n                        			}\n                        			deleteSelected(i);\n                        			Global.locus.save.saveStrategy[i].save();\n                		    	}\n                		    }	\n            			}\n            			break;\n            		case '剖面电缆':\n            			var originLength = Global.locus.select.control.layers[i].selectedFeatures.length;\n            			if(originLength>0){\n                			var holeIds = [];           			\n                			for(var j=0;j<originLength;j++){\n                				holeIds[j] = Global.locus.select.control.layers[i].selectedFeatures[j].attributes['hole_id'];\n                				var sid = Global.locus.select.control.layers[i].selectedFeatures[j].attributes['cable_id'];\n                				var hid = Global.locus.select.control.layers[i].selectedFeatures[j].attributes['hole_id'];\n                				var ppid = Global.locus.select.control.layers[i].selectedFeatures[j].attributes['pp_segment_id'];\n                				for(var k=0;k<Global.locus.layers.elevationLayer.cableLayer.features.length;k++){\n                					if(Global.locus.layers.elevationLayer.cableLayer.features[k].attributes['cable_id'] == sid &&\n                							Global.locus.layers.elevationLayer.cableLayer.features[k].attributes['hole_id'] == hid &&\n                							Global.locus.layers.elevationLayer.cableLayer.features[k].attributes['pp_segment_id'] == ppid){\n                						if(Global.locus.layers.elevationLayer.cableLayer.features[k].renderIntent == 'default'){\n                							Global.locus.select.control.layers[i].selectedFeatures.push(Global.locus.layers.elevationLayer.cableLayer.features[k]);\n                							Global.locus.layers.elevationLayer.cableLayer.features[k].renderIntent = 'select';\n                							break;\n                						}\n                					}\n                				}\n                			}\n        					$.post(Global.option.URL +'/delete.action',{\n        						sids 	: holeIds.toString(),\n        						type	: 'cable'\n        					});\n                			deleteSelected(i);	\n            			}\n            			break;\n            		case '剖面属性':\n            			var originLength = Global.locus.select.control.layers[i].selectedFeatures.length;\n            			if(originLength>0){\n        					var holeIds = [], bracketIds = [];\n        					var hIndex = 0, bIndex = 0;\n        					var url;\n                			for(var j=0;j<originLength;j++){\n                				if(Global.locus.select.control.layers[i].selectedFeatures[j].attributes['object_type'] == '1010502'){\n                					holeIds[hIndex] = Global.locus.select.control.layers[i].selectedFeatures[j].attributes['static_id'];\n                					hIndex++;\n                				}\n                				if(Global.locus.select.control.layers[i].selectedFeatures[j].attributes['object_type'] == '1010503'){\n                					bracketIds[bIndex] = Global.locus.select.control.layers[i].selectedFeatures[j].attributes['static_id'];\n                					bIndex++;\n                				}\n                			}\n                			if(hIndex != 0){\n                				if(bIndex != 0){\n                					url = \"deleteHole.action?type=hole&holesId=\"+holeIds.toString()+\"&bracketsId=\"+bracketIds.toString();\n                				}else{\n                					url = \"deleteHole.action?type=hole&holesId=\"+holeIds.toString();\n                				}               				\n                			}else{\n                				if(bIndex != 0){\n                					url = \"deleteHole.action?type=hole&bracketsId=\"+bracketIds.toString();\n                				}else{\n                					url = \"deleteHole.action?type=hole&holesId=\"+holeIds.toString()+\"&bracketsId=\"+bracketIds.toString();\n                				}\n                			}\n                			Global.constant.holeIndex = i;\n                		    OpenLayers.Request.POST({\n                		        url: url,\n                		        success: holeStatus_success,\n                		        failure: (function(e){\n                		        	Plugins.dialog.show({\n                		        		'title': '错误信息',\n                		        		'text': e.responseText\n                		        	},{\n                		        		'submit' : function(e){\n                		        			Plugins.dialog.remove();\n                		        		}\n                		        	});\n                		        	}\n                		        )\n                		    });\n                		    function holeStatus_success(req){\n                		    	if(req.responseText == 'pole'){\n                   		        	Plugins.dialog.show({\n                		        		'title': '错误信息',\n                		        		'text': '不能删除穿管管孔，请先删除所穿电缆！'\n                		        	},{\n                		        		'submit' : function(e){\n                		        			Plugins.dialog.remove();\n                		        		}\n                		        	});\n                		    	}else{\n                		    		var i = Global.constant.holeIndex;\n                		    		var originLength = Global.locus.select.control.layers[i].selectedFeatures.length;\n                        			for(var j=0;j<originLength;j++){\n                        				var sid = Global.locus.select.control.layers[i].selectedFeatures[j].attributes['static_id'];\n                        				var ppid = Global.locus.select.control.layers[i].selectedFeatures[j].attributes['pp_segment_id'];\n                        				for(var k=0;k<Global.locus.layers.elevationLayer.pipe_propertyLayer.features.length;k++){\n                        					if(Global.locus.layers.elevationLayer.pipe_propertyLayer.features[k].attributes['static_id'] == sid &&\n                        							Global.locus.layers.elevationLayer.pipe_propertyLayer.features[k].attributes['pp_segment_id'] == ppid){\n                        						if(Global.locus.layers.elevationLayer.pipe_propertyLayer.features[k].renderIntent == 'default'){\n                        							Global.locus.select.control.layers[i].selectedFeatures.push(Global.locus.layers.elevationLayer.pipe_propertyLayer.features[k]);\n                        							Global.locus.layers.elevationLayer.pipe_propertyLayer.features[k].renderIntent = 'select';\n                        							break;\n                        						}\n                        					}\n                        				}\n                        			}\n                        			deleteSelected(i);\n                        			Global.locus.save.saveStrategy[i].save();\n                		    	}\n                		    }	\n            			}\n            			break;\n            		default:\n            			if(Global.locus.select.control.layers[i].selectedFeatures.length>0){\n            				deleteSelected(i);	\n            			}         			\n            		}\n            	}\n            	Plugins.dialog.remove();\n        		for (var i = 0; i < Global.locus.constant.saveNum; i++) {\n        			Global.locus.save.saveStrategy[i].save();\n        		}\n    		}\n    	});	\n	}\n}\n\n/* Feature starting to move */\nGlobal.locus.method.startDrag = function (feature, pixel) {\n	lastPixel = pixel;\n}\n\n/* Feature moving */\nGlobal.locus.method.doDrag = function (feature, pixel) {\n	var layers = this.layers || [this.layer];\n	var layer;\n	for(var l=0; l<layers.length; ++l) {\n		layer = layers[l];\n		Global.locus.copy.features[l] = [];\n		for (i in layer.selectedFeatures) {\n			if(layer.selectedFeatures[i]){\n				if(Global.locus.flag.copy){\n					Global.locus.copy.features[l].push(layer.selectedFeatures[i].clone());\n				}\n				var res = this.map.getResolution();\n				layer.selectedFeatures[i].geometry.move(\n					res * (pixel.x - lastPixel.x), \n					res * (lastPixel.y - pixel.y)\n				);	\n				layer.drawFeature(layer.selectedFeatures[i]);\n				if(Global.locus.flag.copy){\n					layer.addFeatures(Global.locus.copy.features[l]);\n					for(var j=0;j<Global.locus.copy.features[l].length;j++){\n						Global.locus.copy.features[l][j].state = OpenLayers.State.INSERT;\n					}\n					Global.locus.copy.features[l] = [];\n				}\n			}\n		}\n	}\n	lastPixel = pixel;\n	if(Global.locus.flag.copy){\n		Plugins.menu.refresh();\n		Plugins.FLAG.MAP['M1']=true;\n		Plugins.menu.update();\n		Global.locus.flag.copy = false;\n	}\n	\n}\n\n/* Featrue stopped moving */\nGlobal.locus.method.endDrag = function (feature, pixel) {\n	var layers = this.layers || [this.layer];\n	var layer;\n	for(var l=0; l<layers.length; ++l) {\n		layer = layers[l];\n		for (i in layer.selectedFeatures) {\n			layer.selectedFeatures[i].state = OpenLayers.State.UPDATE;\n		}\n	}\n}\n\n/* 框选事件捕捉 */\nGlobal.locus.method.box_selected = function(e){\n	var sum = [];\n	var index = 0;\n	for(var i=0;i<e.layers.length;i++){\n		for(var j=0;j<e.layers[i].selectedFeatures.length;j++){\n			sum[index] = e.layers[i].selectedFeatures[j];\n			index++;\n		}\n	}\n	Plugins.slide_form.show({//弹框\n		'title'		: '所选对象',\n		'buttons'	: 'no',\n		'content'	: '<table class=\"featurelist\"></table>'\n	});\n	Plugins.slide_form.add_list(sum);	\n}\n\nGlobal.locus.method.electrical_select = function(e){\n	if(!Global.locus.flag.shift){\n		/*画管沟功能-虚拟土建*/	\n		if(Global.locus.flag.addPipe){\n			Global.locus.method.addPipe(e.feature);		\n		}	\n	}\n}\n\nGlobal.locus.method.electrical_unselect = function(e){\n	\n}\n\nGlobal.locus.method.building_select = function(e){\n	if(!Global.locus.flag.shift){\n		/*添加剖面*/\n		if(Global.locus.flag.addProfilePpSegment){\n			Global.locus.method.createProfile(e.feature);\n		}\n		if(Global.locus.flag.addProfileWell){\n			Global.locus.method.addProfile(e.feature);\n		}\n		\n		/*添加测绘层*/\n		if(Global.locus.flag.addSurveyFlag && \n				(e.feature.attributes['object_type'] == '1020101' || e.feature.attributes['object_type'] == '1020103')){\n			Global.locus.draw.surveyWellId = e.feature.attributes['static_id'];\n			//Global.locus.method.toggleControl(\"polygon\");\n			Plugins.dialog.show({\n				url 	:	Global.option.URL + '/editProfile.action',\n				param	:	{\n				points	: 3\n				}\n			},{\n				submit	: function(){\n					var n = 0;\n					var pointsx = [];\n					var pointsy = [];\n					var x=0,y=0, flag=true;\n					$('.pointx').each(function(){\n						if($(this).val() == ''){\n							flag = false;\n						}\n						pointsx[x] = $(this).val();\n						x++;\n					});\n					\n					$('.pointy').each(function(){\n						if($(this).val() == ''){\n							flag = false;\n						}\n						pointsy[y] = $(this).val();\n						y++;\n					});\n					\n					if(flag){\n						//alert('第一个点的经纬度为' + pointsx[0] + ':' + pointsy[0]);\n					} else {\n						alert('数据不能为空');\n					}\n					Plugins.dialog.lock('unlocked'); \n					\n					//var res = map.getResolution();\n					var point = [];\n					for(var i=0; i<x; i++){\n						point[i] = new OpenLayers.Geometry.Point(pointsx[i], pointsy[i]); 								\n					}\n					var ln = new OpenLayers.Geometry.Polygon(new OpenLayers.Geometry.LinearRing(point)); \n					var feature = new OpenLayers.Feature.Vector(ln);\n					feature.attributes['well_id'] = Global.locus.draw.surveyWellId;\n					feature.attributes['object_type'] = 1030110;\n					feature.state = OpenLayers.State.INSERT;\n					Global.locus.layers.elevationLayer.surveyLayer.addFeatures([feature]);\n					Global.locus.constant.saveEventsCount = 1;\n					Global.locus.save.saveStrategy[2].save();\n	    			Plugins.dialog.remove();\n				}\n			});\n		}\n		\n		/*画管沟功能-真实土建*/	\n		if(Global.locus.flag.addPipe){			\n			Global.locus.method.addPipe(e.feature);		\n		}\n		\n		/*电缆入沟功能*/ \n		function judge(originStart, originEnd, newAddFeature){\n			var newAdd = newAddFeature.geometry.components;\n			var newPointS = newAdd[0];\n			var newPointE = newAdd[newAdd.length-1];\n			if(((originEnd.x == newPointS.x) && (originEnd.y == newPointS.y))&&\n					((originStart.x != newPointE.x) || (originStart.y != newPointE.y))){\n				Plugins.slide_form.add_data({\n					'text'	: newAddFeature.attributes['name'],\n					'name' 	: 'topipe['+Global.constant.index+']',//数组名wires不可修改\n					'value'	: newAddFeature.attributes['static_id'],\n					'type' 	: 'int'\n				});\n				Global.constant.index++;\n				for(var i=1;i<newAdd.length;i++){\n					Global.locus.draw.cablePoints.push(newAdd[i]);\n				}\n				return true;\n			}else{\n				if(((originEnd.x == newPointE.x) && (originEnd.y == newPointE.y)) &&\n						((originStart.x != newPointS.x) || (originStart.y != newPointS.y))){\n					Plugins.slide_form.add_data({\n						'text'	: newAddFeature.attributes['name'],\n						'name' 	: 'topipe['+Global.constant.index+']',//数组名wires不可修改\n						'value'	: newAddFeature.attributes['static_id'],\n						'type' 	: 'int'\n					});\n					Global.constant.index++;\n					for(var i=newAdd.length-2;i>=0;i--){\n						Global.locus.draw.cablePoints.push(newAdd[i]);\n					}\n					return true;\n				}else{\n					return false;\n				}\n			}\n		}\n		if(Global.locus.flag.cableToPipe){\n			var type = e.feature.attributes['object_type'];\n			if(type == '1020203' || type == '1020211' || type == '1020212' || type == '1020213' ||\n					type == '1020214' || type == '1020215' || type == '1020216'){\n				if(Global.locus.draw.cablePoints.length != 0){\n					if(!judge(Global.locus.draw.cablePoints[Global.locus.draw.cablePoints.length-2],Global.locus.draw.cablePoints[Global.locus.draw.cablePoints.length-1], e.feature)){\n						if(Global.locus.flag.cableToPipeStart){\n							var arr = [];\n							for(var i=0;i<Global.locus.draw.cablePoints.length;i++){\n								arr[i] = Global.locus.draw.cablePoints[Global.locus.draw.cablePoints.length-1-i].clone();\n							}\n							for(var i=0;i<Global.locus.draw.cablePoints.length;i++){\n								Global.locus.draw.cablePoints[i] = arr[i];\n							}\n							if(judge(Global.locus.draw.cablePoints[Global.locus.draw.cablePoints.length-2],Global.locus.draw.cablePoints[Global.locus.draw.cablePoints.length-1], e.feature)){\n								Global.locus.flag.cableToPipeStart = false;\n							}else{\n				            	Plugins.dialog.show({\n				            		'title': '错误信息',\n				            		'text': '所选管沟段不连续或重复。'\n				            	},{\n				            		'submit' : function(e){\n				            			Plugins.dialog.remove();\n				            		}\n				            	});\n							}\n						}else{\n			            	Plugins.dialog.show({\n			            		'title': '错误信息',\n			            		'text': '所选管沟段不连续或重复。'\n			            	},{\n			            		'submit' : function(e){\n			            			Plugins.dialog.remove();\n			            		}\n			            	});\n						}\n					}\n				}else{\n					var start,end,sflag,eflag;\n					if(Global.locus.toPipe.startType != \"1020102\"){\n						sflag = true;\n					}else{\n						sflag = false;\n					}\n					if(Global.locus.toPipe.endType != \"1020102\"){\n						eflag = true;\n					}else{\n						eflag = false;\n					}\n					if(sflag || eflag){\n						for(var i=0;i<Global.locus.layers.electricalLayer.features.length;i++){\n							if(sflag && !start && Global.locus.layers.electricalLayer.features[i].attributes['static_id'] == Global.locus.toPipe.start){\n								start = Global.locus.layers.electricalLayer.features[i].geometry;\n							}else{\n								if(eflag && !end && Global.locus.layers.electricalLayer.features[i].attributes['static_id'] == Global.locus.toPipe.end){\n									end = Global.locus.layers.electricalLayer.features[i].geometry;\n								}\n							}\n						}\n					}\n					if(!sflag || !eflag){\n						for(var i=0;i<Global.locus.layers.buildingLayer.features.length;i++){\n							if(!sflag && !start && Global.locus.layers.buildingLayer.features[i].attributes['static_id'] == Global.locus.toPipe.start){\n								start = Global.locus.layers.buildingLayer.features[i].geometry;\n							}else{\n								if(!eflag && !end && Global.locus.layers.buildingLayer.features[i].attributes['static_id'] == Global.locus.toPipe.end){\n									end = Global.locus.layers.buildingLayer.features[i].geometry;\n								}\n							}\n						}\n					}\n					var pipeStart = e.feature.geometry.components[0];\n					var pipeEnd = e.feature.geometry.components[e.feature.geometry.components.length-1];\n					if(pipeStart.equals(start) || pipeStart.equals(end) || pipeEnd.equals(start) || pipeEnd.equals(end)){\n						var temp = e.feature.geometry.clone();\n						Global.locus.draw.cablePoints = temp.components;\n						Plugins.slide_form.add_data({\n							'text'	: e.feature.attributes['name'],\n							'name' 	: 'topipe['+Global.constant.index+']',//数组名wires不可修改\n							'value'	: e.feature.attributes['static_id'],\n							'type' 	: 'int'\n						});\n						Global.constant.index++;\n						Global.locus.flag.cableToPipeStart = true;\n					}else{\n			        	Plugins.dialog.show({\n			        		'title': '错误信息',\n			        		'text': '所选管沟段位置有误，请重新选择'\n			        	},{\n			        		'submit' : function(e){\n			        			Plugins.dialog.remove();\n			        		}\n			        	});\n					}\n				}\n			}else{\n	        	Plugins.dialog.show({\n	        		'title': '错误信息',\n	        		'text': '请选择管沟段'\n	        	},{\n	        		'submit' : function(e){\n	        			Plugins.dialog.remove();\n	        		}\n	        	});\n			}\n		}	\n	}\n} \n\nGlobal.locus.method.building_unselect = function(e){  \n}\n\nGlobal.locus.method.survey_select = function(e){  \n}\n\nGlobal.locus.method.survey_unselect = function(e){  	\n}\n\nGlobal.locus.method.profile_select = function(e){\n	if(!Global.locus.flag.shift){\n		   Global.locus.copy.source = e.feature.geometry.getBounds().getCenterLonLat();\n		    if(e.feature.attributes['object_type'] == '1010501'){\n		    	var display = true;\n		    	\n		    	/*添加单个管孔*/\n		        if(Global.locus.flag.addSingleHoleFlag){\n		        	display = false;\n		    		Plugins.dialog.show({\n		    			title: '管孔',\n		    			feature: e.feature,\n		    			url: Global.option.URL+'/template/property/pipehole.jsp'\n		    		},{\n		    			'submit' : function(e){\n		    				if($('#hole_x').val() == \"\" || $('#hole_y').val() == \"\" || $('#diameter').val() == \"\"){\n		    					Plugins.dialog.warm({\n									'title'	: '错误信息'\n								},\"横坐标、埋深、直径不能为空，请填写后重新提交\",{});\n		    				}else{\n		    					Global.locus.method.drawPipeHole(e['feature']);\n		    				}\n		    			}\n		    		});\n		        }\n		        \n		        /*添加规则管孔*/\n		    	if(Global.locus.flag.addRegularHoleFlag){\n		    		display = false;\n		    		Plugins.dialog.show({\n		    			title: '规则管孔',\n		    			feature: e.feature,\n		    			url: Global.option.URL+'/template/property/regularholes.jsp'\n		    		},{\n		    			'submit' : function(e){\n		    				Global.locus.method.drawRegularPipeHole(e['feature']);\n		    			}\n		    		});\n		    	}\n		    	\n		    	/*添加支架*/\n		    	if(Global.locus.flag.addBracketFlag){\n		    		display = false;\n		    		Plugins.dialog.show({\n		    			title: '支架',\n		    			feature: e.feature,\n		    			url		: Global.option.URL+'/getProperty.action',\n		    			param	: {\n		    				type	: 1010503\n		    			}\n		    		},{\n		    			'submit' : function(e){\n		    				Global.locus.method.drawBrackets(e['feature']);\n		    			}\n		    		});\n		    	}  	\n		    	\n		        /*穿管信息*/\n		    	if(Global.locus.flag.labelFlag){\n		    		display = false;\n		    		Plugins.slide_form.show({\n		    			'title'		: '穿管信息',\n		    			'url'		: Global.option.URL + '/getWireOfProfile.action',\n		    			'buttons'	: 'off',\n		    			'param'		:{\n		    				'SId'	: e.feature.attributes['static_id']\n		    			}\n		    		},{\n		    			'success'	: function(){\n		    				Global.locus.flag.slide = true;\n		    			} \n		    		});\n		    	}    	\n		    	\n				/*显示长宽*/\n		    	if(display){\n		    		if(e.feature.geometry.components.length == 1){\n		        	    OpenLayers.Request.GET({\n		        	    	url: \"getPropertyJson.action?type=\"+e.feature.attributes['object_type']\n		        	    		+\"&staticId=\"+e.feature.attributes['static_id'],\n		        	        success: profileProperty_success,\n					        failure: (function(e){\n					        	Plugins.dialog.show({\n					        		'title': '错误信息',\n					        		'text': e.responseText\n					        	},{\n					        		'submit' : function(e){\n					        			Plugins.dialog.remove();\n					        		}\n					        	});\n					        	}\n					        )\n		        	    });\n		        		function profileProperty_success(req){\n		        			var format = new OpenLayers.Format.JSON();\n		        		    var response = format.read(req.responseXML || req.responseText);\n		        		    Global.locus.method.displaySize(e.feature, response['profileWidth'], response['profileHigh']);\n		        		}	\n		    		}\n		    	}\n		    }	\n	}\n}\n\n/*添加、更新单个管孔功能函数*/\nGlobal.locus.method.drawPipeHole = function(feature,holeFeature){\n	var Ppfeature;\n	for(var i=0;i<Global.locus.layers.buildingLayer.features.length;i++){\n		if(Global.locus.layers.buildingLayer.features[i].attributes['static_id'] ==\n			feature.attributes['pp_segment_id']){\n			Ppfeature = Global.locus.layers.buildingLayer.features[i];\n			break;\n		}\n	}\n	if(Ppfeature){\n	    OpenLayers.Request.GET({\n	        url: \"getPropertyJson.action?type=\"+Ppfeature.attributes['object_type']\n	        	+\"&staticId=\"+Ppfeature.attributes['static_id'],\n	        success: ppSegmentProperty_success,\n	        failure: (function(e){\n	        	Plugins.dialog.show({\n	        		'title': '错误信息',\n	        		'text': e.responseText\n	        	},{\n	        		'submit' : function(e){\n	        			Plugins.dialog.remove();\n	        		}\n	        	});\n	        	}\n	        )\n	    });\n	}else{\n    	Plugins.dialog.show({\n    		'title': '错误信息',\n    		'text': '请检查剖面所属管沟是否存在或者被隐藏!'\n    	},{\n    		'submit' : function(e){\n    			Plugins.dialog.remove();\n    		}\n    	});\n	}\n    function ppSegmentProperty_success(req){\n    	var format = new OpenLayers.Format.JSON();\n    	var response = format.read(req.responseXML || req.responseText);	\n    	var x_length = parseFloat($('#hole_x').val())*Global.constant.scaleMM;\n    	var y_length = parseFloat($('#hole_y').val())*Global.constant.scaleMM;\n    	var radius = parseFloat($('#diameter').val()/2)*Global.constant.scaleMM;\n    	var high = feature.geometry.components[0].components[0].components[1].distanceTo(\n    			feature.geometry.components[0].components[0].components[2]);\n    	var featureCopy;//镜像剖面\n	    for(var i=0;i<Global.locus.layers.elevationLayer.profileLayer.features.length;i++){\n	    	if(Global.locus.layers.elevationLayer.profileLayer.features[i].attributes['static_id'] ==\n	    		feature.attributes['static_id']){\n	    		var reference = feature.geometry.components[0].components[0].components[0];\n	    		var geometry = Global.locus.layers.elevationLayer.profileLayer.features[i].geometry.components[0].components[0].components[0];\n	    		if((geometry.x != reference.x) && (geometry.y != reference.y)){\n	    			featureCopy = Global.locus.layers.elevationLayer.profileLayer.features[i];\n	    		}\n	    	}\n	    }\n	    if(featureCopy){\n	    	var start = feature.geometry.components[0].components[0].components[0];\n	    	var end = featureCopy.geometry.components[0].components[0].components[0];\n	    	var direction = \n	    		Math.atan((high-y_length-radius)/(x_length+radius)) + \n	    		Math.atan((end.y-start.y)/(end.x-start.x));\n	    	var compare = start;\n	    	var changedFlag = false;\n	    	var checkedPass = true;\n	        if(response['startBuilding'] == feature.attributes['well_id']){\n	        }else{\n	        	if(response['endBuilding'] == feature.attributes['well_id']){\n	        		compare = end;\n	        		mirrorCompare = start;\n	    	    	changedFlag = true;\n	        	}else{\n	            	Plugins.dialog.show({\n	            		'title': '错误信息',\n	            		'text': '剖面所属管沟未经过剖面所属工井，请检查数据正确性！'\n	            	},{\n	            		'submit' : function(e){\n	            			Plugins.dialog.remove();\n	            		}\n	            	});\n	        		checkedPass = false;\n	        	}\n	        }\n	        if(checkedPass){\n	    		var length = Math.sqrt((x_length+radius)*(x_length+radius)+\n	    				(high-y_length-radius)*(high-y_length-radius));\n	    		var center = new OpenLayers.Geometry.Point();\n	    		var mirrorCenter = new OpenLayers.Geometry.Point();\n	    		if(changedFlag){\n	    			center.x = compare.x - length*Math.cos(direction);\n	    			center.y = compare.y - length*Math.sin(direction);\n	    			mirrorCenter.x = mirrorCompare.x + length*Math.cos(direction);\n	    			mirrorCenter.y = mirrorCompare.y + length*Math.sin(direction);\n	    		}else{\n	    			center.x = compare.x + length*Math.cos(direction);\n	    			center.y = compare.y + length*Math.sin(direction);\n	        		mirrorCenter.x = mirrorCompare.x - length*Math.cos(direction);\n	        		mirrorCenter.y = mirrorCompare.y - length*Math.sin(direction);\n	    		}\n	    		if(holeFeature){//判断是更新管孔属性还是添加管孔\n	    			holeFeature.move(new OpenLayers.LonLat(center.x,center.y));\n	    		    var holeFeatureCopy;\n	    		    for(var i=0;i<Global.locus.layers.elevationLayer.pipe_propertyLayer.features.length;i++){\n	    		    	if(Global.locus.layers.elevationLayer.pipe_propertyLayer.features[i].attributes['static_id'] ==\n	    		    		holeFeature.attributes['static_id']){\n	    		    		var reference = holeFeature.geometry.components[0].components[0];\n	    		    		var geometry = Global.locus.layers.elevationLayer.pipe_propertyLayer.features[i].geometry.components[0].components[0];\n	    		    		if((geometry.x != reference.x) && (geometry.y != reference.y)){\n	    		    			holeFeatureCopy = Global.locus.layers.elevationLayer.pipe_propertyLayer.features[i];\n	    		    		}\n	    		    	}\n	    		    }\n	    		    holeFeatureCopy.move(new OpenLayers.LonLat(mirrorCenter.x,mirrorCenter.y));\n		    		Global.locus.constant.saveEventsCount = 1;\n		    		Global.locus.save.saveStrategy[4].save([holeFeature, holeFeatureCopy]);\n	    		}else{\n	    			var circle = [];\n	    			circle[0] = new OpenLayers.Feature.Vector(\n	    					OpenLayers.Geometry.Polygon.createRegularPolygon(center,radius,30));\n	    			circle[1] = new OpenLayers.Feature.Vector(\n	    					OpenLayers.Geometry.Polygon.createRegularPolygon(mirrorCenter,radius,30));\n	    			var staticId = Plugins.get_staticid();\n	    			if(changedFlag){\n	    				circle[0].attributes['well_id'] = response['endBuilding'];\n	    				circle[1].attributes['well_id'] = response['startBuilding'];\n	    			}else{\n	    				circle[0].attributes['well_id'] = response['startBuilding'];\n	    				circle[1].attributes['well_id'] = response['endBuilding'];\n	    			}\n	    			for(var i=0;i<2;i++){\n	    	    		circle[i].attributes['static_id'] = staticId;\n	    	    		circle[i].attributes['object_type'] = '1010502';\n	    	    		circle[i].attributes['pp_segment_id'] = response['staticId'];	\n	    	    		circle[i].state = OpenLayers.State.INSERT;\n	    			}\n	    			Global.locus.layers.elevationLayer.pipe_propertyLayer.addFeatures(circle);\n	    			Plugins.dialog.add('holes[0].staticId', staticId, 'int');\n	    			Plugins.dialog.add('holes[0].wellId', response['startBuilding'], 'int');\n	    			Plugins.dialog.add('holes[0].ppSegmentId', response['staticId'], 'int');\n	    			Plugins.dialog.add('holes[0].profileId', feature.attributes['static_id'], 'int');\n	    			Plugins.dialog.add('holes[0].mirrorWellId', response['endBuilding'], 'int');\n	        		Plugins.menu.refresh();\n	        		Plugins.FLAG.MAP['M1']=true;\n	        		Plugins.menu.update();\n	    			Global.locus.flag.addSingleHoleFlag = false;\n		    		Global.locus.constant.saveEventsCount = 1;\n		    		Global.locus.save.saveStrategy[4].save(circle);\n	    		}\n	    		var response = setInterval(function(){\n	    			if(Global.locus.save.state['剖面属性'] == 'success'){\n	    				$.post(Global.option.URL + 'saveProperties.action', Base.request.get_param(),function(res){\n	    				});\n	    				Plugins.dialog.remove();				\n	    				clearInterval(response);\n	    			}\n	    			if(Global.locus.save.state['剖面属性'] == 'fail'){\n	    				clearInterval(response);\n	    			}\n	    		},500);	\n	        }	\n	    }else{\n        	Plugins.dialog.show({\n        		'title': '错误信息',\n        		'text': '请确认管孔所属剖面是否存在镜像剖面或者被隐藏！'\n        	},{\n        		'submit' : function(e){\n        			Plugins.dialog.remove();\n        		}\n        	});\n	    }\n    }\n}\n\n/*添加规则管孔功能函数*/\nGlobal.locus.method.drawRegularPipeHole = function(feature){\n	var Ppfeature;\n	for(var i=0;i<Global.locus.layers.buildingLayer.features.length;i++){\n		if(Global.locus.layers.buildingLayer.features[i].attributes['static_id'] ==\n			feature.attributes['pp_segment_id']){\n			Ppfeature = Global.locus.layers.buildingLayer.features[i];\n			break;\n		}\n	}\n	if(Ppfeature){\n	    OpenLayers.Request.GET({\n	        url: \"getPropertyJson.action?type=\"+Ppfeature.attributes['object_type']\n	        	+\"&staticId=\"+Ppfeature.attributes['static_id'],\n	        success: ppSegmentProperty_success,\n	        failure: (function(e){\n	        	Plugins.dialog.show({\n	        		'title': '错误信息',\n	        		'text': e.responseText\n	        	},{\n	        		'submit' : function(e){\n	        			Plugins.dialog.remove();\n	        		}\n	        	});\n	        	}\n	        )\n	    });\n	}else{\n    	Plugins.dialog.show({\n    		'title': '错误信息',\n    		'text': '请检查剖面所属管沟是否存在或者被隐藏!'\n    	},{\n    		'submit' : function(e){\n    			Plugins.dialog.remove();\n    		}\n    	});\n	}\n    function ppSegmentProperty_success(req){\n    	var format = new OpenLayers.Format.JSON();\n    	var response = format.read(req.responseXML || req.responseText);	\n		var obj = [];\n		obj[0] = new Object(), obj[1] = new Object();\n		var hx = parseFloat($('#pholex').val());\n		var hy = parseFloat($('#pholey').val());\n		var hx_start = parseFloat($('#pholex_start').val())*Global.constant.scaleMM;\n		var hy_start = parseFloat($('#pholey_start').val())*Global.constant.scaleMM;\n		var hx_span = parseFloat($('#pholex_span').val())*Global.constant.scaleMM;\n		var hy_span = parseFloat($('#pholey_span').val())*Global.constant.scaleMM;\n		var hr = parseFloat($('#pholed').val())*Global.constant.scaleMM/2;\n		var code = $('#code').val();\n    	var featureCopy;//镜像剖面\n	    for(var i=0;i<Global.locus.layers.elevationLayer.profileLayer.features.length;i++){\n	    	if(Global.locus.layers.elevationLayer.profileLayer.features[i].attributes['static_id'] ==\n	    		feature.attributes['static_id']){\n	    		var reference = feature.geometry.components[0].components[0].components[0];\n	    		var geometry = Global.locus.layers.elevationLayer.profileLayer.features[i].geometry.components[0].components[0].components[0];\n	    		if((geometry.x != reference.x) && (geometry.y != reference.y)){\n	    			featureCopy = Global.locus.layers.elevationLayer.profileLayer.features[i];\n	    		}\n	    	}\n	    }\n	    if(featureCopy){\n			obj[0].vertex = Ppfeature.geometry.components[0].clone();\n			obj[1].vertex = Ppfeature.geometry.components[Ppfeature.geometry.components.length-1].clone();\n	    	var changedFlag = false;\n	    	var checkedPass = true;\n			if(obj[0].vertex.x > obj[1].vertex.x || \n					(obj[0].vertex.x == obj[1].vertex.x && obj[0].vertex.y > obj[1].vertex.y)){\n				var temp = obj[0].vertex.clone();\n				obj[0].vertex = obj[1].vertex.clone();\n				obj[1].vertex = temp.clone();\n				changedFlag = true;\n			}\n	        if(response['startBuilding'] != feature.attributes['well_id'] &&\n	        		response['endBuilding'] != feature.attributes['well_id']){\n	        	Plugins.dialog.show({\n	        		'title': '错误信息',\n	        		'text': '剖面所属管沟未经过剖面所属工井，请检查数据正确性！'\n	        	},{\n	        		'submit' : function(e){\n	        			Plugins.dialog.remove();\n	        		}\n	        	});\n        		checkedPass = false;\n	        }\n	        var Rdirection = Math.atan((obj[1].vertex.y-obj[0].vertex.y)/(obj[1].vertex.x-obj[0].vertex.x));\n	        if(checkedPass){\n	        	obj[0].points = [], obj[1].points = [];\n	        	var profileDistance = obj[1].vertex.distanceTo(obj[0].vertex);\n				var distance = profileDistance/4;\n				var Pwidth = feature.geometry.components[0].components[0].components[0].distanceTo(\n		    			feature.geometry.components[0].components[0].components[1]);\n				var Phigh = feature.geometry.components[0].components[0].components[1].distanceTo(\n		    			feature.geometry.components[0].components[0].components[2]);\n				obj[0].points[0] = new OpenLayers.Geometry.Point(\n						obj[0].vertex.x+distance*Math.cos(Rdirection),\n						obj[0].vertex.y+distance*Math.sin(Rdirection));\n				obj[1].points[0] = new OpenLayers.Geometry.Point(\n						obj[1].vertex.x-distance*Math.cos(Rdirection),\n						obj[1].vertex.y-distance*Math.sin(Rdirection));\n				var length;\n				for(var i=0;i<3;i++){\n					length = (i+1)%2*Pwidth+i%2*Phigh;\n					obj[0].dx = length * Math.cos(Rdirection+Math.PI/2*i);\n					obj[0].dy = length * Math.sin(Rdirection+Math.PI/2*i);\n					obj[1].dx = length * Math.cos(Rdirection+Math.PI/2*i-Math.PI);//非旋转换'+'\n					obj[1].dy = length * Math.sin(Rdirection+Math.PI/2*i-Math.PI);//非旋转换'+'\n					obj[0].points[i+1] = new OpenLayers.Geometry.Point(obj[0].points[i].x+obj[0].dx,obj[0].points[i].y+obj[0].dy);\n					obj[1].points[i+1] = new OpenLayers.Geometry.Point(obj[1].points[i].x+obj[1].dx,obj[1].points[i].y+obj[1].dy);\n				}\n				obj[0].points[4] = obj[0].points[0].clone();\n				obj[1].points[4] = obj[1].points[0].clone();\n				\n				var staticId = Plugins.get_staticid();				 \n				obj[0].sp = obj[0].points[3];\n				obj[1].sp = obj[1].points[3];\n				obj[0].hole = [], obj[1].hole = [];\n				var tempx, tempy, temp, Hdirection;\n				var index = 0, encode, codeIndex, numIndex;\n				codeIndex = Global.locus.constant.encode.search(code.charAt(0));\n				numIndex = parseInt(code.slice(1,code.length));\n				obj[0].center = new OpenLayers.Geometry.Point();\n				obj[1].center = new OpenLayers.Geometry.Point();\n				for(var i=0;i<hx;i++){\n					tempy = hy_start+i*hy_span+(2*i+1)*hr;\n					obj[0].array = [], obj[1].array = [];\n					for(var j=0;j<hy;j++){\n						tempx = hx_start+j*hx_span+(2*j+1)*hr;\n						temp = Math.sqrt(tempx*tempx+tempy*tempy);\n						encode = changedFlag ? Global.locus.constant.encode.charAt(codeIndex+hx-i+1)+(numIndex+hy-j) //非旋转hx-i+1换'i'\n								: Global.locus.constant.encode.charAt(codeIndex+i)+(numIndex+j);\n						Hdirection = Math.atan(tempx/tempy);\n						obj[0].center.x = obj[0].sp.x + temp*Math.sin(Hdirection + Rdirection);\n						obj[0].center.y = obj[0].sp.y - temp*Math.cos(Hdirection + Rdirection);\n						obj[1].center.x = obj[1].sp.x - temp*Math.sin(Hdirection + Rdirection);//非旋转括号内换'-'\n						obj[1].center.y = obj[1].sp.y + temp*Math.cos(Hdirection + Rdirection);//非旋转两个'+'都换'-'\n						for(var k=0;k<2;k++){\n							obj[k].array[j] = OpenLayers.Geometry.Polygon.createRegularPolygon(obj[k].center,hr,30);\n							obj[k].hole[index] = new OpenLayers.Feature.Vector(obj[k].array[j]);\n							obj[k].hole[index].attributes['pp_segment_id'] = feature.attributes['pp_segment_id'];\n							obj[k].hole[index].attributes['object_type'] = '1010502';\n							obj[k].hole[index].attributes['static_id'] = staticId + index + 1;\n							obj[k].hole[index].state = OpenLayers.State.INSERT;\n						}\n						obj[0].hole[index].attributes['well_id'] = \n							changedFlag ? response['endBuilding'] : response['startBuilding'];\n						obj[1].hole[index].attributes['well_id'] = \n							changedFlag ? response['startBuilding'] : response['endBuilding'];			\n						Plugins.dialog.add('holes[' + index + '].objectType', '1010502', 'int');\n						Plugins.dialog.add('holes[' + index + '].wellId', response['startBuilding'], 'int');\n						Plugins.dialog.add('holes[' + index + '].mirrorWellId', response['endBuilding'], 'int');\n						Plugins.dialog.add('holes[' + index + '].profileId', feature.attributes['static_id'], 'int');\n						Plugins.dialog.add('holes[' + index + '].pipeCode', encode);\n						Plugins.dialog.add('holes[' + index + '].coordinateX', tempx/Global.constant.scaleMM, 'int');\n						Plugins.dialog.add('holes[' + index + '].deep', tempy/Global.constant.scaleMM, 'int');\n						Plugins.dialog.add('holes[' + index + '].pipeDiameter', 2*hr/Global.constant.scaleMM, 'int');\n						Plugins.dialog.add('holes[' + index + '].ppSegmentId', feature.attributes['pp_segment_id'], 'int');\n						Plugins.dialog.add('holes[' + index + '].staticId', staticId + index + 1, 'int');	\n						Global.locus.layers.elevationLayer.pipe_propertyLayer.addFeatures([obj[0].hole[index],obj[1].hole[index]]);								\n						index++;\n					}\n				}\n				var saveArr = [], k=0;\n				for(i=0;i<index;i++){\n					saveArr[k] = obj[0].hole[i];\n					saveArr[k+1] = obj[1].hole[i];\n					k+=2;\n				}\n				Global.locus.flag.addRegularHoleFlag = false;\n				Plugins.menu.refresh();\n				Plugins.FLAG.MAP['M1']=true;\n				Plugins.menu.update();\n				Global.locus.constant.saveEventsCount = 1;\n				Global.locus.save.saveStrategy[4].save(saveArr);\n	    		var response = setInterval(function(){\n	    			if(Global.locus.save.state['剖面属性'] == 'success'){\n	    				$.post(Global.option.URL + 'saveProperties.action', Base.request.get_param(),function(res){\n	    				});\n	    				Plugins.dialog.remove();				\n	    				clearInterval(response);\n	    			}\n	    			if(Global.locus.save.state['剖面属性'] == 'fail'){\n	    				//Plugins.dialog.remove();\n	    				clearInterval(response);\n	    			}\n	    		},500);\n	        }	\n	    }else{\n        	Plugins.dialog.show({\n        		'title': '错误信息',\n        		'text': '请确认管孔所属剖面是否存在镜像剖面或者被隐藏！'\n        	},{\n        		'submit' : function(e){\n        			Plugins.dialog.remove();\n        		}\n        	});\n	    }\n    }\n}\n\n/*添加支架功能函数*/\nGlobal.locus.method.drawBrackets = function(feature){\n	var Ppfeature;\n	for(var i=0;i<Global.locus.layers.buildingLayer.features.length;i++){\n		if(Global.locus.layers.buildingLayer.features[i].attributes['static_id'] ==\n			feature.attributes['pp_segment_id']){\n			Ppfeature = Global.locus.layers.buildingLayer.features[i];\n			break;\n		}\n	}\n	if(Ppfeature){\n	    OpenLayers.Request.GET({\n	        url: \"getPropertyJson.action?type=\"+Ppfeature.attributes['object_type']\n	        	+\"&staticId=\"+Ppfeature.attributes['static_id'],\n	        success: ppSegmentProperty_success,\n	        failure: (function(e){\n	        	Plugins.dialog.show({\n	        		'title': '错误信息',\n	        		'text': e.responseText\n	        	},{\n	        		'submit' : function(e){\n	        			Plugins.dialog.remove();\n	        		}\n	        	});\n	        	}\n	        )\n	    });\n	}else{\n    	Plugins.dialog.show({\n    		'title': '错误信息',\n    		'text': '请检查剖面所属管沟是否存在或者被隐藏!'\n    	},{\n    		'submit' : function(e){\n    			Plugins.dialog.remove();\n    		}\n    	});\n	}\n    function ppSegmentProperty_success(req){\n    	var format = new OpenLayers.Format.JSON();\n    	var response = format.read(req.responseXML || req.responseText);	\n		var obj = [];\n		obj[0] = new Object(), obj[1] = new Object();\n		var bLine = parseInt($('#bracket_numbers').val())/2;\n		var bSpan = parseFloat($('#bracket_interval').val())*Global.constant.scaleMM;\n		var model = $('#bracket_model').val().toLowerCase().split('x');\n		var bLength = parseFloat(model[0])*Global.constant.scaleMM;\n		var bThick = parseFloat(model[2])*Global.constant.scaleMM;\n    	var featureCopy;//镜像剖面\n	    for(var i=0;i<Global.locus.layers.elevationLayer.profileLayer.features.length;i++){\n	    	if(Global.locus.layers.elevationLayer.profileLayer.features[i].attributes['static_id'] ==\n	    		feature.attributes['static_id']){\n	    		var reference = feature.geometry.components[0].components[0].components[0];\n	    		var geometry = Global.locus.layers.elevationLayer.profileLayer.features[i].geometry.components[0].components[0].components[0];\n	    		if((geometry.x != reference.x) && (geometry.y != reference.y)){\n	    			featureCopy = Global.locus.layers.elevationLayer.profileLayer.features[i];\n	    		}\n	    	}\n	    }\n	    if(featureCopy){\n			obj[0].vertex = Ppfeature.geometry.components[0].clone();\n			obj[1].vertex = Ppfeature.geometry.components[Ppfeature.geometry.components.length-1].clone();\n	    	var changedFlag = false;\n	    	var checkedPass = true;\n			if(obj[0].vertex.x > obj[1].vertex.x || \n					(obj[0].vertex.x == obj[1].vertex.x && obj[0].vertex.y > obj[1].vertex.y)){\n				var temp = obj[0].vertex.clone();\n				obj[0].vertex = obj[1].vertex.clone();\n				obj[1].vertex = temp.clone();\n				changedFlag = true;\n			}\n	        if(response['startBuilding'] != feature.attributes['well_id'] &&\n	        		response['endBuilding'] != feature.attributes['well_id']){\n	        	Plugins.dialog.show({\n	        		'title': '错误信息',\n	        		'text': '剖面所属管沟未经过剖面所属工井，请检查数据正确性！'\n	        	},{\n	        		'submit' : function(e){\n	        			Plugins.dialog.remove();\n	        		}\n	        	});\n        		checkedPass = false;\n	        }\n	        var Rdirection = Math.atan((obj[1].vertex.y-obj[0].vertex.y)/(obj[1].vertex.x-obj[0].vertex.x));\n	        if(checkedPass){\n	        	obj[0].points = [], obj[1].points = [];\n	        	var profileDistance = obj[1].vertex.distanceTo(obj[0].vertex);\n				var distance = profileDistance/4;\n				var Pwidth = feature.geometry.components[0].components[0].components[0].distanceTo(\n		    			feature.geometry.components[0].components[0].components[1]);\n				var Phigh = feature.geometry.components[0].components[0].components[1].distanceTo(\n		    			feature.geometry.components[0].components[0].components[2]);\n				obj[0].points[0] = new OpenLayers.Geometry.Point(\n						obj[0].vertex.x+distance*Math.cos(Rdirection),\n						obj[0].vertex.y+distance*Math.sin(Rdirection));\n				obj[1].points[0] = new OpenLayers.Geometry.Point(\n						obj[1].vertex.x-distance*Math.cos(Rdirection),\n						obj[1].vertex.y-distance*Math.sin(Rdirection));\n				var length;\n				for(var i=0;i<3;i++){\n					length = (i+1)%2*Pwidth+i%2*Phigh;\n					obj[0].dx = length * Math.cos(Rdirection+Math.PI/2*i);\n					obj[0].dy = length * Math.sin(Rdirection+Math.PI/2*i);\n					obj[1].dx = length * Math.cos(Rdirection+Math.PI/2*i-Math.PI);//非旋转换'+'\n					obj[1].dy = length * Math.sin(Rdirection+Math.PI/2*i-Math.PI);//非旋转换'+'\n					obj[0].points[i+1] = new OpenLayers.Geometry.Point(obj[0].points[i].x+obj[0].dx,obj[0].points[i].y+obj[0].dy);\n					obj[1].points[i+1] = new OpenLayers.Geometry.Point(obj[1].points[i].x+obj[1].dx,obj[1].points[i].y+obj[1].dy);\n				}\n				obj[0].points[4] = obj[0].points[0].clone();\n				obj[1].points[4] = obj[1].points[0].clone();\n				\n				var staticId = Plugins.get_staticid();	\n				obj[0].sp = obj[0].points[3];\n				obj[1].sp = obj[1].points[3];\n				var tempx, tempy, temp, Hdirection, increase;\n				obj[0].left_points = [],obj[1].left_points = [],obj[0].right_points = [],obj[1].right_points = [];\n				obj[0].rectangle = [],obj[1].rectangle = [];\n				var index = 0, encode;\n				for(var i=0;i<bLine;i++){\n					obj[0].left_points[0] = new OpenLayers.Geometry.Point(\n							obj[0].points[3].x+((i+1)*bSpan+i*bThick)*Math.sin(Rdirection),\n							obj[0].points[3].y-((i+1)*bSpan+i*bThick)*Math.cos(Rdirection));\n					obj[1].left_points[0] = new OpenLayers.Geometry.Point(\n							obj[1].points[3].x-((i+1)*bSpan+i*bThick)*Math.sin(Rdirection),\n							obj[1].points[3].y+((i+1)*bSpan+i*bThick)*Math.cos(Rdirection));\n					obj[0].right_points[0] = new OpenLayers.Geometry.Point(\n							obj[0].points[2].x+((i+1)*bSpan+i*bThick)*Math.sin(Rdirection)+bLength*Math.cos(Rdirection-Math.PI),\n							obj[0].points[2].y-((i+1)*bSpan+i*bThick)*Math.cos(Rdirection)+bLength*Math.sin(Rdirection-Math.PI));\n					obj[1].right_points[0] = new OpenLayers.Geometry.Point(\n							obj[1].points[2].x-((i+1)*bSpan+i*bThick)*Math.sin(Rdirection)+bLength*Math.cos(Rdirection),\n							obj[1].points[2].y+((i+1)*bSpan+i*bThick)*Math.cos(Rdirection)+bLength*Math.sin(Rdirection));\n					for(var j=0;j<3;j++){\n						increase = (j+1)%2*bLength+j%2*bThick;\n						obj[0].dx = increase * Math.cos(Rdirection-Math.PI/2*j);\n						obj[0].dy = increase * Math.sin(Rdirection-Math.PI/2*j);\n						obj[1].dx = increase * Math.cos(Rdirection-Math.PI/2*j-Math.PI);\n						obj[1].dy = increase * Math.sin(Rdirection-Math.PI/2*j-Math.PI);\n						obj[0].left_points[j+1] = new OpenLayers.Geometry.Point(obj[0].left_points[j].x+obj[0].dx,obj[0].left_points[j].y+obj[0].dy);\n						obj[1].left_points[j+1] = new OpenLayers.Geometry.Point(obj[1].left_points[j].x+obj[1].dx,obj[1].left_points[j].y+obj[1].dy);\n						obj[0].right_points[j+1] = new OpenLayers.Geometry.Point(obj[0].right_points[j].x+obj[0].dx,obj[0].right_points[j].y+obj[0].dy);\n						obj[1].right_points[j+1] = new OpenLayers.Geometry.Point(obj[1].right_points[j].x+obj[1].dx,obj[1].right_points[j].y+obj[1].dy);\n					}\n					obj[0].left_points[4] = obj[0].left_points[0].clone();\n					obj[1].left_points[4] = obj[1].left_points[0].clone();\n					obj[0].right_points[4] = obj[0].right_points[0].clone();\n					obj[1].right_points[4] = obj[1].right_points[0].clone();\n					obj[0].rectangle[2*i] = new OpenLayers.Geometry.Polygon(\n							new OpenLayers.Geometry.LinearRing(obj[0].left_points));\n					obj[1].rectangle[2*i] = new OpenLayers.Geometry.Polygon(\n							new OpenLayers.Geometry.LinearRing(obj[1].left_points));\n					obj[0].rectangle[2*i+1] = new OpenLayers.Geometry.Polygon(\n							new OpenLayers.Geometry.LinearRing(obj[0].right_points));\n					obj[1].rectangle[2*i+1] = new OpenLayers.Geometry.Polygon(\n							new OpenLayers.Geometry.LinearRing(obj[1].right_points));\n				}\n				obj[0].polygons = new OpenLayers.Feature.Vector(\n						new OpenLayers.Geometry.MultiPolygon(obj[0].rectangle));\n				obj[1].polygons = new OpenLayers.Feature.Vector(\n						new OpenLayers.Geometry.MultiPolygon(obj[1].rectangle));\n				for(var i=0;i<2;i++){\n					obj[i].polygons.attributes['pp_segment_id'] = feature.attributes['pp_segment_id'];\n					obj[i].polygons.attributes['object_type'] = '1010503';\n					obj[i].polygons.attributes['static_id'] = staticId;\n					obj[i].polygons.state = OpenLayers.State.INSERT;\n				}\n				obj[0].polygons.attributes['well_id'] = \n					changedFlag ? response['endBuilding'] : response['startBuilding'];\n				obj[1].polygons.attributes['well_id'] = \n					changedFlag ? response['startBuilding'] : response['endBuilding'];\n				Plugins.dialog.set('#staticId', staticId);\n				Plugins.dialog.add('bracket.wellId', response['startBuilding'], 'int');\n				Plugins.dialog.add('bracket.mirrorWellId', response['endBuilding'], 'int');\n				Plugins.dialog.add('bracket.belongsPpSegment', feature.attributes['pp_segment_id'], 'int');					\n				Global.locus.layers.elevationLayer.pipe_propertyLayer.addFeatures([obj[0].polygons,obj[1].polygons]);\n				Global.locus.flag.addBracketFlag = false;\n				Plugins.menu.refresh();\n				Plugins.FLAG.MAP['M1']=true;\n				Plugins.menu.update();\n				Global.locus.constant.saveEventsCount = 1;\n				Global.locus.save.saveStrategy[4].save([obj[0].polygons,obj[1].polygons]);\n	    		var response = setInterval(function(){\n	    			if(Global.locus.save.state['剖面属性'] == 'success'){\n	    				$.post(Global.option.URL + 'saveProperty.action', Base.request.get_param(),function(res){\n	    				});\n	    				Plugins.dialog.remove();				\n	    				clearInterval(response);\n	    			}\n	    			if(Global.locus.save.state['剖面属性'] == 'fail'){\n	    				//Plugins.dialog.remove();\n	    				clearInterval(response);\n	    			}\n	    		},500);\n	        }	\n	    }else{\n        	Plugins.dialog.show({\n        		'title': '错误信息',\n        		'text': '请确认管孔所属剖面是否存在镜像剖面或者被隐藏！'\n        	},{\n        		'submit' : function(e){\n        			Plugins.dialog.remove();\n        		}\n        	});\n	    }\n    }\n}\n\nGlobal.locus.method.profile_unselect = function(e){  \n	var arraylength = Global.locus.label.point.length;\n	for(i=0;i<arraylength;i++){\n		Global.locus.label.point[i].destroy();	\n	}\n}\n\nGlobal.locus.method.pipe_property_select = function(e){\n	Global.locus.copy.source = e.feature.geometry.getBounds().getCenterLonLat();\n	if(Global.locus.flag.matchCableFlag){\n	    OpenLayers.Request.GET({\n	        url: \"getPropertyJson.action?type=\"+e.feature.attributes['object_type']\n	        	+\"&staticId=\"+e.feature.attributes['static_id'],\n	        success: holeProperty_success,\n	        failure: (function(e){\n	        	Plugins.dialog.show({\n	        		'title': '错误信息',\n	        		'text': e.responseText\n	        	},{\n	        		'submit' : function(e){\n	        			Plugins.dialog.remove();\n	        		}\n	        	});\n	        	}\n	        )\n	    });\n	    var featureCopy;\n	    for(var i=0;i<Global.locus.layers.elevationLayer.pipe_propertyLayer.features.length;i++){\n	    	if(Global.locus.layers.elevationLayer.pipe_propertyLayer.features[i].attributes['static_id'] ==\n	    		e.feature.attributes['static_id']){\n	    		var reference = e.feature.geometry.components[0].components[0];\n	    		var geometry = Global.locus.layers.elevationLayer.pipe_propertyLayer.features[i].geometry.components[0].components[0];\n	    		if((geometry.x != reference.x) && (geometry.y != reference.y)){\n	    			featureCopy = Global.locus.layers.elevationLayer.pipe_propertyLayer.features[i];\n	    		}\n	    	}\n	    }\n	    function holeProperty_success(req){\n	    	var format = new OpenLayers.Format.JSON();\n	        var response = format.read(req.responseXML || req.responseText);\n	        if(response['wirecableSegmentId']){\n	        	Plugins.dialog.show({\n	        		'title': '错误信息',\n	        		'text': \"该管孔已被穿管\"\n	        	},{\n	        		'submit' : function(e){\n	        			Plugins.dialog.remove();\n	        		}\n	        	});\n	        }else{\n	        	var holeCenter = new OpenLayers.Geometry.Point();\n	        	var holeCopyCenter = new OpenLayers.Geometry.Point();\n	        	var vertex = e.feature.geometry.components[0].components;\n	        	var vertexCopy = featureCopy.geometry.components[0].components;\n	        	holeCenter.x = (vertex[0].x+vertex[15].x)/2;\n	        	holeCenter.y = (vertex[0].y+vertex[15].y)/2;\n	        	holeCopyCenter.x = (vertexCopy[0].x+vertexCopy[15].x)/2;\n	        	holeCopyCenter.y = (vertexCopy[0].y+vertexCopy[15].y)/2;      	\n		        Plugins.dialog.show({\n					title: '选择电缆', \n					url: Global.option.URL+'/getProOfWireCables.action',\n					width: 500,\n					feature: e.feature,\n					featureCopy: featureCopy,\n					center: holeCenter,\n					centerCopy: holeCopyCenter,\n					param	: {\n						PPSId	: e.feature.attributes['pp_segment_id']\n					}\n				}, {\n					'submit' : function(e){\n					    OpenLayers.Request.GET({\n					        url: \"getPropertiesJson.action?pipeSId=\"+e['feature'].attributes['static_id'],\n					        success: holeInProfile_success,\n					        failure: (function(e){\n								Plugins.dialog.warm({\n									'title'	: '错误信息'\n								},e.responseText,{});\n					        	}\n					        )\n					    });\n					    function holeInProfile_success(req){\n					    	var format = new OpenLayers.Format.JSON();\n					        var response = format.read(req.responseXML || req.responseText);\n					        var selectedCable = $('#cable').val();\n					        var flag = false;\n					        for(var i=0;i<response.length;i++){\n					        	if(selectedCable == response[i]['wirecableSegmentId']){\n					        		Plugins.dialog.warm(e, '该电缆已穿在'+response[i]['pipeCode']+'号管孔，确定继续穿管？',{\n										'yes' 	: createCableIcon\n					        		});\n					        		flag = true;\n					        		break;\n					        	}\n					        }\n					        if(!flag){\n					        	createCableIcon();\n					        }\n					        function createCableIcon(){\n								var style,cableRadius;\n								var cableDiameter = $('#cableDiameter').val();\n								cableRadius = cableDiameter/2;\n								var voltage = $('input[name=\"'+selectedCable+'\"]').val();\n								switch(voltage){\n								case \"0\" :\n									style = {externalGraphic:\"img/holes/communicate.svg\",pointRadius: cableRadius};\n									break;\n								case \"1\" : \n									style = {externalGraphic:\"img/holes/hole04.svg\",pointRadius: cableRadius};\n									break;\n								case \"2\" : \n									style = {externalGraphic:\"img/holes/hole10.svg\",pointRadius: cableRadius};\n									break;\n								case \"3\" : \n									style = {externalGraphic:\"img/holes/hole35.svg\",pointRadius: cableRadius};\n									break;\n								case \"4\" : \n									style = {externalGraphic:\"img/holes/hole110.svg\",pointRadius: cableRadius};\n									break;\n								case \"5\" : \n									style = {externalGraphic:\"img/holes/hole220.svg\",pointRadius: cableRadius};\n									break;\n								case \"6\" : \n									style = {externalGraphic:\"img/holes/hole330.svg\",pointRadius: cableRadius};\n									break;\n								case \"7\" : \n									style = {externalGraphic:\"img/holes/hole500.svg\",pointRadius: cableRadius};\n									break;\n								case \"8\" : \n									style = {externalGraphic:\"img/holes/hole750.svg\",pointRadius: cableRadius};\n									break;\n								default:\n									style = null;								\n								}\n								var attributes = {\n										'cable_id': selectedCable,\n										'voltage_grade': parseInt(voltage),\n										'cable_diameter': cableDiameter,\n										'pp_segment_id': e['feature'].attributes['pp_segment_id']\n								}\n								if(style){\n									var cp = new OpenLayers.Feature.Vector(e['center'], attributes);\n									cp.renderIntent = 'default';\n									cp.attributes['well_id'] = e['feature'].attributes['well_id'];\n									cp.attributes['hole_id'] = e['feature'].attributes['static_id'];\n									var cpCopy = new OpenLayers.Feature.Vector(e['centerCopy'], attributes);\n									cpCopy.renderIntent = 'default';\n									cpCopy.attributes['well_id'] = e['featureCopy'].attributes['well_id'];\n									cpCopy.attributes['hole_id'] = e['featureCopy'].attributes['static_id'];\n									cp.state = OpenLayers.State.INSERT;\n									cpCopy.state = OpenLayers.State.INSERT;\n									Global.locus.layers.elevationLayer.cableLayer.addFeatures([cp,cpCopy]);\n						    		Global.locus.constant.saveEventsCount = 1;\n						    		Global.locus.save.saveStrategy[5].save([cp,cpCopy]);\n				    				var response = setInterval(function(){\n				    					if(Global.locus.save.state['剖面电缆'] == 'success'){\n				    	    				$.post(Global.option.URL + 'updatePro.action?SId=' + e['feature'].attributes['static_id']\n				    	    					+ '&wcSeg=' + selectedCable);\n											Global.locus.flag.matchCableFlag = false;\n								    		Plugins.menu.refresh();\n								    		Plugins.FLAG.MAP['M1']=true;\n								    		Plugins.menu.update();\n											Plugins.dialog.remove();\n				    						clearInterval(response);\n				    					}\n				    					if(Global.locus.save.state['剖面电缆'] == 'fail'){\n				    						clearInterval(response);\n				    					}\n				    				},500);\n								}else{\n									Plugins.dialog.warm({\n										'title'	: '错误信息'\n									},'所穿电缆电压等级有误，请检查数据',{});\n								}\n					        }\n					    }\n					}\n			    });\n	        }\n	    }\n    }\n}	\n\nGlobal.locus.method.pipe_property_unselect = function(e){  	\n}\n\nGlobal.locus.method.cable_select = function(e){\n	if(Global.locus.flag.slide){\n		Plugins.slide_form.highlight(e.feature.attributes['cable_id']);\n	}\n}\n\nGlobal.locus.method.cable_unselect = function(e){  \n	if(Global.locus.flag.slide){\n		Plugins.slide_form.unhighlight();\n	}	\n}\n\n\n/*添加剖面函数*/\nGlobal.locus.method.addProfile = function(feature){\n	if(feature.attributes['object_type'] != '1020101' && feature.attributes['object_type'] != '1020103'){\n    	Plugins.dialog.show({\n    		'title': '错误信息',\n    		'text': '请选择工井'\n    	},{\n    		'submit' : function(e){\n    			Plugins.dialog.remove();\n    		}\n    	});\n	}else{\n		if(!Global.locus.flag.addProfilePpSegment){\n			Global.locus.profile.unit = feature.attributes['static_id'];\n		}\n		Global.locus.flag.addProfilePpSegment = true;\n		Global.locus.flag.addProfileWell = false;\n	}\n}\n\nGlobal.locus.method.createProfile = function(feature){\n	var type = feature.attributes['object_type'];\n	if(type=='1020211' || type=='1020212' || type=='1020213' ||\n			type=='1020214' || type=='1020215' || type=='1020216'){\n	    OpenLayers.Request.GET({\n	        url: \"getPropertyJson.action?type=\"+feature.attributes['object_type']\n	        	+\"&staticId=\"+feature.attributes['static_id'],\n	        success: ppSegmentProperty_success,\n	        failure: (function(e){\n	        	Plugins.dialog.show({\n	        		'title': '错误信息',\n	        		'text': e.responseText\n	        	},{\n	        		'submit' : function(e){\n	        			Plugins.dialog.remove();\n	        		}\n	        	});\n	        	}\n	        )\n	    });\n	    function ppSegmentProperty_success(req){\n	    	var format = new OpenLayers.Format.JSON();\n	        var response = format.read(req.responseXML || req.responseText);\n	        if(response['startBuilding'] && response['endBuilding']){\n		        if(response['startBuilding'] == Global.locus.profile.unit || \n		        		response['endBuilding'] == Global.locus.profile.unit){\n		        	Global.locus.flag.addProfilePpSegment = false;\n		    		Plugins.dialog.show({\n		    			title: '添加剖面图', \n		    			feature: feature,\n		    			obj: response,\n		    			url: Global.option.URL+'/template/property/cross.jsp'\n		    		},{\n		    			'submit' : function(e){\n		    				var obj = [];\n		    				obj[0] = new Object(), obj[1] = new Object();\n		    				var changedFlag = false;\n		    				var Pwidth = parseFloat($('#plengthx').val())*Global.constant.scaleMM;\n		    				var Phigh = parseFloat($('#plengthy').val())*Global.constant.scaleMM;\n		    				obj[0].vertex = e['feature'].geometry.components[0].clone();\n		    				obj[1].vertex = e['feature'].geometry.components[e['feature'].geometry.components.length-1].clone();\n		    				if(obj[0].vertex.x > obj[1].vertex.x || \n		    						(obj[0].vertex.x == obj[1].vertex.x && obj[0].vertex.y > obj[1].vertex.y)){\n		    					var temp = obj[0].vertex.clone();\n		    					obj[0].vertex = obj[1].vertex.clone();\n		    					obj[1].vertex = temp.clone();\n		    					changedFlag = true;\n		    				}\n		    				var Rdirection = Math.atan((obj[1].vertex.y-obj[0].vertex.y)/(obj[1].vertex.x-obj[0].vertex.x));\n		    				obj[0].points = [], obj[1].points = [];\n		    	        	var profileDistance = obj[1].vertex.distanceTo(obj[0].vertex);\n		    				var distance = profileDistance/4;\n		    				obj[0].points[0] = new OpenLayers.Geometry.Point(\n		    						obj[0].vertex.x+distance*Math.cos(Rdirection),\n		    						obj[0].vertex.y+distance*Math.sin(Rdirection));\n		    				obj[1].points[0] = new OpenLayers.Geometry.Point(\n		    						obj[1].vertex.x-distance*Math.cos(Rdirection),\n		    						obj[1].vertex.y-distance*Math.sin(Rdirection));\n		    				var length;\n		    				for(var i=0;i<3;i++){\n		    					length = (i+1)%2*Pwidth+i%2*Phigh;\n		    					obj[0].dx = length * Math.cos(Rdirection+Math.PI/2*i);\n		    					obj[0].dy = length * Math.sin(Rdirection+Math.PI/2*i);\n		    					obj[1].dx = length * Math.cos(Rdirection+Math.PI/2*i-Math.PI);//非旋转换'+'\n		    					obj[1].dy = length * Math.sin(Rdirection+Math.PI/2*i-Math.PI);//非旋转换'+'\n		    					obj[0].points[i+1] = new OpenLayers.Geometry.Point(obj[0].points[i].x+obj[0].dx,obj[0].points[i].y+obj[0].dy);\n		    					obj[1].points[i+1] = new OpenLayers.Geometry.Point(obj[1].points[i].x+obj[1].dx,obj[1].points[i].y+obj[1].dy);\n		    				}\n		    				obj[0].points[4] = obj[0].points[0].clone();\n		    				obj[1].points[4] = obj[1].points[0].clone();\n		    				\n		    				obj[0].polygons = [], obj[1].polygons = [];\n		    				obj[0].polygons[0] = new OpenLayers.Geometry.Polygon(\n		    						new OpenLayers.Geometry.LinearRing(obj[0].points));\n		    				obj[1].polygons[0] = new OpenLayers.Geometry.Polygon(\n		    						new OpenLayers.Geometry.LinearRing(obj[1].points));		    				\n		    				var bottomSpan = Pwidth/4;\n		    				var bottomLong = 1.4*bottomSpan;\n		    				var bottomLines = [], bottomPoint = [], bottomEndPoint = [];\n		    				var dx = bottomLong * Math.cos(Rdirection+Math.PI/4);\n		    				var dy = bottomLong * Math.sin(Rdirection+Math.PI/4);\n		    				var bottomNum = parseInt(Pwidth/bottomSpan)+1;\n		    				var spanDx, spanDy;\n		    				for(var i=0;i<bottomNum;i++){\n		    					spanDx = bottomSpan*i*Math.cos(Rdirection+Math.PI);\n		    					spanDy = bottomSpan*i*Math.sin(Rdirection+Math.PI);\n		    					bottomPoint[i] = new OpenLayers.Geometry.Point(\n		    							obj[0].points[3].x-spanDx,obj[0].points[3].y-spanDy);\n		    					bottomEndPoint[i] = new OpenLayers.Geometry.Point(\n		    							bottomPoint[i].x+dx,bottomPoint[i].y+dy);\n		    					bottomLines[i] = new OpenLayers.Geometry.LineString(\n		    							[bottomPoint[i],bottomEndPoint[i]]); \n		    				}\n		    				obj[0].bottomLine = new OpenLayers.Feature.Vector(\n		    						new OpenLayers.Geometry.MultiLineString(bottomLines));		    				\n		    				dx = bottomLong * Math.cos(Rdirection-Math.PI/4);\n		    				dy = bottomLong * Math.sin(Rdirection-Math.PI/4);\n		    				for(var i=0;i<bottomNum;i++){\n		    					spanDx = bottomSpan*i*Math.cos(Rdirection);\n		    					spanDy = bottomSpan*i*Math.sin(Rdirection);\n		    					bottomPoint[i] = new OpenLayers.Geometry.Point(\n		    							obj[1].points[3].x-spanDx,obj[1].points[3].y-spanDy);\n		    					bottomEndPoint[i] = new OpenLayers.Geometry.Point(\n		    							bottomPoint[i].x+dx,bottomPoint[i].y+dy);\n		    					bottomLines[i] = new OpenLayers.Geometry.LineString(\n		    							[bottomPoint[i],bottomEndPoint[i]]); \n		    				}\n		    				obj[1].bottomLine = new OpenLayers.Feature.Vector(\n		    						new OpenLayers.Geometry.MultiLineString(bottomLines));\n		    				\n		    				/*判断是矩形、拱形还是圆形剖面*/\n		    				switch(Global.locus.profile.shape){\n		    				case 'rectangle':\n		    					break;\n		    				case 'arch':		    					\n			    				var rW= Pwidth/2; // horizontal radius\n			    				var rH= Phigh; // vertical radius\n			    				var rotation = Rdirection; //Rotation\n			    				var xCent, yCent, xEnd, yEnd, xCopyCent, yCopyCent, xCopyEnd, yCopyEnd;\n			    				xCent = obj[0].vertex.x+(rW+distance)*Math.cos(Rdirection);\n			    				yCent = obj[0].vertex.y+(rW+distance)*Math.sin(Rdirection);\n			    				xEnd = obj[0].vertex.x+distance*Math.cos(Rdirection);\n			    				yEnd = obj[0].vertex.y+distance*Math.sin(Rdirection);\n			    				xCopyCent = obj[1].vertex.x-(rW+distance)*Math.cos(Rdirection);\n			    				yCopyCent = obj[1].vertex.y-(rW+distance)*Math.sin(Rdirection);\n			    				xCopyEnd = obj[1].vertex.x-distance*Math.cos(Rdirection);\n			    				yCopyEnd = obj[1].vertex.y-distance*Math.sin(Rdirection);\n			    				var list = [], listCopy = [];\n			    				list[0] = new OpenLayers.Geometry.Point(xCent,yCent);\n			    				listCopy[0] = new OpenLayers.Geometry.Point(xCopyCent,yCopyCent);\n			    				for (var angle = 0; angle <Math.PI; angle += 0.1 ) {//angle控制精度，越小，点个数越多\n			    					x = xCent + rW * Math.cos(angle) * Math.cos(rotation) - rH * Math.sin(angle) * Math.sin(rotation);\n			    					y = yCent + rW * Math.cos(angle) * Math.sin(rotation) + rH * Math.sin(angle) * Math.cos(rotation);\n			    				    list.push(new OpenLayers.Geometry.Point(x, y));\n			    				};\n			    				for (var angle = Math.PI; angle < 2*Math.PI; angle += 0.1 ) {//angle控制精度，越小，点个数越多\n			    					x = xCopyCent + rW * Math.cos(angle) * Math.cos(rotation) - rH * Math.sin(angle) * Math.sin(rotation);\n			    					y = yCopyCent + rW * Math.cos(angle) * Math.sin(rotation) + rH * Math.sin(angle) * Math.cos(rotation);\n			    				    listCopy.push(new OpenLayers.Geometry.Point(x, y));\n			    				};\n			    				list.push(new OpenLayers.Geometry.Point(xEnd, yEnd));\n			    				listCopy.push(new OpenLayers.Geometry.Point(xCopyEnd, yCopyEnd));\n			    				obj[0].polygons[1] = new OpenLayers.Geometry.Polygon(new OpenLayers.Geometry.LinearRing(list));\n			    				obj[1].polygons[1] = new OpenLayers.Geometry.Polygon(new OpenLayers.Geometry.LinearRing(listCopy));\n			    				break;\n		    				case 'round':\n		    					var center, centerCopy;\n			    				center = new OpenLayers.Geometry.Point(\n			    						obj[0].vertex.x+(Pwidth/2+distance)*Math.cos(Rdirection)+Phigh/2*Math.cos(Rdirection+Math.PI/2),\n			    						obj[0].vertex.y+(Pwidth/2+distance)*Math.sin(Rdirection)+Phigh/2*Math.sin(Rdirection+Math.PI/2));\n			    				centerCopy = new OpenLayers.Geometry.Point(\n			    						obj[1].vertex.x-(Pwidth/2+distance)*Math.cos(Rdirection)+Phigh/2*Math.cos(Rdirection-Math.PI/2),\n			    						obj[1].vertex.y-(Pwidth/2+distance)*Math.sin(Rdirection)+Phigh/2*Math.sin(Rdirection-Math.PI/2));\n			    				obj[0].polygons[1] = OpenLayers.Geometry.Polygon.createRegularPolygon(center,Pwidth/2,30);\n			    				obj[1].polygons[1] = OpenLayers.Geometry.Polygon.createRegularPolygon(centerCopy,Pwidth/2,30);\n		    					break;\n		    				}\n		    				obj[0].profile = new OpenLayers.Geometry.MultiPolygon(obj[0].polygons);\n		    				obj[1].profile = new OpenLayers.Geometry.MultiPolygon(obj[1].polygons);\n		    				obj[0].Pfeature = new OpenLayers.Feature.Vector(obj[0].profile);\n		    				obj[1].Pfeature = new OpenLayers.Feature.Vector(obj[1].profile);\n		    				var staticId = Plugins.get_staticid();	\n		    				for(var i=0;i<2;i++){\n		    					obj[i].Pfeature.attributes['pp_segment_id'] = e['feature'].attributes['static_id'];\n		    					obj[i].Pfeature.attributes['object_type'] = '1010501';\n		    					obj[i].bottomLine.attributes['object_type'] = '1000501';\n		    					obj[i].Pfeature.attributes['static_id'] = staticId;\n		    					obj[i].Pfeature.state = OpenLayers.State.INSERT;\n		    					obj[i].bottomLine.state = OpenLayers.State.INSERT;\n		    				}\n		    				if(changedFlag){\n		    					obj[1].Pfeature.attributes['well_id'] = e['obj']['startBuilding']; \n			    				obj[1].bottomLine.attributes['well_id'] = e['obj']['startBuilding'];\n			    				obj[1].bottomLine.attributes['pp_segment_id'] = e['feature'].attributes['static_id']; \n			    				obj[0].Pfeature.attributes['well_id'] = e['obj']['endBuilding'];\n			    				obj[0].bottomLine.attributes['well_id'] = e['obj']['endBuilding'];\n			    				obj[0].bottomLine.attributes['pp_segment_id'] = e['feature'].attributes['static_id'];\n		    				}else{\n			    				obj[0].Pfeature.attributes['well_id'] = e['obj']['startBuilding']; \n			    				obj[0].bottomLine.attributes['well_id'] = e['obj']['startBuilding'];\n			    				obj[0].bottomLine.attributes['pp_segment_id'] = e['feature'].attributes['static_id']; \n			    				obj[1].Pfeature.attributes['well_id'] = e['obj']['endBuilding'];\n			    				obj[1].bottomLine.attributes['well_id'] = e['obj']['endBuilding'];\n			    				obj[1].bottomLine.attributes['pp_segment_id'] = e['feature'].attributes['static_id'];\n		    				}\n		    				Plugins.dialog.add('profile[0].ppSegmentId', e['feature'].attributes['static_id'], 'int');\n				        	Plugins.dialog.add('profile[0].wellId', e['obj']['startBuilding'], 'int');\n				        	Plugins.dialog.add('profile[0].mirrorWellId', e['obj']['endBuilding'], 'int');\n		    				Plugins.dialog.add('profile[0].objectType', '1010501', 'int');\n		    				Plugins.dialog.add('profile[0].staticId', staticId, 'int');\n		    				Global.locus.layers.elevationLayer.profileLayer.addFeatures([obj[0].Pfeature,obj[1].Pfeature,obj[0].bottomLine,obj[1].bottomLine]);\n    						Plugins.menu.refresh();\n    						Plugins.FLAG.MAP['M1']=true;\n    						Plugins.menu.update();\n		    				Global.locus.constant.saveEventsCount = 1;\n		    				Global.locus.save.saveStrategy[3].save([obj[0].Pfeature,obj[1].Pfeature,obj[0].bottomLine,obj[1].bottomLine]);\n\n		    				var response = setInterval(function(){\n		    					if(Global.locus.save.state['剖面'] == 'success'){\n		    						$.post(Global.option.URL + 'saveProperties.action', Base.request.get_param(),function(res){\n		    						});		    						\n		    						Plugins.dialog.remove();\n		    						clearInterval(response);\n		    					}\n		    					if(Global.locus.save.state['剖面'] == 'fail'){\n		    						clearInterval(response);\n		    					}\n		    				},500);\n		    			}\n		    		});\n		        }else{\n		        	Plugins.dialog.show({\n		        		'title': '错误信息',\n		        		'text': '所选管沟段未经过所选工井，请确认后重新选择管沟段'\n		        	},{\n		        		'submit' : function(e){\n		        			Plugins.dialog.remove();\n		        		}\n		        	});\n		        }\n	        }else{\n	        	Plugins.dialog.show({\n	        		'title': '错误信息',\n	        		'text': '所选管沟段属性有误，请检查后重新选择管沟段'\n	        	},{\n	        		'submit' : function(e){\n	        			Plugins.dialog.remove();\n	        		}\n	        	});\n	        }			\n	    }\n	}else{\n    	Plugins.dialog.show({\n    		'title': '错误信息',\n    		'text': '请选择电缆管沟'\n    	},{\n    		'submit' : function(e){\n    			Plugins.dialog.remove();\n    		}\n    	});\n	}\n}\n\n/*画管沟函数*/	\nGlobal.locus.method.addPipe = function(feature){\n	function chooseType(start,startType,end,endType){\n		Plugins.dialog.show({\n			title : '请选择管沟类型',\n			url : Global.option.URL + '/template/property/cableline_type.jsp',\n			width : 420\n		}, {\n			'submit' : function(e) {\n				var type = Plugins.dialog.getval('#linetype');\n				Plugins.dialog.remove();\n				pipePropertyDialog(type,start,startType,end,endType);				\n			}\n		});\n	}\n	function pipePropertyDialog(pipeType,start,startType,end,endType){\n		\n		Plugins.dialog.show({\n			title	: '属性', \n			url		: Global.option.URL+'/getProperty.action',\n			param	: {\n				type	: pipeType\n			}\n		}, \n		{\n			'success' : function(){\n				Plugins.dialog.lock('unlocked');\n				var fakeNum = 0;\n				if(startType != '1020103'){\n					Plugins.dialog.set('#start', start.attributes['static_id']);\n					Plugins.dialog.set('#startName', start.attributes['name']);\n					Plugins.dialog.set('#startTypeName', '工井');\n				}else{\n					Plugins.dialog.set('#startName', $('#feature_name').val()+'0');\n					Plugins.dialog.set('#startTypeName', '虚拟工井');\n					fakeNum++;\n				}						\n				Plugins.dialog.set('#start_type', startType);\n				if(endType != '1020103'){\n					Plugins.dialog.set('#end', end.attributes['static_id']);\n					Plugins.dialog.set('#endName', end.attributes['name']);\n					Plugins.dialog.set('#endTypeName', '工井');\n				}else{\n					Plugins.dialog.set('#endName', $('#feature_name').val()+fakeNum);\n					Plugins.dialog.set('#endTypeName', '虚拟工井');\n				}					\n				Plugins.dialog.set('#end_type', endType);\n			},\n			'submit' : function(e){\n				if($('#feature_name').val()==\"\"){							\n					Plugins.dialog.warm(e, '名称不能为空，请填写后重新提交' ,{});	\n				}else{				\n					var staticId = Plugins.get_staticid();\n					var points = [],style;\n					points[0] = new OpenLayers.Geometry.Point(start.geometry.x, start.geometry.y);\n					points[1] = new OpenLayers.Geometry.Point(end.geometry.x, end.geometry.y);\n					if(pipeType == '1020203'){\n						style = Global.style.form[19];\n					}else{\n						style = Global.style.form[13];\n					}\n					var pipeGeometry;\n					if(Global.locus.draw.middleUnit){\n						var middle = new OpenLayers.Geometry.Point(Global.locus.draw.middleUnit.geometry.x,\n								Global.locus.draw.middleUnit.geometry.y);\n						pipeGeometry = new OpenLayers.Geometry.LineString(\n								[points[0],middle,points[1]]\n						);	\n					}else{\n						pipeGeometry = new OpenLayers.Geometry.LineString(points);\n					}\n					var pipe = new OpenLayers.Feature.Vector(pipeGeometry);\n					pipe.renderIntent = 'default';\n					pipe.attributes['static_id'] = staticId;\n					pipe.attributes['name'] = $('#feature_name').val()\n					pipe.attributes['object_type'] = pipeType;\n					pipe.attributes['z_index'] = Global.constant.pp_segment;\n					pipe.state = OpenLayers.State.INSERT;\n					Global.locus.layers.buildingLayer.addFeatures([pipe]);\n					var pipeName;\n					switch(pipeType){\n					case '1020203' :\n						pipeName = 'virtualpipe';\n						break;\n					case '1020211' :\n						pipeName = 'rackpipe';\n						break;\n					case '1020212' :\n						pipeName = 'bridge';\n						break;\n					case '1020213' :\n						pipeName = 'channel';\n						break;\n					case '1020214' :\n						pipeName = 'buried';\n						break;\n					case '1020215' :\n						pipeName = 'tunnel';\n						break;\n					case '1020216' :\n						pipeName = 'jacking';\n						break;\n					}\n					var fakeWell = [], fakeStaticId = [];\n					if(startType == '1020103'){\n						fakeWell[0] = creatInventedUnit(start);\n						fakeStaticId[0] = staticId + 1;\n						Plugins.dialog.set('#start', fakeStaticId[0]);\n					}\n					if(endType == '1020103'){\n						if(fakeWell[0]){\n							fakeWell[1] = creatInventedUnit(end);\n							fakeStaticId[1] = staticId + 2;\n							Plugins.dialog.set('#end', fakeStaticId[1]);\n						}else{\n							fakeWell[0] = creatInventedUnit(end);\n							fakeStaticId[0] = staticId + 1;\n							Plugins.dialog.set('#end', fakeStaticId[0]);\n						}						\n					}\n					Plugins.dialog.set('#staticId', staticId);\n					var featureClone = [];\n					for(var i=0;i<fakeWell.length;i++){\n			        	var projectTo = new OpenLayers.Projection(\"EPSG:4326\"); //WGS 1984 projection\n			            var projectSource = Global.locus.map.getProjectionObject(); //The map projection\n			            featureClone[i] = fakeWell[i].clone();\n				        featureClone[i].geometry.transform(projectSource, projectTo);\n				        fakeWell[i].attributes['name'] = $('#feature_name').val()+i;\n				        fakeWell[i].attributes['static_id'] = fakeStaticId[i];\n						Plugins.dialog.add('wells['+i+'].staticId', fakeStaticId[i], 'int');\n						Plugins.dialog.add('wells['+i+'].name', $('#feature_name').val()+i);\n						Plugins.dialog.add('wells['+i+'].objectType', '1020103', 'int');\n						Plugins.dialog.add('wells['+i+'].longitude', featureClone[i].geometry.x);\n						Plugins.dialog.add('wells['+i+'].latitude', featureClone[i].geometry.y);\n						Plugins.dialog.add('wells['+i+'].isVirtualWell', 0, 'int');\n					}	 \n					var saveArr = [];\n					for(i=0;i<fakeWell.length;i++){\n						saveArr[i] = fakeWell[i];\n					}\n					saveArr.push(pipe);\n					Global.locus.constant.saveEventsCount = 1;\n					Global.locus.save.saveStrategy[1].save(saveArr);\n    				var response = setInterval(function(){\n    					if(Global.locus.save.state['土建设备'] == 'success'){\n    						$.post(Global.option.URL + 'saveProperties.action', Base.request.get_param(),function(res){\n    						});\n    						Plugins.dialog.remove();\n    						Global.locus.flag.addPipe = false;\n    						Plugins.menu.refresh();\n    						Plugins.FLAG.MAP['M1']=true;\n    						Plugins.menu.update();\n    						Global.locus.draw.middleUnit = null;\n    						clearInterval(response);\n    					}\n    					if(Global.locus.save.state['土建设备'] == 'fail'){\n    						clearInterval(response);\n    					}\n    				},500);	\n				}\n			}\n		});\n	}\n	function creatInventedUnit(feature){\n		var inventedUnit = feature.clone();\n		inventedUnit.style = Global.style.form[10];	\n		inventedUnit.attributes['object_type'] = '1020103';\n		inventedUnit.attributes['z_index'] = Global.constant.unit;\n		inventedUnit.state = OpenLayers.State.INSERT;\n		Global.locus.layers.buildingLayer.addFeatures([inventedUnit]);\n		return inventedUnit;\n	}\n	if(!Global.locus.flag.finishAddPipe){\n		Global.locus.draw.startUnit = feature;\n		Global.locus.flag.finishAddPipe = true;\n	}else{\n		if(feature.attributes['object_type']=='1020103'){\n			Global.locus.draw.middleUnit = feature;\n		}else{\n			var startType = Global.locus.draw.startUnit.attributes['object_type'];\n			var endType = feature.attributes['object_type'];	\n			switch(startType){\n			case '1020101' :\n				if(endType != '1020101'){\n					chooseType(Global.locus.draw.startUnit, startType, feature, '1020103');\n				}else{\n					chooseType(Global.locus.draw.startUnit, startType, feature, endType);\n				}			\n				break;\n			case '1020102' :\n				if(endType == '1020102'){\n					pipePropertyDialog('1020203',Global.locus.draw.startUnit, '1020103', feature, '1020103');//虚拟管沟段\n				}else{\n					if(endType == '1020101'){\n//						wellPropertyDialog(creatInventedUnit(Global.locus.draw.startUnit));\n						chooseType(Global.locus.draw.startUnit, '1020103', feature, endType);\n					}else{\n				    	Plugins.dialog.show({\n				    		'title': '错误信息',\n				    		'text': '起点终点选择有误'\n				    	},{\n				    		'submit' : function(e){\n				    			Plugins.dialog.remove();\n				    		}\n				    	});\n					}\n				}\n				break;\n			default :\n				if(endType == '1020101'){\n					chooseType(Global.locus.draw.startUnit, '1020103', feature, endType);\n				}else{\n					if(endType != '1020102'){\n						chooseType(Global.locus.draw.startUnit, '1020103', feature, '1020103');\n					}else{\n				    	Plugins.dialog.show({\n				    		'title': '错误信息',\n				    		'text': '起点终点选择有误'\n				    	},{\n				    		'submit' : function(e){\n				    			Plugins.dialog.remove();\n				    		}\n				    	});\n					}\n				}\n			}	\n			Global.locus.flag.finishAddPipe = false;\n		}	\n	}\n}\n\n/*显示隐藏要素功能函数*/\nGlobal.locus.method.changeFeatureVisibility = function(){\n	for(var i=0;i<Global.locus.constant.visible;i++){//根据要选择显示的要素某字段的各个值给数组赋值，需要设置\n		var flag = document.getElementById(\"fVis\"+i).checked;\n		if(!flag){\n			Global.locus.layers.buildingLayer.styleMap.styles[\"default\"].rules[i].setMaxScaleDenominator(1);\n			Global.locus.layers.electricalLayer.styleMap.styles[\"default\"].rules[i].setMaxScaleDenominator(1);\n		}else{\n			Global.locus.layers.buildingLayer.styleMap.styles[\"default\"].rules[i].setMaxScaleDenominator(Global.locus.draw.scale[i]);\n			Global.locus.layers.electricalLayer.styleMap.styles[\"default\"].rules[i].setMaxScaleDenominator(Global.locus.draw.scale[i]);	\n		}\n	}\n	Global.locus.layers.buildingLayer.redraw();\n	Global.locus.layers.electricalLayer.redraw();\n}\n	\n/*模糊查询功能函数*/\nGlobal.locus.method.vague_search = function(text, layerIndex){\n	Global.constant.searchIndex = layerIndex;\n	var layer;\n	if(layerIndex == 0){\n		layer = 'electrical';\n	}else{\n		layer = 'civil_engineering';\n	}\n	var filter = new OpenLayers.Filter.Comparison({//比较操作符  \n		type: OpenLayers.Filter.Comparison.LIKE,\n		property: \"name\",//查询的字段，需要根据图层设置  \n		value: \"*\"+text+\"*\"  \n	})  		\n	var filter_1_0 = new OpenLayers.Format.Filter.v1_0_0();   \n	var tempXML = new OpenLayers.Format.XML();           \n	var xmlPara = tempXML.write(filter_1_0.write(filter));    		  \n	var dataXML = Global.locus.constant.originXML \n			+	'<wfs:Query typeName=\"OpenGIS:geo_'+layer+'\">' + \"/n\"//查询的图层，需要设置\n			+	'<wfs:PropertyName>OpenGIS:name</wfs:PropertyName>' + '/n'//查询的属性字段，需要设置\n			+	'<wfs:PropertyName>OpenGIS:object_type</wfs:PropertyName>' + '/n'//查询的属性字段，需要设置\n			+	'<wfs:PropertyName>OpenGIS:static_id</wfs:PropertyName>' + '/n'//查询的属性字段，需要设置\n			+	'<wfs:PropertyName>OpenGIS:geometry_data</wfs:PropertyName>' + '/n'//查询的几何字段，需要设置\n			+	xmlPara\n			+	'</wfs:Query>' + \"/n\"\n			+	'</wfs:GetFeature>';\n	var request = OpenLayers.Request.POST({  \n		url : \"http://\"+Global.option.ip+\":8081/geoserver/wfs\",  \n		data : dataXML,                     \n		callback : Global.locus.method.vague_search_handler  \n	});\n}\n\n/*模糊查询功能的回调函数*/	\nGlobal.locus.method.vague_search_handler = function(req){\n	var gml =  new OpenLayers.Format.GML();\n	var features = gml.read(req.responseText);\n	if(features.length == 0){\n    	Plugins.dialog.show({\n    		'title': '错误信息',\n    		'text': '未检测到匹配设备'\n    	},{\n    		'submit' : function(e){\n    			Plugins.dialog.remove();\n    		}\n    	});\n	}else{	\n		var theHTML = '';\n	    for(var i=0;i<features.length;i++){\n	    	theHTML += '<li><span onclick=\"Global.locus.method.exact_search(\\''\n	    			+ features[i].attributes['static_id']\n	    			+ '\\','+features[i].attributes['object_type']+')\" title='\n	    			+ features[i].attributes['static_id']\n	    			+ '>' \n	    			+ features[i].attributes['name']\n	    			+ '</span> <div class=\"tcon\" ><span onclick=\"Plugins.dialog.show('\n	    			+ '{title: \\'属性\\', url: Global.option.URL+\\'\\/getProperty.action\\',param:{type:'\n	    			+ features[i].attributes['object_type']\n	    			+ ',isbn:'\n	    			+ features[i].attributes['static_id']\n	    			+ '}},{\\'submit\\':function(e){Base.request.update_pro(e, '\n	    			+ Global.constant.searchIndex\n	    			+ ', \\'unit\\');}})\">属性</span></div></li>';\n		}\n	    document.getElementById(\"search_result\").innerHTML = theHTML;\n	    Plugins.init_search_result();\n	    \n		for(var i=0;i<features.length;i++){\n			if(features[i].attributes['name']==document.getElementById(\"st\").value){\n				Global.locus.method.trans(features[i]);\n				i=features.length;\n			}\n		}\n	}	  	  \n}\n	\n/*查询功能的定位函数*/\nGlobal.locus.method.trans = function(obj){\n	var geometry = obj.geometry;\n	if(!geometry.x){\n		var xmin,xmax,ymin,ymax;\n		xmin = obj.geometry.components[0].x;\n		xmax = xmin;\n		ymin = obj.geometry.components[0].y;\n		ymax = ymin;\n		for(var i=1;i<obj.geometry.components.length;i++){\n			if(obj.geometry.components[i].x<xmin){\n				xmin = obj.geometry.components[i].x;\n			}else{\n				if(obj.geometry.components[i].x>xmax){\n					xmax = obj.geometry.components[i].x;\n				}\n			}\n			if(obj.geometry.components[i].y<ymin){\n				ymin = obj.geometry.components[i].y;\n			}else{\n				if(obj.geometry.components[i].y>ymax){\n					ymax = obj.geometry.components[i].y;\n				}\n			}\n		}\n		geometry = new OpenLayers.Geometry.Point((xmin+xmax)/2,(ymin+ymax)/2);\n	}\n	var foundPosition = new OpenLayers.LonLat(geometry.x, geometry.y).transform(\n		new OpenLayers.Projection(\"EPSG:4326\"),\n		Global.locus.map.getProjectionObject()\n	);\n	Global.locus.map.setCenter(foundPosition, Global.constant.zoomLevel);\n	if(Global.constant.searchIndex == 0){\n		for(var i=0;i<Global.locus.layers.electricalLayer.features.length;i++){\n			if(Global.locus.layers.electricalLayer.features[i].attributes['static_id'] == obj.attributes['static_id']){\n				Global.locus.select.control.unselectAll();\n				Global.locus.select.control.select(Global.locus.layers.electricalLayer.features[i]);\n			}\n		}\n	}else{\n		for(var i=0;i<	Global.locus.layers.buildingLayer.features.length;i++){\n			if(	Global.locus.layers.buildingLayer.features[i].attributes['static_id'] == obj.attributes['static_id']){\n				Global.locus.select.control.unselectAll();\n				Global.locus.select.control.select(Global.locus.layers.buildingLayer.features[i]);\n			}\n		}\n	}\n	Plugins.init_search_result();\n}\n\n/*精确查询功能函数*/\nGlobal.locus.method.exact_search = function(id, type){\n	var findFlag = false;\n	if (type == 1010201 || type == 1010202 || type == 1010203 ||\n			type == 1010204 || type == 1010205 || type == 1010206 ||\n			type == 1010402 || type == 1010403 || type == 1010601 ||\n			type == 1010602 || type == 1010207 || type == 1010208){\n		for(var i=0;i<Global.locus.layers.electricalLayer.features.length;i++){\n			if(Global.locus.layers.electricalLayer.features[i].attributes['static_id'] == id &&\n					Global.locus.layers.electricalLayer.features[i].attributes['object_type'] == type){\n				Global.constant.searchIndex = 0;\n				Global.locus.method.trans(Global.locus.layers.electricalLayer.features[i]);\n				findFlag = true;\n				break;\n			}			\n		}\n		if(!findFlag){\n	    	Plugins.dialog.show({\n	    		'title': '错误信息',\n	    		'text': '未检测到设备'\n	    	},{\n	    		'submit' : function(e){\n	    			Plugins.dialog.remove();\n	    		}\n	    	});\n		}\n	}else{\n		for(var i=0;i<	Global.locus.layers.buildingLayer.features.length;i++){\n			if(Global.locus.layers.buildingLayer.features[i].attributes['static_id'] == id &&\n					Global.locus.layers.buildingLayer.features[i].attributes['object_type'] == type){\n				Global.constant.searchIndex = 1;\n				Global.locus.method.trans(Global.locus.layers.buildingLayer.features[i]);\n				findFlag = true;\n				break;\n			}			\n		}\n		if(!findFlag){\n	    	Plugins.dialog.show({\n	    		'title': '错误信息',\n	    		'text': '未检测到设备'\n	    	},{\n	    		'submit' : function(e){\n	    			Plugins.dialog.remove();\n	    		}\n	    	});\n		}\n	}\n}\n\n/*按坐标查询功能*/\nGlobal.locus.method.cr_search = function(text){\n    var values = text.split(\",\");\n    if (values.length !== 2) {\n    	Plugins.dialog.show({\n    		'title': '错误信息',\n    		'text': '请按照x,y的形式输入'\n    	},{\n    		'submit' : function(e){\n    			Plugins.dialog.remove();\n    		}\n    	});\n        values = null;\n    } else {\n        values[0] = parseFloat(values[0]);\n        values[1] = parseFloat(values[1]);\n        if (isNaN(values[0]) || isNaN(values[1])) {\n        	Plugins.dialog.show({\n        		'title': '错误信息',\n        		'text': '输入的x,y必须是数字'\n        	},{\n        		'submit' : function(e){\n        			Plugins.dialog.remove();\n        		}\n        	});\n            values = null;\n        } else {\n		var foundPosition = new OpenLayers.LonLat(values[0], values[1]).transform(\n			new OpenLayers.Projection(\"EPSG:4326\"),\n			Global.locus.map.getProjectionObject()\n		);\n		Global.locus.map.setCenter(foundPosition, Global.constant.zoomLevel);        \n        } \n    }    \n}\n\n/*释放触发按钮*/\nGlobal.locus.method.controlRelease = function(){\n	for(i=0;i<Global.locus.draw.number;i++){\n		if(Global.locus.draw.controls[i].active){\n			Global.locus.draw.controls[i].deactivate();\n			break;\n		}	\n	}\n	for(key in Global.locus.controls) {\n		if(Global.locus.controls[key].active && key != \"pan\"){\n			Global.locus.controls[key].deactivate();\n			break;\n		}\n	}\n	if(Global.locus.copy.dragControl.active){\n		Global.locus.copy.dragControl.deactivate();	\n	}	\n}\n\n/*标识、按钮状态复位*/\nGlobal.locus.method.reset = function(){\n	Global.locus.method.controlRelease();\n	Global.locus.flag.cableToPipe = false;\n	Global.locus.flag.cableToPipeStart = false;\n	Global.locus.flag.addProfileWell = false;\n	Global.locus.flag.addProfilePpSegment = false;\n	Global.locus.flag.addSingleHoleFlag = false;\n	Global.locus.flag.addRegularHoleFlag = false;\n	Global.locus.flag.addBracketFlag = false;\n	Global.locus.flag.matchCableFlag = false;\n	Global.locus.flag.addSurveyFlag = false;\n	Global.locus.flag.labelFlag = false;\n	Global.locus.flag.finishList = false;\n	Global.locus.flag.elevation = false;\n	Global.locus.flag.addPipe = false;\n	Global.locus.flag.finishAddPipe = false;\n	Global.locus.flag.judgeCross = true;\n	Global.locus.flag.copy = false;\n}\n\n/*显示长宽信息函数*/\nGlobal.locus.method.displaySize = function(feature, width, high){\n	var arraylength = feature.geometry.getVertices().length; \n\n    var preX,preY,nextX,nextY,heading = [],angle = [],position = [];\n	for (i=0;i<arraylength;i++){		\n		if (i<arraylength-1){\n			preX = feature.geometry.getVertices()[i].x;\n			preY = feature.geometry.getVertices()[i].y;            	\n			nextX = feature.geometry.getVertices()[i+1].x;\n			nextY = feature.geometry.getVertices()[i+1].y;\n		}else{\n			preX = feature.geometry.getVertices()[i].x;\n			preY = feature.geometry.getVertices()[i].y;            	\n			nextX = feature.geometry.getVertices()[0].x;\n			nextY = feature.geometry.getVertices()[0].y;			\n		}	\n		/*--calculate angle --*/ 	\n		heading[i] = Math.atan2(nextY - preY, nextX - preX),\n		angle[i] = heading[i] * 180 / Math.PI;\n		position[i] = \"ct\";\n		if ( angle[i]>90 && angle[i]<270){\n			angle[i] += 180;\n			position[i] = \"cb\";\n		}      	\n		var point = new OpenLayers.Geometry.Point((preX + nextX)/2, (preY + nextY)/2);\n		Global.locus.label.point[i] = new OpenLayers.Feature.Vector(point);		    	                     \n		Global.locus.label.point[i].attributes = {\n				length: Math.round(((i+1)%2)*width*10)/10//四舍五入保留一位小数\n					+Math.round((i%2)*high*10)/10,\n					favColor: 'red',\n					align: position[i],\n					angle: angle[i],\n					Select:true\n		};\n		Global.locus.layers.tempLayer.addFeatures([Global.locus.label.point[i]]);\n	}		\n}\n\n\n/*剖面注释绘制函数*/\n/*\nGlobal.locus.method.drawList = function(geometry, direction){\n	var origin = new OpenLayers.Geometry.Point();\n	switch(direction){\n		case \"rb\" : {	\n			Global.locus.controls[\"list\"].insertDirectionLength(-180, 160);\n			Global.locus.controls[\"list\"].insertDirectionLength(90, Global.locus.label.count*20);\n			Global.locus.controls[\"list\"].insertDirectionLength(0, 160);\n			Global.locus.controls[\"list\"].insertDirectionLength(-90, Global.locus.label.count*20);			\n			origin.x = geometry.x-160;\n			origin.y = geometry.y+Global.locus.label.count*20;\n			}break;\n		case \"rt\" : {\n			Global.locus.controls[\"list\"].insertDirectionLength(-90, Global.locus.label.count*20);\n			Global.locus.controls[\"list\"].insertDirectionLength(-180, 160);\n			Global.locus.controls[\"list\"].insertDirectionLength(90, Global.locus.label.count*20);\n			Global.locus.controls[\"list\"].insertDirectionLength(0, 160);\n			origin.x = geometry.x-160;\n			origin.y = geometry.y;\n			}break;		\n		case \"lt\" : {		\n			Global.locus.controls[\"list\"].insertDirectionLength(0, 160);		\n			Global.locus.controls[\"list\"].insertDirectionLength(-90, Global.locus.label.count*20);\n			Global.locus.controls[\"list\"].insertDirectionLength(-180, 160);\n			Global.locus.controls[\"list\"].insertDirectionLength(90, Global.locus.label.count*20);\n			origin.x = geometry.x;\n			origin.y = geometry.y;			\n			}break;\n		case \"lb\" : {		\n			Global.locus.controls[\"list\"].insertDirectionLength(90, Global.locus.label.count*20);\n			Global.locus.controls[\"list\"].insertDirectionLength(0, 160);\n			Global.locus.controls[\"list\"].insertDirectionLength(-90, Global.locus.label.count*20);\n			Global.locus.controls[\"list\"].insertDirectionLength(-180, 160);			\n			origin.x = geometry.x;\n			origin.y = geometry.y+Global.locus.label.count*20;\n			}break;				\n	}		\n	var list_line = [];\n	var list_label = [];\n	for(var i=0;i<Global.locus.label.count-1;i++){\n		var start_point = new OpenLayers.Geometry.Point(origin.x, origin.y - (i+1)*20);\n		var end_point = new OpenLayers.Geometry.Point(origin.x+160, origin.y - (i+1)*20);\n		var line = new OpenLayers.Geometry.LineString([start_point, end_point]);\n		list_line[i] = new OpenLayers.Feature.Vector(line);\n		list_line[i].attributes['well_id'] = Global.locus.profile.unit;\n		list_line[i].attributes['pp_segment_id'] = Global.locus.profile.pp_segment;\n		list_line[i].state = OpenLayers.State.INSERT;\n		Global.locus.layers.elevationLayer.listLayer.addFeatures(list_line[i]);\n	}\n	var string = '';\n	for(var i=0;i<Global.locus.response.length;i++){\n		if(Global.locus.response[i]['wirecableSegmentId']){\n			string = string + Global.locus.response[i]['wirecableSegmentId'] + ',';\n		}\n	}\n    OpenLayers.Request.GET({\n        url: \"getProJsonOfCables.action?SIds=\"+string,\n        success: cableProperty_success,\n        failure: (function(e){\n        	Plugins.dialog.show({\n        		'title': '错误信息',\n        		'text': e.responseText\n        	},{\n        		'submit' : function(e){\n        			Plugins.dialog.remove();\n        		}\n        	});\n        	}\n        )\n    });\n    function cableProperty_success(req){\n		var format = new OpenLayers.Format.JSON();\n	    var response = format.read(req.responseXML || req.responseText);\n    	for(var i=0,j=0;i<Global.locus.label.count;i++){													\n    		var label_point = new OpenLayers.Geometry.Point(origin.x+80, origin.y - (i+1)*20+10);\n    		list_label[i] = new OpenLayers.Feature.Vector(label_point);\n    		if(Global.locus.response[i]['wirecableSegmentId']){\n    			list_label[i].attributes['cable_name'] = response[j]['name'];\n    			j++;\n    		}\n    		list_label[i].attributes['pipe_hole_id'] = Global.locus.response[i]['pipeCode'] ;\n    		list_label[i].attributes['color'] = \"black\" ;\n    		list_label[i].attributes['is_available'] = Global.locus.response[i]['isAvailable'] ;\n    		list_label[i].attributes['well_id'] = Global.locus.profile.unit;\n    		list_label[i].attributes['pp_segment_id'] = Global.locus.profile.pp_segment;\n    		list_label[i].state = OpenLayers.State.INSERT;\n    		Global.locus.layers.elevationLayer.labelLayer.addFeatures(list_label[i]);\n    	}\n    	Global.locus.flag.labelFlag = false;\n    } 			\n}\n*/\n\n/*地图注记显示隐藏*/\nGlobal.locus.method.lable_switch = function(){\n	if(!Global.locus.flag.labelDisplayFlag){\n		Global.locus.layers.buildingLayer.styleMap = Global.style.buildingStyle_label;\n		Global.locus.layers.electricalLayer.styleMap = Global.style.buildingStyle_label;\n		Global.locus.layers.buildingLayer.redraw();\n		Global.locus.layers.electricalLayer.redraw();\n	    Global.locus.flag.labelDisplayFlag = true;\n	}else{	\n		Global.locus.layers.buildingLayer.styleMap = Global.style.buildingStyle_nolabel;\n		Global.locus.layers.electricalLayer.styleMap = Global.style.buildingStyle_nolabel;\n		Global.locus.layers.buildingLayer.redraw();	\n		Global.locus.layers.electricalLayer.redraw();\n	    Global.locus.flag.labelDisplayFlag = false;\n	}\n}\n\n/*打开立视图*/\nGlobal.locus.method.openElevation = function(e) {\n	var eleFilter = new OpenLayers.Filter.Comparison({\n		type: OpenLayers.Filter.Comparison.EQUAL_TO,\n		property: \"well_id\",\n		value: e.feature.attributes['static_id']\n	});\n	for(var key in Global.locus.layers.elevationLayer){\n		Global.locus.layers.elevationLayer[key].filter = eleFilter;\n		Global.locus.layers.elevationLayer[key].refresh({force: true});\n	}\n}\n\n/*关闭立视图*/\nGlobal.locus.method.closeElevation = function() {\n	var eleFilter = new OpenLayers.Filter.Comparison({\n		type: OpenLayers.Filter.Comparison.EQUAL_TO,\n		property: \"well_id\",\n		value: 0\n	});\n	for(var key in Global.locus.layers.elevationLayer){\n		Global.locus.layers.elevationLayer[key].filter = eleFilter;\n		Global.locus.layers.elevationLayer[key].refresh({force: true});\n	}	 	\n}\n// 跳转到接线图\nGlobal.locus.method.goto_connect_line = function () {\n        Plugins.func_tabs(\".midtabs\", function(obj) {\n            Plugins.change_content(obj);\n        }, $('#tab_wire'));\n\n        $.post(Global.option.URL + 'getSideBarJson.action', {\n            //'id'    : treeNode.id,\n            'level' : 0\n        }, function(data) {\n            slide.set_data(data);\n        }, 'json');\n\n        slide.slide_in();\n    }\n/*前台功能选择接口一*/\nGlobal.locus.method.toggleControl = function(element) {\n	for(key in Global.locus.controls) {\n		if(element == key) {\n			Global.locus.controls[key].activate();\n		} else {\n			Global.locus.controls[key].deactivate();\n		}\n	}\n	if(element == \"pan\"){\n		Global.locus.select.control.activate();\n	}else{\n		Global.locus.select.control.deactivate();\n	}\n}\n\n/*前台功能选择接口二：绘制功能*/\nGlobal.locus.method.toggleDrawControl = function(index){\n	for(var i=0;i<Global.locus.draw.number;i++){\n		if(i == index){\n			Global.locus.draw.styleType=Global.style.form[i];\n			Global.locus.draw.unitType=Global.unit[i];\n			Global.locus.draw.controls[i].activate();\n		} else{\n			Global.locus.draw.controls[i].deactivate();\n		}\n	}\n}\n\n",
+			"file": "/E/javaweb/TONGXIANG2/WebContent/lib/locus.js",
+			"file_size": 135997,
+			"file_write_time": 130710475170407348,
+			"settings":
+			{
+				"buffer_size": 128907,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/javaweb/TONGXIANG2/WebContent/js/base.js",
+			"settings":
+			{
+				"buffer_size": 50745,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/javaweb/TONGXIANG2/WebContent/template/home.jsp",
+			"settings":
+			{
+				"buffer_size": 13715,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/javaweb/TONGXIANG2/WebContent/lib/main.js",
+			"settings":
+			{
+				"buffer_size": 13950,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style/pc/notice.less",
+			"settings":
+			{
+				"buffer_size": 395,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style/pc/login.less",
+			"settings":
+			{
+				"buffer_size": 217,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style/pc/pagination.less",
+			"settings":
+			{
+				"buffer_size": 530,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style/common/carousel.less",
+			"settings":
+			{
+				"buffer_size": 688,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "docs-pc/src/carousel.ejs",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/main.js",
+			"settings":
+			{
+				"buffer_size": 513,
 				"line_ending": "Windows"
 			}
 		},
@@ -358,7 +481,23 @@
 			"file": "docs/src/verify.ejs",
 			"settings":
 			{
-				"buffer_size": 1272,
+				"buffer_size": 1735,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "docs/src/sourceglobal.ejs",
+			"settings":
+			{
+				"buffer_size": 814,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/bone-carousel.js",
+			"settings":
+			{
+				"buffer_size": 2243,
 				"line_ending": "Windows"
 			}
 		},
@@ -379,13 +518,10 @@
 			}
 		},
 		{
-			"contents": ".checked{\n	color: @color-comfort;\n	cursor: pointer;\n}\n\n.unchecked{\n	color:#ccc;\n	cursor: pointer;\n}\n\n.shp-price{\n	 \n	span{\n		color: @color-highlight;\n		font-weight: bold;\n		font-size: @font-size-md;\n	}\n}\n.shp-price-total{\n	line-height: 46px;\n\n	span{\n		font-size: @font-size-lg;\n	}\n}\n\n.stars{\n	color:\n}",
 			"file": "style/addon/gelinwei/shoppingcart.less",
-			"file_size": 310,
-			"file_write_time": 130939580760909727,
 			"settings":
 			{
-				"buffer_size": 301,
+				"buffer_size": 527,
 				"line_ending": "Windows"
 			}
 		},
@@ -417,18 +553,10 @@
 			}
 		},
 		{
-			"file": "js/bone-verify.js",
-			"settings":
-			{
-				"buffer_size": 3028,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "js/bone-verify2.js",
 			"settings":
 			{
-				"buffer_size": 3054,
+				"buffer_size": 1930,
 				"line_ending": "Windows"
 			}
 		},
@@ -436,7 +564,7 @@
 			"file": "js/bone-form.js",
 			"settings":
 			{
-				"buffer_size": 513,
+				"buffer_size": 587,
 				"line_ending": "Windows"
 			}
 		},
@@ -444,18 +572,14 @@
 			"file": "js/bone-dialog.js",
 			"settings":
 			{
-				"buffer_size": 3971,
+				"buffer_size": 3973,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "var verify = require('./bone-verify');\nvar dialog = require('./bone-dialog');\nvar dropdown = require('./bone-dropdown');\nvar carousel = require('./bone-carousel');\n \n$(document).ready(function(){\n	dropdown.init();\n	$('#go').click(function(){\n		//verify.check('#form');ff\n		var d = dialog.init('标 题', 'content');\n\n	});\n\n	carousel.init();//fdd\n\n});",
-			"file": "js/main.js",
-			"file_size": 370,
-			"file_write_time": 130945514120699987,
 			"settings":
 			{
-				"buffer_size": 346,
+				"buffer_size": 0,
 				"line_ending": "Windows"
 			}
 		},
@@ -470,8 +594,8 @@
 		{
 			"contents": "/******/ (function(modules) { // webpackBootstrap\n/******/ 	// The module cache\n/******/ 	var installedModules = {};\n\n/******/ 	// The require function\n/******/ 	function __webpack_require__(moduleId) {\n\n/******/ 		// Check if module is in cache\n/******/ 		if(installedModules[moduleId])\n/******/ 			return installedModules[moduleId].exports;\n\n/******/ 		// Create a new module (and put it into the cache)\n/******/ 		var module = installedModules[moduleId] = {\n/******/ 			exports: {},\n/******/ 			id: moduleId,\n/******/ 			loaded: false\n/******/ 		};\n\n/******/ 		// Execute the module function\n/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);\n\n/******/ 		// Flag the module as loaded\n/******/ 		module.loaded = true;\n\n/******/ 		// Return the exports of the module\n/******/ 		return module.exports;\n/******/ 	}\n\n\n/******/ 	// expose the modules object (__webpack_modules__)\n/******/ 	__webpack_require__.m = modules;\n\n/******/ 	// expose the module cache\n/******/ 	__webpack_require__.c = installedModules;\n\n/******/ 	// __webpack_public_path__\n/******/ 	__webpack_require__.p = \"\";\n\n/******/ 	// Load entry module and return exports\n/******/ 	return __webpack_require__(0);\n/******/ })\n/************************************************************************/\n/******/ ([\n/* 0 */\n/***/ function(module, exports, __webpack_require__) {\n\n	var verify = __webpack_require__(1);\n	var dialog = __webpack_require__(3);\n	var dropdown = __webpack_require__(4);\n	var carousel = __webpack_require__(5);\n	 \n	$(document).ready(function(){\n		dropdown.init();\n		$('#go').click(function(){\n			//verify.check('#form');ff\n			var d = dialog.init('标 题', 'content');\n\n		});\n\n		carousel.init();\n\n	});\n\n/***/ },\n/* 1 */\n/***/ function(module, exports, __webpack_require__) {\n\n	var CONFIG = __webpack_require__(2);\n\n	module.exports.check = function(obj){\n		$this = $(obj);\n		var flag = true;\n		var msg = {\n			'required': '此项不能为空',\n			'wrong': '此项格式错误'\n		}\n\n		$this.find('.verify-required').each(function(){\n			add_state($(this), '');\n			if (check_empty($(this).val())) {\n				add_state($(this), msg.required);\n				flag = false;\n			} \n		});\n\n		$this.find('.verify-email').each(function(){\n			add_state($(this), '');\n			if (check_empty($(this).val())) {\n				if (allow_empty($(this))) {\n					return true;\n				};\n				add_state($(this), msg.required);\n				flag = false;\n			} else if (!check_email($(this).val())) {\n				add_state($(this), msg.wrong);\n				flag = false;\n			}\n		});\n\n		$this.find('.verify-url').each(function(){\n			add_state($(this), '');\n			if (check_empty($(this).val())) {\n				if (allow_empty($(this))) {\n					return true;\n				};\n				add_state($(this), msg.required);\n				flag = false;\n			} else if (!check_url($(this).val())) {\n				add_state($(this), msg.wrong);\n				flag = false;\n			}\n		});\n\n		$this.find('.verify-password').each(function(){\n			add_state($(this), '');\n\n			if (check_empty($(this).val())) {\n				if (allow_empty($(this))) {\n					return true;\n				};\n				add_state($(this), msg.required);\n				flag = false;\n			} else if (!check_psd($(this).val())) {\n				add_state($(this), msg.wrong);\n				flag = false;\n			}\n		});\n\n		$this.find('.verify-nocn').each(function(){\n			add_state($(this), '');\n			if (check_empty($(this).val())) {\n				if (allow_empty($(this))) {\n					return true;\n				};\n				add_state($(this), msg.required);\n				flag = false;\n			} else if (!check_nocn($(this).val())) {\n				add_state($(this), msg.wrong);\n				flag = false;\n			}\n		});\n\n		//bone.placeholder.refresh();\n		\n		return flag;\n	}\n\n\n	function allow_empty(obj){\n		if(obj.attr('class').indexOf('verify-empty') < 0){\n			return false;\n		} else {\n			return true;\n		}\n	}	\n\n	function set_state(params){\n		for(key in params){\n			if (params[key] == '') {\n				$(key).next('p').remove();\n				add_state($(key), params[key]);\n			} else {\n				add_state($(key), params[key]);\n			};\n		}\n	}\n\n	function add_state(aim, info){\n		aim.next('p').remove();\n		if (info != '') {\n			info = aim.attr('data-msg')?aim.attr('data-msg'):info;\n			if(info != '{{none}}'){\n				aim.after('<p>' + info + '</p>');\n			}\n			aim.parent('div').addClass(CONFIG.prefix + 'input-wrong');\n		} else {\n			aim.parent('div').removeClass(CONFIG.prefix + 'input-wrong');\n			aim.next('p').remove();\n		};\n	}\n\n	function check_empty(value){\n		//var reg = /^\\s$/;\n		if(value.replace(' ', '') != ''){\n			return false;\n		}\n		return true;\n	}\n\n	function check_email(value){\n		  var reg = /^([a-zA-Z0-9_\\.\\-])+\\@(([a-zA-Z0-9\\-])+\\.)+([a-zA-Z0-9]{2,4})+$/;\n		  if(!reg.test(value)){\n		   		return false;\n		  }\n		  return true;\n	}\n\n	function check_url(value){\n		var reg = /[a-zA-Z0-9]+\\.[a-z]+/i;\n		if(!reg.test(value)){\n			return false;\n		}\n		return true;\n	}\n\n	function check_psd(value){\n		var reg = /[a-zA-Z0-9]{6,14}/;\n		if(!reg.test(value)){\n			return false;\n		}\n		return true;\n	}\n\n	function check_nocn(value){\n		var reg = /[\\u4E00-\\u9FA5]/i;\n		if(reg.test(value)){\n			return false;\n		}\n		return true;\n	}\n\n\n/***/ },\n/* 2 */\n/***/ function(module, exports) {\n\n	module.exports = {\n		prefix: 'bo-',\n		$: function(str){//格式化选择器#test->#bo-test\n			var res = '';\n\n			if(/^#./.test(str)){\n				\n				res = str.replace('#', '#' + this.prefix);\n\n			}\n			else if(/^\\../.test(str)){\n				\n				res = str.replace('.', '.' + this.prefix);\n			} else {\n				res = this.prefix + str;\n			}\n			return res;\n		}\n	}\n\n/***/ },\n/* 3 */\n/***/ function(module, exports, __webpack_require__) {\n\n	var CONFIG = __webpack_require__(2);\n\n	var $dialog;\n\n	module.exports.init = function(title, content, config){\n		if(typeof $dialog == 'undefined'){//单例模式\n			$dialog = new _dialog(title, content, config);\n			//console.log('new dialog');\n			\n		} else {\n			$dialog.refresh(title, content, config);\n			\n		}\n		return $dialog;\n	}\n\n	//对话框类\n	function _dialog(title, content, config){\n		var $this = this;\n		this._title = title?title:\"\";\n		this._content = content?content:\"\";\n		this._config = {};\n		this.config = config?config:{};\n		this._config.buttons = (this.config.buttons != undefined)?this.config.buttons:'single';\n		this._config.width = (this.config.width != undefined)?this.config.width:'400px';\n\n		/*config:{\n			'buttons': 'single',\n			'width': '400px' \n		}*/\n		this.timer;\n		this._ok = function(){};\n		this._no = function(){};\n		this._onload = function(){};\n\n		var tmp = {\n			layout: CONFIG.$('#dialog-layout'),\n			sdialog: CONFIG.$('.dialog'),\n			dialog: CONFIG.$('#dialog-layout') + ' ' + CONFIG.$('.dialog')\n		}\n\n		var domstr = {\n			layout: CONFIG.$('dialog-layout'),\n			sdialog: CONFIG.$('dialog'),\n			dialog: CONFIG.$('dialog-layout') + ' ' + CONFIG.$('dialog')\n		}\n\n\n\n		//显示对话框\n		this.open = function(){	\n			clearTimeout($this.timer);\n			$(tmp.layout).css('display', 'block');\n			var h = $(tmp.dialog).height() + 90;\n\n		 	$(tmp.dialog).css('margin-top', $(window).height()/2 - h/2);\n\n		}\n\n		//关闭对话框\n		this.close = function(){\n\n		}\n\n		//点击确定\n		this.ok = function(callback){\n			if(typeof callback != 'undefined'){\n				$this._ok = callback;\n			}\n			\n			return this;\n		}\n\n		//点击取消\n		this.no = function(callback){\n			if(typeof callback != 'undefined'){\n				$this._no = callback;\n			}  \n		\n			return this;\n		}\n\n		//加载完毕\n		this.onload = function(callback){\n			if(typeof callback != 'undefined'){\n				$this._onload = callback;\n\n			}  \n		\n			return this;	\n		}\n\n		//点击关闭\n		this.close = function(callback){\n			if(typeof callback != 'undefined'){\n				callback();\n			}\n\n			$(tmp.dialog).removeClass('dialog-state-open').addClass('dialog-state-close');\n	 		$this.timer = setTimeout(function(){\n	 			$(tmp.layout).css('display', 'none');\n	 		}, 300);\n			\n			return this;\n		}\n\n		this._dom = function(){\n			if($(tmp.layout).length > 0 ){\n				$(tmp.layout).remove();\n			}\n			 \n			if($this._config.buttons == 'single'){\n				var buttons = '<div class=\"dialog-buttons\">'\n					+'<button class=\"'+CONFIG.prefix+'btn-primary button dialog-ok\">确 定</button></div>';\n			} else if($this._config.buttons == 'none'){\n				var buttons = '';\n			} else {\n				var buttons = '<div class=\"dialog-buttons\">'\n					+'<button class=\"'+CONFIG.prefix+'btn-default button dialog-no\">取 消</button>'\n					+'<button class=\"'+CONFIG.prefix+'btn-primary button dialog-ok\">确 定</button></div>';\n			}\n\n			$('body').append('<div id=\"'+domstr.layout+'\"><div class=\"container ' + domstr.sdialog+' dialog-state-open\" style=\"width:'+this._config.width+'\"><h3 class=\"dialog-title\">'+this._title\n		 		+ '</h3><div class=\"dialog-close\"><i class=\"icon iconfont\">&#xe602;</i></div><div class=\"content\">'+this._content+'</div>'+buttons+'</div></div>'\n		 	);\n\n		 	\n		 	setTimeout(function(){\n		 		$this._onload();\n		 	}, 1);\n		 	\n			if($this._config.buttons == 'none'){\n				$(tmp.sdialog).css('padding-bottom', '10px');\n			}\n\n			$(tmp.layout + ' .dialog-close').on('click', function(){\n				$this.close();\n			});\n			$(tmp.layout + ' .dialog-ok').on('click', function(){\n				$this._ok();\n				$this.close();\n			});\n			$(tmp.layout + ' .dialog-no').on('click', function(){\n				$this._no();\n				$this.close();\n			});\n		}\n\n		//更新\n		this.refresh = function(title, content , config){\n			$this._title = title?title:\"\";\n			$this._content = content?content:\"\";\n			this._config = {};\n			this.config = config?config:{};\n			this._config.buttons = (this.config.buttons != undefined)?this.config.buttons:'single';\n			this._config.width = (this.config.width != undefined)?this.config.width:'400px';\n\n			$this._ok = function(){};\n			$this._no = function(){};\n			$this._onload = function(){};\n\n			$this._dom();\n			$this.open();\n		}\n\n		//this._dom = \n		\n		this._dom();\n		this.open();\n\n	}\n\n	  \n\n/***/ },\n/* 4 */\n/***/ function(module, exports, __webpack_require__) {\n\n	var CONFIG = __webpack_require__(2);\n\n	module.exports.init = function(){\n		dropdown();\n	}\n\n\n	function dropdown(){\n		$('.' + CONFIG.prefix + 'dropdown').hover(function(){\n	 \n			$(this).find('.' + CONFIG.prefix + 'dropdown-menu').css('display', 'block');\n		}, function(){\n			$(this).find('.' + CONFIG.prefix + 'dropdown-menu').css('display', 'none');\n		});	\n	}\n\n/***/ },\n/* 5 */\n/***/ function(module, exports, __webpack_require__) {\n\n	var CONFIG = __webpack_require__(2);\n\n\n	function slide(obj){\n		var _this = this;\n		_this.obj = obj;\n		_this.slide = _this.obj.find('.slide');\n	 \n		_this.items = _this.slide.children('.slide-item');\n		_this.leftButton = _this.obj.children('.arrow-left');\n		_this.rightButton = _this.obj.children('.arrow-right');\n		_this.step = 0;\n		_this.width = 0;//主容器长度\n		_this.length = 0;//slide长度\n		_this.flag = false;//动画标志\n\n		//初始化尺寸\n		_this.init = function(){\n			\n			_this.items.each(function(){\n				_this.length += parseInt($(this).outerWidth());\n				_this.step = $(this).outerWidth();\n				$(this).css('width', _this.step);\n			})\n			\n			_this.width = _this.obj.outerWidth();\n			_this.slide.css('width', _this.length);\n		}\n\n		//滚动 left or right\n		_this.run = function(direction){\n			var pos = {};//_this.slide.position();\n			pos.left = parseInt(_this.slide.css('marginLeft'));\n\n			switch(direction){\n				case 'right':{\n					 \n					if(Math.abs(pos.left) >= _this.length - _this.width - 1){\n					 \n					} else {\n						_this.move(pos.left - _this.step);\n					}		\n					break;\n				}\n				case 'left':{\n	 \n					if(Math.abs(pos.left) == 0){\n						 \n					} else {\n						_this.move(pos.left + _this.step);\n					}\n					break;\n				}\n				default: {\n\n				}\n			}\n		}\n\n		_this.displayButtons = function(left){\n				 \n			if(left <= _this.width - _this.length + 1){\n				_this.rightButton.css('display', 'none');\n				_this.leftButton.css('display', 'block');\n			} else if(left == 0){\n				_this.rightButton.css('display', 'block');\n				_this.leftButton.css('display', 'none');\n			} else {\n				_this.rightButton.css('display', 'block');\n				_this.leftButton.css('display', 'block');\n			}\n		}\n\n		_this.move = function(left){\n			_this.flag = true;\n			_this.slide.animate({\n				'marginLeft': left + 'px'\n			}, 500,function(){\n				_this.displayButtons(left);\n				_this.flag = false;\n			})\n		}	\n\n		_this.events = function(){\n			_this.leftButton.on('click', function(){\n				if(!_this.flag)\n					_this.run('left');\n			});\n			_this.rightButton.on('click', function(){\n				if(!_this.flag)\n					_this.run('right');\n			});\n		}\n\n\n\n		_this.init();\n		_this.events();\n		 \n\n	}\n\n	//适用于PC的幻灯片，依赖jquery\n	module.exports.init = function(){\n		 var list = [];\n		 $('.' + CONFIG.prefix + 'carousel').each(function(){\n		 	var _this = $(this);\n		  \n		 	list.push(new slide(_this));\n		 });\n\n	}\n\n\n\n/***/ }\n/******/ ]);",
 			"file": "build/main.js",
-			"file_size": 13070,
-			"file_write_time": 130935127643901397,
+			"file_size": 17315,
+			"file_write_time": 130962176276670963,
 			"settings":
 			{
 				"buffer_size": 12405,
@@ -482,7 +606,15 @@
 			"file": "js/main-global.js",
 			"settings":
 			{
-				"buffer_size": 359,
+				"buffer_size": 616,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/sae/wwwroot/source/smart/trunck/sources/webresource/glw/front/js/index.js",
+			"settings":
+			{
+				"buffer_size": 4325,
 				"line_ending": "Windows"
 			}
 		},
@@ -522,6 +654,14 @@
 			}
 		},
 		{
+			"file": "docs-pc/src/wall.ejs",
+			"settings":
+			{
+				"buffer_size": 1599,
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "docs-pc/src/commonheader.ejs",
 			"settings":
 			{
@@ -557,7 +697,7 @@
 			"file": "style/common/input.less",
 			"settings":
 			{
-				"buffer_size": 3106,
+				"buffer_size": 3293,
 				"line_ending": "Windows"
 			}
 		},
@@ -565,7 +705,7 @@
 			"file": "style/common/theme.less",
 			"settings":
 			{
-				"buffer_size": 3864,
+				"buffer_size": 3942,
 				"line_ending": "Windows"
 			}
 		},
@@ -581,7 +721,7 @@
 			"file": "style/bone-greenway.less",
 			"settings":
 			{
-				"buffer_size": 1143,
+				"buffer_size": 1240,
 				"line_ending": "Windows"
 			}
 		},
@@ -597,7 +737,79 @@
 			"file": "build/bone-global.js",
 			"settings":
 			{
-				"buffer_size": 16291,
+				"buffer_size": 19478,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style/bone-pc.less",
+			"settings":
+			{
+				"buffer_size": 944,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style/addon/gelinwei/admin.less",
+			"settings":
+			{
+				"buffer_size": 1330,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style/bone.less",
+			"settings":
+			{
+				"buffer_size": 660,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "docs/src/source.ejs",
+			"settings":
+			{
+				"buffer_size": 807,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style/pc/admin-grid.less",
+			"settings":
+			{
+				"buffer_size": 584,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style/common/sidebar.less",
+			"settings":
+			{
+				"buffer_size": 1001,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style/common/wall.less",
+			"settings":
+			{
+				"buffer_size": 170,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 849,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "style/common/core.less",
+			"settings":
+			{
+				"buffer_size": 865,
 				"line_ending": "Windows"
 			}
 		}
@@ -642,6 +854,7 @@
 	},
 	"file_history":
 	[
+		"/E/javaweb/TONGXIANG2/WebContent/lib/plugins.js",
 		"/D/sae/wwwroot/source/bone-mobile/style/bone-pc.less",
 		"/D/sae/wwwroot/source/smart/trunck/sources/java/glw/src/main/webapp/WEB-INF/views/admin/admin-cou-add.vm",
 		"/D/sae/wwwroot/source/bone-mobile/style/addon/gelinwei/home.less",
@@ -768,8 +981,7 @@
 		"/D/sae/wwwroot/source/Earth/application/views/view/user.php",
 		"/D/sae/wwwroot/source/Earth/application/controllers/Welcome.php",
 		"/D/sae/wwwroot/source/Earth/application/views/view/orderlist.php",
-		"/D/sae/wwwroot/source/Earth/application/views/main/list.php",
-		"/D/sae/wwwroot/source/Earth/application/views/common/source2.php"
+		"/D/sae/wwwroot/source/Earth/application/views/main/list.php"
 	],
 	"find":
 	{
@@ -787,6 +999,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Global.locus.flag.labelFlag",
+			"已穿",
 			"dialog",
 			",\n",
 			"FollowSymLinks",
@@ -939,7 +1153,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -996,18 +1210,356 @@
 				},
 				{
 					"buffer": 2,
-					"file": "js/bone-carousel.js",
+					"file": "js/bone-wall.js",
 					"settings":
 					{
-						"buffer_size": 2243,
+						"buffer_size": 3172,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								691,
-								691
+								3106,
+								3106
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1251.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "js/bone-verify.js",
+					"settings":
+					{
+						"buffer_size": 3028,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2200,
+								2200
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 270.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "js/bone-notice.js",
+					"settings":
+					{
+						"buffer_size": 529,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								503,
+								503
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 85.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/Users/tgoooo/Desktop/微博对话框/微博对话框/index.html",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/E/javaweb/TONGXIANG2/WebContent/lib/locus.js",
+					"settings":
+					{
+						"buffer_size": 128907,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								52841,
+								52841
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 20780.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/E/javaweb/TONGXIANG2/WebContent/js/base.js",
+					"settings":
+					{
+						"buffer_size": 50745,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8399,
+								8426
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 5030.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/E/javaweb/TONGXIANG2/WebContent/template/home.jsp",
+					"settings":
+					{
+						"buffer_size": 13715,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8533,
+								8523
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java Server Pages (JSP).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 3240.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/E/javaweb/TONGXIANG2/WebContent/lib/main.js",
+					"settings":
+					{
+						"buffer_size": 13950,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								522,
+								522
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 8748.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "style/pc/notice.less",
+					"settings":
+					{
+						"buffer_size": 395,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12,
+								12
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "style/pc/login.less",
+					"settings":
+					{
+						"buffer_size": 217,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "style/pc/pagination.less",
+					"settings":
+					{
+						"buffer_size": 530,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								327,
+								327
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "style/common/carousel.less",
+					"settings":
+					{
+						"buffer_size": 688,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								324,
+								324
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "docs-pc/src/carousel.ejs",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "js/main.js",
+					"settings":
+					{
+						"buffer_size": 513,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								494,
+								494
 							]
 						],
 						"settings":
@@ -1023,11 +1575,11 @@
 			]
 		},
 		{
-			"selected": 9,
+			"selected": 42,
 			"sheets":
 			[
 				{
-					"buffer": 3,
+					"buffer": 16,
 					"file": "/E/Download/iconfont (2)/ux_1445171175_7056942/iconfont.css",
 					"settings":
 					{
@@ -1053,24 +1605,50 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 17,
 					"file": "docs/src/verify.ejs",
 					"settings":
 					{
-						"buffer_size": 1272,
+						"buffer_size": 1735,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								389,
-								389
+								1526,
+								1526
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 594.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "docs/src/sourceglobal.ejs",
+					"settings":
+					{
+						"buffer_size": 814,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								450,
+								450
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1079,7 +1657,33 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 19,
+					"file": "js/bone-carousel.js",
+					"settings":
+					{
+						"buffer_size": 2243,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1511,
+								1511
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1696.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 20,
 					"file": "fonts2/iconfont.css",
 					"settings":
 					{
@@ -1105,7 +1709,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 21,
 					"file": "style/addon/gelinwei/project.less",
 					"settings":
 					{
@@ -1131,19 +1735,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 22,
 					"file": "style/addon/gelinwei/shoppingcart.less",
 					"settings":
 					{
-						"buffer_size": 301,
+						"buffer_size": 527,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								299,
-								299
+								522,
+								522
 							]
 						],
 						"settings":
@@ -1151,13 +1755,13 @@
 							"syntax": "Packages/LESS/LESS.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 90.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 23,
 					"file": "/C/Users/tgoooo/Desktop/a.html",
 					"settings":
 					{
@@ -1183,7 +1787,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 24,
 					"file": "docs/src/form.ejs",
 					"settings":
 					{
@@ -1209,7 +1813,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 25,
 					"file": "docs/src/list.ejs",
 					"settings":
 					{
@@ -1235,11 +1839,88 @@
 					"type": "text"
 				},
 				{
-					"buffer": 11,
-					"file": "js/bone-verify.js",
+					"buffer": 26,
+					"file": "js/bone-verify2.js",
 					"settings":
 					{
-						"buffer_size": 3028,
+						"buffer_size": 1930,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								544,
+								544
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 27,
+					"file": "js/bone-form.js",
+					"settings":
+					{
+						"buffer_size": 587,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								558,
+								558
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 522.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 28,
+					"file": "js/bone-dialog.js",
+					"settings":
+					{
+						"buffer_size": 3973,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3317,
+								3317
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 630.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 29,
+					"settings":
+					{
+						"buffer_size": 0,
 						"regions":
 						{
 						},
@@ -1247,90 +1928,13 @@
 						[
 							[
 								0,
-								3028
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "js/bone-verify2.js",
-					"settings":
-					{
-						"buffer_size": 3054,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								690,
-								690
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "js/bone-form.js",
-					"settings":
-					{
-						"buffer_size": 513,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								440,
-								440
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "js/bone-dialog.js",
-					"settings":
-					{
-						"buffer_size": 3971,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								362,
-								362
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"default_dir": "D:\\sae\\wwwroot\\source\\bone-mobile\\docs\\src",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1343,15 +1947,15 @@
 					"file": "js/main.js",
 					"settings":
 					{
-						"buffer_size": 346,
+						"buffer_size": 513,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								341,
-								341
+								483,
+								483
 							]
 						],
 						"settings":
@@ -1365,7 +1969,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 16,
+					"buffer": 30,
 					"file": "js/bone-dropdown.js",
 					"settings":
 					{
@@ -1391,7 +1995,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 17,
+					"buffer": 31,
 					"file": "build/main.js",
 					"settings":
 					{
@@ -1417,19 +2021,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 18,
+					"buffer": 32,
 					"file": "js/main-global.js",
 					"settings":
 					{
-						"buffer_size": 359,
+						"buffer_size": 616,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								359,
-								359
+								420,
+								420
 							]
 						],
 						"settings":
@@ -1443,7 +2047,33 @@
 					"type": "text"
 				},
 				{
-					"buffer": 19,
+					"buffer": 33,
+					"file": "/D/sae/wwwroot/source/smart/trunck/sources/webresource/glw/front/js/index.js",
+					"settings":
+					{
+						"buffer_size": 4325,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4316,
+								4316
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 34,
 					"file": "js/bone-config.js",
 					"settings":
 					{
@@ -1469,7 +2099,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 20,
+					"buffer": 35,
 					"file": "node_modules/gulp-ejs/test/expected/config.js",
 					"settings":
 					{
@@ -1495,7 +2125,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 21,
+					"buffer": 36,
 					"file": "docs-pc/src/source.ejs",
 					"settings":
 					{
@@ -1521,7 +2151,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 22,
+					"buffer": 37,
 					"file": "style/common/article.less",
 					"settings":
 					{
@@ -1532,8 +2162,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								204,
+								204
 							]
 						],
 						"settings":
@@ -1547,7 +2177,34 @@
 					"type": "text"
 				},
 				{
-					"buffer": 23,
+					"buffer": 38,
+					"file": "docs-pc/src/wall.ejs",
+					"settings":
+					{
+						"buffer_size": 1599,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1525,
+								1512
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 810.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 39,
 					"file": "docs-pc/src/commonheader.ejs",
 					"settings":
 					{
@@ -1573,7 +2230,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 24,
+					"buffer": 40,
 					"file": "docs-pc/src/commonsidebar.ejs",
 					"settings":
 					{
@@ -1599,7 +2256,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 25,
+					"buffer": 41,
 					"file": "docs-pc/src/index.ejs",
 					"settings":
 					{
@@ -1611,7 +2268,7 @@
 						[
 							[
 								0,
-								0
+								7354
 							]
 						],
 						"settings":
@@ -1619,13 +2276,13 @@
 							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1101.0,
+						"translation.y": 4924.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 26,
+					"buffer": 42,
 					"file": "style/common/form.less",
 					"settings":
 					{
@@ -1645,25 +2302,25 @@
 							"syntax": "Packages/LESS/LESS.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 540.0,
+						"translation.y": 378.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 27,
+					"buffer": 43,
 					"file": "style/common/input.less",
 					"settings":
 					{
-						"buffer_size": 3106,
+						"buffer_size": 3293,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1372,
+								1372
 							]
 						],
 						"settings":
@@ -1671,25 +2328,25 @@
 							"syntax": "Packages/LESS/LESS.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1998.0,
+						"translation.y": 1188.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 28,
+					"buffer": 44,
 					"file": "style/common/theme.less",
 					"settings":
 					{
-						"buffer_size": 3864,
+						"buffer_size": 3942,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								668,
-								668
+								3452,
+								3363
 							]
 						],
 						"settings":
@@ -1697,13 +2354,13 @@
 							"syntax": "Packages/LESS/LESS.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2394.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 29,
+					"buffer": 45,
 					"file": "style/common/grid.less",
 					"settings":
 					{
@@ -1729,19 +2386,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 30,
+					"buffer": 46,
 					"file": "style/bone-greenway.less",
 					"settings":
 					{
-						"buffer_size": 1143,
+						"buffer_size": 1240,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1032,
-								1032
+								908,
+								908
 							]
 						],
 						"settings":
@@ -1755,7 +2412,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 31,
+					"buffer": 47,
 					"file": "gulpfile.js",
 					"settings":
 					{
@@ -1766,26 +2423,26 @@
 						"selection":
 						[
 							[
-								1838,
-								1838
+								1469,
+								1469
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
-						"translation.x": 40.0,
-						"translation.y": 585.0,
+						"translation.x": 0.0,
+						"translation.y": 1557.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 32,
+					"buffer": 48,
 					"file": "build/bone-global.js",
 					"settings":
 					{
-						"buffer_size": 16291,
+						"buffer_size": 19478,
 						"regions":
 						{
 						},
@@ -1802,6 +2459,240 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 450.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 49,
+					"file": "style/bone-pc.less",
+					"settings":
+					{
+						"buffer_size": 944,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								504,
+								504
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 50,
+					"file": "style/addon/gelinwei/admin.less",
+					"settings":
+					{
+						"buffer_size": 1330,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								818,
+								818
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 216.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 51,
+					"file": "style/bone.less",
+					"settings":
+					{
+						"buffer_size": 660,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 52,
+					"file": "docs/src/source.ejs",
+					"settings":
+					{
+						"buffer_size": 807,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								807,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 53,
+					"file": "style/pc/admin-grid.less",
+					"settings":
+					{
+						"buffer_size": 584,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								269,
+								269
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 54,
+					"file": "style/common/sidebar.less",
+					"settings":
+					{
+						"buffer_size": 1001,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1001,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 55,
+					"file": "style/common/wall.less",
+					"settings":
+					{
+						"buffer_size": 170,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								73,
+								73
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 56,
+					"file": "package.json",
+					"settings":
+					{
+						"buffer_size": 849,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								539,
+								846
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 57,
+					"file": "style/common/core.less",
+					"settings":
+					{
+						"buffer_size": 865,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								832,
+								832
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 486.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1837,7 +2728,7 @@
 		"cols":
 		[
 			0.0,
-			0.164864864865,
+			0.0762474512833,
 			1.0
 		],
 		"rows":
@@ -1858,8 +2749,20 @@
 		"selected_items":
 		[
 			[
+				"main",
+				"js/main.js"
+			],
+			[
+				"wall",
+				"style/common/wall.less"
+			],
+			[
 				"theme",
 				"style/common/theme.less"
+			],
+			[
+				"ver",
+				"docs/src/verify.ejs"
 			],
 			[
 				"index",
@@ -1872,10 +2775,6 @@
 			[
 				"dialog",
 				"js/bone-dialog.js"
-			],
-			[
-				"main",
-				"js/main.js"
 			],
 			[
 				"",
@@ -1900,10 +2799,6 @@
 			[
 				"config",
 				"js/bone-config.js"
-			],
-			[
-				"ver",
-				"js/bone-verify.js"
 			],
 			[
 				"form",
@@ -2252,6 +3147,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 256.0,
+	"side_bar_width": 168.0,
 	"status_bar_visible": true
 }

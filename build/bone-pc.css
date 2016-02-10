@@ -103,7 +103,7 @@ p {
   top: 0;
 }
 .bo-col-sidebar {
-  width: 240px;
+  width: 200px;
   background: #34495e;
   color: #fff;
 }
@@ -116,7 +116,7 @@ p {
 .bo-col-content {
   position: absolute;
   right: 0;
-  left: 240px;
+  left: 200px;
   top: 50px;
   bottom: 0;
   overflow-y: auto;
@@ -193,7 +193,8 @@ p {
   border: 1px #e0e0e0 solid;
   display: inline-block;
 }
-.bo-pagination a {
+.bo-pagination a,
+.bo-pagination span {
   margin: 0;
   display: block;
   float: left;
@@ -1294,16 +1295,16 @@ input {
   overflow: hidden;
   width: 100%;
 }
-.bo-carousel .slide {
+.bo-carousel > .slide {
   margin-left: 0;
   width: 100%;
 }
-.bo-carousel .slide .slide-item {
+.bo-carousel > .slide .slide-item {
   float: left;
   display: block;
   overflow: hidden;
 }
-.bo-carousel .slide .slide-item > img {
+.bo-carousel > .slide .slide-item > img {
   width: 100%;
 }
 .bo-carousel .arrow-left,
@@ -1345,4 +1346,66 @@ input {
 }
 .bo-table-border td {
   border-bottom: 1px #e0e0e0 solid;
+}
+.bo-wall {
+  position: relative;
+  overflow: hidden;
+}
+.bo-wall > .slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.bo-sidebar {
+  width: 100%;
+  height: 100%;
+  padding: 20px 0;
+  overflow-y: auto;
+  background: #34495e;
+}
+.bo-sidebar .bo-tab-vertical {
+  font-size: 14px;
+  text-align: left;
+}
+.bo-sidebar .bo-tab-vertical a,
+.bo-sidebar .bo-tab-vertical button {
+  font-size: 16px;
+  padding: 0 14px !important;
+  height: 52px !important;
+  line-height: 52px !important;
+  color: #b9c8d8 !important;
+  padding-left: 50px !important;
+}
+.bo-sidebar .bo-tab-vertical a i,
+.bo-sidebar .bo-tab-vertical button i {
+  position: absolute;
+  left: 15px;
+  top: 0;
+  line-height: 52px -2 !important;
+  font-size: 24px;
+}
+.bo-sidebar .bo-tab-vertical a:hover,
+.bo-sidebar .bo-tab-vertical button:hover {
+  color: #ffffff !important;
+  background: #3d566e !important;
+}
+.bo-sidebar .bo-tab-vertical .bo-tab-dock {
+  right: 14px;
+  top: 0;
+  height: 36.4px !important;
+  line-height: 36.4px !important;
+  color: #91aac2;
+  font-size: 11.2px;
+}
+.bo-sidebar .bo-tab-vertical .bo-tab-dock .bo-tab-dock-text {
+  color: #91aac2 !important;
+  line-height: 36.4px !important;
+}
+.bo-sidebar-title {
+  color: #b9c8d8;
+  text-align: left;
+  font-size: 12.6px;
+  padding: 14px 14px;
 }

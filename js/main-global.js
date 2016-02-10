@@ -7,19 +7,18 @@ bone.dropdown = require('./bone-dropdown');
 bone.carousel = require('./bone-carousel');
 bone.form = require('./bone-form');
 bone.notice = require('./bone-notice');
- 
+bone.wall = require('./bone-wall');
+
 $(document).ready(function(){
 	bone.dropdown.init();
 	bone.carousel.init();
-	//fdsffsdfds
+	//
 	$('.stars').each(function(){
 		var score = parseInt($(this).data('score'));
 		var tmp = '';
 		while(score--){
 			tmp += '<i class="icon iconfont">&#xe604;</i>';
 		}
-
 		$(this).html(tmp);
-
 	});
 });

@@ -3,6 +3,7 @@ var dialog = require('./bone-dialog');
 var dropdown = require('./bone-dropdown');
 var carousel = require('./bone-carousel');
 var notice = require('./bone-notice');
+var wall = require('./bone-wall');
  
 $(document).ready(function(){
 	dropdown.init();
@@ -15,5 +16,9 @@ $(document).ready(function(){
 	});
 
 	carousel.init();//fdd
-
+	wall.init([
+		'11111',
+		'22222',
+		'33333'
+	]);
 });

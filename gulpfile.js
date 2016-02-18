@@ -8,7 +8,9 @@ var webpack 		= require('gulp-webpack');
 var gutil 			= require('gulp-util');
 var ejs 			= require("gulp-ejs");
 var rev				= require('gulp-rev');
-
+var babel 			= require('gulp-babel');
+var jsxloader		= require('jsx-loader');
+var babelloader 	= require('babel-loader');
 
 gulp.task('css', function(){
 	watch('./style/**/*.less', function(){
@@ -33,7 +35,7 @@ gulp.task('css', function(){
 			.pipe(autoprefixer())
 			//.pipe(minifyCSS())
 			.pipe(gulp.dest('./build'))
-			.pipe(gulp.dest('D:/sae/wwwroot/source/smart/trunck/sources/webresource/glw/admin/style'));//for格林卫 
+			//.pipe(gulp.dest('D:/sae/wwwroot/source/smart/trunck/sources/webresource/glw/admin/style'));//for格林卫 
 	
 		gulp.src('./style/bone-greenway.less')
 			.pipe(less())
@@ -42,12 +44,33 @@ gulp.task('css', function(){
 				this.end();
 			})
 			.pipe(autoprefixer())
-			.pipe(gulp.dest('D:/sae/wwwroot/source/smart/trunck/sources/webresource/glw/front/style'))//;//for格林卫
+			//.pipe(gulp.dest('D:/sae/wwwroot/source/smart/trunck/sources/webresource/glw/front/style'))//;//for格林卫
 			
 	});
 
 });
 
+//react版本
+gulp.task('rcjs', function(callback){
+	watch('./rc/*.js', function(){
+		gulp.src('./rc/mainrc.js')
+			.pipe(webpack({
+				watch: true,
+				output: {
+					filename: 'mainrc.js'
+				},
+				module: {
+			        loaders: [
+						// { test: /\.css$/, loader: "style!css" },
+						// required for react jsx
+						{ test: /\.js$/,    loader: "jsx-loader" }
+			        ]
+			    }
+			})).pipe(gulp.dest('./build'));
+	});
+});
+
+//jquery版本脚本
 gulp.task('js', function(callback){
 	watch('./js/*.js', function(){
 		gulp.src('./js/main.js')
@@ -70,6 +93,8 @@ gulp.task('js', function(callback){
 	});
 });
 
+
+//文档
 gulp.task('doc', function(){
 	watch('./docs/src/*.ejs', function(){
 		gulp.src('./docs/src/*.ejs')
@@ -85,5 +110,5 @@ gulp.task('doc', function(){
 
 
 gulp.task('default', function(){
-	gulp.run(['css', 'js', 'doc']);
+	gulp.run(['css', 'js', 'doc', 'rcjs']);
 });

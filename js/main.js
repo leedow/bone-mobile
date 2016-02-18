@@ -19,6 +19,6 @@ $(document).ready(function(){
 	wall.init([
 		'11111',
 		'22222',
-		'33333'
+		'333334'
 	]);
 });

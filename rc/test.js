@@ -1,3 +1,3 @@
-export default test = function(){
+export var test = function(){
 	console.log('test bables')
 }

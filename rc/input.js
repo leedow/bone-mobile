@@ -1,10 +1,22 @@
-React = require('react');
+import React from 'react'
 
 
-var Input = React.createClass({
+export var Input = React.createClass({
 	getInitialState: function() {
-		return {data: []};
+		return {
+			data: [],
+			placeholder: 'test',
+			state: ''
+		};
 	},
+	getDefaultProps : function () {
+		return {
+			placeholder : '',
+			value: '',
+			state: '',//pass|wrong
+			size: 'normal'
+		};
+  	},
 	componentDidMount: function() {
 		 
 	},
@@ -12,15 +24,10 @@ var Input = React.createClass({
 		return (
 			<div className="bo-form-item">
 				<label htmlFor="" className="bo-label"></label>
-				<div>
-					<input className="bo-input" type="text" placeholder=""  />
+				<div className={'bo-input-' + this.props.state}>					
+					<input className="bo-input bo-form-control" type="text" placeholder={this.props.placeholder}  />
 				</div>
 			</div>
 		)
 	}
 });
-
-module.export = Input;
-
-
- 

@@ -44,20 +44,47 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	React 		= __webpack_require__(1);
-	var ReactDOM 	= __webpack_require__(158);
-	var Input 		= __webpack_require__(159);
+	'use strict';
 
+	var _react = __webpack_require__(1);
 
-	console.log(Input)
-	ReactDOM.render((
-		
-		React.createElement("div", null, React.createElement(Input, null))
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(158);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _input = __webpack_require__(159);
+
+	var _header = __webpack_require__(160);
+
+	var _headerDock = __webpack_require__(161);
+
+	var _icons = __webpack_require__(162);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	_reactDom2.default.render(_react2.default.createElement(
+		'div',
+		null,
+		_react2.default.createElement(
+			'div',
+			{ className: 'bo-layout-header' },
+			_react2.default.createElement(
+				_header.Header,
+				{ title: 'header title' },
+				_react2.default.createElement(_headerDock.HeaderDock, { align: 'left', title: 'left' }),
+				_react2.default.createElement(_headerDock.HeaderDock, { align: 'right', title: 'right' })
+			)
 		),
-		document.getElementById('test')
-	)
+		_react2.default.createElement(
+			'div',
+			{ className: 'bo-layout-main' },
+			_react2.default.createElement(_icons.Icon, { type: 'setting' })
+		)
+	), document.getElementById('app'));
 
-
+	//fsdjjjt
 
 /***/ },
 /* 1 */
@@ -19664,50 +19691,174 @@
 /* 159 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(module) {React = __webpack_require__(1);
+	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.Input = undefined;
 
-	var Input = React.createClass({displayName: "Input",
-		getInitialState: function() {
-			return {data: []};
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Input = exports.Input = _react2.default.createClass({
+		displayName: 'Input',
+
+		getInitialState: function getInitialState() {
+			return {
+				data: [],
+				placeholder: 'test',
+				state: ''
+			};
 		},
-		componentDidMount: function() {
-			 
+		getDefaultProps: function getDefaultProps() {
+			return {
+				placeholder: '',
+				value: '',
+				state: '', //pass|wrong
+				size: 'normal'
+			};
 		},
-		render: function(){
-			return (
-				React.createElement("div", {className: "bo-form-item"}, 
-					React.createElement("label", {htmlFor: "", className: "bo-label"}), 
-					React.createElement("div", null, 
-						React.createElement("input", {className: "bo-input", type: "text", placeholder: ""})
-					)
+		componentDidMount: function componentDidMount() {},
+		render: function render() {
+			return _react2.default.createElement(
+				'div',
+				{ className: 'bo-form-item' },
+				_react2.default.createElement('label', { htmlFor: '', className: 'bo-label' }),
+				_react2.default.createElement(
+					'div',
+					{ className: 'bo-input-' + this.props.state },
+					_react2.default.createElement('input', { className: 'bo-input bo-form-control', type: 'text', placeholder: this.props.placeholder })
 				)
-			)
+			);
 		}
 	});
 
-	module.export = Input;
-
-
-	 
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(160)(module)))
-
 /***/ },
 /* 160 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = function(module) {
-		if(!module.webpackPolyfill) {
-			module.deprecate = function() {};
-			module.paths = [];
-			// module.parent = undefined by default
-			module.children = [];
-			module.webpackPolyfill = 1;
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.Header = undefined;
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Header = exports.Header = _react2.default.createClass({
+		displayName: 'Header',
+
+		getInitialState: function getInitialState() {
+			return {
+				data: []
+			};
+		},
+		getDefaultProps: function getDefaultProps() {
+			return {
+				title: 'Title'
+			};
+		},
+		componentDidMount: function componentDidMount() {},
+		render: function render() {
+			return _react2.default.createElement(
+				'div',
+				{ className: 'bo-header' },
+				this.props.title,
+				this.props.children
+			);
 		}
-		return module;
-	}
+	});
 
+/***/ },
+/* 161 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.HeaderDock = undefined;
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var HeaderDock = exports.HeaderDock = _react2.default.createClass({
+		displayName: 'HeaderDock',
+
+		getInitialState: function getInitialState() {
+			return {
+				data: []
+			};
+		},
+		getDefaultProps: function getDefaultProps() {
+			return {
+				align: 'left',
+				href: '',
+				title: ''
+			};
+		},
+		componentDidMount: function componentDidMount() {},
+		render: function render() {
+			return _react2.default.createElement(
+				'div',
+				{ className: 'bo-header-dock-' + this.props.align },
+				_react2.default.createElement(
+					'a',
+					{ href: this.props.href },
+					this.props.title
+				)
+			);
+		}
+	}); //
+
+/***/ },
+/* 162 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.Icon = undefined;
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Icon = exports.Icon = _react2.default.createClass({
+		displayName: 'Icon',
+
+		getInitialState: function getInitialState() {
+			return {
+				data: []
+			};
+		},
+		getDefaultProps: function getDefaultProps() {
+			return {
+				type: ''
+			};
+		},
+		componentDidMount: function componentDidMount() {},
+		render: function render() {
+			return _react2.default.createElement('i', { className: "iconfont icon-" + this.props.type });
+		}
+	});
 
 /***/ }
 /******/ ]);

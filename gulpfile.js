@@ -8,9 +8,6 @@ var webpack 		= require('gulp-webpack');
 var gutil 			= require('gulp-util');
 var ejs 			= require("gulp-ejs");
 var rev				= require('gulp-rev');
-var babel 			= require('gulp-babel');
-var jsxloader		= require('jsx-loader');
-var babelloader 	= require('babel-loader');
 
 gulp.task('css', function(){
 	watch('./style/**/*.less', function(){
@@ -63,7 +60,15 @@ gulp.task('rcjs', function(callback){
 			        loaders: [
 						// { test: /\.css$/, loader: "style!css" },
 						// required for react jsx
-						{ test: /\.js$/,    loader: "jsx-loader" }
+						//{ test: /\.js$/,    loader: "babel-loader" },
+						{
+							test: /\.js$/,
+							exclude: /(node_modules|bower_components)/,
+							loader: 'babel-loader',
+							query: {
+						     	presets: ['react', 'es2015']
+						    }
+						}
 			        ]
 			    }
 			})).pipe(gulp.dest('./build'));
@@ -89,7 +94,7 @@ gulp.task('js', function(callback){
 				}
 			}))
 			.pipe(gulp.dest('./build'))
-			.pipe(gulp.dest('D:/sae/wwwroot/source/smart/trunck/sources/webresource/glw/front/js'));//for格林卫 
+			//.pipe(gulp.dest('D:/sae/wwwroot/source/smart/trunck/sources/webresource/glw/front/js'));//for格林卫 
 	});
 });
 
@@ -110,5 +115,5 @@ gulp.task('doc', function(){
 
 
 gulp.task('default', function(){
-	gulp.run(['css', 'js', 'doc', 'rcjs']);
+	gulp.run(['css', 'js', 'doc']);
 });

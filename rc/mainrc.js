@@ -1,13 +1,25 @@
-React 		= require('react');
-var ReactDOM 	= require('react-dom');
-var Input 		= require('./input');
+import React from 'react'
+import ReactDOM from 'react-dom'
+import {Input} from './input'
+import {Header} from './header/header'
+import {HeaderDock} from './header/header-dock'
+import {Icon} from './core/icons'
 
 
-console.log(Input)
 ReactDOM.render((
-	
-	<div><Input /></div>
+	<div>	
+	<div className="bo-layout-header">
+		<Header title="header title">
+			<HeaderDock align="left" title="left"/>
+			<HeaderDock align="right" title="right"/>
+		</Header>
+	</div>
+	<div className="bo-layout-main">
+		<Icon type="setting"/>
+	</div>
+	</div>
 	),
-	document.getElementById('test')
+	document.getElementById('app')
 )
 
+//fsdjjjt

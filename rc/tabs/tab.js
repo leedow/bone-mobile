@@ -1,6 +1,6 @@
 import React from 'react';
 
-var Tab = React.createClass({
+export var Tab = React.createClass({
 	getInitialState: function() {
 		return {
 			data: []
@@ -21,9 +21,9 @@ var Tab = React.createClass({
 			className += '-bor';
 		}
 		return (
-			<div className={className}>
-
-			</div>
+			<ul className={className}>
+				{this.props.children}
+			</ul>
 		)
 	}
 });

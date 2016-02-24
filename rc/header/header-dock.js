@@ -20,7 +20,9 @@ export var HeaderDock = React.createClass({
 		return (
 			<div className={'bo-header-dock-'+this.props.align}>
 				<a href={this.props.href}>
+					{this.props.children}
 					{this.props.title}
+					
 				</a>
 			</div>
 		)

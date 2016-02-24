@@ -326,22 +326,6 @@
 				"buffer_size": 2405,
 				"line_ending": "Unix"
 			}
-		},
-		{
-			"file": "style/common/stepline.less",
-			"settings":
-			{
-				"buffer_size": 1480,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/bone-carousel.js",
-			"settings":
-			{
-				"buffer_size": 2243,
-				"line_ending": "Windows"
-			}
 		}
 	],
 	"build_system": "",
@@ -393,10 +377,11 @@
 	},
 	"expanded_folders":
 	[
-		"/D/sae/wwwroot/source/bone-mobile"
 	],
 	"file_history":
 	[
+		"/Users/leedow/www/bone-mobile/style/common/stepline.less",
+		"/Users/leedow/www/bone-mobile/js/bone-carousel.js",
 		"/Users/leedow/www/bone-mobile/js/bone-verify2.js",
 		"/Users/leedow/www/bone-mobile/docs/src/verify.ejs",
 		"/Users/leedow/www/bone-mobile/fonts2/iconfont.css",
@@ -522,9 +507,7 @@
 		"/D/sae/wwwroot/source/bone-mobile/docs/form.php",
 		"/D/sae/wwwroot/source/bone-mobile/style/hack.less",
 		"/E/Nodejs/ghost/content/themes/alife/post.hbs",
-		"/D/sae/wwwroot/source/bone-mobile/docs/src/form.ejs",
-		"/D/sae/wwwroot/source/bone-mobile/docs/src/header.ejs",
-		"/D/sae/wwwroot/source/bone-mobile/docs/src/menu.ejs"
+		"/D/sae/wwwroot/source/bone-mobile/docs/src/form.ejs"
 	],
 	"find":
 	{
@@ -694,7 +677,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -717,64 +700,6 @@
 						"settings":
 						{
 							"syntax": "Packages/LESS/LESS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "style/common/stepline.less",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1480,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								190,
-								190
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LESS/LESS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "js/bone-carousel.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2243,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								691,
-								691
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -820,7 +745,7 @@
 		"cols":
 		[
 			0.0,
-			0.164864864865,
+			0.61258443884,
 			1.0
 		],
 		"rows":
@@ -1248,7 +1173,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},

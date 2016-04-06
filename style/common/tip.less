@@ -1,0 +1,54 @@
+.@{prefix}{
+	&tip{
+		background: 	@tip-background;
+		color: 			@tip-color;
+		padding: 		@tip-padding;
+		height: 		@tip-height;
+		line-height:  	@tip-height;
+		border-radius: 	@radius;
+
+		&:before{
+			position: absolute;
+		    content: " ";
+		    width: 0px;
+		    height: 0px;
+		    border-width: 5px;
+		    border-style: solid;
+		    border-color: transparent;
+		}
+	}
+
+	&tip-left{
+		&:before{
+		    border-left-color: @tip-background;
+		    left: -5px;
+		    top:50%;
+		    margin-top: -5px;
+		}
+	}
+
+	&tip-top{
+		&:before{
+			border-top-color: @tip-background;
+		    right: @tip-offset;
+		    bottom: -10px;
+		}
+	}
+
+	&tip-bottom{
+		&:before{
+			position: absolute;
+			left: 20px;
+			bottom: -(@tip-height+5);
+		}
+	}
+
+	&tip-right{
+		&:before{
+			position: absolute;
+			left: 100%;
+			top: 50%;
+			margin-top: -(0.5*@tip-height);
+		}
+	}
+}

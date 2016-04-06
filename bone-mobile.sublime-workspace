@@ -4,6 +4,58 @@
 		"selected_items":
 		[
 			[
+				"pos",
+				"position"
+			],
+			[
+				"click",
+				"clickEvent"
+			],
+			[
+				"Tabsi",
+				"TabsItemVertical"
+			],
+			[
+				"icon",
+				"iconCss"
+			],
+			[
+				"Tab",
+				"TabsItem"
+			],
+			[
+				"Ta",
+				"TabsHorizon"
+			],
+			[
+				"La",
+				"Layoutbox"
+			],
+			[
+				"b",
+				"bo-tab-item"
+			],
+			[
+				"Header",
+				"HeaderDock"
+			],
+			[
+				"Vue",
+				"VueRouter"
+			],
+			[
+				"rand",
+				"random_speed"
+			],
+			[
+				"react",
+				"react-router"
+			],
+			[
+				"pAGE",
+				"PageHome"
+			],
+			[
 				"get",
 				"getInputData"
 			],
@@ -320,10 +372,66 @@
 	"buffers":
 	[
 		{
-			"file": "style/addon/gelinwei/list.less",
+			"file": "style/common/text.less",
 			"settings":
 			{
-				"buffer_size": 2405,
+				"buffer_size": 103,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "style/common/theme.less",
+			"settings":
+			{
+				"buffer_size": 4077,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "style/common/tip.less",
+			"settings":
+			{
+				"buffer_size": 837,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "docs/src/form.ejs",
+			"settings":
+			{
+				"buffer_size": 4370,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "style/common/form.less",
+			"settings":
+			{
+				"buffer_size": 1149,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "gulpfile.js",
+			"settings":
+			{
+				"buffer_size": 2596,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "style/common/input.less",
+			"settings":
+			{
+				"buffer_size": 3615,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "style/bone.less",
+			"settings":
+			{
+				"buffer_size": 723,
 				"line_ending": "Unix"
 			}
 		}
@@ -335,10 +443,26 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 400.0,
-		"last_filter": "",
+		"height": 203.0,
+		"last_filter": "Package Control: ins",
 		"selected_items":
 		[
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: remo",
+				"Package Control: Remove Package"
+			],
 			[
 				"Snippet: ",
 				"Snippet: html"
@@ -350,13 +474,9 @@
 			[
 				"insta",
 				"Package Control: Install Package"
-			],
-			[
-				"Package Control: ",
-				"Package Control: Install Package"
 			]
 		],
-		"width": 424.0
+		"width": 457.0
 	},
 	"console":
 	{
@@ -377,12 +497,84 @@
 	},
 	"expanded_folders":
 	[
+		"/Users/leedow/www/bone-mobile",
+		"/Users/leedow/www/bone-mobile/style",
+		"/Users/leedow/www/bone-mobile/style/common"
 	],
 	"file_history":
 	[
-		"/Users/leedow/www/bone-mobile/style/common/stepline.less",
-		"/Users/leedow/www/bone-mobile/js/bone-carousel.js",
+		"/Users/leedow/www/bone-mobile/style/common/theme.less",
+		"/Users/leedow/www/bone-mobile/style/common/form.less",
 		"/Users/leedow/www/bone-mobile/js/bone-verify2.js",
+		"/Users/leedow/www/bone-mobile/style/common/list.less",
+		"/Users/leedow/www/bone-mobile/style/bone.less",
+		"/Users/leedow/www/bone-mobile/style/common/input.less",
+		"/Users/leedow/www/bone-mobile/style/common/tip.less",
+		"/Users/leedow/Library/Application Support/Sublime Text 3/Packages/LESS/LESS.sublime-settings",
+		"/Users/leedow/Library/Application Support/Sublime Text 3/Packages/User/less2css.sublime-settings",
+		"/Users/leedow/Library/Application Support/Sublime Text 3/Packages/User/CSS.sublime-settings",
+		"/Users/leedow/Library/Application Support/Sublime Text 3/Packages/User/LESS.sublime-settings",
+		"/Users/leedow/Library/Application Support/Sublime Text 3/Packages/LESS/README.md",
+		"/Users/leedow/Library/Application Support/Sublime Text 3/Packages/Less2Css/less2css.sublime-settings",
+		"/Users/leedow/Library/Application Support/Sublime Text 3/Packages/User/Distraction Free.sublime-settings",
+		"/Users/leedow/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/leedow/www/bone-mobile/js/bone-carousel.js",
+		"/Users/leedow/www/bone-vue/src/components/form/form.vue",
+		"/Users/leedow/www/bone-vue/src/components/form/index.js",
+		"/Users/leedow/www/bone-vue/src/pages/form.vue",
+		"/Users/leedow/www/bone-vue/src/components/form/input.vue",
+		"/Users/leedow/www/bone-vue/src/components/form/select.vue",
+		"/Users/leedow/www/bone-vue/src/main.js",
+		"/Users/leedow/www/bone-vue/src/pages/index.vue",
+		"/Users/leedow/www/bone-vue/src/components/common/icon.vue",
+		"/Users/leedow/www/bone-vue/README.md",
+		"/Users/leedow/www/bone-vue/src/pages/tabs.vue",
+		"/Users/leedow/www/bone-vue/src/services/message.js",
+		"/Users/leedow/www/bone-vue/.babelrc",
+		"/Users/leedow/www/bone-vue/build/webpack.base.config.js",
+		"/Users/leedow/www/bone-vue/build/webpack.dev.config.js",
+		"/Users/leedow/www/bone-vue/src/components/layouts/main.vue",
+		"/Users/leedow/www/bone-vue/src/components/layouts/index.js",
+		"/Users/leedow/www/bone-vue/src/components/tabs/index.js",
+		"/Users/leedow/www/bone-vue/src/components/buttons/index.js",
+		"/Users/leedow/www/bone-vue/src/components/buttons/buttons.vue",
+		"/Users/leedow/www/bone-vue/src/components/common/index.js",
+		"/Users/leedow/www/bone-vue/src/pages/buttons.vue",
+		"/Users/leedow/www/bone-vue/src/components/Hello.vue",
+		"/Users/leedow/www/bone-vue/src/components/A.vue",
+		"/Users/leedow/www/bone-vue/src/components/tabs/tabs-vertical.vue",
+		"/Users/leedow/www/bone-vue/src/components/header/dock.vue",
+		"/Users/leedow/www/bone-vue/src/components/header/header-dock.vue",
+		"/Users/leedow/www/bone-vue/package.json",
+		"/Users/leedow/Library/Application Support/Sublime Text 3/Packages/User/Plain text.sublime-settings",
+		"/Users/leedow/www/bone-vue/src/App.vue",
+		"/Users/leedow/www/trafficGIS/roads/vue.js",
+		"/Users/leedow/www/bone-mobile/build/mainrc.js",
+		"/Users/leedow/www/Mercury/application/views/shoppingcart/index.php",
+		"/Users/leedow/www/phpmyadmin/config.inc.php",
+		"/Users/leedow/Downloads/glwkaifa.sql",
+		"/Users/leedow/Downloads/glwkaifa (1).sql",
+		"/Users/leedow/www/Mercury/application/views/common/sourceadmin.php",
+		"/Users/leedow/www/Grenada/trunck/sources/java/glw/src/main/resources/config-glw.properties",
+		"/Users/leedow/www/Mercury/application/controllers/Welcome.php",
+		"/Users/leedow/www/Mercury/application/views/home/scorebuy.php",
+		"/Users/leedow/www/Mercury/static/js/numbers.js",
+		"/Users/leedow/www/Mercury/js/modules1.3.1/score.js",
+		"/Users/leedow/www/Mercury/application/views/user/exchange.php",
+		"/Users/leedow/www/Mercury/static/js/leeui.js",
+		"/Users/leedow/www/Mercury/static/Gruntfile.js",
+		"/Users/leedow/www/test/numbers.html",
+		"/Users/leedow/www/Mercury/static/js/check_widget.js",
+		"/Users/leedow/www/Mercury/application/views/common/source.php",
+		"/Users/leedow/www/Mercury/application/config/database.php",
+		"/Users/leedow/www/Mercury/application/views/home/seckill.php",
+		"/Users/leedow/www/Mercury/application/views/user/score.php",
+		"/Users/leedow/www/dove/views/partials/headersearch.hbs",
+		"/Users/leedow/www/dove/routes/position.js",
+		"/Users/leedow/www/Earth/js/bone.min.js",
+		"/Users/leedow/www/Earth/js/modules1.0.7/list.js",
+		"/Users/leedow/www/Grenada/trunck/sources/webresource/glw/front/js/project.js",
+		"/Users/leedow/www/bone-mobile/style/common/stepline.less",
 		"/Users/leedow/www/bone-mobile/docs/src/verify.ejs",
 		"/Users/leedow/www/bone-mobile/fonts2/iconfont.css",
 		"/Users/leedow/www/bone-mobile/style/addon/gelinwei/project.less",
@@ -403,9 +595,6 @@
 		"/Users/leedow/www/bone-mobile/docs-pc/src/commonheader.ejs",
 		"/Users/leedow/www/bone-mobile/docs-pc/src/commonsidebar.ejs",
 		"/Users/leedow/www/bone-mobile/docs-pc/src/index.ejs",
-		"/Users/leedow/www/bone-mobile/style/common/form.less",
-		"/Users/leedow/www/bone-mobile/style/common/input.less",
-		"/Users/leedow/www/bone-mobile/style/common/theme.less",
 		"/Users/leedow/www/bone-mobile/style/common/grid.less",
 		"/Users/leedow/www/bone-mobile/style/bone-greenway.less",
 		"/Users/leedow/www/bone-mobile/gulpfile.js",
@@ -441,73 +630,7 @@
 		"/D/sae/wwwroot/source/bone-mobile/style/common/theme.less",
 		"/D/sae/wwwroot/source/bone-mobile/build/bone-pc.css",
 		"/D/sae/wwwroot/source/bone-mobile/style/common/buttons.less",
-		"/D/sae/wwwroot/source/bone-mobile/style/bone.less",
-		"/D/sae/wwwroot/source/bone-mobile/style/pc/admin-grid.less",
-		"/D/sae/wwwroot/source/bone-mobile/style/common/grid.less",
-		"/D/sae/wwwroot/source/bone-mobile/style/common/input.less",
-		"/D/sae/wwwroot/source/bone-mobile/docs/src/index.ejs",
-		"/D/sae/wwwroot/source/bone-mobile/js/bone-config.js",
-		"/D/sae/wwwroot/source/bone-mobile/js/bone-dialog.js",
-		"/D/sae/bin/Apache2.2/conf/httpd.conf",
-		"/D/sae/wwwroot/source/bone-mobile/style/grid.less",
-		"/D/sae/wwwroot/source/bone-mobile/js/bone-verify.js",
-		"/D/sae/wwwroot/source/bone-mobile/build/main.js",
-		"/D/sae/wwwroot/source/bone-mobile/build/build/main.js",
-		"/D/sae/wwwroot/source/bone-mobile/docs/verify.html",
-		"/D/sae/wwwroot/source/bone-mobile/docs/src/tabs.ejs",
-		"/D/sae/wwwroot/source/bone-mobile/style/admin-grid.less",
-		"/D/sae/wwwroot/source/bone-mobile/style/container.less",
-		"/D/sae/wwwroot/source/bone-mobile/style/form.less",
-		"/D/sae/wwwroot/source/bone-mobile/style/theme.less",
-		"/D/sae/wwwroot/source/bone-mobile/build/bone.css",
-		"/D/sae/wwwroot/source/bone-mobile/style/input.less",
-		"/D/sae/wwwroot/source/bone-mobile/style/menu.less",
-		"/D/sae/wwwroot/source/bone-mobile/style/article.less",
-		"/D/sae/wwwroot/source/bone-mobile/style/sidebar.less",
-		"/D/sae/wwwroot/source/bone-mobile/docs-pc/src/commonheader.ejs",
-		"/D/sae/wwwroot/source/bone-mobile/docs-pc/src/commonmenu.ejs",
-		"/D/sae/wwwroot/source/bone-mobile/docs-pc/src/commonsidebar.ejs",
-		"/D/sae/wwwroot/source/bone-mobile/docs-pc/src/source.ejs",
-		"/D/sae/wwwroot/source/bone-mobile/docs/src/commonsidebar.ejs",
-		"/D/sae/wwwroot/source/bone-mobile/docs-pc/index.html",
-		"/D/sae/wwwroot/source/bone-mobile/style/response.less",
-		"/D/sae/wwwroot/source/bone-mobile/style/pc/container.less",
-		"/D/sae/wwwroot/source/bone-mobile/docs/src/full.ejs",
-		"/D/sae/wwwroot/source/bone-mobile/style/layouts.less",
-		"/D/sae/wwwroot/source/Moon01/moon02.sql",
-		"/D/sae/wwwroot/source/bone-mobile/style/tabs.less",
-		"/D/sae/wwwroot/source/bone-mobile/docs/src/layouts.ejs",
-		"/D/sae/wwwroot/source/bone-mobile/style/header.less",
-		"/D/sae/wwwroot/source/bone-mobile/style/margin.less",
-		"/D/sae/wwwroot/source/bone-mobile/docs/commonmenu.html",
-		"/D/sae/wwwroot/source/bone-mobile/style/buttons.less",
-		"/D/sae/wwwroot/source/bone-mobile/docs/src/fonticon.ejs",
-		"/D/sae/wwwroot/source/bone-mobile/docs/tabs.html",
-		"/D/sae/wwwroot/source/bone-mobile/docs/src/sidebar.ejs",
-		"/D/sae/wwwroot/source/bone-mobile/docs/src/tmp.ejs",
-		"/D/sae/wwwroot/source/bone-mobile/docs/src/list.ejs",
-		"/E/javaweb/maddog/WebContent/manager/system/importData3.jsp",
-		"/D/sae/wwwroot/source/bone-mobile/style/core.less",
-		"/D/sae/wwwroot/source/bone-mobile/docs/source.php",
-		"/D/sae/wwwroot/source/bone-mobile/build/bone-ce6dcbc6df.css",
-		"/E/javaweb/maddog/docs/index.html",
-		"/E/javaweb/maddog/WebContent/manager/views/lee/history.html",
-		"/E/javaweb/maddog/WebContent/manager/views/lee/default.html",
-		"/E/javaweb/maddog/WebContent/manager/views/lee/check.html",
-		"/E/javaweb/maddog/WebContent/manager/system/menu.jsp",
-		"/E/javaweb/maddog/WebContent/manager/system/menu2.jsp",
-		"/E/javaweb/maddog/WebContent/manager/system/edit.jsp",
-		"/E/javaweb/maddog/WebContent/manager/js/controllers/lee/view.js",
-		"/E/javaweb/maddog/WebContent/manager/js/controllers/lee/photos2.js",
-		"/E/javaweb/maddog/WebContent/manager/js/controllers/lee/photos.js",
-		"/E/javaweb/maddog/WebContent/manager/js/controllers/lee/history.js",
-		"/E/javaweb/maddog/WebContent/manager/js/controllers/lee/help.js",
-		"/E/javaweb/maddog/WebContent/manager/js/controllers/lee/gmap.js",
-		"/D/sae/wwwroot/source/bone-mobile/docs/commonsidebar.php",
-		"/D/sae/wwwroot/source/bone-mobile/docs/form.php",
-		"/D/sae/wwwroot/source/bone-mobile/style/hack.less",
-		"/E/Nodejs/ghost/content/themes/alife/post.hbs",
-		"/D/sae/wwwroot/source/bone-mobile/docs/src/form.ejs"
+		"/D/sae/wwwroot/source/bone-mobile/style/bone.less"
 	],
 	"find":
 	{
@@ -525,6 +648,42 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"user",
+			"\\'",
+			"country",
+			"//$",
+			"INSERT INTO .*;",
+			"country",
+			"\\'",
+			"COMMENT",
+			"COMMENT='.*'",
+			"COMMENT '.*'",
+			"COMMENT AS `.*`",
+			"COMMENT",
+			"COMMENT='.*'",
+			"COMMENT '.*'",
+			"COMMENT AS '.*'",
+			"COMMENT AS `.*`",
+			" ON UPDATE CURRENT_TIMESTAMP",
+			"COMMENT",
+			" COMMENT='.*'",
+			" COMMENT '.*'",
+			" COMMENT `.*`",
+			" COMMENT AS `.*`",
+			"COMMENT",
+			"COMMENT '.*?'",
+			"COMMENT'.*?'",
+			"COMMENT AS '.*?'",
+			"COMMENT '.*?'",
+			"COMMENT `.*?`",
+			"COMMENT AS `.*?`",
+			"COMMENT AS '.*?'",
+			"COMMENT AS \\'.*\\'",
+			"COMMENT AS '.*'",
+			"COMMENT AS '*'",
+			"init",
+			"speed",
+			"verify",
 			"dialog",
 			",\n",
 			"FollowSymLinks",
@@ -616,39 +775,7 @@
 			"angular",
 			"BASE_URL",
 			"HOSTNAME_AND_PATH_TO_JSAPI",
-			"main",
-			"simple_html_dom",
-			"simple_html_dom_node",
-			"load(",
-			"console",
-			"i",
-			"alert",
-			"map",
-			"f9f9f9",
-			"localhost/arcgis/arcgis_js_api/library/3.9/3.9/",
-			"http://localhost/arcgis/arcgis_js_api/library/3.9/3.9/",
-			"[HOSTNAME_AND_PATH_TO_JSAPI]",
-			"events",
-			"<a",
-			"p",
-			"events",
-			"projects",
-			"projects/",
-			"projects",
-			"\"\n",
-			"rgba",
-			");",
-			"important",
-			";}",
-			"cate-title",
-			"pro-box",
-			"4px",
-			"leedow",
-			"<a",
-			"tag",
-			"mySettings",
-			"GLOBAL.add_type",
-			"GLOBAL.add_flag"
+			"main"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -656,6 +783,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"",
+			"car_speed",
 			".html",
 			"$order",
 			"</span>",
@@ -677,24 +806,80 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "style/addon/gelinwei/list.less",
+					"file": "style/common/text.less",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2405,
+						"buffer_size": 103,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								157,
-								157
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "style/common/theme.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4077,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4076,
+								4076
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "style/common/tip.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 837,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								301,
+								301
 							]
 						],
 						"settings":
@@ -706,14 +891,153 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "docs/src/form.ejs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4370,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								993,
+								952
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "style/common/form.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1149,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								798,
+								798
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 480.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 0,
 					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "gulpfile.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2596,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								821,
+								821
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "style/common/input.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3615,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1301,
+								1301
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 1.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "style/bone.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 723,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								723,
+								723
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
 				}
-			]
-		},
-		{
-			"sheets":
-			[
 			]
 		}
 	],
@@ -734,18 +1058,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.61258443884,
 			1.0
 		],
 		"rows":
@@ -772,6 +1089,18 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"bone-",
+				"js/bone-carousel.js"
+			],
+			[
+				"wel",
+				"application/controllers/Welcome.php"
+			],
+			[
+				"clean",
+				"roads/js/clean.js"
+			],
 			[
 				"theme",
 				"style/common/theme.less"
@@ -1157,12 +1486,16 @@
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 500.0,
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"~/www/Mercury/mercury.sublime-project"
+			]
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"select_symbol":
 	{
@@ -1181,7 +1514,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 256.0,
+	"side_bar_width": 244.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

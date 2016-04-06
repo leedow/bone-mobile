@@ -3,8 +3,7 @@ button,input{
 }
 
 .@{prefix}{
-	&textarea, &input, &input-lg, &select, &select-lg{
-		
+	&textarea, &input, &input-lg,&input-sm, &select, &select-lg, &select-sm{
 		background: #fff;
 		border: 1px @line-color solid;
 		border-radius: @radius;
@@ -21,15 +20,13 @@ button,input{
 		&:hover{
 			border: 1px @color-primary solid;
 		}
-
-
 	}
 
 	&textarea{
 		padding: @input-padding;
 	}
 
-	&input, &input-lg{
+	&input, &input-lg, &input-sm{
 		-webkit-appearance: none !important;
 	}
 
@@ -42,6 +39,12 @@ button,input{
 		padding: @input-padding-lg;
 		height: @input-height-lg;
 		font-size: @font-size-md;
+	}
+
+	&input-sm, &select-sm{
+		padding: @input-padding-sm;
+		height: @input-height-sm;
+		
 	}
 
 	select{
@@ -85,6 +88,32 @@ button,input{
 			padding: 0.5*@padding-vertical 0 0 0;
 			text-align: left;
 			background: #fff;
+		}
+		&>.error{
+			position: absolute;
+			left:0;
+			top:0;
+		}
+	
+		 
+
+		 
+	}
+
+	&input-notice{
+		.@{prefix}tip{
+			background: @color-highlight;
+		}
+		
+		.@{prefix}tip-top{
+			position: absolute;
+			z-index:999;
+			right: @padding-vertical;
+			top:-(@tip-height - 8);
+
+			&:before{
+				border-top-color: @color-highlight;
+			}
 		}
 	}
 

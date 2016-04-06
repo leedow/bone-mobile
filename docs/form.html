@@ -75,6 +75,8 @@
 			<li class="bo-tab-item"><a href="tabs.html">菜单选项</a><div class="bo-tab-dock"><p class="bo-tab-dock-text">Tabs</p></div></li>
 			<li class="bo-tab-item"><a href="buttons.html">按 钮</a><div class="bo-tab-dock"><p class="bo-tab-dock-text">Buttons</p></div></li>
 			<li class="bo-tab-item"><a href="form.html">表 单</a><div class="bo-tab-dock"><p class="bo-tab-dock-text">Form</p></div></li> 
+			<li class="bo-tab-item"><a href="counter.html">数量选择</a><div class="bo-tab-dock"><p class="bo-tab-dock-text"></p></div></li> 
+			<li class="bo-tab-item"><a href="menu.html">侧边菜单</a><div class="bo-tab-dock"><p class="bo-tab-dock-text"></p></div></li> 
 		</ul>
 	</div>
 </aside>
@@ -90,14 +92,14 @@
 
 	<div class="bo-box bo-m1000">
 		<div class="bo-form-blank">
-			<div class="bo-form-item">
+			<div class="bo-form-item-lg">
  				<label class="bo-label">必填项</label>
- 				<div class="bo-input-wrong-lg">
+ 				<div class="bo-input-wrong">
  					<input class="bo-input-lg bo-form-control" type="text" placeholder="Enter something">
-
+					<div class="bo-tip bo-tip-top">错误信息</div>
  				</div>
  			</div>
-			<div class="bo-form-item">
+			<div class="bo-form-item-lg">
  				<label class="bo-label">必填项</label>
  				<div>
  					<input class="bo-input-lg bo-form-control" type="text" placeholder="Enter something">
@@ -134,6 +136,13 @@
  				<div class="bo-input-wrong">
  					<input class="bo-input bo-form-control" type="text" placeholder="请输入内容">
  					<p>信息错误，请重新填写。</p>
+ 				</div>
+ 			</div>
+ 			<div class="bo-form-item">
+ 				<label>出错项</label>
+ 				<div class="bo-input-wrong">
+ 					<input class="bo-input bo-form-control" type="text" placeholder="请输入内容">
+ 					<div class="bo-tip bo-tip-top">Wrong message</div>
  				</div>
  			</div>
  			<div class="bo-form-item">

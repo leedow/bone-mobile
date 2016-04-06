@@ -58,6 +58,19 @@
 		height: 100%;
 	}
 
+	&layout-sidemenu{
+		width: @sidemenu-width;
+		height: 100%;
+		position: fixed;
+		left:0;
+		top:@header-height;
+		height: 100%;
+	}
+
+	&side-p{
+		padding-left: @sidemenu-width;
+	}
+
 	&unfixed{
 		.@{prefix}layout-header{
 			position: relative;

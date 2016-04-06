@@ -66,8 +66,7 @@ var Verify = {
 			} else {
 				_this.set($(this), '');
 			}
-				
-			 
+							 
 		});
 	},
 	check: function(obj){

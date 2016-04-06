@@ -1,0 +1,60 @@
+.@{prefix}{
+	&counter{
+		display: inline-block;
+		float:left;
+		.counter-btn{
+			border: 1px @line-color solid;
+			background: #fff;
+		 	 
+			float:left;
+		}
+
+		.counter-input{
+			float: left;
+			width: 40px;
+			text-align: center;
+			border:0 !important;
+			padding-left:0;
+			padding-right: 0;
+		}
+
+		.plus{
+			 
+		}
+
+		.sub{
+			 
+		}
+	}
+
+	&counter2{
+		float:left;
+		.counter-btn,.counter-btn-disable{
+			height: @counter2-height;
+			width: @counter2-height;
+			border: none;
+			border-radius: 0.5*@counter2-height;
+			background: @color-primary;
+			color:#fff;
+			line-height: @counter2-height;
+		}
+
+		.counter-btn-disable{
+			 
+			background: @color-secondary;
+			color:@font-color-light;
+			line-height: @counter2-height;
+		}
+
+		.counter-input{
+			height: @counter2-height;
+			text-align:center;
+			border: none;
+			width: 40px;
+
+			background: none;
+		}
+	}
+
+
+}

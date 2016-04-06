@@ -20,7 +20,8 @@ gulp.task('css', function(){
 			//.pipe(rev())
 			.pipe(autoprefixer())
 			//.pipe(minifyCSS())
-			.pipe(gulp.dest('./build'));
+			.pipe(gulp.dest('./build'))
+			.pipe(gulp.dest('../Order/css'));
 
 		gulp.src('./style/bone-pc.less')
 			.pipe(less())
@@ -34,15 +35,7 @@ gulp.task('css', function(){
 			.pipe(gulp.dest('./build'))
 			//.pipe(gulp.dest('D:/sae/wwwroot/source/smart/trunck/sources/webresource/glw/admin/style'));//for格林卫 
 	
-		gulp.src('./style/bone-greenway.less')
-			.pipe(less())
-			.on('error', function(err) {
-				gutil.log('Less Error!', err.message);
-				this.end();
-			})
-			.pipe(autoprefixer())
-			//.pipe(gulp.dest('D:/sae/wwwroot/source/smart/trunck/sources/webresource/glw/front/style'))//;//for格林卫
-			
+		 
 	});
 
 });

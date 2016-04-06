@@ -7,6 +7,9 @@ import {Icon} from './core/icons'
 import {Tab} from './tabs/tab'
 import {TabItem} from './tabs/tab-item'
 import {Box} from './layouts/box'
+import {Counter}  from  './form/counter'
+import {List} from './list/list'
+import {ListItem} from './list/list-item'
 var Router = require('react-router').Router
 var Route = require('react-router').Route
 var Link = require('react-router').Link
@@ -92,8 +95,34 @@ var PageHome = React.createClass({
 						<TabItem href="#tabs" name="Menu one" icon="true">
 							<Icon type="settings"/>
 						</TabItem>
-						 
+						 <Counter />
 					</Tab>
+
+				</Box>
+				<Box>
+					<List style={{height:'100px',overflow:'auto'}}>
+						<ListItem>
+							111111111
+						</ListItem>
+						<ListItem>
+							111111111
+						</ListItem>
+						<ListItem>
+							111111111
+						</ListItem>
+						<ListItem>
+							111111111
+						</ListItem>
+						<ListItem>
+							111111111
+						</ListItem>
+						<ListItem>
+							111111111
+						</ListItem>
+						<ListItem>
+							111111111
+						</ListItem>
+					</List>
 				</Box>
 			</div>
 			</div>
@@ -132,9 +161,9 @@ var App = React.createClass({
 	},
 	render: function(){
 		return (
-			
+			<div>
 			{this.props.children}
-			
+			</div>
 		)
 	}
 });

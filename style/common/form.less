@@ -3,6 +3,7 @@
 		label{
 			font-weight: bold;
 		}
+
 	}
 
 	&label-required{
@@ -22,14 +23,35 @@
 	}
 
 	&form-blank {
-		.@{prefix}form-item{
+
+		.form-notice{
+			padding:2px @padding-vertical;
+			color:@color-highlight;
+		}
+
+		
+
+		.@{prefix}form-item,.@{prefix}form-item-lg{
 			padding: 0;
 			border-bottom:1px @line-color solid;
 			position: relative;
 			
-			input{
+			input,select{
 				border: 0 !important;
+				padding: @input-padding-lg;
 				padding-left: @form-blank-text-width;
+				height: @input-height-lg;
+				font-size: @font-size-md;
+				box-shadow: none !important;
+				width:100%;
+			}
+
+			.input-no-label{
+				padding-left: @padding-vertical;
+			}
+
+			i{
+
 			}
 
 			p{
@@ -49,6 +71,14 @@
 				padding-right: @padding-vertical;
 			}
 		}
+
+		.@{prefix}form-item-noline {
+			border-bottom: 0px !important;
+		}
+
+		 
 	}
+
+
 
 }

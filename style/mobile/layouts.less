@@ -12,7 +12,7 @@
 	}
 
 	&layout-main, &layout-header, &layout-menu{
-		background: #fff;
+		//background: #fff;
 		width: @layout-width-lg;
 		margin-left: @sidebar-width-lg;
 		z-index:999;
@@ -30,6 +30,13 @@
 		box-shadow: @layout-shadow;
 		padding: @header-height 0 @menu-height-icon 0;
 	}
+
+	//header里包括横向fix的tabs
+	&layout-main-addon{
+		padding: @header-height+@tabs-height 0 @menu-height-icon 0;
+	}
+
+
 
 	&layout-header{
 		//width: @width-sm;

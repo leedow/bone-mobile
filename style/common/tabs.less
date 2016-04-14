@@ -118,6 +118,7 @@
 		height: 100%;
 		background: @color-secondary;
 		border-right:1px @line-color solid;
+		line-height: 1.2;
 		&:after{
 			clear: both;
 			height: 0;
@@ -126,8 +127,9 @@
 		}
 		.@{prefix}tab-item{
 			font-size: @font-size-md;
-			height: @tabs-side-height;
-			line-height:@tabs-side-height;
+			//height: @tabs-side-height;
+			//line-height:@tabs-side-height;
+			padding: @tabs-side-padding;
 			border-bottom:1px @line-color solid;
 			cursor: pointer;
 		}
@@ -137,6 +139,22 @@
 			border-left:2px @color-primary solid;
 			color: @color-primary !important;
 			background: #fff;
+		}
+
+		.tab-item-tag{
+			padding:@tabs-side-padding-tag;
+		}
+
+		p{
+			color:#999;
+			font-size: @font-size-sm;
+			padding:0;
+			margin:0;
+
+		}
+
+		.tab-item-disable{
+			color:#999;
 		}
 	}
 

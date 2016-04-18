@@ -986,6 +986,12 @@ input {
 .bo-p1101 {
   padding: 14px 14px 0 14px;
 }
+.bo-p1001 {
+  padding: 14px 0 0 14px;
+}
+.bo-p0110 {
+  padding: 0 14px 14px 0;
+}
 .bo-p2000 {
   padding-top: 28px;
 }

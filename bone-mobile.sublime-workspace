@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"font",
+				"font-size"
+			],
+			[
 				"tabs-side-",
 				"tabs-side-padding"
 			],
@@ -90,10 +94,6 @@
 			[
 				"margin",
 				"margin-top"
-			],
-			[
-				"font",
-				"font-size"
 			],
 			[
 				"mar",
@@ -396,10 +396,29 @@
 			}
 		},
 		{
+			"contents": "//config\n@prefix: 					bo-;\n\n//font\n@font-family: 				\"Helvetica Neue\", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;\n@font-family-icon:			iconfont;\n@font-size: 				14px;\n@font-size-sm: 				12px;\n@font-size-md:				16px;\n@font-size-lg:				20px;\n@font-color: 				#565a5c;\n@font-color-light:			#999;\n@line-height: 				1.5;\n@radius:					2px;\n\n//padding\n@padding-vertical:			@font-size;\n@padding-horizon:			@font-size;\n@margin-vertical:			@font-size;\n@margin-horizon:			@font-size;\n\n//color\n@color-primary: 			#6699FF;\n@color-secondary:			#f2f2f2;\n@color-highlight: 			#FF6633;\n@color-comfort:				#66CC33;\n\n//line\n@line-color: 				#e0e0e0;\n\n//link color\n@link-color:				@font-color;\n@link-color-active:			@color-primary;\n@link-color-hover:			@color-primary;\n\n//layouts&box\n@layout-shadow:				0px 1px 1px #cfcfcf;\n@layout-main-background:	#f2f2f2;\n@box-title-color:			#999;\n\n//response\n@width-lg: 					1200px;\n@width-md: 					992px;\n@width-sm: 					768px;\n@background-body-ti:		#fff;\n@background-body-sm:		#fff;\n@background-body-md:		#fff;\n@background-body-lg:		#fff;\n@sidebar-width-ti:			200px;\n@sidebar-width-sm:			20%;\n@sidebar-width-md:			20%;\n@sidebar-width-lg:			20%;\n@layout-width-ti:			100%;\n@layout-width-sm:			80%;\n@layout-width-md:			80%;\n@layout-width-lg:			80%;\n\n//global header for mobile\n@header-height:				44px;\n@header-background: 		@color-primary;\n@header-color:				#fff;\n@header-color-hover:		darken(@color-primary, 10%);\n\n@header-background-light:	#fff;\n@header-color-light:		#444;\n@header-color-hover-light:	darken(@color-primary, 10%);\n\n\n//header for pc & response design\n@header-pc-height:			50px;\n@header-pc-background:		@color-primary;\n@header-pc-color:			#fff;\n@header-pc-color-hover:		darken(@color-primary, 10%);\n\n@header-pc-height-light:	50px;\n@header-pc-background-light:#fff;\n@header-pc-color-light:		@font-color;\n@header-pc-color-hover-light:@font-color;\n\n//global menu\n@menu-border-top:			1px @line-color solid;\n@menu-height-icon:			40px;\n@menu-background-icon:		#fff;\n@menu-color-icon:			#999;\n@menu-color-hover-icon:		@color-primary;\n@menu-fontsize-icon:		22px;\n\n//global sidebar\n@sidebar-width: 			200px;\n@sidebar-background:		#34495e;//@color-primary;\n@sidebar-tab-color:			lighten(@sidebar-background, 50%);\n@sidebar-tab-color-flag:	lighten(@sidebar-background, 38%);\n			\n//tabs\n@tabs-height:				52px;\n@tabs-horizon-height: 		44px;\n//@tabs-side-height: 			38px;\n@tabs-side-padding-tag: 	6px 4px;\n@tabs-side-padding:  		10px 4px;\n\n\n//buttons\n@btn-radius:				@radius;\n\n@btn-padding-sm:			5px 10px;\n@btn-padding:				8px 12px;\n@btn-padding-lg:			10px 16px;\n\n@btn-fontsize-sm:			@font-size;\n@btn-fontsize:				@font-size;\n@btn-fontsize-lg:			@font-size-md;\n\n@btn-background:			@color-secondary;\n@btn-background-primary:	@color-primary;\n@btn-background-warm:		@color-highlight;\n\n\n@btn-color:					@font-color;\n@btn-color-primary:			#fff;\n@btn-color-warm:			#fff;\n\n@btn-color-light:			#fff;//深色背景按钮线条色\n\n//input\n@input-padding:				9px 10px;//@btn-padding;\n@input-padding-lg:			11px 16px;//@btn-padding-lg;\n@input-padding-sm: 			6px 10px;\n@input-shadow-color:		lighten(@color-primary, 15%);\n@input-shadow-color-wrong:	lighten(@color-highlight, 15%);\n@input-shadow-color-pass:	lighten(@color-comfort, 15%);\n\n@input-height:				39px;\n@input-height-lg:			46px;\n@input-height-sm: 			33px;\n\n//table\n@table-height:				@input-height-lg;\n\n\n//form\n@form-item-padding: 		0.5*@padding-vertical;\n@form-blank-padding: 		@font-size;\n@form-blank-text-width:		80px;\n\n\n//admin grid\n@ad-header-height:			50px;\n@ad-sidebar-width:			240px;\n@ad-sidebar-background:		#34495E;\n\n\n//dialog\n@dialog-width:				400px;\n@dialog-background:			#fff;\n@dialog-header-height:		40px;\n@dialog-dock-height:		50px;\n\n\n//stepline\n@stepline-height:			4px;//line width\n@stepline-dock-width:		80px;\n@stepline-color-light:		#f2f2f2;\n@stepline-color-dark:		@color-comfort;\n@stepline-circle-size:		16px;\n\n//article title-midline\n@title-midline-height: 		60px;\n@title-text-width:			100px;\n@title-line-width:			30%;\n\n//notice widget\n@notice-widget-width:		240px;\n@notice-widget-height: 		50px;\n\n//hover tip\n@tip-padding: 				1px 4px;\n@tip-background: 			#444;\n@tip-color: 				#fff;\n@tip-height: 				20px;\n@tip-offset: 				15px;\n\n//notice\n@notice-warm-background: 	#fcf8e3;\n@notice-warm-color: 		@color-highlight;\n\n//counter\n@counter2-height: 			28px;\n\n//check\n@check-height: 				28px;\n\n//sidemenu\n@sidemenu-width: 			80px;\n",
 			"file": "style/common/theme.less",
+			"file_size": 4442,
+			"file_write_time": 131051658890000000,
 			"settings":
 			{
-				"buffer_size": 4390,
+				"buffer_size": 4427,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "style/common/comment.less",
+			"settings":
+			{
+				"buffer_size": 303,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "docs/src/comments.ejs",
+			"settings":
+			{
+				"buffer_size": 1734,
 				"line_ending": "Unix"
 			}
 		},
@@ -447,15 +466,7 @@
 			"file": "docs/sidebar.html",
 			"settings":
 			{
-				"buffer_size": 5248,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "docs/src/commonsidebar.ejs",
-			"settings":
-			{
-				"buffer_size": 1954,
+				"buffer_size": 5377,
 				"line_ending": "Unix"
 			}
 		},
@@ -494,7 +505,7 @@
 			"file": "style/bone.less",
 			"settings":
 			{
-				"buffer_size": 929,
+				"buffer_size": 1190,
 				"line_ending": "Unix"
 			}
 		},
@@ -534,7 +545,7 @@
 			"file": "style/mobile/layouts.less",
 			"settings":
 			{
-				"buffer_size": 1166,
+				"buffer_size": 1458,
 				"line_ending": "Unix"
 			}
 		},
@@ -542,7 +553,7 @@
 			"file": "style/addon/jishibao/product.less",
 			"settings":
 			{
-				"buffer_size": 372,
+				"buffer_size": 376,
 				"line_ending": "Unix"
 			}
 		},
@@ -551,14 +562,6 @@
 			"settings":
 			{
 				"buffer_size": 3083,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "style/mobile/menu.less",
-			"settings":
-			{
-				"buffer_size": 1283,
 				"line_ending": "Unix"
 			}
 		},
@@ -641,15 +644,23 @@
 	"expanded_folders":
 	[
 		"/Users/leedow/www/bone-mobile",
+		"/Users/leedow/www/bone-mobile/docs",
 		"/Users/leedow/www/bone-mobile/docs/src",
+		"/Users/leedow/www/bone-mobile/node_modules",
 		"/Users/leedow/www/bone-mobile/style",
 		"/Users/leedow/www/bone-mobile/style/addon",
 		"/Users/leedow/www/bone-mobile/style/addon/jishibao",
 		"/Users/leedow/www/bone-mobile/style/common",
-		"/Users/leedow/www/bone-mobile/style/mobile"
+		"/Users/leedow/www/bone-mobile/style/mobile",
+		"/Users/leedow/www/bone-mobile/style/pc"
 	],
 	"file_history":
 	[
+		"/Users/leedow/www/bone-mobile/docs/src/commonsidebar.ejs",
+		"/Users/leedow/www/bone-mobile/docs/src/comments.ejs",
+		"/Users/leedow/www/bone-mobile/style/addon/jishibao/nutri.less",
+		"/Users/leedow/www/bone-mobile/style/common/grid.less",
+		"/Users/leedow/www/bone-mobile/style/common/padding.less",
 		"/Users/leedow/www/bone-mobile/docs/src/counter.ejs",
 		"/Users/leedow/www/bone-mobile/style/common/theme.less",
 		"/Users/leedow/www/bone-mobile/style/common/form.less",
@@ -743,7 +754,6 @@
 		"/Users/leedow/www/bone-mobile/docs-pc/src/commonheader.ejs",
 		"/Users/leedow/www/bone-mobile/docs-pc/src/commonsidebar.ejs",
 		"/Users/leedow/www/bone-mobile/docs-pc/src/index.ejs",
-		"/Users/leedow/www/bone-mobile/style/common/grid.less",
 		"/Users/leedow/www/bone-mobile/style/bone-greenway.less",
 		"/Users/leedow/www/bone-mobile/gulpfile.js",
 		"/Users/leedow/www/bone-mobile/build/bone-global.js",
@@ -773,11 +783,7 @@
 		"/D/sae/wwwroot/source/bone-mobile/style/addon/gelinwei/theme.less",
 		"/D/sae/wwwroot/source/bone-mobile/style/addon/gelinwei/list.less",
 		"/E/javaweb/smart/trunck/sources/webresource/front/index.html",
-		"/D/sae/wwwroot/source/bone-mobile/style/addon/gelinwei.less",
-		"/D/sae/wwwroot/source/bone-mobile/docs-pc/src/index.ejs",
-		"/D/sae/wwwroot/source/bone-mobile/style/common/theme.less",
-		"/D/sae/wwwroot/source/bone-mobile/build/bone-pc.css",
-		"/D/sae/wwwroot/source/bone-mobile/style/common/buttons.less"
+		"/D/sae/wwwroot/source/bone-mobile/style/addon/gelinwei.less"
 	],
 	"find":
 	{
@@ -953,7 +959,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -990,15 +996,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4390,
+						"buffer_size": 4427,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2483,
-								2483
+								2336,
+								2336
 							]
 						],
 						"settings":
@@ -1006,14 +1012,72 @@
 							"syntax": "Packages/LESS/LESS.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1166.0,
+						"translation.y": 786.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "style/common/comment.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 303,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								301,
+								301
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
+					"file": "docs/src/comments.ejs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1734,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1358,
+								1358
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 444.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
 					"file": "style/common/tip.less",
 					"semi_transient": false,
 					"settings":
@@ -1042,7 +1106,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 5,
 					"file": "docs/src/form.ejs",
 					"semi_transient": false,
 					"settings":
@@ -1071,7 +1135,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 6,
 					"file": "style/common/form.less",
 					"semi_transient": false,
 					"settings":
@@ -1096,11 +1160,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 7,
 					"file": "gulpfile.js",
 					"semi_transient": false,
 					"settings":
@@ -1129,7 +1193,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 8,
 					"file": "style/common/counter.less",
 					"semi_transient": false,
 					"settings":
@@ -1147,75 +1211,47 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 173.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "docs/sidebar.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5248,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3399,
-								3399
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 737.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 18,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "docs/src/commonsidebar.ejs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1954,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1846,
-								1846
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 39.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
 					"buffer": 9,
+					"file": "docs/sidebar.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5377,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1060,
+								1060
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
 					"semi_transient": false,
 					"settings":
 					{
@@ -1239,11 +1275,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 11,
 					"file": "docs/src/full.ejs",
 					"semi_transient": false,
 					"settings":
@@ -1268,11 +1304,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 12,
 					"file": "docs/src/menu.ejs",
 					"semi_transient": false,
 					"settings":
@@ -1297,11 +1333,11 @@
 						"translation.y": 65.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 13,
 					"file": "style/common/input.less",
 					"semi_transient": false,
 					"settings":
@@ -1326,24 +1362,24 @@
 						"translation.y": 245.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
-					"buffer": 13,
+					"buffer": 14,
 					"file": "style/bone.less",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 929,
+						"buffer_size": 1190,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								918,
-								918
+								619,
+								619
 							]
 						],
 						"settings":
@@ -1354,11 +1390,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 14,
+					"buffer": 15,
 					"file": "style/common/sidebar.less",
 					"semi_transient": false,
 					"settings":
@@ -1379,15 +1415,15 @@
 							"syntax": "Packages/LESS/LESS.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": -0.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
-					"buffer": 15,
+					"buffer": 16,
 					"file": "style/common/buttons.less",
 					"semi_transient": false,
 					"settings":
@@ -1412,11 +1448,11 @@
 						"translation.y": 1493.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 16,
+					"buffer": 17,
 					"file": "style/common/core.less",
 					"semi_transient": false,
 					"settings":
@@ -1441,11 +1477,11 @@
 						"translation.y": 260.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 17,
+					"buffer": 18,
 					"file": "style/common/helper.less",
 					"semi_transient": false,
 					"settings":
@@ -1463,30 +1499,31 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 18,
+					"buffer": 19,
 					"file": "style/mobile/layouts.less",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1166,
+						"buffer_size": 1458,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1024,
-								1024
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1498,39 +1535,40 @@
 						"translation.y": 563.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 19,
+					"buffer": 20,
 					"file": "style/addon/jishibao/product.less",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 372,
+						"buffer_size": 376,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								155,
-								155
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 20,
+					"buffer": 21,
 					"file": "style/common/tabs.less",
 					"semi_transient": false,
 					"settings":
@@ -1555,36 +1593,7 @@
 						"translation.y": 1710.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 21,
-					"file": "style/mobile/menu.less",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 1283,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LESS/LESS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": -0.0,
-						"translation.y": 161.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -1606,13 +1615,14 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -1695,11 +1705,11 @@
 		"selected_items":
 		[
 			[
-				"the",
+				"theme",
 				"style/common/theme.less"
 			],
 			[
-				"theme",
+				"the",
 				"style/common/theme.less"
 			],
 			[
@@ -2119,7 +2129,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 244.0,
+	"side_bar_width": 218.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

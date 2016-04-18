@@ -1,0 +1,42 @@
+.@{prefix}{
+	&stars, &stars-sm{
+		float: left;
+		height: 25px;
+		line-height: 25px;
+		.star, .star-check{
+			float:left;
+			border:0;
+			background: 0;
+			font-size: @font-size-lg;
+			margin-right:10px;
+			color:#ddd;
+			 
+			padding:0;
+				 
+			&:hover{
+				color: @color-highlight;
+			}
+		}
+		 
+
+		.star-check{
+			color: @color-highlight;
+		}
+
+		.score{
+			line-height: 25px;
+			float: left;
+			font-size: @font-size-md;
+
+		}
+	}
+
+	&stars-sm{
+		 
+		.star, .star-check{
+		 	margin-right: 5px;
+			font-size: @font-size;
+		 			 
+		}
+	}
+}

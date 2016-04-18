@@ -1,7 +1,8 @@
 .product{
 	position: relative;
-	padding-left: 	70px;
-	height:80px;
+	padding-left:70px;
+	min-height:75px;
+	cursor: pointer;
 	.pic{
 		position: absolute;
 		width: 80px;
@@ -14,10 +15,13 @@
 	}
 	.intro{
 		color: #999;
+		padding-top:4px;
+		padding-bottom:3px;
 	}
 }
 
 .product-dock{
+	min-height: 31px;
 	.price{
 		float:left;
 		color: @color-highlight;
@@ -30,4 +34,6 @@
 	.mount{
 		float:right;
 	}
-}
+}	
+
+ 

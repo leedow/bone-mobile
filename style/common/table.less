@@ -7,6 +7,9 @@
 			text-align: left;
 			padding: 0px @padding-vertical;
 			line-height: @table-height;
+			//text-align: center;
+			font-weight: normal;
+			font-size: @font-size-md;
 		}
 
 		thead{
@@ -21,10 +24,28 @@
 
 	&table-border{
 		th{
-			border-bottom: 1px @line-color solid;
+			border-bottom: 1px @line-color-light solid;
 		}
 		td{
-			border-bottom: 1px @line-color solid;
+			border-bottom: 1px @line-color-light solid;
 		}
 	}
+
+	&table-edit-off{
+		.@{prefix}input-table{
+			border:0 !important;
+			padding-left:0 !important;
+			&:focus{
+				outline: none;
+				box-shadow:none;
+				//border: 1px @color-primary solid;
+			}
+
+			&:hover{
+				//border: 1px @color-primary solid;
+			}
+		}
+	}
+
+	
 }

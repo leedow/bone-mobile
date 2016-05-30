@@ -1,5 +1,5 @@
 .@{prefix}{
-	&counter{
+	&counter, &counter-sm{
 		display: inline-block;
 		float:left;
 		.counter-btn{
@@ -24,6 +24,24 @@
 
 		.sub{
 			 
+		}
+	}
+
+	&counter-sm{
+		.counter-btn{
+			border: 1px @line-color solid;
+			background: #fff;
+		 	 
+			float:left;
+		}
+
+		.counter-input{
+			float: left;
+			width: 40px;
+			text-align: center;
+			border:0 !important;
+			padding-left:0;
+			padding-right: 0;
 		}
 	}
 

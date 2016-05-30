@@ -82,7 +82,7 @@
 		color: @btn-color-primary;
 		background: @btn-background-primary;
 		border:1px @btn-background-primary solid;
-		border-bottom:3px darken(@btn-background-primary,15%) solid;
+		border-bottom:3px darken(@btn-background-primary,10%) solid;
 		&:hover{
 			background: darken(@btn-background-primary, 11%);
 			color: @btn-color-primary;
@@ -113,16 +113,20 @@
 
 	&btn-none{
 		//color: @btn-color-light;
- 		background: none;
- 		color: @color-primary;;
+		background: none;
+ 		color: @font-color-light;
 		//border:1px @btn-color-light solid;
 		//color: @btn-color-light;
 		&:hover{
 			//background: @btn-color-light;
-			color: @font-color;
+			color: @color-primary;
 		}
 	}
-
+	
+	&btn-tiny{
+		padding: @btn-padding-tiny;
+		//font-size: @btn-fontsize-sm;
+	}
 	&btn-sm{
 		padding: @btn-padding-sm;
 		//font-size: @btn-fontsize-sm;

@@ -12,12 +12,71 @@
 			font-size: 1.1*@font-size-lg;
 			background: @color-primary;
 			color:#fff;
+			display: block;
 		}
 
 		.tabmenu-title{
 			text-align: center;
 			padding:3px 0;
 			font-size: @font-size-sm;
+			display: block;
+		}
+	}
+
+	&tabmenu-box{
+		display: flex;
+		 justify-content:space-around;
+	}
+
+	&tabmenu2{
+		cursor: pointer;
+		text-align: center;
+		position: relative;
+		.tabmenu-pic{
+			margin: 0 auto;
+			text-align: center;
+			width:2em;
+			height:1.2em;
+			line-height: 1.2em;
+			font-size: 1.3*@font-size-lg;
+			display: block;
+		}
+
+		.tabmenu-title{
+			text-align: center;
+			padding:3px 0;
+			font-size: @font-size;
+			display: block;
+		}
+
+		.tip{
+			position: absolute;
+			top:0px;
+			left: 70%;
+			background: @color-highlight;
+			color:#fff;
+			padding:2px 4px;
+			line-height: 1em;
+			border-radius: 8px;
+			font-size: 0.6rem;
+		}
+	}
+
+	&tabmenu-sm{
+		.tabmenu-pic{
+			width:2em;
+			height:1.2em;
+			line-height: 1.2em;
+			font-size: 24px;
+			display: block;
+		}
+
+		.tabmenu-title{	
+			padding:1px 0;
+			font-size: @font-size-sm;
+			display: block;
+			line-height: 1em;
+
 		}
 	}
 }

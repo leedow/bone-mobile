@@ -4,12 +4,24 @@ var CONFIG = require('./bone-config');
 var Format = {
 	type: {
 		required: {
-			reg:/.{1,}/,
+			reg: /.{1,}/,
 			msg: '此项不能为空'
 		},
 		email: {
 			reg: /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
 			msg: '邮箱格式错误'
+		},
+		phone: {
+			reg: /^\d{11}$/,
+			msg: '手机格式错误'
+		},
+		float: {
+			reg: /^\d+(.\d+)?$/,
+			msg: '必须为整数或小数'
+		},
+		int: {
+			reg: /^\d+$/,
+			msg: '必须为整数'
 		}
 	},
 	do: function(required, format, value){
@@ -51,30 +63,49 @@ var Format = {
 
 
 var Verify = {
+	_data: {},
 	_flag: true,
 	_check: function(obj){
+
 		var _this = this;
+
 		obj.each(function(){
 			var required = $(this).data('required')?$(this).data('required'):false;
 			var format = $(this).data('format')?$(this).data('format'):'';
 			var value = $(this).val();
+			var name = $(this).attr('name');
 
 			var res = Format.do(required, format, value);
 			if(!res.state){
 				_this.set($(this), res.msg);
 				_this._flag = false;
+				if(name)
+					delete _this._data[name];
 			} else {
+				if(name){
+					_this._data[name] = value;
+				}
 				_this.set($(this), '');
 			}
 							 
 		});
 	},
+	getData: function(){
+		return this._data;
+	},
 	check: function(obj){
 		this._flag = true;
-	 	var form = $(obj);
+		if(typeof obj == 'string'){
+			var form = $(obj);
+		} else {
+			var form = obj;
+		}
+
+
 	 	var inputs = form.find('input');
 	 	var selects = form.find('select');
 	 	var textarea = form.find('textarea');
+	 	this._data = {};
 
 	 	this._check(inputs);
 	 	this._check(selects);
@@ -84,14 +115,15 @@ var Verify = {
 	},
 	set: function(aim, info){
 		aim.next('p').remove();
+		var size = aim.attr('data-size')?'-'+aim.attr('data-size'):'';//input的尺寸
 		if (info != '') {
 			info = aim.attr('data-msg')?aim.attr('data-msg'):info;
 			if(info != '{{none}}'){
 				aim.after('<p>' + info + '</p>');
 			}
-			aim.parent('div').addClass(CONFIG.prefix + 'input-wrong');
+			aim.parent('div').addClass(CONFIG.prefix + 'input-wrong'+size);
 		} else {
-			aim.parent('div').removeClass(CONFIG.prefix + 'input-wrong');
+			aim.parent('div').removeClass(CONFIG.prefix + 'input-wrong'+size);
 			aim.next('p').remove();
 		};
 	}

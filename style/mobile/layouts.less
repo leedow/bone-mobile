@@ -28,6 +28,7 @@
 		background: @layout-main-background;
 		min-height: 100%;
 		box-shadow: @layout-shadow;
+		overflow: hidden;
 		padding: @header-height 0 @menu-height-icon 0;
 	}
 
@@ -71,25 +72,36 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		
+		background: #fff;
+		border-top: 1px @line-color solid;	
 	}
 
+
+
 	&layout-sidebar{
-		width: @sidebar-width-lg;
-		height: 100%;
+		width: 100%;
+		background: #fff; 
 		position: fixed;
 		left:0;
 		top:0;
-		height: 100%;
+		bottom:0;
+		z-index: 99999;
+
 	}
 
 	&layout-sidemenu{
 		width: @sidemenu-width;
-		height: 100%;
+		 
 		position: fixed;
 		left:0;
 		top:@header-height;
-		height: 100%;
+		bottom:0;
+	}
+
+	&layout-sidemenu-absolute{
+		position: absolute;
+		left:0;
+		top:@header-height;
 	}
 
 	&side-p{

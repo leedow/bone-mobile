@@ -3,7 +3,7 @@ button,input{
 }
 
 .@{prefix}{
-	&textarea, &input, &input-lg,&input-sm, &select, &select-lg, &select-sm{
+	&textarea, &input, &input-lg,&input-sm,&input-tiny, &select, &select-lg, &select-sm{
 		background: #fff;
 		border: 1px @line-color solid;
 		border-radius: @radius;
@@ -26,7 +26,7 @@ button,input{
 		padding: @input-padding;
 	}
 
-	&input, &input-lg, &input-sm{
+	&input, &input-lg, &input-sm, &input-tiny{
 		-webkit-appearance: none !important;
 	}
 
@@ -34,6 +34,8 @@ button,input{
 		padding: @input-padding;
 		height: @input-height;
 	}
+
+
 
 	&input-lg, &select-lg{
 		padding: @input-padding-lg;
@@ -47,8 +49,32 @@ button,input{
 		
 	}
 
+	&input-tiny{
+		padding: @input-padding-tiny;
+		height: @input-height-tiny;
+	}
+
 	select{
 		-webkit-appearance: none;
+	}
+
+	&input-wrong-sm{
+		position: relative;
+		input{
+			outline: none;
+			box-shadow: 0 0 4px @input-shadow-color;
+			border: 1px @color-highlight solid;
+		}
+
+		&>p{
+			color:@color-highlight;
+			padding:0;
+			position: absolute;
+			right: @padding-horizon;
+			top:0;
+			display: none;
+
+		}
 	}
 
 	&input-wrong{
@@ -79,13 +105,13 @@ button,input{
 		}
 
 		&>p{
-			position: absolute;
-			right: 35px;
-			top:2px;
-			height: @input-height -4;
-			line-height: @input-height -4;
+			//position: absolute;
+			//right: 35px;
+			//top:2px;
+			//height: @input-height -4;
+			//line-height: @input-height -4;
 			color: @color-highlight;
-			padding: 0.5*@padding-vertical 0 0 0;
+			padding: 1px 0 0 0;
 			text-align: left;
 			background: #fff;
 		}
@@ -147,9 +173,9 @@ button,input{
 			}
 		}
 		&>p{
-			position: absolute;
-			bottom: -20px;
-			left:0;
+			//position: absolute;
+			//bottom: -20px;
+			//left:0;
 			color: @color-highlight;
 			padding: 0.5*@padding-vertical 0 0 0;
 		}

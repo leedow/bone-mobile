@@ -27,6 +27,7 @@
 
 //line
 @line-color: 				#e0e0e0;
+@line-color-light: 			#eee;
 
 //link color
 @link-color:				@font-color;
@@ -37,6 +38,11 @@
 @layout-shadow:				0px 1px 1px #cfcfcf;
 @layout-main-background:	#f2f2f2;
 @box-title-color:			#999;
+
+@box-title2-height: 		50px;
+
+@box-titlesm-height: 		38px;
+
 
 //response
 @width-lg: 					1200px;
@@ -80,10 +86,17 @@
 //global menu
 @menu-border-top:			1px @line-color solid;
 @menu-height-icon:			40px;
+
 @menu-background-icon:		#fff;
 @menu-color-icon:			#999;
 @menu-color-hover-icon:		@color-primary;
-@menu-fontsize-icon:		22px;
+@menu-fontsize-icon:		24px;
+
+//menu normal
+@menu-height-normal: 		50px;
+@menu-iconheight-normal: 	30px;
+@menu-titleheight-normal: 	16px; 			
+
 
 //global sidebar
 @sidebar-width: 			200px;
@@ -102,6 +115,8 @@
 //buttons
 @btn-radius:				@radius;
 
+
+@btn-padding-tiny:			2px 6px;
 @btn-padding-sm:			5px 10px;
 @btn-padding:				8px 12px;
 @btn-padding-lg:			10px 16px;
@@ -125,6 +140,7 @@
 @input-padding:				9px 10px;//@btn-padding;
 @input-padding-lg:			11px 16px;//@btn-padding-lg;
 @input-padding-sm: 			6px 10px;
+@input-padding-tiny: 		3px 6px;
 @input-shadow-color:		lighten(@color-primary, 15%);
 @input-shadow-color-wrong:	lighten(@color-highlight, 15%);
 @input-shadow-color-pass:	lighten(@color-comfort, 15%);
@@ -132,6 +148,7 @@
 @input-height:				39px;
 @input-height-lg:			46px;
 @input-height-sm: 			33px;
+@input-height-tiny: 		27px;
 
 //table
 @table-height:				@input-height-lg;
@@ -166,7 +183,7 @@
 //article title-midline
 @title-midline-height: 		60px;
 @title-text-width:			100px;
-@title-line-width:			30%;
+@title-line-width:			120px;
 
 //notice widget
 @notice-widget-width:		240px;

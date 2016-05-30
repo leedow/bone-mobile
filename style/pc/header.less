@@ -1,5 +1,9 @@
 .@{prefix}{
-	&header, &header-light{
+
+	&header{
+		background: @color-primary;
+	}
+	&header, &header-light, &header-dark{
 		height: @header-pc-height;
 		.@{prefix}logo{
 			float: left;
@@ -9,6 +13,39 @@
 			padding:0 @padding-vertical;
 			
 
+		}
+
+		.@{prefix}header-dock-left, .@{prefix}header-dock-right{
+			position: absolute;
+			height: @header-pc-height;
+			line-height: @header-pc-height;
+			a, button{
+				background: none;
+				border: 0;
+				min-width: @header-pc-height;
+				color: lighten(@header-background, 60%);
+				display: inline-block;
+				float: left;
+				height: @header-pc-height;
+				line-height: @header-pc-height;
+				padding: 0 @padding-horizon;
+				&:hover{
+					background: darken(@header-background, 5%)
+				}
+				i{
+					font-size: @font-size-lg;
+				}
+			}
+		}
+
+		.@{prefix}header-dock-left{
+			left:0;
+			top:0;
+		}
+
+		.@{prefix}header-dock-right{
+			right:0;
+			top:0;
 		}
 
 		.@{prefix}header-nav{
@@ -74,6 +111,19 @@
 			 
 		}
 
+		.@{prefix}header-dock-left, .@{prefix}header-dock-right{
+			 
+			a, button{
+				 
+				color: @font-color;
+				 
+				&:hover{
+					background: none;
+					color: @color-primary;
+				}
+			}
+		}
+
 		.@{prefix}header-nav{
 			 
 			li{
@@ -85,6 +135,45 @@
 					 background: none;
 					 &:hover{
 					 	color:@color-primary;
+					 }
+				}
+			}
+		}
+	}
+
+	&header-dark{
+		//border-bottom:1px @line-color solid;
+		background: #444;
+		color:@line-color-light;
+		//border-right: 1px @line-color solid;
+		.@{prefix}logo{
+			 
+		}
+
+		.@{prefix}header-dock-left, .@{prefix}header-dock-right{
+			 
+			a, button{
+				 
+				color:@line-color-light;
+				 
+				&:hover{
+					background: none;
+					color: #fff;
+				}
+			}
+		}
+
+		.@{prefix}header-nav{
+			 
+			li{
+				 
+				.@{prefix}nav-button{	
+					 color:@line-color-light;
+					 border:0;
+					 //border-left:1px @line-color solid;
+					 background: none;
+					 &:hover{
+					 	color: #fff;
 					 }
 				}
 			}

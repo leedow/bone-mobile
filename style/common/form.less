@@ -18,8 +18,22 @@
 		padding: @form-item-padding 0;
 	}
 
+	&form-item:after{
+		content: '';
+		display: block;
+		clear:both;
+		width: 100%;
+		line-height: 0;
+		overflow: hidden;
+	}
+
 	&form-control{
 		width: 100%;
+	}
+
+	&label-control{
+		line-height: @input-height;
+		text-align: right;
 	}
 
 	&form-blank {
@@ -27,6 +41,7 @@
 		.form-notice{
 			padding:2px @padding-vertical;
 			color:@color-highlight;
+			text-align: left;
 		}
 
 		
@@ -70,6 +85,12 @@
 				font-size: @font-size-md;
 				padding-right: @padding-vertical;
 			}
+
+
+		}
+
+		.@{prefix}form-item-lg:last-child{
+			border-bottom: 0;
 		}
 
 		.@{prefix}form-item-noline {

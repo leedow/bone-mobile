@@ -1,29 +1,37 @@
 .product{
 	position: relative;
-	padding-left:70px;
+	padding-left:75px;
 	min-height:75px;
 	cursor: pointer;
 	.pic{
 		position: absolute;
-		width: 80px;
-		height: 80px;
+		width: 70px;
+		height: 70px;
 		top:0;
 		left:0;
 	}
+
 	.name{
 		font-size: @font-size;
 	}
+
 	.intro{
 		color: #999;
 		padding-top:4px;
 		padding-bottom:3px;
 	}
+
+	.price{
+		padding:0;
+		color: @color-highlight;
+	}
 }
 
 .product-dock{
 	min-height: 31px;
+	display: flex;
 	.price{
-		float:left;
+		flex:1;
 		color: @color-highlight;
 		font-size: @font-size-md;
 		span{
@@ -32,8 +40,171 @@
 	}
 
 	.mount{
-		float:right;
+		 
 	}
 }	
 
- 
+//购物车商品
+.product-shp{
+	padding: 10px;
+	display: flex;
+	border-bottom:1px #eee solid;
+
+
+	.pro-pic{
+		padding: 0 10px;
+		vertical-align: bottom;
+		img{
+			width: 60px;
+			vertical-align: bottom;
+		}
+	}
+
+	.pro-info{
+		flex: 1;
+		.pro-title{
+			font-size: 14px;
+			font-weight: normal;
+		}
+
+		.pro-dock{
+			display: flex;
+			padding: 10px 0 0 0;
+		}
+	}
+}
+
+.product-shp:last-child{
+	border-bottom:0 !important;
+}
+
+//铺旺商品列表
+.product3{
+	padding: 10px;
+	display: flex;
+
+	.pro-pic{
+		padding: 0 10px 0 0;
+		vertical-align: bottom;
+		img{
+			width: 60px;
+			vertical-align: bottom;
+		}
+	}
+
+	.pro-info{
+		flex: 1;
+		.pro-title{
+			font-size: 15px;
+			font-weight: normal;
+		}
+
+		.pro-price{
+			padding:2px 0;
+			display: flex;
+			.price{
+				flex:1;
+				color:@color-highlight;
+			}
+			.old{
+				color:#999;
+				font-size: 13px;
+			}
+		}
+
+		.pro-dock{
+			display: flex;
+			padding: 5px 0 0 0;
+		}
+	}
+}
+
+.product2{
+	padding:10px;
+	text-align: left;
+	.pic{
+		overflow: hidden;
+		img{
+			width: 100%;
+		}
+	}
+
+	.name{
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 1.4;
+		height: 38px;
+		overflow: hidden;
+
+	}
+
+	.intro{
+		color:#999;
+	}
+
+	.price{
+		font-size: 1.1rem;
+		color: #c31525;
+		display: flex;
+		align-items: center;
+
+		.num{
+			flex: 1;
+		}
+	
+		.oldprice{
+			color:#999;
+			font-size: 13px;
+			text-decoration: line-through;
+		}
+
+	}
+
+	.dock{
+		padding-top: 5px;
+		display: flex;
+
+		.dock-left{
+			flex:1;
+		}
+
+		.dock-right{
+			display: flex;
+		}
+	}
+}
+
+#shop-name{
+	font-size: 16px;
+	padding: 15px 0;
+	margin: 0 10px;
+	border-bottom: 1px @line-color-light solid;
+}
+//店铺
+.shop-dock{
+	display: flex;
+	.icon{
+		
+	}
+
+	.text{
+		flex:1
+	}
+
+	.btn-sm{
+		background: none;
+		border:0;
+		padding:0 10px;
+		font-size: 16px;
+		color:#999;
+	}
+
+	.btn{
+		background: none;
+		border:0;
+		padding:0 15px;
+		font-size: 22px;
+		color:@color-primary;
+
+	}
+}

@@ -1,6 +1,5 @@
 .@{prefix}{
 	&check{
-		height: @check-height;
 		position: relative;
 		background: none;
 		border:0;
@@ -9,6 +8,11 @@
 	}
 
 	&checked{
+		color: @color-highlight;
+	}
+
+	&checked-tip{
+		color: @color-highlight;
 		&:after{
 			position: absolute;
 			right:-0.5*@font-size-md;
@@ -17,6 +21,24 @@
 			content: '\e608';
 			font-size: @font-size-md;
 			color: @color-highlight;
+			background: #fff;
+			border-radius: 8px;
+
+		}
+	}
+
+	&shp-warm{
+		color: @color-highlight;
+		&:after{
+			position: absolute;
+			right:-0.5*@font-size-md;
+			top:-0.2*@font-size-md;
+			font-family: @font-family-icon; 
+			content: '\e612' !important;
+			font-size: @font-size-md;
+			color: @color-highlight;
+			background: #fff;
+			border-radius: 8px;
 
 		}
 	}

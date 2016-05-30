@@ -9,8 +9,9 @@ body{
 	line-height: @line-height;
 	text-align: center;
 	min-height: 100%;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
-
+ 
 *{
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -39,10 +40,14 @@ a{
 
 a:hover{
 	color: @color-primary;
+	outline: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 input, button{
 	transition: all ease-in-out .4s !important;
+	outline:none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 button:hover{

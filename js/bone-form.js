@@ -1,30 +1,45 @@
-var CONFIG = require('./bone-config');
+var Verify = require('./bone-verify2');
 
+module.exports = function(formObj, btnObj){
+	this.request = false;
+	this.btn = null;
+	this.btnText = '';
+	this.formObj = formObj;
+	 
+ 
 
-function getFormData(obj){
-	var form = $(obj);
-
-	var input = form.find('input');
-	var select = form.find('select');
-
-	var data = {};
-
-	input.each(function(){		 
-		if($(this).data('ignore') != true && $(this).attr('name') != undefined){
-			 
-			data[$(this).attr('name')] = $(this).val();
+	this.setBtn = function(btnObj){
+		if(typeof btnObj == 'string'){
+			this.btn = $(btnObj);
+		} else {
+			this.btn = btnObj;
 		}
-	});
+		this.btnText = this.btn.text();
+		return this;
+	} 
 
-	select.each(function(){
-		if($(this).data('ignore') != true && $(this).attr('name') != undefined){
-			data[$(this).attr('name')] = $(this).val();
-		}		 
-	});
+	if(btnObj)
+		this.setBtn(btnObj);
 
-	return data;
-}
+	this.submit = function(callback){
+		if(bone.verify.check(this.formObj) && !this.request){
+			//提交预处理		 
+			this.request = true;
+			this.btn.text('处理中');
+			var data = bone.verify.getData();
+					
+		    //数据AJAX提交
+		    callback(data)
+		    
+		}
+		return this;
+	}
 
-module.exports.getFormData = function(obj){
-	return getFormData(obj);
-}
+	this.reset = function(){
+		this.btn.text(this.btnText);
+	 	this.request = false;
+	 	return this
+	}
+
+	 
+}	

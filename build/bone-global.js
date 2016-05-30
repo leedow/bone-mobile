@@ -44,21 +44,25 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	window.bone = {}
+	//全局变量.
+	bone = {}
 
 	bone.verify = __webpack_require__(1);
-	bone.verify2 = __webpack_require__(3);
-	bone.dialog = __webpack_require__(4);
-	bone.dropdown = __webpack_require__(5);
-	bone.carousel = __webpack_require__(6);
-	bone.form = __webpack_require__(7);
-	bone.notice = __webpack_require__(8);
-	bone.wall = __webpack_require__(9);
+	bone.dialog = __webpack_require__(3);
+	bone.dropdown = __webpack_require__(4);
+	bone.carousel = __webpack_require__(5);
+	bone.form = __webpack_require__(6);
+	bone.notice = __webpack_require__(7);
+	bone.wall = __webpack_require__(8);
+	bone.sidebar = __webpack_require__(9);
+	bone.current = __webpack_require__(10);
+	bone.pagination = __webpack_require__(11);
 
 	$(document).ready(function(){
 		bone.dropdown.init();
 		bone.carousel.init();
-		//
+		bone.sidebar.init();
+		//的
 		$('.stars').each(function(){
 			var score = parseInt($(this).data('score'));
 			var tmp = '';
@@ -75,199 +79,28 @@
 
 	var CONFIG = __webpack_require__(2);
 
-	module.exports.check = function(obj){
-		$this = $(obj);
-		var flag = true;
-		var msg = {
-			'required': '此项不能为空',
-			'wrong': '此项格式错误'
-		}
-
-		$this.find('.verify-required').each(function(){
-			add_state($(this), '');
-			if (check_empty($(this).val())) {
-				add_state($(this), msg.required);
-				flag = false;
-			} 
-		});
-
-		$this.find('.verify-email').each(function(){
-			add_state($(this), '');
-			if (check_empty($(this).val())) {
-				if (allow_empty($(this))) {
-					return true;
-				};
-				add_state($(this), msg.required);
-				flag = false;
-			} else if (!check_email($(this).val())) {
-				add_state($(this), msg.wrong);
-				flag = false;
-			}
-		});
-
-		$this.find('.verify-url').each(function(){
-			add_state($(this), '');
-			if (check_empty($(this).val())) {
-				if (allow_empty($(this))) {
-					return true;
-				};
-				add_state($(this), msg.required);
-				flag = false;
-			} else if (!check_url($(this).val())) {
-				add_state($(this), msg.wrong);
-				flag = false;
-			}
-		});
-
-		$this.find('.verify-password').each(function(){
-			add_state($(this), '');
-
-			if (check_empty($(this).val())) {
-				if (allow_empty($(this))) {
-					return true;
-				};
-				add_state($(this), msg.required);
-				flag = false;
-			} else if (!check_psd($(this).val())) {
-				add_state($(this), msg.wrong);
-				flag = false;
-			}
-		});
-
-		$this.find('.verify-nocn').each(function(){
-			add_state($(this), '');
-			if (check_empty($(this).val())) {
-				if (allow_empty($(this))) {
-					return true;
-				};
-				add_state($(this), msg.required);
-				flag = false;
-			} else if (!check_nocn($(this).val())) {
-				add_state($(this), msg.wrong);
-				flag = false;
-			}
-		});
-
-		//bone.placeholder.refresh();
-		
-		return flag;
-	}
-
-
-	function allow_empty(obj){
-		if(obj.attr('class').indexOf('verify-empty') < 0){
-			return false;
-		} else {
-			return true;
-		}
-	}	
-
-	function set_state(params){
-		for(key in params){
-			if (params[key] == '') {
-				$(key).next('p').remove();
-				add_state($(key), params[key]);
-			} else {
-				add_state($(key), params[key]);
-			};
-		}
-	}
-
-	function add_state(aim, info){
-		aim.next('p').remove();
-		if (info != '') {
-			info = aim.attr('data-msg')?aim.attr('data-msg'):info;
-			if(info != '{{none}}'){
-				aim.after('<p>' + info + '</p>');
-			}
-			aim.parent('div').addClass(CONFIG.prefix + 'input-wrong');
-		} else {
-			aim.parent('div').removeClass(CONFIG.prefix + 'input-wrong');
-			aim.next('p').remove();
-		};
-	}
-
-	function check_empty(value){
-		//var reg = /^\s$/;
-		if(value.replace(' ', '') != ''){
-			return false;
-		}
-		return true;
-	}
-
-	function check_email(value){
-		  var reg = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-		  if(!reg.test(value)){
-		   		return false;
-		  }
-		  return true;
-	}
-
-	function check_url(value){
-		var reg = /[a-zA-Z0-9]+\.[a-z]+/i;
-		if(!reg.test(value)){
-			return false;
-		}
-		return true;
-	}
-
-	function check_psd(value){
-		var reg = /[a-zA-Z0-9]{6,14}/;
-		if(!reg.test(value)){
-			return false;
-		}
-		return true;
-	}
-
-	function check_nocn(value){
-		var reg = /[\u4E00-\u9FA5]/i;
-		if(reg.test(value)){
-			return false;
-		}
-		return true;
-	}
-
-
-/***/ },
-/* 2 */
-/***/ function(module, exports) {
-
-	module.exports = {
-		prefix: 'bo-',
-		$: function(str){//格式化选择器#test->#bo-test
-			var res = '';
-
-			if(/^#./.test(str)){
-				
-				res = str.replace('#', '#' + this.prefix);
-
-			}
-			else if(/^\../.test(str)){
-				
-				res = str.replace('.', '.' + this.prefix);
-			} else {
-				res = this.prefix + str;
-			}
-			return res;
-		}
-	}
-
-/***/ },
-/* 3 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var CONFIG = __webpack_require__(2);
-
 
 	var Format = {
 		type: {
 			required: {
-				reg:/.{1,}/,
+				reg: /.{1,}/,
 				msg: '此项不能为空'
 			},
 			email: {
 				reg: /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
 				msg: '邮箱格式错误'
+			},
+			phone: {
+				reg: /^\d{11}$/,
+				msg: '手机格式错误'
+			},
+			float: {
+				reg: /^\d+(.\d+)?$/,
+				msg: '必须为整数或小数'
+			},
+			int: {
+				reg: /^\d+$/,
+				msg: '必须为整数'
 			}
 		},
 		do: function(required, format, value){
@@ -309,31 +142,49 @@
 
 
 	var Verify = {
+		_data: {},
 		_flag: true,
 		_check: function(obj){
+
 			var _this = this;
+
 			obj.each(function(){
 				var required = $(this).data('required')?$(this).data('required'):false;
 				var format = $(this).data('format')?$(this).data('format'):'';
 				var value = $(this).val();
+				var name = $(this).attr('name');
 
 				var res = Format.do(required, format, value);
 				if(!res.state){
 					_this.set($(this), res.msg);
 					_this._flag = false;
+					if(name)
+						delete _this._data[name];
 				} else {
+					if(name){
+						_this._data[name] = value;
+					}
 					_this.set($(this), '');
 				}
-					
-				 
+								 
 			});
+		},
+		getData: function(){
+			return this._data;
 		},
 		check: function(obj){
 			this._flag = true;
-		 	var form = $(obj);
+			if(typeof obj == 'string'){
+				var form = $(obj);
+			} else {
+				var form = obj;
+			}
+
+
 		 	var inputs = form.find('input');
 		 	var selects = form.find('select');
 		 	var textarea = form.find('textarea');
+		 	this._data = {};
 
 		 	this._check(inputs);
 		 	this._check(selects);
@@ -343,14 +194,15 @@
 		},
 		set: function(aim, info){
 			aim.next('p').remove();
+			var size = aim.attr('data-size')?'-'+aim.attr('data-size'):'';//input的尺寸
 			if (info != '') {
 				info = aim.attr('data-msg')?aim.attr('data-msg'):info;
 				if(info != '{{none}}'){
 					aim.after('<p>' + info + '</p>');
 				}
-				aim.parent('div').addClass(CONFIG.prefix + 'input-wrong');
+				aim.parent('div').addClass(CONFIG.prefix + 'input-wrong'+size);
 			} else {
-				aim.parent('div').removeClass(CONFIG.prefix + 'input-wrong');
+				aim.parent('div').removeClass(CONFIG.prefix + 'input-wrong'+size);
 				aim.next('p').remove();
 			};
 		}
@@ -360,7 +212,31 @@
 	 
 
 /***/ },
-/* 4 */
+/* 2 */
+/***/ function(module, exports) {
+
+	module.exports = {
+		prefix: 'bo-',
+		$: function(str){//格式化选择器#test->#bo-test
+			var res = '';
+
+			if(/^#./.test(str)){
+				
+				res = str.replace('#', '#' + this.prefix);
+
+			}
+			else if(/^\../.test(str)){
+				
+				res = str.replace('.', '.' + this.prefix);
+			} else {
+				res = this.prefix + str;
+			}
+			return res;
+		}
+	}
+
+/***/ },
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var CONFIG = __webpack_require__(2);
@@ -387,14 +263,14 @@
 		this._config = {};
 		this.config = config?config:{};
 		this._config.buttons = (this.config.buttons != undefined)?this.config.buttons:'single';
-		this._config.width = (this.config.width != undefined)?this.config.width:'400px';
+		this._config.width = (this.config.width != undefined)?this.config.width:'';
 
 		/*config:{
 			'buttons': 'single',
 			'width': '400px' 
 		}*/
 		this.timer;
-		this._ok = function(){};
+		this._ok = function(){return true};
 		this._no = function(){};
 		this._onload = function(){};
 
@@ -474,6 +350,11 @@
 				$(tmp.layout).remove();
 			}
 			 
+			var ww = '';
+			if(this._config.width != ''){
+				ww = 'width:' + this._config.width;
+			} 
+
 			if($this._config.buttons == 'single'){
 				var buttons = '<div class="dialog-buttons">'
 					+'<button class="'+CONFIG.prefix+'btn-primary button dialog-ok">确 定</button></div>';
@@ -485,7 +366,7 @@
 					+'<button class="'+CONFIG.prefix+'btn-primary button dialog-ok">确 定</button></div>';
 			}
 
-			$('body').append('<div id="'+domstr.layout+'"><div class="container ' + domstr.sdialog+' dialog-state-open" style="width:'+this._config.width+'"><h3 class="dialog-title">'+this._title
+			$('body').append('<div id="'+domstr.layout+'"><div class="container ' + domstr.sdialog+' dialog-state-open" style="'+ww+'"><h3 class="dialog-title">'+this._title
 		 		+ '</h3><div class="dialog-close"><i class="icon iconfont">&#xe602;</i></div><div class="content">'+this._content+'</div>'+buttons+'</div></div>'
 		 	);
 
@@ -502,8 +383,11 @@
 				$this.close();
 			});
 			$(tmp.layout + ' .dialog-ok').on('click', function(){
-				$this._ok();
-				//$this.close();
+
+				if($this._ok()){
+					$this.close();
+
+				}
 			});
 			$(tmp.layout + ' .dialog-no').on('click', function(){
 				$this._no();
@@ -520,7 +404,7 @@
 			this._config.buttons = (this.config.buttons != undefined)?this.config.buttons:'single';
 			this._config.width = (this.config.width != undefined)?this.config.width:'400px';
 
-			$this._ok = function(){};
+			$this._ok = function(){return true};
 			$this._no = function(){};
 			$this._onload = function(){};
 
@@ -538,7 +422,7 @@
 	  
 
 /***/ },
-/* 5 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var CONFIG = __webpack_require__(2);
@@ -558,7 +442,7 @@
 	}
 
 /***/ },
-/* 6 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var CONFIG = __webpack_require__(2);
@@ -677,42 +561,57 @@
 
 
 /***/ },
-/* 7 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var CONFIG = __webpack_require__(2);
+	var Verify = __webpack_require__(1);
 
+	module.exports = function(formObj, btnObj){
+		this.request = false;
+		this.btn = null;
+		this.btnText = '';
+		this.formObj = formObj;
+		 
+	 
 
-	function getFormData(obj){
-		var form = $(obj);
-
-		var input = form.find('input');
-		var select = form.find('select');
-
-		var data = {};
-
-		input.each(function(){		 
-			if($(this).data('ignore') != true && $(this).attr('name') != undefined){
-				 
-				data[$(this).attr('name')] = $(this).val();
+		this.setBtn = function(btnObj){
+			if(typeof btnObj == 'string'){
+				this.btn = $(btnObj);
+			} else {
+				this.btn = btnObj;
 			}
-		});
+			this.btnText = this.btn.text();
+			return this;
+		} 
 
-		select.each(function(){
-			if($(this).data('ignore') != true && $(this).attr('name') != undefined){
-				data[$(this).attr('name')] = $(this).val();
-			}		 
-		});
+		if(btnObj)
+			this.setBtn(btnObj);
 
-		return data;
-	}
+		this.submit = function(callback){
+			if(bone.verify.check(this.formObj) && !this.request){
+				//提交预处理		 
+				this.request = true;
+				this.btn.text('处理中');
+				var data = bone.verify.getData();
+						
+			    //数据AJAX提交
+			    callback(data)
+			    
+			}
+			return this;
+		}
 
-	module.exports.getFormData = function(obj){
-		return getFormData(obj);
-	}
+		this.reset = function(){
+			this.btn.text(this.btnText);
+		 	this.request = false;
+		 	return this
+		}
+
+		 
+	}	
 
 /***/ },
-/* 8 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var CONFIG = __webpack_require__(2);
@@ -744,7 +643,7 @@
 	module.exports = Notice;
 
 /***/ },
-/* 9 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//上下左右滚动的照片墙
@@ -909,6 +808,155 @@
 			list[random].move(data[random], direction[dir]);
 		}, 4000);
 
+
+	}
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var CONFIG = __webpack_require__(2);
+
+
+	module.exports.init = function(){
+		$('#sidebar-toggle').click(function(){
+
+			var s = $(CONFIG.$('.layout-sidebar'));
+
+	 
+			if(s.css('display') == 'none'){
+				s.slideDown('fast');
+			} else {
+				s.slideUp('fast');
+			}
+		})
+	}
+
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
+
+	/*
+	 * 根据url中的参数高亮当前选择的tab
+	 * @param aimObj: 目标DOM
+	 * @param key: url中的参数
+	 * @param currentClass: 要添加的current class name
+	 */
+
+	module.exports = function(aimObj, currentClass){
+
+		if(typeof aimObj == 'string'){
+			var aim = $(aimObj);
+		} else {
+			var aim = aimObj;
+		}
+
+		var href = window.location.href;
+		aim.removeClass(currentClass);
+
+		aim.each(function(){
+			if(href.indexOf($(this).data('page')) >= 0){
+				$(this).addClass(currentClass);
+			}
+		});
+
+
+	}
+
+/***/ },
+/* 11 */
+/***/ function(module, exports) {
+
+	/*
+	 * 分页
+	 */
+	module.exports = function(option, obj){
+		this.pageIndex  = 0;
+		this.pageSize = 10;
+		this.total = 0;
+		this.pageCount = 0;
+		this.obj = null;
+		this.callback = function(){
+			
+		}
+
+		//初始化数据
+		this.init = function(option, obj){
+			this.pageIndex  = option.pageIndex||0;
+			this.pageSize = option.pageSize||10;
+			this.total = option.total||0;
+			this.callback = option.clickEvent||function(){};
+			this.pageCount = Math.round(this.total/this.pageSize);
+			if(typeof obj == 'string'){
+				this.obj = $(obj);
+			} else {
+				this.obj = obj;
+			}
+			this.initDOM();
+			this.initEvent();
+
+		}
+		
+
+		this.initDOM = function(){
+			
+			var tmp = '';
+
+			var n = 4;
+			for(var i=0; i<n; i++){
+				var current = this.pageIndex-n+i;
+				if(current < 0) continue;
+				if(this.pageIndex == current){
+					tmp += '<span class="current"  data-page='+current+'>' + (current+1) + '</span>';
+				} else {
+					tmp += '<a class="bo-page-btn" data-page='+current+'>' + (current+1) + '</a>';
+				}	
+
+			}
+
+			for(var i=0; i<n; i++){
+				var current = this.pageIndex+i;
+				if(current >= this.pageCount) break;
+				if(this.pageIndex == current){
+					tmp += '<span class="current"  data-page='+current+'>' + (current+1) + '</span>';
+				} else {
+					tmp += '<a class="bo-page-btn" data-page='+current+'>' + (current+1) + '</a>';
+				}	
+
+			}
+		
+			if(this.pageIndex+1 == this.pageCount){
+				var last = ''
+			} else {
+				var last = '<a class="bo-page-btn" data-page='+(this.pageCount-1)+'>最后一页</a>'
+			}
+			if(this.pageIndex == 0){
+				var first = '';
+			} else {
+				var first = '<a class="bo-page-btn" data-page=0>第一页</a>'
+			}	
+			 
+			
+			this.obj.html(first+tmp+last);
+			
+					
+
+		}	
+
+		this.initEvent = function(){
+			var _this = this;
+			_this.obj.on('click', '.bo-page-btn', function(){
+				_this.pageIndex = $(this).data('page');
+				_this.initDOM();
+				_this.callback({
+					pageIndex: _this.pageIndex,
+					pageSize: _this.pageSize,
+					pageCount: _this.pageCount
+				});
+			})
+		}
+
+		this.init(option, obj);
 
 	}
 

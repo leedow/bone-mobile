@@ -1,4 +1,6 @@
 //底部menu
+//弃用
+//改用menu2
 .@{prefix}{
 	&menu-3{
 		&>li{
@@ -71,6 +73,73 @@
 	}
 
 	&menu-normal{//带文字菜单
+		border-top: @menu-border-top;
+		text-align: center;
+		height: @menu-height-normal;
+		 
+		font-size: @menu-fontsize-icon;
+		color: @menu-color-icon; 
+		background: @menu-background-icon;
+		overflow: hidden;//防止字体溢出
 
+
+		button{
+			background: none;
+			border:0;
+			width: 100%;
+			height: @menu-height-normal;
+			color: @menu-color-icon;
+			cursor: pointer;
+			margin:0;
+
+			&:active{
+				color: @menu-color-hover-icon;;
+				//background: lighten(@menu-background-icon, 8%)
+			}
+			&:hover{
+				color: @menu-color-hover-icon;
+				//background: lighten(@menu-background-icon, 8%)
+			}
+			.icon{
+				font-size: @menu-fontsize-icon;
+				display: block;
+				height: @menu-iconheight-normal;
+				line-height: @menu-iconheight-normal
+			}
+			.title{
+				font-size: @font-size-sm;
+				display: block;
+				height: @menu-titleheight-normal;
+				line-height: @menu-titleheight-normal;
+			}
+		}
+
+		a{
+			display: block;
+			width: 100%;
+			height: @menu-height-normal;
+			color: @menu-color-icon;
+
+			&:hover{
+				color: @menu-color-hover-icon;
+				//background: lighten(@menu-background-icon, 8%)
+			}
+			&:active{
+				color: @menu-color-hover-icon;
+				//background: lighten(@menu-background-icon, 8%)
+			}
+			.icon{
+				font-size: @menu-fontsize-icon;
+				display: block;
+				height: @menu-iconheight-normal;
+				line-height: @menu-iconheight-normal
+			}
+			.title{
+				font-size: @font-size-sm;
+				display: block;
+				height: @menu-titleheight-normal;
+				line-height: @menu-titleheight-normal;
+			}
+		}
 	}
 }

@@ -22,14 +22,14 @@ function _dialog(title, content, config){
 	this._config = {};
 	this.config = config?config:{};
 	this._config.buttons = (this.config.buttons != undefined)?this.config.buttons:'single';
-	this._config.width = (this.config.width != undefined)?this.config.width:'400px';
+	this._config.width = (this.config.width != undefined)?this.config.width:'';
 
 	/*config:{
 		'buttons': 'single',
 		'width': '400px' 
 	}*/
 	this.timer;
-	this._ok = function(){};
+	this._ok = function(){return true};
 	this._no = function(){};
 	this._onload = function(){};
 
@@ -109,6 +109,11 @@ function _dialog(title, content, config){
 			$(tmp.layout).remove();
 		}
 		 
+		var ww = '';
+		if(this._config.width != ''){
+			ww = 'width:' + this._config.width;
+		} 
+
 		if($this._config.buttons == 'single'){
 			var buttons = '<div class="dialog-buttons">'
 				+'<button class="'+CONFIG.prefix+'btn-primary button dialog-ok">确 定</button></div>';
@@ -120,7 +125,7 @@ function _dialog(title, content, config){
 				+'<button class="'+CONFIG.prefix+'btn-primary button dialog-ok">确 定</button></div>';
 		}
 
-		$('body').append('<div id="'+domstr.layout+'"><div class="container ' + domstr.sdialog+' dialog-state-open" style="width:'+this._config.width+'"><h3 class="dialog-title">'+this._title
+		$('body').append('<div id="'+domstr.layout+'"><div class="container ' + domstr.sdialog+' dialog-state-open" style="'+ww+'"><h3 class="dialog-title">'+this._title
 	 		+ '</h3><div class="dialog-close"><i class="icon iconfont">&#xe602;</i></div><div class="content">'+this._content+'</div>'+buttons+'</div></div>'
 	 	);
 
@@ -137,8 +142,11 @@ function _dialog(title, content, config){
 			$this.close();
 		});
 		$(tmp.layout + ' .dialog-ok').on('click', function(){
-			$this._ok();
-			//$this.close();
+
+			if($this._ok()){
+				$this.close();
+
+			}
 		});
 		$(tmp.layout + ' .dialog-no').on('click', function(){
 			$this._no();
@@ -155,7 +163,7 @@ function _dialog(title, content, config){
 		this._config.buttons = (this.config.buttons != undefined)?this.config.buttons:'single';
 		this._config.width = (this.config.width != undefined)?this.config.width:'400px';
 
-		$this._ok = function(){};
+		$this._ok = function(){return true};
 		$this._no = function(){};
 		$this._onload = function(){};
 

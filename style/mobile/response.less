@@ -10,8 +10,23 @@
 			margin-left:0;
 		}
 	 	&layout-sidebar{
-	 		left: -@sidebar-width;
+	 		width: 100%;//@sidebar-width-ti;
+ 			position: fixed;
+ 			top: @header-pc-height;
+ 			left:0;
+ 			display: none;
 	 	}
+	 	&dialog{
+	 		width: 88% !important;
+	 	}
+	 	&login-box{
+	 		width: 100% !important;
+	 	}
+
+	 	&label-control{
+			line-height: 1.2;
+			text-align: left;
+		}
 	}
 }
 @media only screen and (min-width: @width-sm) and (max-width: @width-md){

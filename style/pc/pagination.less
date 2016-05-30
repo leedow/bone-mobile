@@ -2,15 +2,20 @@
 	&pagination{
  		background: #fff;
 		overflow: hidden;
-		border: 1px @line-color solid;
+		border: 1px @line-color-light solid;
 		display: inline-block;
+		border-radius: 2px;
 		
-		a, span{
+		a, span, strong{
 			margin:0;
 			display: block;
 			float:left;
-			border-right: 1px @line-color solid;
+			border-right: 1px @line-color-light solid;
 			padding: 0.4em 1em;
+		}
+
+		a:last-child{
+			border-right:0 !important;
 		}
 
 		a:hover{
@@ -22,7 +27,7 @@
 			border-right:0;
 		}
 
-		.current{
+		.current, strong{
 			display: inline-block;
 			border-right: 1px @line-color solid;
 			//padding: 0.4em 1em;

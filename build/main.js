@@ -268,7 +268,7 @@
 		} else {
 			$dialog.refresh(title, content, config);
 			
-		}
+		}	
 		return $dialog;
 	}
 
@@ -309,6 +309,10 @@
 		this.open = function(){	
 			clearTimeout($this.timer);
 			$(tmp.layout).css('display', 'block');
+			$(tmp.layout).removeClass('layout-state-close').addClass('layout-state-open');
+			$this.timer = setTimeout(function(){
+	 			$(tmp.layout).removeClass('layout-state-open')
+	 		}, 10);
 			var h = $(tmp.dialog).height() + 90;
 
 		 	$(tmp.dialog).css('margin-top', $(window).height()/2 - h/2);
@@ -353,7 +357,7 @@
 			if(typeof callback != 'undefined'){
 				callback();
 			}
-
+			$(tmp.layout).removeClass('layout-state-open').addClass('layout-state-close');
 			$(tmp.dialog).removeClass('dialog-state-open').addClass('dialog-state-close');
 	 		$this.timer = setTimeout(function(){
 	 			$(tmp.layout).css('display', 'none');
@@ -379,7 +383,7 @@
 				var buttons = '';
 			} else {
 				var buttons = '<div class="dialog-buttons">'
-					+'<button class="'+CONFIG.prefix+'btn-default button dialog-no">取 消</button>'
+					+'<button class="'+CONFIG.prefix+'btn-blank button dialog-no">取 消</button>'
 					+'<button class="'+CONFIG.prefix+'btn-primary button dialog-ok">确 定</button></div>';
 			}
 

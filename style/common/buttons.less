@@ -1,6 +1,6 @@
 .@{prefix}{
 	&btn, &btn-primary,&btn-primary-underline, &btn-warm,&btn-blank, &btn-primary-blank, &btn-warm-blank,
-	&btn-light, &btn-none{
+	&btn-light, &btn-none, &btn-comfort{
 		-webkit-appearance: none !important;
 		font-family: @font-family;
 		cursor: pointer;
@@ -97,6 +97,17 @@
 		&:hover{
 			background: darken(@btn-background-warm, 11%);
 			color: @btn-color-warm;
+		}
+	}
+
+	&btn-comfort{
+		color: @btn-color-comfort;
+		background: @btn-background-comfort;
+		border:1px @btn-background-comfort solid;
+
+		&:hover{
+			background: darken(@btn-background-comfort, 11%);
+			color: @btn-color-comfort;
 		}
 	}
 

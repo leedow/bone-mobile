@@ -1,7 +1,7 @@
 /*
  * 分页
  */
-module.exports = function(option, obj){
+module.exports = function(option){
 	this.pageIndex  = 0;
 	this.pageSize = 10;
 	this.total = 0;
@@ -12,20 +12,21 @@ module.exports = function(option, obj){
 	}
 
 	//初始化数据
-	this.init = function(option, obj){
-		this.pageIndex  = option.pageIndex||0;
-		this.pageSize = option.pageSize||10;
-		this.total = option.total||0;
-		this.callback = option.clickEvent||function(){};
-		this.pageCount = Math.round(this.total/this.pageSize);
-		if(typeof obj == 'string'){
-			this.obj = $(obj);
-		} else {
-			this.obj = obj;
+	this.init = function(option){
+		this.pageIndex  = option.pageIndex||this.pageIndex ;
+		this.pageSize = option.pageSize||this.pageSize;
+		this.total = option.total||this.total;
+		this.callback = option.clickEvent||this.callback;
+		this.pageCount = Math.ceil(this.total/this.pageSize);
+		if(option.ele){
+			if(typeof option.ele == 'string'){
+				this.obj = $(option.ele);
+			} else {
+				this.obj = option.ele;
+			}
 		}
 		this.initDOM();
-		this.initEvent();
-
+		 
 	}
 	
 
@@ -63,6 +64,7 @@ module.exports = function(option, obj){
 		}
 		if(this.pageIndex == 0){
 			var first = '';
+			var last = '';
 		} else {
 			var first = '<a class="bo-page-btn" data-page=0>第一页</a>'
 		}	
@@ -87,6 +89,7 @@ module.exports = function(option, obj){
 		})
 	}
 
-	this.init(option, obj);
+	this.init(option);
+	this.initEvent();
 
 }

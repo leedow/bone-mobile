@@ -48,6 +48,31 @@ gulp.task('css', function(){
 			.pipe(gulp.dest('./build'))
 			.pipe(gulp.dest('../IVDS/css'))
 			.pipe(gulp.dest('../moon/public/css'))
+
+		//学生订餐系统order
+		gulp.src('./style/bone-order.less')
+			.pipe(less())
+			.on('error', function(err) {
+				gutil.log('Less Error!', err.message);
+				this.end();
+			})
+			//.pipe(rev())
+			.pipe(autoprefixer())
+			//.pipe(minifyCSS())
+			.pipe(gulp.dest('../Order/css'));
+
+		//ivds app
+		gulp.src('./style/bone-ivds-app.less')
+			.pipe(less())
+			.on('error', function(err) {
+				gutil.log('Less Error!', err.message);
+				this.end();
+			})
+			//.pipe(rev())
+			.pipe(autoprefixer())
+			//.pipe(minifyCSS())
+			.pipe(gulp.dest('../IVDS/css'));
+	 
 		 
 	});
 

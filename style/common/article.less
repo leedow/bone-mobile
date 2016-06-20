@@ -54,7 +54,7 @@
 		}
 	}
 
-	&title-line{
+	&title-line, &title-line-sm{
 		height: @title-midline-height;
 		position: relative;
 		&:after{
@@ -73,9 +73,17 @@
 			line-height: @title-midline-height;
 			width: @title-text-width;
 			background: #fff;
-			//margin-left: -0.5*@title-text-width;
+			// margin-left: -0.5*@title-text-width;
 			text-align: left;
 			font-weight: normal;
+		}
+	}
+
+	&title-line-sm{
+		height: 0.6*@title-midline-height;
+		.title{
+			line-height: 0.6*@title-midline-height;
+			width: 0.6*@title-text-width;
 		}
 	}
 

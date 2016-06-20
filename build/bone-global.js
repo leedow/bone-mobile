@@ -45,7 +45,8 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	//全局变量.
-	bone = {}
+
+	window.bone = {}
 
 	bone.verify = __webpack_require__(1);
 	bone.dialog = __webpack_require__(3);
@@ -57,12 +58,13 @@
 	bone.sidebar = __webpack_require__(9);
 	bone.current = __webpack_require__(10);
 	bone.pagination = __webpack_require__(11);
+	//bone.rdialog = require('./bone-rdialog');
 
 	$(document).ready(function(){
 		bone.dropdown.init();
 		bone.carousel.init();
 		bone.sidebar.init();
-		//的
+		 
 		$('.stars').each(function(){
 			var score = parseInt($(this).data('score'));
 			var tmp = '';
@@ -72,6 +74,8 @@
 			$(this).html(tmp);
 		});
 	});
+
+	module.exports = bone;
 
 /***/ },
 /* 1 */
@@ -103,7 +107,7 @@
 				msg: '必须为整数'
 			}
 		},
-		do: function(required, format, value){
+		doo: function(required, format, value){
 			var _this = this;
 			var value = value.replace(/\s/, '');
 
@@ -151,10 +155,13 @@
 			obj.each(function(){
 				var required = $(this).data('required')?$(this).data('required'):false;
 				var format = $(this).data('format')?$(this).data('format'):'';
+				var ignore = $(this).data('ignore')||false;
 				var value = $(this).val();
 				var name = $(this).attr('name');
 
-				var res = Format.do(required, format, value);
+				if(ignore){ return true;}
+
+				var res = Format.doo(required, format, value);
 				if(!res.state){
 					_this.set($(this), res.msg);
 					_this._flag = false;
@@ -251,7 +258,7 @@
 		} else {
 			$dialog.refresh(title, content, config);
 			
-		}
+		}	
 		return $dialog;
 	}
 
@@ -292,6 +299,10 @@
 		this.open = function(){	
 			clearTimeout($this.timer);
 			$(tmp.layout).css('display', 'block');
+			$(tmp.layout).removeClass('layout-state-close').addClass('layout-state-open');
+			$this.timer = setTimeout(function(){
+	 			$(tmp.layout).removeClass('layout-state-open')
+	 		}, 10);
 			var h = $(tmp.dialog).height() + 90;
 
 		 	$(tmp.dialog).css('margin-top', $(window).height()/2 - h/2);
@@ -336,7 +347,7 @@
 			if(typeof callback != 'undefined'){
 				callback();
 			}
-
+			$(tmp.layout).removeClass('layout-state-open').addClass('layout-state-close');
 			$(tmp.dialog).removeClass('dialog-state-open').addClass('dialog-state-close');
 	 		$this.timer = setTimeout(function(){
 	 			$(tmp.layout).css('display', 'none');
@@ -362,7 +373,7 @@
 				var buttons = '';
 			} else {
 				var buttons = '<div class="dialog-buttons">'
-					+'<button class="'+CONFIG.prefix+'btn-default button dialog-no">取 消</button>'
+					+'<button class="'+CONFIG.prefix+'btn-blank button dialog-no">取 消</button>'
 					+'<button class="'+CONFIG.prefix+'btn-primary button dialog-ok">确 定</button></div>';
 			}
 
@@ -870,7 +881,7 @@
 	/*
 	 * 分页
 	 */
-	module.exports = function(option, obj){
+	module.exports = function(option){
 		this.pageIndex  = 0;
 		this.pageSize = 10;
 		this.total = 0;
@@ -881,20 +892,21 @@
 		}
 
 		//初始化数据
-		this.init = function(option, obj){
-			this.pageIndex  = option.pageIndex||0;
-			this.pageSize = option.pageSize||10;
-			this.total = option.total||0;
-			this.callback = option.clickEvent||function(){};
-			this.pageCount = Math.round(this.total/this.pageSize);
-			if(typeof obj == 'string'){
-				this.obj = $(obj);
-			} else {
-				this.obj = obj;
+		this.init = function(option){
+			this.pageIndex  = option.pageIndex||this.pageIndex ;
+			this.pageSize = option.pageSize||this.pageSize;
+			this.total = option.total||this.total;
+			this.callback = option.clickEvent||this.callback;
+			this.pageCount = Math.ceil(this.total/this.pageSize);
+			if(option.ele){
+				if(typeof option.ele == 'string'){
+					this.obj = $(option.ele);
+				} else {
+					this.obj = option.ele;
+				}
 			}
 			this.initDOM();
-			this.initEvent();
-
+			 
 		}
 		
 
@@ -932,6 +944,7 @@
 			}
 			if(this.pageIndex == 0){
 				var first = '';
+				var last = '';
 			} else {
 				var first = '<a class="bo-page-btn" data-page=0>第一页</a>'
 			}	
@@ -956,7 +969,8 @@
 			})
 		}
 
-		this.init(option, obj);
+		this.init(option);
+		this.initEvent();
 
 	}
 

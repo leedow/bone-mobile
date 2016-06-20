@@ -1,15 +1,17 @@
 .@{prefix}{
-	&table, &table-border{
+	&table, &table-border, &table-border-all{
+		overflow-x: auto;
 		width: 100%;
 		text-align: left;
 		border-collapse:collapse;
 		th{
 			text-align: left;
-			padding: 0px @padding-vertical;
-			line-height: @table-height;
+			padding: 10px @padding-vertical;
+			//line-height: @table-height;
 			//text-align: center;
 			font-weight: normal;
 			font-size: @font-size-md;
+			white-space: nowrap;
 		}
 
 		thead{
@@ -17,8 +19,8 @@
 		}
 
 		td{
-			padding: 0px @padding-vertical;
-			line-height: @table-height;
+			padding: 10px @padding-vertical;
+			//line-height: @table-height;
 		}
 	}
 
@@ -28,6 +30,62 @@
 		}
 		td{
 			border-bottom: 1px @line-color-light solid;
+		}
+
+
+	}
+
+	&table-border-all{
+		border: 1px @line-color solid;
+	 
+		th{
+			border-bottom: 1px @line-color solid;
+			border-right: 1px @line-color solid;
+		}
+		td{
+			border-bottom: 1px @line-color solid;
+			border-right: 1px @line-color solid;
+			//line-height: @input-height;
+
+			input, select{
+				border:1px #fff solid;
+				border-radius: 0 !important;
+			}
+
+			.bo-input-wrong > p{
+				padding:4px 6px;
+				line-height: 14px;
+				background: @color-highlight;
+				color:#fff;
+			}
+		}
+
+		
+
+		.td-input{
+			padding:0;
+			
+		}
+	}
+
+	&table-box{
+		line-height: 1.5;
+		padding: @padding-vertical*0.5;
+		padding-left: 0;
+		.grey-bg{
+			font-size: @font-size-sm;
+		 	padding-right:5px;
+ 			background:#f9f9f9;
+		}
+		.blue-bg{
+			font-size: @font-size-sm;
+			 padding-right:5px;
+ 			color:@color-primary;
+		}
+		.warm-bg{
+			font-size: @font-size-sm;
+		 padding-right:5px;
+			color: @color-highlight;
 		}
 	}
 

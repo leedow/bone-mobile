@@ -24,7 +24,7 @@ var Format = {
 			msg: '必须为整数'
 		}
 	},
-	do: function(required, format, value){
+	doo: function(required, format, value){
 		var _this = this;
 		var value = value.replace(/\s/, '');
 
@@ -72,10 +72,13 @@ var Verify = {
 		obj.each(function(){
 			var required = $(this).data('required')?$(this).data('required'):false;
 			var format = $(this).data('format')?$(this).data('format'):'';
+			var ignore = $(this).data('ignore')||false;
 			var value = $(this).val();
 			var name = $(this).attr('name');
 
-			var res = Format.do(required, format, value);
+			if(ignore){ return true;}
+
+			var res = Format.doo(required, format, value);
 			if(!res.state){
 				_this.set($(this), res.msg);
 				_this._flag = false;

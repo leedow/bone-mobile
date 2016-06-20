@@ -9,6 +9,7 @@
 	//display: none;
 	z-index: 99999;
 	text-align: center;
+	transition: all .3s ease;   
 }
 
 @-webkit-keyframes open {
@@ -32,6 +33,15 @@
 }
 
 
+.layout-state-open{
+	opacity: 0;
+    
+}
+.layout-state-close{
+	opacity: 0;
+    
+}
+
 .dialog-state-open{
 	-webkit-animation: open 0.3s both ease;
 	animation: open 0.3s both ease;
@@ -44,7 +54,7 @@
 .@{prefix}{
 
 
-	&dialog{
+	&dialog, &rdialog{
 		position: relative;
 		border-radius: 4px;
 		overflow: hidden;

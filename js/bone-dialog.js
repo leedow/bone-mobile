@@ -10,7 +10,7 @@ module.exports.init = function(title, content, config){
 	} else {
 		$dialog.refresh(title, content, config);
 		
-	}
+	}	
 	return $dialog;
 }
 
@@ -51,6 +51,10 @@ function _dialog(title, content, config){
 	this.open = function(){	
 		clearTimeout($this.timer);
 		$(tmp.layout).css('display', 'block');
+		$(tmp.layout).removeClass('layout-state-close').addClass('layout-state-open');
+		$this.timer = setTimeout(function(){
+ 			$(tmp.layout).removeClass('layout-state-open')
+ 		}, 10);
 		var h = $(tmp.dialog).height() + 90;
 
 	 	$(tmp.dialog).css('margin-top', $(window).height()/2 - h/2);
@@ -95,7 +99,7 @@ function _dialog(title, content, config){
 		if(typeof callback != 'undefined'){
 			callback();
 		}
-
+		$(tmp.layout).removeClass('layout-state-open').addClass('layout-state-close');
 		$(tmp.dialog).removeClass('dialog-state-open').addClass('dialog-state-close');
  		$this.timer = setTimeout(function(){
  			$(tmp.layout).css('display', 'none');
@@ -121,7 +125,7 @@ function _dialog(title, content, config){
 			var buttons = '';
 		} else {
 			var buttons = '<div class="dialog-buttons">'
-				+'<button class="'+CONFIG.prefix+'btn-default button dialog-no">取 消</button>'
+				+'<button class="'+CONFIG.prefix+'btn-blank button dialog-no">取 消</button>'
 				+'<button class="'+CONFIG.prefix+'btn-primary button dialog-ok">确 定</button></div>';
 		}
 

@@ -92,7 +92,7 @@
 
 		.@{prefix}header-nav{
 			 
-			li{
+			&>li{
 				&>a{
 					color:#fff;
 				}
@@ -178,6 +178,23 @@
 				}
 			}
 		}
+	}
+
+	@-webkit-keyframes flash {
+		from { color: #fff}
+		to { color: @color-highlight}
+	}
+
+	@keyframes flash {
+		from { color: #fff}
+		to { color: @color-highlight}
+	}
+
+
+	&font-flash{
+		color: @color-highlight;
+		-webkit-animation: flash 0.9s infinite ease;
+		animation: flash 0.9s infinite ease;	
 	}
 
 	

@@ -1,5 +1,6 @@
 //全局变量.
-bone = {}
+
+window.bone = {}
 
 bone.verify = require('./bone-verify2');
 bone.dialog = require('./bone-dialog');
@@ -11,12 +12,13 @@ bone.wall = require('./bone-wall');
 bone.sidebar = require('./bone-sidebar');
 bone.current = require('./bone-current');
 bone.pagination = require('./bone-pagination');
+//bone.rdialog = require('./bone-rdialog');
 
 $(document).ready(function(){
 	bone.dropdown.init();
 	bone.carousel.init();
 	bone.sidebar.init();
-	//的
+	 
 	$('.stars').each(function(){
 		var score = parseInt($(this).data('score'));
 		var tmp = '';
@@ -26,3 +28,5 @@ $(document).ready(function(){
 		$(this).html(tmp);
 	});
 });
+
+module.exports = bone;

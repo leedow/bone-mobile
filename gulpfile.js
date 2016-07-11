@@ -23,6 +23,31 @@ gulp.task('css', function(){
 			.pipe(gulp.dest('./build'))
 			.pipe(gulp.dest('../Andromeda/dist/'));
 
+		gulp.src('./style/bone-jr.less')
+			.pipe(less())
+			.on('error', function(err) {
+				gutil.log('Less Error!', err.message);
+				this.end();
+			})
+			//.pipe(rev())
+			.pipe(autoprefixer())
+			//.pipe(minifyCSS())
+			.pipe(gulp.dest('./build'))
+
+
+		gulp.src('./style/bone-wis.less')
+			.pipe(less())
+			.on('error', function(err) {
+				gutil.log('Less Error!', err.message);
+				this.end();
+			})
+			//.pipe(rev())
+			.pipe(autoprefixer())
+			//.pipe(minifyCSS())
+			.pipe(gulp.dest('./build'))
+			.pipe(gulp.dest('../bone-lion/dist'))
+
+
 		gulp.src('./style/bone-x.less')
 			.pipe(less())
 			.on('error', function(err) {
@@ -36,6 +61,7 @@ gulp.task('css', function(){
 			.pipe(gulp.dest('../Galaxy/css'))
 			.pipe(gulp.dest('../moon/public/css'))
 			//.pipe(gulp.dest('D:/sae/wwwroot/source/smart/trunck/sources/webresource/glw/admin/style'));//for格林卫 
+		
 		gulp.src('./style/bone-bluex.less')
 			.pipe(less())
 			.on('error', function(err) {
@@ -46,7 +72,7 @@ gulp.task('css', function(){
 			.pipe(autoprefixer())
 			//.pipe(minifyCSS())
 			.pipe(gulp.dest('./build'))
-			.pipe(gulp.dest('../IVDS/css'))
+			//.pipe(gulp.dest('../IVDS/css'))
 			.pipe(gulp.dest('../moon/public/css'))
 
 		//学生订餐系统order
@@ -72,6 +98,17 @@ gulp.task('css', function(){
 			.pipe(autoprefixer())
 			//.pipe(minifyCSS())
 			.pipe(gulp.dest('../IVDS/css'));
+
+		gulp.src('./style/bone-lion.less')
+		.pipe(less())
+		.on('error', function(err) {
+			gutil.log('Less Error!', err.message);
+			this.end();
+		})
+		//.pipe(rev())
+		.pipe(autoprefixer())
+		//.pipe(minifyCSS())
+		.pipe(gulp.dest('../IVDS/css'));
 	 
 		 
 	});
@@ -139,6 +176,7 @@ gulp.task('doc', function(){
 			.pipe(ejs())
 			.pipe(gulp.dest('./docs'));
 	});
+
 	watch('./docs-pc/src/*.ejs', function(){
 		gulp.src('./docs-pc/src/*.ejs')
 			.pipe(ejs())

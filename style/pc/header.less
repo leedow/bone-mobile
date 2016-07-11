@@ -4,6 +4,7 @@
 		background: @color-primary;
 	}
 	&header, &header-light, &header-dark{
+		position: relative;
 		height: @header-pc-height;
 		.@{prefix}logo{
 			float: left;
@@ -29,6 +30,7 @@
 				height: @header-pc-height;
 				line-height: @header-pc-height;
 				padding: 0 @padding-horizon;
+
 				&:hover{
 					background: darken(@header-background, 5%)
 				}
@@ -48,6 +50,8 @@
 			top:0;
 		}
 
+
+
 		.@{prefix}header-nav{
 			float: right;
 			height: 100%;
@@ -56,11 +60,13 @@
 				text-align: left;
 				float:left;
 				position: relative;
+
 				.@{prefix}nav-button{
 					height: @header-pc-height;
 					line-height: @header-pc-height;
 					padding-top:0;
 					padding-bottom:0;
+					//color: #999c9e;
 					i{
 						font-size: @font-size-lg;
 						//color: @font-color-light;
@@ -133,12 +139,15 @@
 					 border:0;
 					 border-left:1px @line-color solid;
 					 background: none;
+					 color: #999c9e;
 					 &:hover{
 					 	color:@color-primary;
 					 }
 				}
 			}
 		}
+
+	 
 	}
 
 	&header-dark{

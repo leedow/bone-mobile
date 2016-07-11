@@ -271,6 +271,7 @@
 		this.config = config?config:{};
 		this._config.buttons = (this.config.buttons != undefined)?this.config.buttons:'single';
 		this._config.width = (this.config.width != undefined)?this.config.width:'';
+		this._config.fullHeight = (this.config.fullHeight != undefined)?this.config.fullHeight:false;
 
 		/*config:{
 			'buttons': 'single',
@@ -306,6 +307,12 @@
 			var h = $(tmp.dialog).height() + 90;
 
 		 	$(tmp.dialog).css('margin-top', $(window).height()/2 - h/2);
+
+		 	//如果要显示充满高度
+		 	if($this._config.fullHeight){
+		 		$(tmp.dialog).css('height', $(window).height()-40)
+		 					.css('margin-top', '20px');
+		 	}
 
 		}
 
@@ -391,6 +398,7 @@
 			}
 
 			$(tmp.layout + ' .dialog-close').on('click', function(){
+				$this._no();
 				$this.close();
 			});
 			$(tmp.layout + ' .dialog-ok').on('click', function(){
@@ -414,6 +422,7 @@
 			this.config = config?config:{};
 			this._config.buttons = (this.config.buttons != undefined)?this.config.buttons:'single';
 			this._config.width = (this.config.width != undefined)?this.config.width:'400px';
+			this._config.fullHeight = (this.config.fullHeight != undefined)?this.config.fullHeight:false;
 
 			$this._ok = function(){return true};
 			$this._no = function(){};
@@ -865,10 +874,28 @@
 		var href = window.location.href;
 		aim.removeClass(currentClass);
 
+
+
 		aim.each(function(){
-			if(href.indexOf($(this).data('page')) >= 0){
-				$(this).addClass(currentClass);
+			var keyWords = $(this).data('page');
+			if(typeof keyWords == 'string'){
+				keyWords = keyWords.split(',');
+			} else {
+				keyWords = []
 			}
+	 
+			for(var i=0; i<keyWords.length; i++){
+				try{
+					var req = eval('/'+keyWords[i]+'/');
+					if(req.test(href)){
+						$(this).addClass(currentClass);
+					}
+				} catch (e) {
+
+				}
+				 
+			}
+			 
 		});
 
 

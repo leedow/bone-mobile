@@ -1,0 +1,170 @@
+@box-height: 198px;
+.search{
+	padding: 15px;
+	position: absolute;
+	bottom:0;
+	left:0;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.5);
+
+	.search-input{
+		background: none;
+		border:1px #fff solid;
+		color:#fff;
+		text-align: center;
+		width:40%;
+		border-radius:23px;
+
+		&::-webkit-input-placeholder{
+			color:#fff;
+		}
+
+		&:focus{
+			background: #fff;
+			color:#444;
+		}
+	}
+
+	.search-button{
+		background: none;
+		border:0;
+		color:#fff;
+		border-radius:23px;
+		&:hover{
+			background: rgba(255, 255, 255, 0.2);
+		}
+	}
+}
+
+.wis-box-title{
+	border-bottom: 1px #eee solid;
+	padding:15px 15px 10px   0;
+
+	h2{
+		font-size: 15px;
+		font-weight: normal;
+	}
+}
+
+.user-box{
+	position: relative;
+	padding-left: 210px;
+	height: @box-height;
+
+	.avatar{
+		background: #f9f9f9;
+		width: 210px;
+		position: absolute;
+		left:0;
+		top:0;
+		text-align: center;
+		padding-top:30px;
+
+		.photo{
+			width: 80px;
+			height: 80px;
+			border-radius: 40px;
+		}
+
+		.name{
+
+		}
+
+		.edit-info{
+			
+		}
+	}
+
+	.account-info{
+
+	}
+
+	.user-bar{
+		//border-top:1px #eee solid;
+	}
+
+	.account-data{
+		overflow: hidden;
+		li{
+			width: 25%;
+			float:left;
+			//padding:15px 0 0 15px;
+
+			p{
+				padding:0;
+				margin:0;
+			}
+
+			.title{
+				color: #999;
+				font-size: 14px;
+				font-weight: normal;
+				padding-bottom:10px;
+			}
+
+			.count{
+				font-size: 22px;
+			}
+
+			.unit{
+				font-size: 11px;
+
+			}	
+		}
+	}
+}
+
+.limit{
+	font-size: 12px;
+	color: #999;
+}
+
+/**服务**/
+.server-box{
+	.server-logo{
+		img{
+			width: 100%;
+		}
+	}
+
+	.server-title{
+		color: @color-primary;
+		font-size: 16px;
+		padding: 10px 15px;
+	}
+
+	.server-content{
+		padding:0  15px 10px 15px; 
+		color: #999;
+	}
+
+	.server-bar{
+		padding: 10px 15px;
+		 
+		background: #f9f9f9;
+		span{
+			color:#999;
+			font-size: 12px;
+		}
+	}
+}
+
+.server-add{
+	text-align: center;
+	padding:104px 0;
+	i{
+
+		font-size: 38px;
+		color:#e0e0e0;
+	}
+}
+
+.box-title{
+	border-bottom: 1px #eee solid;
+}
+
+/**通知公告**/
+
+
+
+

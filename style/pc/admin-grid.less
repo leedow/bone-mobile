@@ -5,10 +5,46 @@
 		height: 100%;
 	}
 
+	&container-mini{
+		.@{prefix}logo-mini{
+			display: block;
+		}
+
+		.@{prefix}logo {
+			display: none;
+		}
+
+		.@{prefix}col-sidebar{
+			width: @sidebar-mini-width;
+		}	
+		
+		.@{prefix}col-content{
+			 
+			left: @sidebar-mini-width;
+			 
+		}
+
+		.@{prefix}col-header{
+			 
+			padding-left: @sidebar-mini-width;
+			 
+		}
+
+	}
+
+	&logo-mini{
+		display: none;
+	}
+
+	&logo {
+		display: block;
+	}
+
 	&col-header{
 		width: 100%;
+		padding-left: @ad-sidebar-width;
 		height: @ad-header-height;
-		background: @color-primary;
+		//background: @color-primary;
 		color: #fff;
 	}
 
@@ -27,11 +63,12 @@
 	&sidebar-fixed{
 		position: absolute;
 		left:0;
-		top: @ad-header-height;
+		top: 0;//@ad-header-height;
 		bottom:0;
 	}
 
 	&col-content{
+		overflow-x: hidden;
 		position: absolute;
 		right:0;
 		left: @ad-sidebar-width;

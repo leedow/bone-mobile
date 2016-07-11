@@ -1,0 +1,123 @@
+/**
+	固定侧栏宽度的布局
+**/	
+.@{prefix}{
+	&container{
+
+	}
+
+	&container-app{
+		width: 100%;
+		margin:0 auto;
+		position: absolute;
+		top: @header-height;
+		bottom: 0;
+	}
+
+	&layout-main, &layout-header, &layout-menu{
+		//background: #fff;
+		width: @layout-width-lg;
+		padding-left: @sidebar-width-lg;
+		z-index:999;
+	}
+
+	&layout-full{
+		padding-left: 0 !important;
+		width: 100% !important;
+	}
+
+	&layout-main{
+		margin-top:0;
+		background: @layout-main-background;
+		min-height: 100%;
+		box-shadow: @layout-shadow;
+		overflow: hidden;
+		padding: @header-height 0 @menu-height-icon 0;
+	}
+
+	&layout-main-top0{
+		padding-top: 0;
+	}
+
+	//header里包括横向fix的tabs
+	&layout-main-addon{
+		padding: @header-height+@tabs-height 0 @menu-height-icon 0;
+	}
+
+
+
+	&layout-header{
+	 
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		
+	}
+
+	&layout-header-absolute{
+		z-index: 99999;
+		position: absolute;
+		left:0;
+		right: 0;
+		top:0;
+	}
+
+	&layout-header-normal{
+		position:relative;
+		 
+	}
+
+
+	&layout-menu{
+		//width: @width-sm;
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: #fff;
+		border-top: 1px @line-color solid;	
+	}
+
+
+
+	&layout-sidebar{
+		width: @sidebar-width-md;
+		background: #fff; 
+		position: fixed;
+		left:0;
+		top:0;
+		bottom:0;
+		z-index: 99999;
+
+	}
+
+	&layout-sidemenu{
+		width: @sidemenu-width;
+		 
+		position: fixed;
+		left:0;
+		top:@header-height;
+		bottom:0;
+	}
+
+	&layout-sidemenu-absolute{
+		position: absolute;
+		left:0;
+		top:@header-height;
+	}
+
+	&side-p{
+		padding-left: @sidemenu-width;
+	}
+
+	&unfixed{
+		.@{prefix}layout-header{
+			position: relative;
+		}	
+		.@{prefix}layout-main{
+			padding: 0 0 @menu-height-icon 0;
+		}
+	}
+
+}

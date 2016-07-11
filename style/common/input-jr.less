@@ -1,0 +1,240 @@
+button{
+	outline: none;
+}
+
+.@{prefix}{
+	&textarea, &input, &input-lg,&input-sm,&input-tiny, &select, &select-lg, &select-sm{
+		background: #fff;
+		border: 1px @line-color solid;
+		border-radius: @radius;
+		line-height: 1.5;
+		font-family: inherit;
+		font-size: @font-size;
+
+		&:focus{
+			outline: none;
+			box-shadow: 0 0 4px @input-shadow-color;
+			border: 1px @color-primary solid;
+		}
+
+		&:hover{
+			border: 1px @color-primary solid;
+		}
+	}
+
+	&readonly{
+		background: #f9f9f9;
+	}
+
+	&textarea{
+		padding: @input-padding;
+	}
+
+	&input, &input-lg, &input-sm, &input-tiny{
+		-webkit-appearance: none !important;
+	}
+
+	&input, &select{
+		padding: @input-padding;
+		height: @input-height;
+	}
+
+
+
+	&input-lg, &select-lg{
+		padding: @input-padding-lg;
+		height: @input-height-lg;
+		font-size: @font-size-md;
+	}
+
+	&input-sm, &select-sm{
+		padding: @input-padding-sm;
+		height: @input-height-sm;
+		
+	}
+
+	&input-tiny{
+		padding: @input-padding-tiny;
+		height: @input-height-tiny;
+	}
+
+	select{
+		-webkit-appearance: none;
+	}
+
+	&input-wrong-sm{
+		position: relative;
+		input{
+			outline: none;
+			box-shadow: 0 0 4px @input-shadow-color;
+			border: 1px @color-highlight solid;
+		}
+
+		&>p{
+			color:@color-highlight;
+			padding:0;
+			position: absolute;
+			right: @padding-horizon;
+			top:0;
+			display: none;
+
+		}
+	}
+
+	&input-wrong{
+		position: relative;
+		&:after{
+			position: absolute;
+			right: 0.5*@padding-horizon;
+			top:0;
+			font-family: @font-family-icon; 
+			content: '\e61a';
+			font-size: @font-size-lg;
+			color: @color-highlight;
+			height: @input-height;
+			line-height: @input-height;
+		}
+
+		&>.@{prefix}input,&>.@{prefix}input-lg{
+			border: 1px @color-highlight solid;
+			box-shadow: 0 0 4px @input-shadow-color-wrong;
+			&:hover,  &:focus{
+				border: 1px @color-highlight solid;
+				box-shadow: 0 0 4px @input-shadow-color-wrong;
+			}
+		}
+
+		&>i{
+			display: none;
+		}
+
+		&>p{
+			//position: absolute;
+			//right: 35px;
+			//top:2px;
+			//height: @input-height -4;
+			//line-height: @input-height -4;
+			color: @color-highlight;
+			padding: 1px 0 0 0;
+			text-align: left;
+			background: #fff;
+		}
+		&>.error{
+			position: absolute;
+			left:0;
+			top:0;
+		}
+	
+		 
+
+		 
+	}
+
+	&input-notice{
+		.@{prefix}tip{
+			background: @color-highlight;
+		}
+		
+		.@{prefix}tip-top{
+			position: absolute;
+			z-index:999;
+			right: @padding-vertical;
+			top:-(@tip-height - 8);
+
+			&:before{
+				border-top-color: @color-highlight;
+			}
+		}
+	}
+
+	&form-item-lg{
+		.@{prefix}input-wrong, .@{prefix}input-pass{
+			&:after{
+				right: @padding-horizon;
+				height: @input-height-lg;
+				line-height: @input-height-lg;
+			}		
+		}
+
+		.@{prefix}input-icon{			 
+			i{				 
+				right: @padding-horizon;
+				height: @input-height-lg;
+				line-height: @input-height-lg;
+			}
+		}
+
+	}
+	
+
+	&select-wrong{
+		&>.@{prefix}select,&>.@{prefix}select-lg{
+			border: 1px @color-highlight solid;
+			box-shadow: 0 0 4px @input-shadow-color-wrong;
+			&:hover,  &:focus{
+				border: 1px @color-highlight solid;
+				box-shadow: 0 0 4px @input-shadow-color-wrong;
+			}
+		}
+		&>p{
+			//position: absolute;
+			//bottom: -20px;
+			//left:0;
+			color: @color-highlight;
+			padding: 0.5*@padding-vertical 0 0 0;
+		}
+	}
+
+
+	&input-pass{
+		position: relative;
+		&:after{
+			position: absolute;
+			right: 0.5*@padding-horizon;
+			top:0;
+			font-family: @font-family-icon; 
+			content: '\e608';
+			font-size: @font-size-lg;
+			color: @color-comfort;
+			height: @input-height;
+			line-height: @input-height;
+		}
+
+		&>i{
+			display: none;
+		}
+
+		&>.@{prefix}input,&>.@{prefix}input-lg{
+			border: 1px @color-comfort solid;
+			box-shadow: 0 0 4px @input-shadow-color-pass;
+			&:hover,  &:focus{
+				border: 1px @color-comfort solid;
+				box-shadow: 0 0 4px @input-shadow-color-pass;
+			}
+		}
+		
+	}
+
+	&input-icon{
+		position: relative;
+		i{
+			position: absolute;
+			right: 0.5*@padding-horizon;
+			top:0;
+			font-family: @font-family-icon; 
+			font-size: @font-size-lg;
+			color: @color-comfort;
+			height: @input-height;
+			line-height: @input-height;
+			//background: #fff;
+			color: @font-color-light;
+		}
+	}
+
+	&input-pass-lg{
+		&:after{
+			height: @input-height-lg;
+			line-height: @input-height-lg;
+		}		
+	}
+}

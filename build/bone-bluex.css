@@ -69,7 +69,7 @@ a {
   transition: all ease-in-out 0.4s !important;
 }
 a:hover {
-  color: #6699FF;
+  color: #3492e6;
   outline: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -80,7 +80,7 @@ button {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 button:hover {
-  color: #6699FF;
+  color: #3492e6;
   cursor: pointer;
 }
 p {
@@ -285,11 +285,12 @@ p {
   width: 100%;
 }
 .bo-header {
-  background: #6699FF;
+  background: #3492e6;
 }
 .bo-header,
 .bo-header-light,
 .bo-header-dark {
+  position: relative;
   height: 50px;
 }
 .bo-header .bo-logo,
@@ -345,7 +346,7 @@ p {
 .bo-header .bo-header-dock-right button:hover,
 .bo-header-light .bo-header-dock-right button:hover,
 .bo-header-dark .bo-header-dock-right button:hover {
-  background: #4c88ff;
+  background: #1d86e3;
 }
 .bo-header .bo-header-dock-left a i,
 .bo-header-light .bo-header-dock-left a i,
@@ -434,16 +435,17 @@ p {
 .bo-header-light .bo-header-dock-left button:hover,
 .bo-header-light .bo-header-dock-right button:hover {
   background: none;
-  color: #6699FF;
+  color: #3492e6;
 }
 .bo-header-light .bo-header-nav li .bo-nav-button {
   color: #565a5c;
   border: 0;
   border-left: 1px #e0e0e0 solid;
   background: none;
+  color: #999c9e;
 }
 .bo-header-light .bo-header-nav li .bo-nav-button:hover {
-  color: #6699FF;
+  color: #3492e6;
 }
 .bo-header-dark {
   background: #444;
@@ -522,7 +524,7 @@ p {
 .bo-pagination strong {
   display: inline-block;
   border-right: 1px #e0e0e0 solid;
-  background: #6699FF;
+  background: #3492e6;
   color: #fff;
 }
 .bo-login-box {
@@ -555,6 +557,7 @@ p {
   color: #fff;
   text-align: center;
   font-size: 16px;
+  z-index: 999999;
 }
 .passport-body {
   background: #f2f2f2;
@@ -626,14 +629,14 @@ p {
   font-size: 28px;
 }
 .bo-sidebar-menu .menu-item-current {
-  border-left: 3px #6699FF solid;
+  border-left: 3px #3492e6 solid;
   padding-left: 77px;
   background: #fff;
   border-top: 1px #eee solid;
   border-bottom: 1px #eee solid;
 }
 .bo-sidebar-menu .menu-item-current i {
-  color: #6699FF;
+  color: #3492e6;
   left: 22px;
 }
 .bo-sidebar-menu a {
@@ -688,12 +691,12 @@ p {
   color: #565a5c;
 }
 .bo-btn-primary-blank {
-  color: #6699FF;
-  border: 1px #6699FF solid;
+  color: #3492e6;
+  border: 1px #3492e6 solid;
   background: none;
 }
 .bo-btn-primary-blank:hover {
-  background: #6699FF;
+  background: #3492e6;
   color: #fff;
 }
 .bo-btn-warm-blank {
@@ -715,21 +718,21 @@ p {
 }
 .bo-btn-primary {
   color: #fff;
-  background: #6699FF;
-  border: 1px #6699FF solid;
+  background: #3492e6;
+  border: 1px #3492e6 solid;
 }
 .bo-btn-primary:hover {
-  background: #2e74ff;
+  background: #1976c9;
   color: #fff;
 }
 .bo-btn-primary-underline {
   color: #fff;
-  background: #6699FF;
-  border: 1px #6699FF solid;
-  border-bottom: 3px #3377ff solid;
+  background: #3492e6;
+  border: 1px #3492e6 solid;
+  border-bottom: 3px #1979ce solid;
 }
 .bo-btn-primary-underline:hover {
-  background: #2e74ff;
+  background: #1976c9;
   color: #fff;
 }
 .bo-btn-warm {
@@ -763,7 +766,7 @@ p {
   color: #999;
 }
 .bo-btn-none:hover {
-  color: #6699FF;
+  color: #3492e6;
 }
 .bo-btn-tiny {
   padding: 2px 6px;
@@ -806,8 +809,8 @@ button {
 .bo-select-lg:focus,
 .bo-select-sm:focus {
   outline: none;
-  box-shadow: 0 0 4px #b3ccff;
-  border: 1px #6699FF solid;
+  box-shadow: 0 0 4px #78b7ee;
+  border: 1px #3492e6 solid;
 }
 .bo-textarea:hover,
 .bo-input:hover,
@@ -817,7 +820,7 @@ button {
 .bo-select:hover,
 .bo-select-lg:hover,
 .bo-select-sm:hover {
-  border: 1px #6699FF solid;
+  border: 1px #3492e6 solid;
 }
 .bo-readonly {
   background: #f9f9f9;
@@ -859,7 +862,7 @@ button {
 }
 .bo-input-wrong-sm input {
   outline: none;
-  box-shadow: 0 0 4px #b3ccff;
+  box-shadow: 0 0 4px #78b7ee;
   border: 1px #FF6633 solid;
 }
 .bo-input-wrong-sm > p {
@@ -1130,6 +1133,9 @@ button {
 }
 .bo-m1111 {
   margin: 14px 14px;
+}
+.bo-m2222 {
+  margin: 28px 28px;
 }
 .bo-m1000 {
   margin-top: 14px;
@@ -2366,7 +2372,7 @@ button {
   width: 28px;
   border: none;
   border-radius: 14px;
-  background: #6699FF;
+  background: #3492e6;
   color: #fff;
   line-height: 28px;
 }
@@ -2593,12 +2599,17 @@ button {
 }
 .bo-dialog .dialog-close:hover,
 .bo-rdialog .dialog-close:hover {
-  color: #6699FF;
+  color: #3492e6;
 }
 .bo-dialog .dialog-content,
 .bo-rdialog .dialog-content {
   height: 100%;
   overflow: hidden;
+}
+.bo-dialog .content,
+.bo-rdialog .content {
+  height: 100%;
+  overflow-y: auto;
 }
 .bo-dialog .dialog-buttons,
 .bo-rdialog .dialog-buttons {
@@ -2711,7 +2722,7 @@ button {
 .bo-table-box .blue-bg {
   font-size: 12px;
   padding-right: 5px;
-  color: #6699FF;
+  color: #3492e6;
 }
 .bo-table-box .warm-bg {
   font-size: 12px;
@@ -2764,6 +2775,7 @@ button {
   overflow: hidden;
 }
 .bo-tab-horizon .bo-tab-item {
+  border-bottom: 2px #eee solid;
   padding-right: 20px ;
   padding-left: 20px;
   display: inline-block;
@@ -2774,8 +2786,8 @@ button {
   float: left;
 }
 .bo-tab-horizon .bo-tab-item-current {
-  border-bottom: 2px #6699FF solid;
-  color: #6699FF !important;
+  border-bottom: 2px #3492e6 solid;
+  color: #3492e6 !important;
 }
 .bo-rdialog {
   position: fixed !important;
@@ -2854,21 +2866,25 @@ button {
   border: 1px #eee solid;
   border-radius: 3px;
   text-align: center;
-  padding: 10px 0px 20px 0px;
+  padding: 5px 0px 20px 0px;
   margin: 20px 0 0 0;
 }
 .home-tips p {
   font-size: 32px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
+}
+.home-tips span {
+  color: #999;
 }
 .home-tips-warm {
   background: #fff;
-  border-top: 2px #6699FF solid;
+  border-top: 2px #3492e6 solid;
 }
 .container-home {
   padding-top: 60px;
   padding-left: 20px;
   padding-right: 20px;
+  background: #f9f9f9;
 }
 .menu-btn {
   display: none;
@@ -2918,4 +2934,7 @@ button {
   .menu-btn {
     display: none !important;
   }
+}
+.container-home {
+  background: #fff;
 }

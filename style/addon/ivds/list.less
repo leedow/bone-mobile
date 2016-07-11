@@ -1,0 +1,99 @@
+.content-box{
+	background: #fff;
+	border:1px #eee solid;
+	border-radius: 4px;
+	//padding:15px;
+
+	&:hover{
+		border:1px #3492e6 solid !important;
+	}
+
+	 
+
+
+	.title{
+		font-size: 16px;
+		text-align: left;
+		padding:15px 15px 10px 15px;
+		border-bottom: 1px #eee solid;
+
+	}
+
+	.train-box{
+		line-height: 28px;
+		text-align: left;
+		padding: 15px;
+
+		.train-p{
+			line-height: 28px;
+			padding:0;
+			margin:0;
+		}
+
+		.train-info-title{
+			color: #999
+		}
+	}
+
+	.edit-bar{
+		border-top:1px #eee solid;
+		padding: 10px;
+		background: #f2f2f2;
+		text-align: right;
+		height: 54px;
+
+		span{
+			line-height: 34px;
+			padding-right: 10px;
+		}
+	}
+}
+
+.flow-box{
+	border-left:2px #eee solid;
+	margin-left:20px;
+	position: relative;
+	height: 30px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+
+
+	.flow-item{
+		position: absolute;
+		left:0;
+		top:0;
+
+		text-align: left;
+		padding-left: 10px;
+		height: 30px;
+		line-height: 30px;
+		&:before{
+			width: 8px;
+			height: 8px;
+			border-radius: 5px;
+			background: #eee;
+			content: "";
+			position: absolute;
+			left:-5px;
+			top:11px;
+		}
+
+		.train-info-title{
+			color: #3492e6;
+		}
+	}
+
+	.flow-info-title{
+		font-size: 13px;
+		color: #3492e6;
+		padding-right: 10px;
+	}
+
+	.flow-item-top{
+		top: -15px;
+	}
+
+	.flow-item-bottom{
+		top: 15px;
+	}
+}

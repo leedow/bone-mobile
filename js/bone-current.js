@@ -16,10 +16,28 @@ module.exports = function(aimObj, currentClass){
 	var href = window.location.href;
 	aim.removeClass(currentClass);
 
+
+
 	aim.each(function(){
-		if(href.indexOf($(this).data('page')) >= 0){
-			$(this).addClass(currentClass);
+		var keyWords = $(this).data('page');
+		if(typeof keyWords == 'string'){
+			keyWords = keyWords.split(',');
+		} else {
+			keyWords = []
 		}
+ 
+		for(var i=0; i<keyWords.length; i++){
+			try{
+				var req = eval('/'+keyWords[i]+'/');
+				if(req.test(href)){
+					$(this).addClass(currentClass);
+				}
+			} catch (e) {
+
+			}
+			 
+		}
+		 
 	});
 
 

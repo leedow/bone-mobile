@@ -1,0 +1,92 @@
+//为了改进grid下的padding问题，padding-wis在padding的基础上所有值都*0.5
+.@{prefix}{
+	&p1111{
+		padding: 0.5*@padding-vertical 0.5*@padding-horizon;
+	}
+	&p0111{
+		padding: 0  0.5*@padding-horizon 0.5*@padding-vertical 0.5*@padding-horizon;
+	}
+	&p1000{
+		padding-top: 0.5*@padding-vertical;
+	}
+	&p0010{
+		padding-bottom: 0.5*@padding-vertical;
+	}
+	&p0100{
+		padding-right: 0.5*@padding-horizon;
+	}
+	&p0001{
+		padding-left: 0.5*@padding-horizon;
+	}
+	&p1010{
+		padding: 0.5*@padding-vertical 0;
+	}
+	&p0101{
+		padding: 0 0.5*@padding-horizon;
+	}
+	&p1101{
+		padding: 0.5*@padding-vertical 0.5*@padding-horizon 0 0.5*@padding-vertical;
+	}
+	&p1001{
+		padding: 0.5*@padding-vertical 0 0 0.5*@padding-vertical;
+	}
+	&p0110{
+		padding: 0   0.5*@padding-horizon 0.5*@padding-vertical 0;
+	}
+
+
+
+	&p2222{
+		padding: @padding-vertical @padding-horizon;
+	}
+	&p0222{
+		padding: 0  @padding-horizon @padding-vertical @padding-horizon;
+	}
+	&p2000{
+		padding-top: @padding-vertical;
+	}
+	&p0020{
+		padding-bottom: @padding-vertical;
+	}
+	&p0200{
+		padding-right: @padding-horizon;
+	}
+	&p0002{
+		padding-left: @padding-horizon;
+	}
+	&p2020{
+		padding: @padding-vertical 0;
+	}
+	&p0202{
+		padding: 0 @padding-horizon;
+	}
+	&p2202{
+		padding: @padding-vertical @padding-horizon 0 @padding-vertical;
+	}
+	&p2002{
+		padding: @padding-vertical 0 0 @padding-vertical;
+	}
+	&p0220{
+		padding: 0   @padding-horizon @padding-vertical 0;
+	}
+
+
+
+
+	&p3000{
+		padding-top: 2*@padding-vertical;
+	}
+	&p0030{
+		padding-bottom: 2*@padding-vertical;
+	}
+	&p0300{
+		padding-right: 2*@padding-horizon;
+	}
+	&p0003{
+		padding-left: 2*@padding-horizon;
+	}
+	&p3333{
+		padding: 2*@padding-vertical 2*@padding-horizon;
+	}
+
+}

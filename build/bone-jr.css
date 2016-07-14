@@ -1008,8 +1008,9 @@ button {
 }
 .bo-form-blank .form-notice {
   padding: 2px 14px;
-  color: #FF6633;
+  background: #FF6633;
   text-align: left;
+  color: #fff;
 }
 .bo-form-blank .bo-form-item,
 .bo-form-blank .bo-form-item-lg {

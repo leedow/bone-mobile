@@ -1028,8 +1028,9 @@ button {
 }
 .bo-form-blank .form-notice {
   padding: 2px 14px;
-  color: #B61D1D;
+  background: #B61D1D;
   text-align: left;
+  color: #fff;
 }
 .bo-form-blank .bo-form-item,
 .bo-form-blank .bo-form-item-lg {
@@ -2809,7 +2810,6 @@ button {
   padding-top: 60px;
   padding-left: 20px;
   padding-right: 20px;
-  background: #f9f9f9;
 }
 .menu-btn {
   display: none;

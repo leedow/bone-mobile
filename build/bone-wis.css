@@ -68,7 +68,7 @@ a {
   transition: all ease-in-out 0.4s !important;
 }
 a:hover {
-  color: #1ab394;
+  color: #3492e6;
   outline: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -79,7 +79,7 @@ button {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 button:hover {
-  color: #1ab394;
+  color: #3492e6;
   cursor: pointer;
 }
 p {
@@ -150,7 +150,7 @@ p {
   overflow-y: auto;
 }
 .bo-header {
-  background: #1ab394;
+  background: #3492e6;
 }
 .bo-header,
 .bo-header-light,
@@ -211,7 +211,7 @@ p {
 .bo-header .bo-header-dock-right button:hover,
 .bo-header-light .bo-header-dock-right button:hover,
 .bo-header-dark .bo-header-dock-right button:hover {
-  background: #179d82;
+  background: #1d86e3;
 }
 .bo-header .bo-header-dock-left a i,
 .bo-header-light .bo-header-dock-left a i,
@@ -300,7 +300,7 @@ p {
 .bo-header-light .bo-header-dock-left button:hover,
 .bo-header-light .bo-header-dock-right button:hover {
   background: none;
-  color: #1ab394;
+  color: #3492e6;
 }
 .bo-header-light .bo-header-nav li .bo-nav-button {
   color: #565a5c;
@@ -310,7 +310,7 @@ p {
   color: #999c9e;
 }
 .bo-header-light .bo-header-nav li .bo-nav-button:hover {
-  color: #1ab394;
+  color: #3492e6;
 }
 .bo-header-dark {
   background: #444;
@@ -389,7 +389,7 @@ p {
 .bo-pagination strong {
   display: inline-block;
   border-right: 1px #e7eaec solid;
-  background: #1ab394;
+  background: #3492e6;
   color: #fff;
 }
 .bo-login-box {
@@ -427,7 +427,7 @@ p {
 .bo-logo,
 .bo-logo-mini {
   height: 60px;
-  background: #1ab394;
+  background: #3492e6;
   color: #fff;
   line-height: 60px;
   border-bottom: 1px #2F4050 solid;
@@ -474,12 +474,12 @@ p {
   font-size: 28px;
 }
 .bo-sidebar-menu .menu-item-current {
-  border-left: 4px #1ab394 solid;
+  border-left: 4px #3492e6 solid;
   padding-left: 66px;
   background: #293846;
 }
 .bo-sidebar-menu .menu-item-current i {
-  color: #1ab394;
+  color: #3492e6;
   left: 16px;
 }
 .bo-sidebar-menu a {
@@ -487,15 +487,6 @@ p {
   width: 100%;
   display: block;
   color: #A7B1C2;
-}
-.content-box {
-  position: relative;
-  padding-left: 140px;
-}
-.content-box .bo-tab-side {
-  position: absolute;
-  left: 0;
-  top: 0;
 }
 #bo-dialog-layout {
   position: fixed;
@@ -506,8 +497,14 @@ p {
   background: rgba(0, 0, 0, 0.7);
   z-index: 99999;
   text-align: center;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 @-webkit-keyframes open {
   from {
@@ -547,12 +544,6 @@ p {
     display: none;
   }
 }
-.layout-state-open {
-  opacity: 0;
-}
-.layout-state-close {
-  opacity: 0;
-}
 .dialog-state-open {
   -webkit-animation: open 0.3s both ease;
   animation: open 0.3s both ease;
@@ -561,8 +552,7 @@ p {
   -webkit-animation: close 0.3s both ease;
   animation: close 0.3s both ease;
 }
-.bo-dialog,
-.bo-rdialog {
+.bo-dialog {
   position: relative;
   border-radius: 4px;
   overflow: hidden;
@@ -573,8 +563,7 @@ p {
   border: 1px #565a5c solid;
   margin: 0 auto;
 }
-.bo-dialog .dialog-title,
-.bo-rdialog .dialog-title {
+.bo-dialog .dialog-title {
   position: absolute;
   width: 100%;
   height: 40px;
@@ -586,44 +575,42 @@ p {
   margin: 0;
   padding: 3px 0 0 0;
 }
-.bo-dialog .dialog-close,
-.bo-rdialog .dialog-close {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  font-size: 20px;
-  top: 0;
-  right: 0;
-  cursor: pointer;
-}
-.bo-dialog .dialog-close:hover,
-.bo-rdialog .dialog-close:hover {
-  color: #1ab394;
-}
-.bo-dialog .dialog-content,
-.bo-rdialog .dialog-content {
+.bo-dialog .dialog-content {
   height: 100%;
   overflow: hidden;
+  padding: 12px 15px 15px 15px;
+  font-size: 15px;
 }
-.bo-dialog .content,
-.bo-rdialog .content {
-  height: 100%;
-  overflow-y: auto;
-}
-.bo-dialog .dialog-buttons,
-.bo-rdialog .dialog-buttons {
+.bo-dialog .dialog-buttons {
   position: absolute;
+  border-top: 1px #e7eaec solid;
   bottom: 0;
   left: 0;
   height: 50px;
   width: 100%;
-  padding: 0 14px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
-.bo-dialog .dialog-buttons .button,
-.bo-rdialog .dialog-buttons .button {
-  float: right;
-  margin-left: 15px;
+.bo-dialog .dialog-buttons .button-ok,
+.bo-dialog .dialog-buttons .button-no,
+.bo-dialog .dialog-buttons .button {
+  background: none;
+  border: 0;
+  font-size: 16px;
+}
+.bo-dialog .dialog-buttons .button-ok {
+  float: left;
+  width: 50%;
+}
+.bo-dialog .dialog-buttons .button-no {
+  float: left;
+  width: 50%;
+  border-right: 1px #e7eaec solid;
+}
+.bo-dialog .dialog-buttons .button {
+  width: 100%;
 }
 .bo-sidebar {
   width: 100%;
@@ -712,12 +699,12 @@ p {
   color: #565a5c;
 }
 .bo-btn-primary-blank {
-  color: #1ab394;
-  border: 1px #1ab394 solid;
+  color: #3492e6;
+  border: 1px #3492e6 solid;
   background: none;
 }
 .bo-btn-primary-blank:hover {
-  background: #1ab394;
+  background: #3492e6;
   color: #fff;
 }
 .bo-btn-warm-blank {
@@ -739,21 +726,21 @@ p {
 }
 .bo-btn-primary {
   color: #fff;
-  background: #1ab394;
-  border: 1px #1ab394 solid;
+  background: #3492e6;
+  border: 1px #3492e6 solid;
 }
 .bo-btn-primary:hover {
-  background: #13826b;
+  background: #1976c9;
   color: #fff;
 }
 .bo-btn-primary-underline {
   color: #fff;
-  background: #1ab394;
-  border: 1px #1ab394 solid;
-  border-bottom: 3px #14866f solid;
+  background: #3492e6;
+  border: 1px #3492e6 solid;
+  border-bottom: 3px #1979ce solid;
 }
 .bo-btn-primary-underline:hover {
-  background: #13826b;
+  background: #1976c9;
   color: #fff;
 }
 .bo-btn-warm {
@@ -787,7 +774,7 @@ p {
   color: #999;
 }
 .bo-btn-none:hover {
-  color: #1ab394;
+  color: #3492e6;
 }
 .bo-btn-tiny {
   padding: 2px 6px;
@@ -830,8 +817,8 @@ button {
 .bo-select-lg:focus,
 .bo-select-sm:focus {
   outline: none;
-  box-shadow: 0 0 4px #37e2bf;
-  border: 1px #1ab394 solid;
+  box-shadow: 0 0 4px #78b7ee;
+  border: 1px #3492e6 solid;
 }
 .bo-textarea:hover,
 .bo-input:hover,
@@ -841,7 +828,7 @@ button {
 .bo-select:hover,
 .bo-select-lg:hover,
 .bo-select-sm:hover {
-  border: 1px #1ab394 solid;
+  border: 1px #3492e6 solid;
 }
 .bo-readonly {
   background: #f9f9f9;
@@ -883,7 +870,7 @@ button {
 }
 .bo-input-wrong-sm input {
   outline: none;
-  box-shadow: 0 0 4px #37e2bf;
+  box-shadow: 0 0 4px #78b7ee;
   border: 1px #FF6633 solid;
 }
 .bo-input-wrong-sm > p {
@@ -1049,8 +1036,9 @@ button {
 }
 .bo-form-blank .form-notice {
   padding: 2px 14px;
-  color: #FF6633;
+  background: #FF6633;
   text-align: left;
+  color: #fff;
 }
 .bo-form-blank .bo-form-item,
 .bo-form-blank .bo-form-item-lg {
@@ -1352,12 +1340,13 @@ button {
   float: left;
 }
 .bo-tab-horizon .bo-tab-item-current {
-  border-bottom: 2px #1ab394 solid;
-  color: #1ab394 !important;
+  border-bottom: 2px #3492e6 solid;
+  color: #3492e6 !important;
 }
 .bo-tab-side {
   height: 100%;
   background: #f9f9f9;
+  border-right: 1px #e7eaec solid;
   line-height: 1.6;
   width: 140px;
 }
@@ -1370,11 +1359,13 @@ button {
 .bo-tab-side .bo-tab-item {
   font-size: 16px;
   padding: 10px 4px;
+  border-bottom: 1px #e7eaec solid;
   padding-left: 20px !important;
   cursor: pointer;
 }
 .bo-tab-side .bo-tab-item-current {
-  color: #1ab394 !important;
+  margin-right: -1px;
+  color: #3492e6 !important;
   background: #fff;
 }
 .bo-tab-side .tab-item-tag {
@@ -1390,51 +1381,84 @@ button {
   color: #999;
 }
 .bo-p1111 {
-  padding: 14px 14px;
+  padding: 7px 7px;
 }
 .bo-p0111 {
-  padding: 0 14px 14px 14px;
+  padding: 0 7px 7px 7px;
 }
 .bo-p1000 {
-  padding-top: 14px;
+  padding-top: 7px;
 }
 .bo-p0010 {
-  padding-bottom: 14px;
+  padding-bottom: 7px;
 }
 .bo-p0100 {
-  padding-right: 14px;
+  padding-right: 7px;
 }
 .bo-p0001 {
-  padding-left: 14px;
+  padding-left: 7px;
 }
 .bo-p1010 {
-  padding: 14px 0;
+  padding: 7px 0;
 }
 .bo-p0101 {
-  padding: 0 14px;
+  padding: 0 7px;
 }
 .bo-p1101 {
-  padding: 14px 14px 0 14px;
+  padding: 7px 7px 0 7px;
 }
 .bo-p1001 {
-  padding: 14px 0 0 14px;
+  padding: 7px 0 0 7px;
 }
 .bo-p0110 {
-  padding: 0 14px 14px 0;
-}
-.bo-p2000 {
-  padding-top: 28px;
-}
-.bo-p0020 {
-  padding-bottom: 28px;
-}
-.bo-p0200 {
-  padding-right: 28px;
-}
-.bo-p0002 {
-  padding-left: 28px;
+  padding: 0 7px 7px 0;
 }
 .bo-p2222 {
+  padding: 14px 14px;
+}
+.bo-p0222 {
+  padding: 0 14px 14px 14px;
+}
+.bo-p2000 {
+  padding-top: 14px;
+}
+.bo-p0020 {
+  padding-bottom: 14px;
+}
+.bo-p0200 {
+  padding-right: 14px;
+}
+.bo-p0002 {
+  padding-left: 14px;
+}
+.bo-p2020 {
+  padding: 14px 0;
+}
+.bo-p0202 {
+  padding: 0 14px;
+}
+.bo-p2202 {
+  padding: 14px 14px 0 14px;
+}
+.bo-p2002 {
+  padding: 14px 0 0 14px;
+}
+.bo-p0220 {
+  padding: 0 14px 14px 0;
+}
+.bo-p3000 {
+  padding-top: 28px;
+}
+.bo-p0030 {
+  padding-bottom: 28px;
+}
+.bo-p0300 {
+  padding-right: 28px;
+}
+.bo-p0003 {
+  padding-left: 28px;
+}
+.bo-p3333 {
   padding: 28px 28px;
 }
 .bo-m1111 {
@@ -1582,6 +1606,7 @@ button {
  * Bootstrap v3.3.5 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * 在bottstrap的基础上取出了grid的padding
  */
 .container {
   margin-right: auto;
@@ -1607,12 +1632,6 @@ button {
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-.row {
-  margin-left: -15px;
-  margin-right: -15px;
 }
 .col-xs-1,
 .col-sm-1,
@@ -1664,8 +1683,6 @@ button {
 .col-lg-12 {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 .col-xs-1,
 .col-xs-2,
@@ -2615,7 +2632,7 @@ button {
 .bo-table-box .blue-bg {
   font-size: 12px;
   padding-right: 5px;
-  color: #1ab394;
+  color: #3492e6;
 }
 .bo-table-box .warm-bg {
   font-size: 12px;
@@ -2640,6 +2657,82 @@ button {
   position: absolute;
   left: 0;
   top: 0;
+}
+.bo-tip {
+  background: #444;
+  color: #fff;
+  padding: 1px 4px;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 2px;
+}
+.bo-tip:before {
+  position: absolute;
+  content: " ";
+  width: 0px;
+  height: 0px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent;
+}
+.bo-tip-left:before {
+  border-left-color: #444;
+  left: -5px;
+  top: 50%;
+  margin-top: -5px;
+}
+.bo-tip-top:before {
+  border-top-color: #444;
+  right: 15px;
+  bottom: -10px;
+}
+.bo-tip-bottom:before {
+  position: absolute;
+  left: 20px;
+  bottom: -25px;
+}
+.bo-tip-right:before {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  margin-top: -10px;
+}
+.fade-transition {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+.fade-enter,
+.fade-leave {
+  opacity: 0;
+}
+.slideDown-transition {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+.slideDown-enter,
+.slideDown-leave {
+  opacity: 0;
+  -webkit-transform: translate3d(0, -40px, 0);
+          transform: translate3d(0, -40px, 0);
+}
+.slideUp-transition {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+.slideUp-enter,
+.slideUp-leave {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 40px, 0);
+          transform: translate3d(0, 40px, 0);
+}
+.pageSlide-transition {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+.pageSlide-enter {
+  opacity: 0;
+  -webkit-transform: translate3d(100%, 0, 0);
+          transform: translate3d(100%, 0, 0);
 }
 .search {
   padding: 15px;
@@ -2732,7 +2825,7 @@ button {
   width: 100%;
 }
 .server-box .server-title {
-  color: #1ab394;
+  color: #3492e6;
   font-size: 16px;
   padding: 10px 15px;
 }
@@ -2760,3 +2853,72 @@ button {
   border-bottom: 1px #eee solid;
 }
 /**通知公告**/
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+body {
+  background: #f2f2f2;
+}
+.bo-tab-horizon .bo-tab-item {
+  padding: 0 20px;
+}
+.content-box {
+  position: relative;
+  padding-left: 140px;
+}
+.content-box .bo-tab-side {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.bo-box {
+  border-radius: 4px;
+}
+/*登录注册*/
+.reg-banner {
+  position: relative;
+}
+.reg-banner img {
+  width: 100%;
+}
+.reg-banner h1 {
+  font-weight: normal;
+  font-size: 20px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 30px;
+  line-height: 30px;
+  margin-top: -22px;
+  color: #fff;
+}
+.reg-banner h1 span {
+  color: #fff;
+  font-size: 13px;
+  display: block;
+}
+.reg-banner:before {
+  position: absolute;
+  content: " ";
+  width: 0px;
+  height: 0px;
+  border-width: 15px;
+  border-style: solid;
+  border-color: transparent;
+  bottom: 0;
+  left: 50%;
+  margin-left: -15px;
+  border-bottom-color: #fff;
+}
+.clear {
+  clear: both;
+  width: 100%;
+  height: 0;
+  line-height: 0;
+  overflow: hidden;
+}

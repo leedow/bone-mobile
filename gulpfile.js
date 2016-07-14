@@ -46,6 +46,7 @@ gulp.task('css', function(){
 			//.pipe(minifyCSS())
 			.pipe(gulp.dest('./build'))
 			.pipe(gulp.dest('../bone-lion/dist'))
+			.pipe(gulp.dest('../front/dist'))
 
 
 		gulp.src('./style/bone-x.less')

@@ -1,44 +1,9 @@
+/*
+ bone-wis主题增强表单样式，增加了适用于PC端的表单布局
+*/	
 .@{prefix}{
-	&form{
-		label{
-			font-weight: bold;
-		}
 
-	}
-
-	&label-required{
-		&:after{
-			color: @color-highlight;
-			content: ' * ';
-			font-size: @font-size-md;
-		}
-	}
-
-	&form-item, &form-item-lg{
-		padding: @form-item-padding 0;
-	}
-
-	&form-item:after{
-		content: '';
-		display: block;
-		clear:both;
-		width: 100%;
-		line-height: 0;
-		overflow: hidden;
-	}
-
-	&form-control{
-		width: 100%;
-	}
-
-	&label-control{
-		line-height: @input-height;
-		text-align: right;
-	}
-
-
-	//手机端样式
-	&form-blank {
+	&form-pc {
 
 		.form-notice{
 			padding:2px @padding-vertical;
@@ -50,15 +15,24 @@
 		
 
 		.@{prefix}form-item,.@{prefix}form-item-lg{
+			margin-bottom:10px;
+
+			.@{prefix}input-wrong{
+				input{
+					border-bottom:1px @color-highlight solid !important;
+				}
+			}
 	 
 			padding: 0;
-			border-bottom:1px @line-color solid;
+			padding-left: @form-blank-text-width;
+			//border-bottom:1px @line-color solid;
 			position: relative;
 			
 			input,select{
 				border: 0 !important;
+				border-bottom:1px @line-color solid !important;
 				padding: @input-padding-lg;
-				padding-left: @form-blank-text-width;
+				//margin-left: @form-blank-text-width;
 				height: @input-height-lg;
 				font-size: @font-size-md;
 				box-shadow: none !important;
@@ -70,6 +44,7 @@
 				padding: @input-padding-lg;
 				width: 100%;
 				margin:0;
+				border-bottom:1px @line-color solid !important;
 			}
 
 			.input-no-label{
@@ -100,14 +75,11 @@
 
 		}
 
-		.@{prefix}form-item-lg:last-child{
-			border-bottom: 0;
+		.submit-btn{
+			padding-left: @form-blank-text-width+18;
 		}
 
-		.@{prefix}form-item-noline {
-			border-bottom: 0px !important;
-		}
-
+	 
 		 
 	}
 

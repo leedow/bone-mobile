@@ -7,7 +7,7 @@
 		display: inline-block;
 
 		.@{prefix}dropdown-menu{
-			display: none;
+			//display: none;
 			position: absolute;
 			 
 			border:1px @line-color solid;
@@ -47,9 +47,8 @@
 	}
 
 	&dropdown-menu{
-		overflow: hidden;
+	 
 		&>li{
-
 			a, button{
 				display: block;
 				width: 100%;
@@ -57,13 +56,19 @@
 				line-height: 38px;
 				padding: 0 15px;
 				cursor: pointer;
+				
 			}
 
 			button{
 				background: none;
 				border: 0;
-				font-size: 15px;
+				font-size: @font-size;
 				text-align: left;
+			}
+
+			button:hover{
+				background: #f2f2f2;
+				color:@font-color;
 			}
 
 			a:hover{

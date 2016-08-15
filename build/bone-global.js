@@ -109,8 +109,11 @@
 		},
 		doo: function(required, format, value){
 			var _this = this;
-			var value = value.replace(/\s/, '');
-
+			try{
+				var value = value.replace(/\s/, '');
+			} catch (e){
+				var value = '';
+			}
 			if(required){
 				if(!_this.type['required'].reg.test(value)){
 					return {
@@ -932,8 +935,7 @@
 					this.obj = option.ele;
 				}
 			}
-			this.initDOM();
-			 
+			this.initDOM();	 
 		}
 		
 

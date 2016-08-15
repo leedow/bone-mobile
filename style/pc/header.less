@@ -77,11 +77,25 @@
 					}
 				}
 
+				.@{prefix}nav-button-icon{
+					position: relative;
+					padding-left: @header-pc-height;
+
+					.pic{
+						width: 0.6*@header-pc-height;
+						height: 0.6*@header-pc-height;
+						border-radius: 0.3*@header-pc-height;
+						position: absolute;
+						left: 15px;
+						top: 0.2*@header-pc-height;
+					}
+				}
+
 				.tag{
 					position: absolute;
 					right:5px;
 					top:5px;
-					background: red;
+					background: @color-highlight;
 					color:#fff;
 					padding:2px 5px;
 					line-height: 1em;

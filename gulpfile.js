@@ -60,7 +60,7 @@ gulp.task('css', function(){
 			//.pipe(minifyCSS())
 			.pipe(gulp.dest('./build'))
 			.pipe(gulp.dest('../Galaxy/css'))
-			.pipe(gulp.dest('../moon/public/css'))
+			//.pipe(gulp.dest('../moon/public/css'))
 			//.pipe(gulp.dest('D:/sae/wwwroot/source/smart/trunck/sources/webresource/glw/admin/style'));//for格林卫 
 		
 		gulp.src('./style/bone-bluex.less')
@@ -74,7 +74,22 @@ gulp.task('css', function(){
 			//.pipe(minifyCSS())
 			.pipe(gulp.dest('./build'))
 			//.pipe(gulp.dest('../IVDS/css'))
+			//.pipe(gulp.dest('../moon/public/css'))
+
+
+		gulp.src('./style/bone-moon.less')
+			.pipe(less())
+			.on('error', function(err) {
+				gutil.log('Less Error!', err.message);
+				this.end();
+			})
+			//.pipe(rev())
+			.pipe(autoprefixer())
+			//.pipe(minifyCSS())
+			.pipe(gulp.dest('./build'))
+			//.pipe(gulp.dest('../IVDS/css'))
 			.pipe(gulp.dest('../moon/public/css'))
+
 
 		//学生订餐系统order
 		gulp.src('./style/bone-order.less')

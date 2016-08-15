@@ -4,7 +4,7 @@
 
 	&logo, &logo-mini{
 		height: @header-height;
-		background: @color-primary;
+		background: darken(@color-primary, 10%);
 		color:#fff;
 		line-height: @header-height;
 		border-bottom:1px #2F4050 solid;
@@ -53,8 +53,7 @@
 			position: relative;
 			text-align: left;
 			padding-left: 66px;
-			font-size: 16px;
-			color:#fff;
+			font-size: 15px;
 			cursor: pointer;
 			i{
 				position: absolute;
@@ -62,7 +61,6 @@
 				top:0;
 				line-height: @side-height;
 				font-size: 28px;
-				color:#A7B1C2;
 
 			}
 		}
@@ -74,7 +72,6 @@
 			//box-sizing: border-box;
 	 		//border-top:1px #eee solid;
 	 		//border-bottom: 1px #eee solid;
-	 		color: lighten(#A7B1C2, 20%);
 			&:after{
 				position: absolute;
 			    content: " ";
@@ -86,7 +83,7 @@
 			    top:50%;
 			    right:0;
 			    margin-top: -8px;
-			    border-right-color:@color-secondary;
+			    border-right-color:#fff;
 			}
 			i{
 				color:@color-primary;
@@ -98,7 +95,7 @@
 			height: 100%;
 			width: 100%;
 			display: block;
-			color: lighten(#A7B1C2, 5%);
+			color: #A7B1C2;
 
 		}
 	}

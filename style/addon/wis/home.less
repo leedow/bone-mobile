@@ -1,3 +1,4 @@
+//智慧园区样式
 @box-height: 198px;
 .search{
 	padding: 15px;
@@ -83,7 +84,10 @@
 		//border-top:1px #eee solid;
 	}
 
-	.account-data{
+	 
+}
+
+.account-data{
 		overflow: hidden;
 		li{
 			width: 25%;
@@ -112,7 +116,6 @@
 			}	
 		}
 	}
-}
 
 .limit{
 	font-size: 12px;
@@ -152,10 +155,19 @@
 .server-add{
 	text-align: center;
 	padding:104px 0;
-	i{
+	cursor: pointer;
 
+	i{
 		font-size: 38px;
 		color:#e0e0e0;
+	}
+	
+	 
+	&:hover{
+		color: @color-primary;
+		i{
+			color: @color-primary;
+		}
 	}
 }
 
@@ -167,4 +179,346 @@
 
 
 
+/**套餐**/
+.plan-box{
+	background: #fff;
+	margin: 35px;
+	border: 2px @color-primary solid;
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+.plan-title{
+	font-size: 16px;
+	background: @color-primary;
+	color:#fff;
+	padding:15px;
+	text-align: center;
+}
+
+.plan-intro{
+	li{
+		padding:10px 0;
+		border-bottom:1px #eee solid;
+		.money{
+			color: @color-highlight;
+		}		
+	}
+
+}
+
+.plan-box-lg{
+	margin: 15px;
+	border:2px @color-highlight solid;
+	.plan-title{
+		background: @color-highlight;
+		font-size: 18px;
+	}
+	.plan-intro{
+		li{
+			padding: 13px 0;
+		}
+	}
+}
+
+
+//房间列表
+.floor-count{
+	margin-top: -5px;
+	overflow: hidden;
+	li{
+
+		width: 100px;
+		float:left;
+		//padding:15px 0 0 15px;
+
+		p{
+			padding:0;
+			margin:0;
+		}
+
+		.title{
+			color: #999;
+			font-size: 14px;
+			font-weight: normal;
+			 
+		}
+
+		.count{
+			font-size: 18px;
+		}
+
+		.unit{
+			font-size: 11px;
+
+		}	
+	}
+}
+.floor-box{
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	border-bottom:1px #eee solid;
+	padding-top: 10px;
+	padding-right: 30px;
+
+	&:hover{
+		.floor-number{
+			color: @color-highlight;
+			font-size: 18px;
+		}
+	}
+
+	.floor-number{
+		color:#999;
+		position: absolute;
+		right:10px;
+		top: 50%;
+		height: 30px;
+		line-height: 30px;
+		margin-top: -15px;
+		font-size: 16px;
+	}
+}	
+
+
+
+.room{
+	color:#fff;
+	width: 110px;
+	height:50px;
+	line-height: 50px;
+	position: relative;
+	float:left;
+	margin-right:10px;
+	text-align: center;
+	margin-bottom:10px;
+	cursor: pointer;
+
+	.name{}
+	.edit{display: none;}
+
+	 
+
+	.delete{
+		 
+		width: 20px;
+		height: 20px;
+		line-height: 20px;
+		border-radius: 10px;
+		position: absolute;
+		right: -10px;
+		top: -10px;
+		color:#999;
+		font-size: 20px;
+		background: #f9f9f9;
+		 
+		display: none;
+
+		&:hover{
+			cursor: pointer;
+			color: @color-highlight;
+			background: lighten(@color-highlight, 50%);
+			 
+		}
+	}
+
+
+	&:hover{
+		 
+		.name {
+			display: none;
+		}
+
+		.edit{
+			display: block;
+		}
+		 .delete{
+		 	display: block;
+		 }
+	}
+
+	 
+}
+
+.room-rent{
+	.room;
+	background: @color-comfort;
+}
+
+.room-unrent{
+	.room;
+	background: @color-highlight;
+}
+
+.room-off{
+	.room;
+	background: #f2f2f2;
+	color:#999;
+}
+
+//身份证
+.user-credit{
+	width: 240px;
+	height: 120px;
+	border:1px #eee solid;
+	border-radius: 4px;
+	padding: 15px;
+	float:left;
+
+	&:hover{
+		border: 1px #e0e0e0 solid;
+	}
+
+
+	.credit-info{
+		position: relative;
+		padding-left: 95px;
+		.credit-avatar{
+			position: absolute;
+			left:0;
+			top:0;
+
+			img{
+				width: 80px;
+				height: 80px;
+				border-radius: 40px;
+			}
+		}
+
+		.credit-ul{
+			li{
+				border-bottom:1px #eee solid;
+				line-height: 32px;
+				height: 32px;
+			}
+
+			.dock{
+				border-bottom: 0;
+			}
+		}
+	}
+}
+
+.credit-none{
+	border:1px #eee solid;
+	border-radius: 4px;
+	line-height: 120px;
+	width: 240px;
+	float:left;
+	text-align: center;
+	font-size: 16px;
+	color:#999;
+	cursor: pointer;
+	&:hover{
+		border: 1px #e0e0e0 solid;
+		background: #f2f2f2;
+	}
+}
+
+
+  .fileupload-button{
+    background: none !important;
+    width: 100%;
+    border:1px #eee solid !important;
+    padding:80px 0 95px 0 !important;
+ 
+    color:#444 !important;
+    font-size: 16px !important;
+    text-align: center !important;
+    cursor: pointer !important;
+
+    &:hover{
+    	background: #f9f9f9;
+    }
+    
+  }
+
+  .up{
+    position: relative;
+  
+
+	input[type="file"]{
+		height: 100%;
+	}
+  }
+
+  .up .filename{
+    color:#999;
+    font-size: 13px;
+    padding:0;
+    position: absolute;
+    bottom:40px ;
+    left: 0;
+    right:0;
+    text-align: center;
+  }
+
+  .up-bg{
+  	.fileupload-button{
+  		background: rgba(0,0,0, 0.1) !important;
+  		color:#fff !important;
+  	}
+  }
+
+  .up-bg:hover{
+  	.fileupload-button{
+  		background: rgba(0,0,0, 0.2) !important;
+  		color:#fff !important;
+  	}
+  }
+
+
+  .fileupload-button:before{
+    font-family: 'iconfont';
+    content: '\e628';
+  }
+
+
+.header-center{
+	position: absolute;
+	left: 50%;
+	margin-left: -100px; 
+}
+
+.ticket-info{
+	padding:0;
+	margin:0;
+	line-height: 22px;
+	p{	
+		display: block;
+		position: relative;
+		margin:0;
+		padding:5px 0;
+		padding-left: 80px;
+
+		.title{
+			position: absolute;
+			left:0;
+			top:5px;
+			color: #999;
+			display: block;
+			float:left;
+			width: 80px;
+		}
+	}
+	 
+}
+
+/**盒子**/
+.box{
+	border:1px #eee solid;
+
+	.box-title{
+		background: #f9f9f9;
+		border-bottom:1px #eee solid;
+		padding: 10px 15px;
+		border-left: 2px @color-primary solid;
+	}
+}
+
+
+.send-comment{
+	 
+}
 

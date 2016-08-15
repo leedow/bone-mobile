@@ -25,8 +25,7 @@ module.exports = function(option){
 				this.obj = option.ele;
 			}
 		}
-		this.initDOM();
-		 
+		this.initDOM();	 
 	}
 	
 

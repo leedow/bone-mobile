@@ -17,6 +17,8 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -o-box-sizing: border-box;
+  -webkit-transition: all ease-in-out 0.4s !important;
+  transition: all ease-in-out 0.4s !important;
 }
 body,
 div,
@@ -74,7 +76,8 @@ a:hover {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 input,
-button {
+button,
+textarea {
   -webkit-transition: all ease-in-out 0.4s !important;
   transition: all ease-in-out 0.4s !important;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -762,7 +765,8 @@ p {
   width: 100%;
   display: block !important;
 }
-button {
+button,
+textarea {
   outline: none;
 }
 .bo-textarea,
@@ -1747,19 +1751,19 @@ button {
   z-index: 999;
 }
 .bo-dropdown-left-bottom .bo-dropdown-menu {
-  top: 100%;
+  top: 99%;
   left: 0;
 }
 .bo-dropdown-right-bottom .bo-dropdown-menu {
-  top: 100%;
+  top: 99%;
   right: 0;
 }
 .bo-dropdown-right-top .bo-dropdown-menu {
-  bottom: 100% ;
+  bottom: 99% ;
   right: 0;
 }
 .bo-dropdown-left-top .bo-dropdown-menu {
-  bottom: 100%;
+  bottom: 99%;
   left: 0;
 }
 .bo-dropdown-menu {
@@ -1772,6 +1776,13 @@ button {
   height: 38px;
   line-height: 38px;
   padding: 0 15px;
+  cursor: pointer;
+}
+.bo-dropdown-menu > li button {
+  background: none;
+  border: 0;
+  font-size: 15px;
+  text-align: left;
 }
 .bo-dropdown-menu > li a:hover {
   background: #f2f2f2;
@@ -2175,6 +2186,26 @@ button {
   -webkit-transform: translate3d(0, -40px, 0);
           transform: translate3d(0, -40px, 0);
 }
+.slideLeft-transition {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+.slideLeft-enter,
+.slideLeft-leave {
+  opacity: 0;
+  -webkit-transform: translate3d(40px, 0, 0);
+          transform: translate3d(40px, 0, 0);
+}
+.slideRight-transition {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+.slideRight-enter,
+.slideRight-leave {
+  opacity: 0;
+  -webkit-transform: translate3d(-40px, 0, 0);
+          transform: translate3d(-40px, 0, 0);
+}
 .slideUp-transition {
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
@@ -2185,14 +2216,36 @@ button {
   -webkit-transform: translate3d(0, 40px, 0);
           transform: translate3d(0, 40px, 0);
 }
-.pageSlide-transition {
+.slideContent-transition {
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
 }
-.pageSlide-enter {
+.slideContent-enter,
+.slideContent-leave {
   opacity: 0;
-  -webkit-transform: translate3d(100%, 0, 0);
-          transform: translate3d(100%, 0, 0);
+  -webkit-transform: translate3d(150px, 0, 0);
+          transform: translate3d(150px, 0, 0);
+}
+.slideContent-transition {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+.scale-enter,
+.scale-leave {
+  -webkit-transform: scale(0, 0);
+          transform: scale(0, 0);
+}
+.pageSlide-transition {
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+.pageSlide-enter {
+  opacity: 0.4;
+  -webkit-transform: translate3d(40px, 0, 0);
+          transform: translate3d(40px, 0, 0);
+}
+.pageSlide-leave {
+  display: none;
 }
 .product {
   position: relative;

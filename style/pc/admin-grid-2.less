@@ -1,0 +1,84 @@
+//mobile的布局系统实现PC WIS的效果补丁
+.@{prefix}{
+	//带侧栏的栅格,系统管理布局for PC
+	body, html{
+		width: 100%;
+		height: 100%;
+	}
+
+	&container-mini{
+		.@{prefix}logo-mini{
+			display: block;
+		}
+
+		.@{prefix}logo {
+			display: none;
+		}
+
+		.@{prefix}col-sidebar{
+			width: @sidebar-mini-width;
+		}	
+		
+		.@{prefix}layout-main{
+			 
+			left: @sidebar-mini-width;
+			 
+		}
+
+		.@{prefix}layout-header{
+			 
+			padding-left: @sidebar-mini-width;
+			 
+		}
+
+	}
+
+	&logo-mini{
+		display: none;
+	}
+
+	&logo {
+		display: block;
+	}
+
+	&layout-header{
+		width: 100%;
+		padding-left: @ad-sidebar-width;
+		height: @ad-header-height;
+		//background: @color-primary;
+		color: #fff;
+	}
+
+	&header-fixed{
+		position: absolute;
+		left:0;
+		top:0;
+	}
+
+	&col-sidebar{
+		width: @ad-sidebar-width; 
+		background: @ad-sidebar-background;
+		color: #fff;
+		position: absolute;
+		left:0;
+		top: 0;//@ad-header-height;
+		bottom:0;
+	}
+
+	&sidebar-fixed{
+		position: absolute;
+		left:0;
+		top: 0;//@ad-header-height;
+		bottom:0;
+	}
+
+	&layout-main{
+		overflow-x: hidden;
+		position: absolute;
+		right:0;
+		left: @ad-sidebar-width;
+		top: @ad-header-height;
+		bottom:0;
+		overflow-y: auto;
+	}
+}

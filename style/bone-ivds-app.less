@@ -1,5 +1,5 @@
 @import url('common/theme-ivds-app.less');
-@import url('common/core.less');
+@import url('common/core-ivds.less');
  
 
 @import url('mobile/menu.less');
@@ -41,6 +41,7 @@
 @import url('addon/jishibao/shoppingcart.less');// 
 @import url('addon/jishibao/item.less');// 
 @import url('addon/jishibao/shopinfo.less');//  
+@import url('pages/message.less');
 
 .train-logo img{
   width: 100%;
@@ -104,4 +105,96 @@
 
 .color-warm{
 	color: @color-highlight;
+}
+
+.add-btn{
+	width: 48px;
+	height: 48px;
+	font-size: 50px;
+	color:@color-primary;
+	border-radius: 25px;
+	background: #fff;
+	//background: @color-primary;
+	line-height:  50px;
+	position: fixed;
+	left: 10px;
+	bottom: 60px;
+}
+
+.login-bg{
+	background: url(background.jpg) no-repeat;
+	background-size: cover;
+	position: fixed;
+	left:0;
+	top:0;
+	bottom:0;
+	right:0;
+	width: 100%;
+}
+
+.home{
+	background: @color-primary;
+	color:#fff;
+
+	.tabmenu-pic{
+		color:#fff;
+
+		i{
+			font-size: 28px;
+		}
+	}
+}
+
+.home-search{
+	background: #fff;
+	border-radius:5px;
+	position: relative;
+	box-shadow: 1px 2px 4px darken(@color-primary, 10%);
+	border-bottom:1px darken(@color-primary, 14%) solid;
+	overflow: hidden;
+	
+	.search-select{
+		position: absolute;
+		width:80px;
+		left:0;
+		top:0;
+
+		select{
+
+		}
+	}
+
+	.search-btn{
+		position: absolute;
+		right:0;
+		top:0;
+		font-size: 28px;
+		color:#999;
+		line-height: 46px;
+		background: none;
+		border:0;
+		padding: 0 10px;
+	}
+
+	.search-input{
+		width: 100%;
+		padding-left: 85px;
+	}
+}
+
+.wx-share{
+	position: fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index:9999;
+
+	img{
+		width: 90%;
+		position: absolute;
+		right:20px;
+		top:20px;
+	}
 }

@@ -2,7 +2,7 @@
 	&tip{
 		background: 	@tip-background;
 		color: 			@tip-color;
-		padding: 		@tip-padding;
+		padding: 		0 4px;//@tip-padding;
 		height: 		@tip-height;
 		line-height:  	@tip-height;
 		border-radius: 	@radius;
@@ -12,7 +12,7 @@
 		    content: " ";
 		    width: 0px;
 		    height: 0px;
-		    border-width: 5px;
+		    border-width: 0.25*@tip-height;//5px;
 		    border-style: solid;
 		    border-color: transparent;
 		}
@@ -21,9 +21,9 @@
 	&tip-left{
 		&:before{
 		    border-left-color: @tip-background;
-		    left: -5px;
-		    top:50%;
-		    margin-top: -5px;
+		    left: 100%;
+		    top: 50%;
+		    margin-top: -0.25*@tip-height;
 		}
 	}
 
@@ -31,24 +31,24 @@
 		&:before{
 			border-top-color: @tip-background;
 		    right: @tip-offset;
-		    bottom: -10px;
+		    bottom: -0.5*@tip-height;
 		}
 	}
 
 	&tip-bottom{
 		&:before{
-			position: absolute;
-			left: 20px;
-			bottom: -(@tip-height+5);
+			border-bottom-color: @tip-background;			 
+			left: @tip-offset;
+			top: -0.5*@tip-height;
 		}
 	}
 
 	&tip-right{
 		&:before{
-			position: absolute;
-			left: 100%;
+			border-right-color: @tip-background;//	 
+			right: 100%;
 			top: 50%;
-			margin-top: -(0.5*@tip-height);
+			margin-top: -0.25*@tip-height;
 		}
 	}
 }

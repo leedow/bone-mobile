@@ -357,6 +357,21 @@ p {
 .bo-header-tran .bo-header-dock-right button i {
   font-size: 20px;
 }
+.bo-header .bo-header-dock-left .tip,
+.bo-header-light .bo-header-dock-left .tip,
+.bo-header-tran .bo-header-dock-left .tip,
+.bo-header .bo-header-dock-right .tip,
+.bo-header-light .bo-header-dock-right .tip,
+.bo-header-tran .bo-header-dock-right .tip {
+  content: ' ';
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background: #FF6633;
+}
 .bo-header .bo-header-dock-left,
 .bo-header-light .bo-header-dock-left,
 .bo-header-tran .bo-header-dock-left {
@@ -586,6 +601,9 @@ p {
   font-size: 12px;
   display: block;
   line-height: 1em;
+}
+.tabmenu-current {
+  color: #6699FF !important;
 }
 .bo-sidebar {
   width: 100%;
@@ -905,9 +923,22 @@ textarea {
   z-index: 999;
   right: 14px;
   top: -12px;
+  line-height: 1.5em;
 }
 .bo-input-notice .bo-tip-top:before {
   border-top-color: #FF6633;
+}
+.bo-input-notice .bo-tip-right {
+  position: absolute;
+  z-index: 999;
+  left: 100%;
+  top: 50%;
+  margin-top: -10px;
+  white-space: nowrap;
+  line-height: 1.5em;
+}
+.bo-input-notice .bo-tip-right:before {
+  border-right-color: #FF6633;
 }
 .bo-form-item-lg .bo-input-wrong:after,
 .bo-form-item-lg .bo-input-pass:after {
@@ -1136,8 +1167,28 @@ textarea {
   font-weight: normal;
   color: #999;
 }
+.bo-box-title3 {
+  min-height: 50px;
+  padding: 0.8em 14px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px #eee solid;
+}
+.bo-box-title3 .title {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-weight: normal;
+}
+.bo-box-title3 .link {
+  color: #999;
+  line-height: 50px;
+}
 .bo-box-title2 {
-  height: 50px;
+  min-height: 50px;
   line-height: 50px;
   padding: 0 14px;
   display: -webkit-box;
@@ -1155,6 +1206,7 @@ textarea {
 }
 .bo-box-title2 .link {
   color: #999;
+  line-height: 50px;
 }
 .bo-box-title-sm {
   height: 38px;
@@ -1806,7 +1858,7 @@ textarea {
 .bo-tip {
   background: #444;
   color: #fff;
-  padding: 1px 4px;
+  padding: 0 4px;
   height: 20px;
   line-height: 20px;
   border-radius: 2px;
@@ -1822,7 +1874,7 @@ textarea {
 }
 .bo-tip-left:before {
   border-left-color: #444;
-  left: -5px;
+  left: 100%;
   top: 50%;
   margin-top: -5px;
 }
@@ -1832,15 +1884,15 @@ textarea {
   bottom: -10px;
 }
 .bo-tip-bottom:before {
-  position: absolute;
-  left: 20px;
-  bottom: -25px;
+  border-bottom-color: #444;
+  left: 15px;
+  top: -10px;
 }
 .bo-tip-right:before {
-  position: absolute;
-  left: 100%;
+  border-right-color: #444;
+  right: 100%;
   top: 50%;
-  margin-top: -10px;
+  margin-top: -5px;
 }
 .bo-notice-warm {
   background: #fcf8e3;
@@ -1963,8 +2015,11 @@ textarea {
   font-size: 20px;
   color: #999;
 }
+.bo-check .check-font {
+  font-size: 16px;
+}
 .bo-checked {
-  color: #FF6633;
+  color: #6699FF;
 }
 .bo-checked-tip {
   color: #FF6633;
@@ -2111,7 +2166,6 @@ textarea {
 .bo-dialog {
   position: relative;
   border-radius: 4px;
-  overflow: hidden;
   width: 400px;
   background: #fff;
   padding-top: 40px;
@@ -2133,7 +2187,6 @@ textarea {
 }
 .bo-dialog .dialog-content {
   height: 100%;
-  overflow: hidden;
   padding: 12px 15px 15px 15px;
   font-size: 15px;
 }
@@ -2159,6 +2212,7 @@ textarea {
 .bo-dialog .dialog-buttons .button-ok {
   float: left;
   width: 50%;
+  color: #6699FF;
 }
 .bo-dialog .dialog-buttons .button-no {
   float: left;

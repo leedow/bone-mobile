@@ -16,6 +16,8 @@
 
 		.@{prefix}col-sidebar{
 			width: @sidebar-mini-width;
+
+			.hidden{display: none !important;}
 		}	
 		
 		.@{prefix}col-content{
@@ -28,6 +30,12 @@
 			 
 			padding-left: @sidebar-mini-width;
 			 
+		}
+
+		.menu-item:hover{
+			.tip{
+				display: block;
+			}
 		}
 
 	}

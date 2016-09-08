@@ -854,9 +854,22 @@ textarea {
   z-index: 999;
   right: 14px;
   top: -12px;
+  line-height: 1.5em;
 }
 .bo-input-notice .bo-tip-top:before {
   border-top-color: #FF6633;
+}
+.bo-input-notice .bo-tip-right {
+  position: absolute;
+  z-index: 999;
+  left: 100%;
+  top: 50%;
+  margin-top: -10px;
+  white-space: nowrap;
+  line-height: 1.5em;
+}
+.bo-input-notice .bo-tip-right:before {
+  border-right-color: #FF6633;
 }
 .bo-form-item-lg .bo-input-wrong:after,
 .bo-form-item-lg .bo-input-pass:after {
@@ -2231,7 +2244,7 @@ textarea {
 .bo-tip {
   background: #444;
   color: #fff;
-  padding: 1px 4px;
+  padding: 0 4px;
   height: 20px;
   line-height: 20px;
   border-radius: 2px;
@@ -2247,7 +2260,7 @@ textarea {
 }
 .bo-tip-left:before {
   border-left-color: #444;
-  left: -5px;
+  left: 100%;
   top: 50%;
   margin-top: -5px;
 }
@@ -2257,15 +2270,15 @@ textarea {
   bottom: -10px;
 }
 .bo-tip-bottom:before {
-  position: absolute;
-  left: 20px;
-  bottom: -25px;
+  border-bottom-color: #444;
+  left: 15px;
+  top: -10px;
 }
 .bo-tip-right:before {
-  position: absolute;
-  left: 100%;
+  border-right-color: #444;
+  right: 100%;
   top: 50%;
-  margin-top: -10px;
+  margin-top: -5px;
 }
 .bo-notice-warm {
   background: #fcf8e3;
@@ -2388,8 +2401,11 @@ textarea {
   font-size: 20px;
   color: #999;
 }
+.bo-check .check-font {
+  font-size: 16px;
+}
 .bo-checked {
-  color: #FF6633;
+  color: #3492e6;
 }
 .bo-checked-tip {
   color: #FF6633;
@@ -2550,6 +2566,7 @@ textarea {
 .bo-dialog .content,
 .bo-rdialog .content {
   height: 100%;
+  padding-bottom: 20px;
   overflow-y: auto;
 }
 .bo-dialog .dialog-buttons,
@@ -2761,7 +2778,6 @@ textarea {
   content: '\e610';
 }
 .message .title {
-  height: 50px;
   line-height: 50px;
   padding: 0;
   margin: 0;

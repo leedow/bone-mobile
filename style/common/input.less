@@ -3,6 +3,10 @@ button,  textarea{
 	 
 }
 
+input[readonly]{  
+    //background-color: #f9f9f9;  
+} 
+
 .@{prefix}{
 	&textarea, &input, &input-lg,&input-sm,&input-tiny, &select, &select-lg, &select-sm{
 		background: #fff;
@@ -141,9 +145,23 @@ button,  textarea{
 			z-index:999;
 			right: @padding-vertical;
 			top:-(@tip-height - 8);
+			line-height: 1.5em;
 
 			&:before{
 				border-top-color: @color-highlight;
+			}
+		}
+
+		.@{prefix}tip-right{
+			position: absolute;
+			z-index:999;
+			left: 100%;
+			top: 50%;
+			margin-top:-0.5*@tip-height;
+			white-space:nowrap;
+			line-height: 1.5em;
+			&:before{
+				border-right-color: @color-highlight;
 			}
 		}
 	}

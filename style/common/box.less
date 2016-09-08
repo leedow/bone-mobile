@@ -66,8 +66,28 @@
 		color:@box-title-color;
 	}
 
+	&box-title3{
+		min-height: @box-title2-height;
+		padding: 0.8em @padding-horizon;
+		//line-height: @box-title2-height;fuck
+		//padding: 0 @padding-horizon;
+		display: flex;
+		border-bottom:1px @line-color-light solid;
+
+		.title{
+			flex: 1;
+			font-weight:normal;
+		}
+
+		.link{
+			color:@font-color-light;
+			line-height:@box-title2-height;
+		}
+	}
+
 	&box-title2{
-		height: @box-title2-height;
+		min-height: @box-title2-height;
+		//padding: 0 @padding-horizon;
 		line-height: @box-title2-height;
 		padding: 0 @padding-horizon;
 		display: flex;
@@ -80,6 +100,7 @@
 
 		.link{
 			color:@font-color-light;
+			line-height:@box-title2-height;
 		}
 	}
 

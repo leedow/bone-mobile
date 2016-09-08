@@ -109,11 +109,17 @@ p {
 .bo-container-mini .bo-col-sidebar {
   width: 64px;
 }
+.bo-container-mini .bo-col-sidebar .hidden {
+  display: none !important;
+}
 .bo-container-mini .bo-col-content {
   left: 64px;
 }
 .bo-container-mini .bo-col-header {
   padding-left: 64px;
+}
+.bo-container-mini .menu-item:hover .tip {
+  display: block;
 }
 .bo-logo-mini {
   display: none;
@@ -475,18 +481,42 @@ p {
   font-size: 15px;
   font-weight: normal;
 }
-.bo-sidebar-menu {
-  overflow: hidden;
-}
 .bo-sidebar-menu .menu-item {
   height: 50px;
   line-height: 50px;
   position: relative;
   text-align: left;
-  padding-left: 66px;
+  padding-left: 64px;
   font-size: 16px;
   color: #fff;
   cursor: pointer;
+}
+.bo-sidebar-menu .menu-item .tip {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  margin-top: -14px;
+  background: #3492e6;
+  color: #fff;
+  padding: 1px 4px;
+  padding-right: 10px;
+  padding-left: 10px;
+  height: 28px;
+  line-height: 28px;
+}
+.bo-sidebar-menu .menu-item .tip:before {
+  position: absolute;
+  content: " ";
+  width: 0px;
+  height: 0px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent;
+  border-right-color: #3492e6;
+  right: 100%;
+  top: 50%;
+  margin-top: -8px;
 }
 .bo-sidebar-menu .menu-item i {
   position: absolute;
@@ -590,7 +620,6 @@ p {
 .bo-dialog {
   position: relative;
   border-radius: 4px;
-  overflow: hidden;
   width: 400px;
   background: #fff;
   padding-top: 40px;
@@ -612,7 +641,6 @@ p {
 }
 .bo-dialog .dialog-content {
   height: 100%;
-  overflow: hidden;
   padding: 12px 15px 15px 15px;
   font-size: 15px;
 }
@@ -638,6 +666,7 @@ p {
 .bo-dialog .dialog-buttons .button-ok {
   float: left;
   width: 50%;
+  color: #3492e6;
 }
 .bo-dialog .dialog-buttons .button-no {
   float: left;
@@ -965,9 +994,22 @@ textarea {
   z-index: 999;
   right: 14px;
   top: -12px;
+  line-height: 1.5em;
 }
 .bo-input-notice .bo-tip-top:before {
   border-top-color: #FF6633;
+}
+.bo-input-notice .bo-tip-right {
+  position: absolute;
+  z-index: 999;
+  left: 100%;
+  top: 50%;
+  margin-top: -10px;
+  white-space: nowrap;
+  line-height: 1.5em;
+}
+.bo-input-notice .bo-tip-right:before {
+  border-right-color: #FF6633;
 }
 .bo-form-item-lg .bo-input-wrong:after,
 .bo-form-item-lg .bo-input-pass:after {
@@ -1137,6 +1179,10 @@ textarea {
   text-align: left;
   color: #fff;
 }
+.bo-form-pc .bo-autocomplete .bo-dropdown-menu li button {
+  padding-left: 80px;
+  text-align: left;
+}
 .bo-form-pc .bo-form-item,
 .bo-form-pc .bo-form-item-lg {
   margin-bottom: 10px;
@@ -1260,8 +1306,28 @@ textarea {
   font-weight: normal;
   color: #999;
 }
+.bo-box-title3 {
+  min-height: 50px;
+  padding: 0.8em 14px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px #e7eaec solid;
+}
+.bo-box-title3 .title {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-weight: normal;
+}
+.bo-box-title3 .link {
+  color: #999;
+  line-height: 50px;
+}
 .bo-box-title2 {
-  height: 50px;
+  min-height: 50px;
   line-height: 50px;
   padding: 0 14px;
   display: -webkit-box;
@@ -1279,6 +1345,7 @@ textarea {
 }
 .bo-box-title2 .link {
   color: #999;
+  line-height: 50px;
 }
 .bo-box-title-sm {
   height: 38px;
@@ -2553,7 +2620,7 @@ textarea {
   *line-height: 46px;
 }
 .bo-stepline-box {
-  padding: 80px 40px;
+  padding: 40px 40px;
 }
 .bo-stepline {
   position: relative;
@@ -2775,7 +2842,7 @@ textarea {
 .bo-tip {
   background: #444;
   color: #fff;
-  padding: 1px 4px;
+  padding: 0 4px;
   height: 20px;
   line-height: 20px;
   border-radius: 2px;
@@ -2791,7 +2858,7 @@ textarea {
 }
 .bo-tip-left:before {
   border-left-color: #444;
-  left: -5px;
+  left: 100%;
   top: 50%;
   margin-top: -5px;
 }
@@ -2801,15 +2868,15 @@ textarea {
   bottom: -10px;
 }
 .bo-tip-bottom:before {
-  position: absolute;
-  left: 20px;
-  bottom: -25px;
+  border-bottom-color: #444;
+  left: 15px;
+  top: -10px;
 }
 .bo-tip-right:before {
-  position: absolute;
-  left: 100%;
+  border-right-color: #444;
+  right: 100%;
   top: 50%;
-  margin-top: -10px;
+  margin-top: -5px;
 }
 .fade-transition {
   -webkit-transition: all .3s ease;
@@ -2939,6 +3006,10 @@ textarea {
 }
 .comment-avatar-right .content .time {
   color: #999;
+}
+html,
+body {
+  overflow: hidden;
 }
 .search {
   padding: 15px;
@@ -3125,10 +3196,17 @@ textarea {
 .floor-box {
   position: relative;
   width: 100%;
-  overflow: hidden;
   border-bottom: 1px #eee solid;
   padding-top: 10px;
   padding-right: 30px;
+}
+.floor-box:after {
+  content: ' ';
+  clear: both;
+  width: 100%;
+  line-height: 0;
+  overflow: hidden;
+  height: 0;
 }
 .floor-box:hover .floor-number {
   color: #FF6633;
@@ -3159,6 +3237,28 @@ textarea {
 .room .edit {
   display: none;
 }
+.room .toolbar {
+  position: absolute;
+  z-index: 99999;
+  left: 0;
+  top: 100%;
+  right: 0;
+  border: 1px #eee solid;
+  border-bottom: 0;
+  background: #fff;
+  display: none;
+  text-align: center !important;
+  box-shadow: 0px 2px 2px #e0e0e0;
+}
+.room .toolbar .bo-tab-item-icon {
+  border-bottom: 1px #eee solid;
+}
+.room .toolbar button {
+  text-align: center;
+}
+.room .toolbar:before {
+  content: ' ';
+}
 .room .delete {
   width: 20px;
   height: 20px;
@@ -3177,6 +3277,9 @@ textarea {
   color: #FF6633;
   background: #ffffff;
 }
+.room:hover {
+  box-shadow: 0px -1px 1px #e0e0e0;
+}
 .room:hover .name {
   display: none;
 }
@@ -3184,6 +3287,9 @@ textarea {
   display: block;
 }
 .room:hover .delete {
+  display: block;
+}
+.room:hover .toolbar {
   display: block;
 }
 .room-rent {
@@ -3201,6 +3307,28 @@ textarea {
 }
 .room-rent .edit {
   display: none;
+}
+.room-rent .toolbar {
+  position: absolute;
+  z-index: 99999;
+  left: 0;
+  top: 100%;
+  right: 0;
+  border: 1px #eee solid;
+  border-bottom: 0;
+  background: #fff;
+  display: none;
+  text-align: center !important;
+  box-shadow: 0px 2px 2px #e0e0e0;
+}
+.room-rent .toolbar .bo-tab-item-icon {
+  border-bottom: 1px #eee solid;
+}
+.room-rent .toolbar button {
+  text-align: center;
+}
+.room-rent .toolbar:before {
+  content: ' ';
 }
 .room-rent .delete {
   width: 20px;
@@ -3220,6 +3348,9 @@ textarea {
   color: #FF6633;
   background: #ffffff;
 }
+.room-rent:hover {
+  box-shadow: 0px -1px 1px #e0e0e0;
+}
 .room-rent:hover .name {
   display: none;
 }
@@ -3227,6 +3358,9 @@ textarea {
   display: block;
 }
 .room-rent:hover .delete {
+  display: block;
+}
+.room-rent:hover .toolbar {
   display: block;
 }
 .room-unrent {
@@ -3244,6 +3378,28 @@ textarea {
 }
 .room-unrent .edit {
   display: none;
+}
+.room-unrent .toolbar {
+  position: absolute;
+  z-index: 99999;
+  left: 0;
+  top: 100%;
+  right: 0;
+  border: 1px #eee solid;
+  border-bottom: 0;
+  background: #fff;
+  display: none;
+  text-align: center !important;
+  box-shadow: 0px 2px 2px #e0e0e0;
+}
+.room-unrent .toolbar .bo-tab-item-icon {
+  border-bottom: 1px #eee solid;
+}
+.room-unrent .toolbar button {
+  text-align: center;
+}
+.room-unrent .toolbar:before {
+  content: ' ';
 }
 .room-unrent .delete {
   width: 20px;
@@ -3263,6 +3419,9 @@ textarea {
   color: #FF6633;
   background: #ffffff;
 }
+.room-unrent:hover {
+  box-shadow: 0px -1px 1px #e0e0e0;
+}
 .room-unrent:hover .name {
   display: none;
 }
@@ -3270,6 +3429,9 @@ textarea {
   display: block;
 }
 .room-unrent:hover .delete {
+  display: block;
+}
+.room-unrent:hover .toolbar {
   display: block;
 }
 .room-off {
@@ -3289,6 +3451,28 @@ textarea {
 .room-off .edit {
   display: none;
 }
+.room-off .toolbar {
+  position: absolute;
+  z-index: 99999;
+  left: 0;
+  top: 100%;
+  right: 0;
+  border: 1px #eee solid;
+  border-bottom: 0;
+  background: #fff;
+  display: none;
+  text-align: center !important;
+  box-shadow: 0px 2px 2px #e0e0e0;
+}
+.room-off .toolbar .bo-tab-item-icon {
+  border-bottom: 1px #eee solid;
+}
+.room-off .toolbar button {
+  text-align: center;
+}
+.room-off .toolbar:before {
+  content: ' ';
+}
 .room-off .delete {
   width: 20px;
   height: 20px;
@@ -3307,6 +3491,9 @@ textarea {
   color: #FF6633;
   background: #ffffff;
 }
+.room-off:hover {
+  box-shadow: 0px -1px 1px #e0e0e0;
+}
 .room-off:hover .name {
   display: none;
 }
@@ -3314,6 +3501,9 @@ textarea {
   display: block;
 }
 .room-off:hover .delete {
+  display: block;
+}
+.room-off:hover .toolbar {
   display: block;
 }
 .user-credit {
@@ -3441,6 +3631,13 @@ textarea {
   padding: 10px 15px;
   border-left: 2px #3492e6 solid;
 }
+.content-title {
+  font-weight: normal;
+  line-height: 14px;
+  padding-left: 10px;
+  margin-top: 10px;
+  border-left: 3px #3492e6 solid;
+}
 .park-box {
   overflow: hidden;
   position: relative;
@@ -3455,14 +3652,14 @@ textarea {
   top: 0;
   right: 0;
   bottom: 0;
-  background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(255, 255, 255, 0)), to(rgba(0, 0, 0, 0.6)));
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(255, 255, 255, 0)), to(rgba(0, 0, 0, 0.3)));
 }
 .park-box .hide .hide-center {
   position: absolute;
   width: 100%;
   top: 50%;
   left: 0;
-  margin-top: -80px;
+  margin-top: -60px;
 }
 .park-box .hide .park-name {
   color: #fff;
@@ -3471,12 +3668,20 @@ textarea {
   margin-top: 20px;
   text-align: center;
 }
-.park-box .account-data {
-  color: #fff !important;
+.park-box .hide .park-intro {
+  color: #fff;
+  text-align: center;
+}
+.account-data2 {
   text-align: center !important;
 }
-.park-box .account-data .title {
-  color: #fff !important;
+.account-data2 li {
+  padding: 30px 0;
+  border-right: 1px #eee solid;
+  cursor: pointer;
+}
+.account-data2 li:hover {
+  background: #f9f9f9;
 }
 html,
 body {

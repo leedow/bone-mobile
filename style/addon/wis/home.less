@@ -1,5 +1,10 @@
 //智慧园区样式
 @box-height: 198px;
+
+
+html, body{
+	overflow: hidden;
+}
 .search{
 	padding: 15px;
 	position: absolute;
@@ -257,10 +262,19 @@
 .floor-box{
 	position: relative;
 	width: 100%;
-	overflow: hidden;
+	//overflow: hidden;
 	border-bottom:1px #eee solid;
 	padding-top: 10px;
 	padding-right: 30px;
+
+	&:after{
+		content: ' ';
+		clear:both;
+		width: 100%;
+		line-height: 0;
+		overflow: hidden;
+		height: 0;
+	}
 
 	&:hover{
 		.floor-number{
@@ -298,6 +312,34 @@
 	.name{}
 	.edit{display: none;}
 
+	.toolbar{
+		position: absolute;
+		z-index: 99999;
+		left: 0;
+		top:100%;
+		right:0;
+		border:1px #eee solid;
+		border-bottom: 0;
+		background: #fff;
+		display: none;
+		text-align: center !important;
+		box-shadow: 0px 2px 2px #e0e0e0;
+
+		.bo-tab-item-icon{
+			border-bottom: 1px #eee solid;
+		}
+
+		button{
+			text-align: center;
+		}
+
+		&:before{
+			content: ' ',
+
+		}
+
+	}
+
 	 
 
 	.delete{
@@ -325,7 +367,7 @@
 
 
 	&:hover{
-		 
+		box-shadow: 0px -1px 1px #e0e0e0;
 		.name {
 			display: none;
 		}
@@ -336,6 +378,9 @@
 		 .delete{
 		 	display: block;
 		 }
+		.toolbar{
+			display: block;
+		}
 	}
 
 	 
@@ -522,3 +567,11 @@
 	 
 }
 
+
+.content-title{
+	font-weight: normal;
+	line-height: 14px;
+	padding-left: 10px;
+	margin-top:10px;
+	border-left: 3px @color-primary solid;
+}

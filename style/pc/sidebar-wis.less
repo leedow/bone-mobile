@@ -1,7 +1,6 @@
 //响应式侧栏，状态可以为隐藏|只显示一个ICON|完整显示
 .@{prefix}{
 
-
 	&logo, &logo-mini{
 		height: @header-height;
 		background: @color-primary;
@@ -38,24 +37,56 @@
 		height:100%;
 		overflow-y: auto;
 		background: #2F4050;//;
-		//box-shadow: inset -1px 0 0 @line-color-light;
-
+		 
 	}
 
 	@side-height: 50px;
 
 	&sidebar-menu{
-		overflow: hidden;
+		//overflow: hidden;
 
 		.menu-item{
 			height: @side-height;
 			line-height: @side-height;
 			position: relative;
 			text-align: left;
-			padding-left: 66px;
+			padding-left: @sidebar-mini-width;
 			font-size: 16px;
 			color:#fff;
 			cursor: pointer;
+
+			.tip{
+				display: none;
+				position: absolute;
+				left: 100%;
+				top: 50%;
+				margin-top: 	-0.7*@tip-height;
+				background: 	@color-primary;
+				color: 			@tip-color;
+				padding: 		@tip-padding;
+				padding-right: 	10px;
+				padding-left: 	10px;
+				height: 		1.4*@tip-height;
+				line-height:  	1.4*@tip-height;
+
+				&:before{
+					position: absolute;
+				    content: " ";
+				    width: 0px;
+				    height: 0px;
+				    border-width: 0.4*@tip-height;//5px;
+				    border-style: solid;
+				    border-color: transparent;
+				    border-right-color: @color-primary;//	 
+					right: 100%;
+					top: 50%;
+					margin-top: -0.4*@tip-height;
+				}
+
+			}
+
+
+
 			i{
 				position: absolute;
 				left:16px;

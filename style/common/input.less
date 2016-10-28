@@ -1,11 +1,11 @@
 button,  textarea{
 	outline: none;
-	 
+
 }
 
-input[readonly]{  
-    //background-color: #f9f9f9;  
-} 
+input[readonly]{
+    //background-color: #f9f9f9;
+}
 
 .@{prefix}{
 	&textarea, &input, &input-lg,&input-sm,&input-tiny, &select, &select-lg, &select-sm{
@@ -35,7 +35,9 @@ input[readonly]{
 		padding: @input-padding;
 	}
 
-	&input, &input-lg, &input-sm, &input-tiny{
+	&input, &input-lg, &input-sm, &input-tiny, &select, &select-lg, &select-sm{
+		appearance:none !important;
+  	-moz-appearance:none !important;
 		-webkit-appearance: none !important;
 	}
 
@@ -55,7 +57,7 @@ input[readonly]{
 	&input-sm, &select-sm{
 		padding: @input-padding-sm;
 		height: @input-height-sm;
-		
+
 	}
 
 	&input-tiny{
@@ -92,7 +94,7 @@ input[readonly]{
 			position: absolute;
 			right: 0.5*@padding-horizon;
 			top:0;
-			font-family: @font-family-icon; 
+			font-family: @font-family-icon;
 			content: '\e612';
 			font-size: @font-size-lg;
 			color: @color-highlight;
@@ -129,17 +131,17 @@ input[readonly]{
 			left:0;
 			top:0;
 		}
-	
-		 
 
-		 
+
+
+
 	}
 
 	&input-notice{
 		.@{prefix}tip{
 			background: @color-highlight;
 		}
-		
+
 		.@{prefix}tip-top{
 			position: absolute;
 			z-index:999;
@@ -172,11 +174,11 @@ input[readonly]{
 				right: @padding-horizon;
 				height: @input-height-lg;
 				line-height: @input-height-lg;
-			}		
+			}
 		}
 
-		.@{prefix}input-icon{			 
-			i{				 
+		.@{prefix}input-icon{
+			i{
 				right: @padding-horizon;
 				height: @input-height-lg;
 				line-height: @input-height-lg;
@@ -184,7 +186,7 @@ input[readonly]{
 		}
 
 	}
-	
+
 
 	&select-wrong{
 		&>.@{prefix}select,&>.@{prefix}select-lg{
@@ -211,7 +213,7 @@ input[readonly]{
 			position: absolute;
 			right: 0.5*@padding-horizon;
 			top:0;
-			font-family: @font-family-icon; 
+			font-family: @font-family-icon;
 			content: '\e608';
 			font-size: @font-size-lg;
 			color: @color-comfort;
@@ -231,7 +233,7 @@ input[readonly]{
 				box-shadow: 0 0 4px @input-shadow-color-pass;
 			}
 		}
-		
+
 	}
 
 	&input-icon{
@@ -240,7 +242,7 @@ input[readonly]{
 			position: absolute;
 			right: 0.5*@padding-horizon;
 			top:0;
-			font-family: @font-family-icon; 
+			font-family: @font-family-icon;
 			font-size: @font-size-lg;
 			color: @color-comfort;
 			height: @input-height;
@@ -254,6 +256,6 @@ input[readonly]{
 		&:after{
 			height: @input-height-lg;
 			line-height: @input-height-lg;
-		}		
+		}
 	}
 }

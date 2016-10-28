@@ -1,0 +1,36 @@
+/*
+ * 用户列表，左侧带 头像，右侧带操作按钮 
+ */
+
+.@{prefix}{
+	&user-list{
+		.user-list-item{
+			padding: 15px 0 15px 35px;
+			position: relative;
+			text-align: left;
+			.avatar{
+				width: 24px;
+				height: 24px;
+				border-radius: 12px;
+				position: absolute;
+				left:0;
+				top:50%;
+				margin-top: -12px;
+				background: #dcdcdc;
+				line-height: 24px;
+				text-align: center;
+				color:#fff;
+				img{
+					width: 24px;
+					height: 24px;
+				}
+			}
+
+			.dock{
+				position: absolute;
+				right: 0;
+				top:0;
+			}
+		}
+	}
+}

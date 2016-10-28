@@ -9,11 +9,13 @@
 		.@{prefix}dropdown-menu{
 			//display: none;
 			position: absolute;
-			 
+
 			border:1px @line-color solid;
 			border-radius: @radius;
 			background: #fff;
 			z-index:999;
+			-webkit-box-shadow: 0 7px 21px rgba(0,0,0,.1);
+     box-shadow: 0 7px 21px rgba(0,0,0,.1);
 			//box-shadow: 0 2px 3px @line-color;
 		}
 
@@ -22,32 +24,34 @@
 
 	&dropdown-left-bottom{
 		.@{prefix}dropdown-menu{
-			top: 99%;
+			top: 100%;
 			left:0;
 		}
 	}
 
 	&dropdown-right-bottom{
 		.@{prefix}dropdown-menu{
-			top: 99%;
+			top: 100%;
 			right:0;
+			margin-top:-2px;
 		}
 	}
 	&dropdown-right-top{
 		.@{prefix}dropdown-menu{
-			bottom: 99% ;
+			margin-bottom:-2px;
+			bottom: 100% ;
 			right:0;
 		}
 	}
 	&dropdown-left-top{
 		.@{prefix}dropdown-menu{
-			bottom: 99%;
+			bottom:100%;
 			left:0;
 		}
 	}
 
 	&dropdown-menu{
-	 
+
 		&>li{
 			a, button{
 				display: block;
@@ -56,7 +60,7 @@
 				line-height: 38px;
 				padding: 0 15px;
 				cursor: pointer;
-				
+
 			}
 
 			button{

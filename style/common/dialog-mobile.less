@@ -51,12 +51,14 @@
 		border-radius: 4px;
 		//overflow: hidden;
 		width: @dialog-width;
+		max-height: 95%;
 		background: @dialog-background;
 		padding-top: @dialog-header-height;
-		padding-bottom: @dialog-dock-height;
+		padding-bottom: @dialog-dock-height+10;
 		border:1px @font-color solid;
 		//margin-top: 100px;
 		margin:0 auto;
+
 
 	
 		.dialog-title{
@@ -69,16 +71,47 @@
 			top:0;
 			font-size: @font-size-md;
 			margin:0;
-			padding:3px 0 0 0;
+			font-weight: normal;
+
+		}
+
+		.dialog-title-bor{
+			border-bottom: 1px @line-color-light solid;
+			height: @dialog-header-height;
+			line-height: @dialog-header-height;
+		}
+
+		.dialog-close{
+			position: absolute;			 
+			width:@dialog-header-height;
+			height:@dialog-header-height;
+			line-height: @dialog-header-height;
+			font-size: @font-size-lg;
+			top:0;
+			right:0;
+			cursor: pointer;
+			border:0;
+			background: none;
+			color: @font-color-light;
+
+			&:hover{
+				color:@color-primary ;
+			}
 		}
 
 		 
 		.dialog-content{
+
 			height: 100%;
 			//width:100%;
-			//overflow: hidden;
-			padding:12px 15px 15px 15px;
+	 
+			padding:0 15px 0 15px;
 			font-size: 15px;
+		}
+
+		.dialog-content-pc{
+			margin:0 -15px 0 -15px;
+
 		}
 
 		.dialog-buttons{
@@ -111,6 +144,20 @@
 			}
 			.button{
 				width: 100%;
+			}
+		}
+
+		.dialog-buttons-pc{
+			border-top:1px @line-color-light solid;
+			padding: 10px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			text-align: right;
+			width: 100%;
+			background: lighten(@color-secondary, 20%);
+			button{
+				min-width: 80px;
 			}
 		}
 	}

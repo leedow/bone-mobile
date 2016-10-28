@@ -12,7 +12,9 @@ body {
   min-height: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-* {
+*,
+:before,
+:after {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -851,7 +853,12 @@ textarea {
 .bo-input,
 .bo-input-lg,
 .bo-input-sm,
-.bo-input-tiny {
+.bo-input-tiny,
+.bo-select,
+.bo-select-lg,
+.bo-select-sm {
+  appearance: none !important;
+  -moz-appearance: none !important;
   -webkit-appearance: none !important;
 }
 .bo-input,
@@ -2485,7 +2492,7 @@ textarea {
   position: relative;
   background: none;
   border: 0;
-  font-size: 20px;
+  font-size: 16px;
   color: #999;
 }
 .bo-check .check-font {

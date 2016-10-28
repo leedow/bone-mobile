@@ -11,9 +11,6 @@
 
 @import url('pc/sidebar-wis.less');
  
-
-
- 
 @import url('common/dialog-mobile.less');
 @import url('common/sidebar.less');
 @import url('common/buttons.less');
@@ -36,6 +33,10 @@
 @import url('common/tip.less');
 @import url('common/animation.less');
 @import url('common/comment-avatar.less');
+@import url('common/none.less');
+@import url('common/picwall.less');
+@import url('common/user-list.less');
+@import url('common/timeline.less');
 
 @import url('addon/wis/home.less');
 
@@ -46,7 +47,7 @@
 .fl{float:left;}
 
 .bo-check {
-	font-size: 18px;
+	font-size: 16px;
 	color: #999;
 	border: none !important;
 	background: none;
@@ -60,4 +61,18 @@
 .bo-checked{
 	color: @color-primary;
 	border: none !important;
+}
+
+.thin-scroll::-webkit-scrollbar {
+    width: 7px;
+}
+
+.thin-scroll::-webkit-scrollbar-thumb {
+    background-color: #b3b3b3;
+    border-left: 2px solid transparent;
+}
+
+.thin-scroll::-webkit-scrollbar-track {
+    background-color: #d9d9d9;
+    border-left: 2px solid transparent;
 }

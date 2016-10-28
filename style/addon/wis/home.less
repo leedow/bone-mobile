@@ -77,7 +77,7 @@ html, body{
 		}
 
 		.edit-info{
-			
+
 		}
 	}
 
@@ -89,7 +89,7 @@ html, body{
 		//border-top:1px #eee solid;
 	}
 
-	 
+
 }
 
 .account-data{
@@ -118,7 +118,7 @@ html, body{
 			.unit{
 				font-size: 11px;
 
-			}	
+			}
 		}
 	}
 
@@ -130,8 +130,36 @@ html, body{
 /**服务**/
 .server-box{
 	.server-logo{
+		position: relative;
 		img{
 			width: 100%;
+		}
+
+		.tag{
+			position: absolute;
+			top:0px;
+			right: 0;
+			background: @color-primary;
+			color:#fff;
+			padding: 0px 10px 0 5px;
+			height: 24px;
+			line-height: 24px;
+			font-size:12px;
+			&:before{
+
+				display: block;
+				position: absolute;
+				content: " ";
+				width: 0px;
+				height: 0px;
+				border-width: 12px;
+				border-style: solid;
+				border-color: transparent;
+				bottom: 0;
+				left: -24px;
+				border-right-color: @color-primary;
+				border-top-color:@color-primary;
+			}
 		}
 	}
 
@@ -142,13 +170,13 @@ html, body{
 	}
 
 	.server-content{
-		padding:0  15px 10px 15px; 
+		padding:0  15px 10px 15px;
 		color: #999;
 	}
 
 	.server-bar{
 		padding: 10px 15px;
-		 
+
 		background: #f9f9f9;
 		span{
 			color:#999;
@@ -166,8 +194,8 @@ html, body{
 		font-size: 38px;
 		color:#e0e0e0;
 	}
-	
-	 
+
+
 	&:hover{
 		color: @color-primary;
 		i{
@@ -207,7 +235,9 @@ html, body{
 		border-bottom:1px #eee solid;
 		.money{
 			color: @color-highlight;
-		}		
+			font-size: 22px;
+
+		}
 	}
 
 }
@@ -246,7 +276,7 @@ html, body{
 			color: #999;
 			font-size: 14px;
 			font-weight: normal;
-			 
+
 		}
 
 		.count{
@@ -256,7 +286,7 @@ html, body{
 		.unit{
 			font-size: 11px;
 
-		}	
+		}
 	}
 }
 .floor-box{
@@ -293,7 +323,7 @@ html, body{
 		margin-top: -15px;
 		font-size: 16px;
 	}
-}	
+}
 
 
 
@@ -340,10 +370,10 @@ html, body{
 
 	}
 
-	 
+
 
 	.delete{
-		 
+
 		width: 20px;
 		height: 20px;
 		line-height: 20px;
@@ -354,14 +384,14 @@ html, body{
 		color:#999;
 		font-size: 20px;
 		background: #f9f9f9;
-		 
+
 		display: none;
 
 		&:hover{
 			cursor: pointer;
 			color: @color-highlight;
 			background: lighten(@color-highlight, 50%);
-			 
+
 		}
 	}
 
@@ -383,7 +413,7 @@ html, body{
 		}
 	}
 
-	 
+
 }
 
 .room-rent{
@@ -404,11 +434,11 @@ html, body{
 
 //身份证
 .user-credit{
-	width: 240px;
-	height: 120px;
+	width: 280px;
+	height: 145px;
 	border:1px #eee solid;
 	border-radius: 4px;
-	padding: 15px;
+	padding: 10px 15px 15px 15px;
 	float:left;
 
 	&:hover{
@@ -422,7 +452,7 @@ html, body{
 		.credit-avatar{
 			position: absolute;
 			left:0;
-			top:0;
+			top:10px;
 
 			img{
 				width: 80px;
@@ -448,8 +478,9 @@ html, body{
 .credit-none{
 	border:1px #eee solid;
 	border-radius: 4px;
-	line-height: 120px;
-	width: 240px;
+	line-height: 145px;
+	height: 145px;
+	width: 280px;
 	float:left;
 	text-align: center;
 	font-size: 16px;
@@ -467,7 +498,7 @@ html, body{
     width: 100%;
     border:1px #eee solid !important;
     padding:80px 0 95px 0 !important;
- 
+
     color:#444 !important;
     font-size: 16px !important;
     text-align: center !important;
@@ -476,12 +507,12 @@ html, body{
     &:hover{
     	background: #f9f9f9;
     }
-    
+
   }
 
   .up{
     position: relative;
-  
+
 
 	input[type="file"]{
 		height: 100%;
@@ -504,6 +535,9 @@ html, body{
   		background: rgba(0,0,0, 0.1) !important;
   		color:#fff !important;
   	}
+  	.filename{
+  		color:#fff;
+  	}
   }
 
   .up-bg:hover{
@@ -523,14 +557,14 @@ html, body{
 .header-center{
 	position: absolute;
 	left: 50%;
-	margin-left: -100px; 
+	margin-left: -100px;
 }
 
 .ticket-info{
 	padding:0;
 	margin:0;
 	line-height: 22px;
-	p{	
+	p{
 		display: block;
 		position: relative;
 		margin:0;
@@ -547,7 +581,7 @@ html, body{
 			width: 80px;
 		}
 	}
-	 
+
 }
 
 /**盒子**/
@@ -564,7 +598,7 @@ html, body{
 
 
 .send-comment{
-	 
+
 }
 
 

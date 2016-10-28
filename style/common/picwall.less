@@ -1,0 +1,52 @@
+/** 照片列表	**/
+.@{prefix}{
+	&pic-wall{
+		.pic-box{
+			float: left;
+			width: 200px;
+			margin: 15px 0 0 15px;
+			position: relative;
+			
+			img{
+				width: 100%;
+			}
+
+			&:hover{
+				box-shadow: 0px -1px 1px #e0e0e0;
+				 
+				 .delete{
+				 	display: block;
+				 }
+				.toolbar{
+					display: block;
+				}
+			}
+
+			.delete{
+		 
+				width: 24px;
+				height: 24px;
+				line-height: 24px;
+				border-radius: 12px;
+				position: absolute;
+				right: -10px;
+				top: -10px;
+				color:#999;
+				font-size: 24px;
+				background: #f9f9f9;
+				 
+				display: none;
+
+				&:hover{
+					cursor: pointer;
+					color: @color-highlight;
+					background: lighten(@color-highlight, 50%);
+					 
+				}
+			}
+
+		}
+	}
+
+
+}

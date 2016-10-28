@@ -2,6 +2,7 @@
 	&tabmenu{
 		cursor: pointer;
 		text-align: center;
+
 		.tabmenu-pic{
 			margin: 0 auto;
 			text-align: center;
@@ -25,7 +26,7 @@
 
 	&tabmenu-box{
 		display: flex;
-		 justify-content:space-around;
+		justify-content:space-around;
 	}
 
 	&tabmenu2{
@@ -62,7 +63,7 @@
 		}
 	}
 
-	 
+
 	&tabmenu-sm{
 		.tabmenu-pic{
 			width:2em;
@@ -72,7 +73,7 @@
 			display: block;
 		}
 
-		.tabmenu-title{	
+		.tabmenu-title{
 			padding:1px 0;
 			font-size: @font-size-sm;
 			display: block;
@@ -80,6 +81,19 @@
 
 		}
 	}
+
+	&tabmenu-border{
+		border-bottom: 1px @line-color-light solid;
+
+
+		.@{prefix}tabmenu2, .@{prefix}tabmenu{
+			padding: 20px 0;
+			flex:1;
+			border-right: 1px @line-color-light solid;
+		}
+	}
+
+
 }
 
 .tabmenu-current{

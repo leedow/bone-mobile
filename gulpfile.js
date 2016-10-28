@@ -137,6 +137,21 @@ gulp.task('css', function(){
 		.pipe(autoprefixer())
 		//.pipe(minifyCSS())
 		.pipe(gulp.dest('../IVDS/css'));
+
+
+		//h5展示页面
+		gulp.src('./style/bone-page.less')
+			.pipe(less())
+			.on('error', function(err) {
+				gutil.log('Less Error!', err.message);
+				this.end();
+			})
+			//.pipe(rev())
+			.pipe(autoprefixer())
+			//.pipe(minifyCSS())
+			.pipe(gulp.dest('../showPage'));
+
+		 
 	 
 		 
 	});

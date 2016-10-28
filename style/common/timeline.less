@@ -1,0 +1,101 @@
+.@{prefix}{
+	&flow-box{
+		border-left:2px #ddd solid;
+		margin-left:20px;
+		position: relative;
+		height: 30px;
+		margin-top: 30px;
+		margin-bottom: 30px;
+
+
+		.flow-item{
+			position: absolute;
+			left:0;
+			top:0;
+
+			text-align: left;
+			padding-left: 10px;
+			height: 30px;
+			line-height: 30px;
+			&:before{
+				width: 8px;
+				height: 8px;
+				border-radius: 5px;
+				background: #ddd;
+				content: "";
+				position: absolute;
+				left:-5px;
+				top:11px;
+			}
+
+			.train-info-title{
+				color: #3492e6;
+			}
+		}
+
+		.flow-info-title{
+			font-size: 13px;
+			color: #3492e6;
+			padding-right: 10px;
+		}
+
+		.flow-item-top{
+			top: -15px;
+		}
+
+		.flow-item-bottom{
+			top: 15px;
+		}
+	}
+
+	&timeline{
+
+
+
+		.timeline-item{
+			position: relative;
+			text-align: left;
+			padding-left: 20px;
+			line-height: 20px;
+			padding-bottom:10px;
+
+			&:last-child{
+				&:before{
+					display: none;
+				}
+			}
+
+			.timeline-content{
+				position: relative;
+				top: -4px;
+
+				p{
+					padding:0;
+					margin:0;
+				}
+			}
+
+			&:after{
+					content: ' ';
+					position: absolute;
+					left:0;
+					top: 0;
+					width: 12px;
+					height: 12px;
+					border:2px @color-primary solid;
+					background: #fff;
+					border-radius: 6px;
+			}
+
+			&:before{
+				content: ' ';
+				width: 2px;
+				background: @line-color;
+				height: 100%;
+				position: absolute;
+				left:5px;
+				top:0;
+			}
+		}
+	}
+}

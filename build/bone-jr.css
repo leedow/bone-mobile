@@ -12,7 +12,9 @@ body {
   min-height: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-* {
+*,
+:before,
+:after {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -601,6 +603,18 @@ p {
   font-size: 12px;
   display: block;
   line-height: 1em;
+}
+.bo-tabmenu-border {
+  border-bottom: 1px #eee solid;
+}
+.bo-tabmenu-border .bo-tabmenu2,
+.bo-tabmenu-border .bo-tabmenu {
+  padding: 20px 0;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border-right: 1px #eee solid;
 }
 .tabmenu-current {
   color: #6699FF !important;
@@ -1998,7 +2012,7 @@ button {
   position: relative;
   background: none;
   border: 0;
-  font-size: 20px;
+  font-size: 16px;
   color: #999;
 }
 .bo-check .check-font {
@@ -2153,9 +2167,10 @@ button {
   position: relative;
   border-radius: 4px;
   width: 400px;
+  max-height: 95%;
   background: #fff;
   padding-top: 40px;
-  padding-bottom: 50px;
+  padding-bottom: 60px;
   border: 1px #565a5c solid;
   margin: 0 auto;
 }
@@ -2169,12 +2184,36 @@ button {
   top: 0;
   font-size: 16px;
   margin: 0;
-  padding: 3px 0 0 0;
+  font-weight: normal;
+}
+.bo-dialog .dialog-title-bor {
+  border-bottom: 1px #eee solid;
+  height: 40px;
+  line-height: 40px;
+}
+.bo-dialog .dialog-close {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  border: 0;
+  background: none;
+  color: #999;
+}
+.bo-dialog .dialog-close:hover {
+  color: #6699FF;
 }
 .bo-dialog .dialog-content {
   height: 100%;
-  padding: 12px 15px 15px 15px;
+  padding: 0 15px 0 15px;
   font-size: 15px;
+}
+.bo-dialog .dialog-content-pc {
+  margin: 0 -15px 0 -15px;
 }
 .bo-dialog .dialog-buttons {
   position: absolute;
@@ -2207,6 +2246,19 @@ button {
 }
 .bo-dialog .dialog-buttons .button {
   width: 100%;
+}
+.bo-dialog .dialog-buttons-pc {
+  border-top: 1px #eee solid;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: right;
+  width: 100%;
+  background: #ffffff;
+}
+.bo-dialog .dialog-buttons-pc button {
+  min-width: 80px;
 }
 .fade-transition {
   -webkit-transition: all .3s ease;
